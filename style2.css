@@ -224,34 +224,7 @@ body {
     max-width: 520px;
 }
 
-.text-accent { color: #ff6b6b; }
-
-.hero-social {
-    display: flex;
-    gap: 12px;
-}
-
-.social-icon {
-    width: 42px;
-    height: 42px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 18px;
-    transition: background 0.2s ease, transform 0.2s ease;
-    text-decoration: none;
-}
-
-.social-icon:hover {
-    background: #ff6b6b;
-    border-color: #ff6b6b;
-    transform: translateY(-3px);
-    color: #fff;
-}
+.text-accent { color: #00a0fd; }
 
 .hero-photo {
     width: 260px;
