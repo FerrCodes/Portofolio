@@ -9,7 +9,7 @@
 function changeWeb(type) {
     const urls = {
         cppkalku: "http://103.186.167.18:8002/rpl3/game/rocket_league/",
-        webku:    "http://103.186.167.18:8002/rpl3/laravel/kaggleFeri/",
+        webku:    "https://ferr-hanni.github.io/To-Do-List/",
         trim:     "http://103.186.167.18:8002/rpl3/laravel/pengepul-meme/public/memes"
     };
     if (urls[type]) window.location.href = urls[type];
