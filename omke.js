@@ -43,29 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== ACTIVE NAV LINK ON SCROLL =====
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link-dramatic');
-
-    if (sections.length && navLinks.length) {
-        function updateActiveNav() {
-            let current = '';
-            sections.forEach(function (section) {
-                if (window.scrollY >= section.offsetTop - 120) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(function (link) {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        }
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav();
-    }
-
     // ===== LIGHTBOX =====
     window.bukaLightbox = function (src, caption) {
         const overlay = document.getElementById('lightboxOverlay');
@@ -87,7 +64,32 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'Escape') window.tutupLightbox();
     });
 
-    
+ // ===== TOGGLE PROJECTS (SHOW/HIDE) =====
+window.toggleProjects = function () {
+    const hiddenProjects = document.querySelectorAll('.project-hidden');
+    const btn = document.getElementById('toggleProjectsBtn');
+    const btnText = btn ? btn.querySelector('.btn-text') : null;
+
+    if (!btn || !hiddenProjects.length) return;
+
+    const isExpanded = btn.classList.contains('expanded');
+
+    hiddenProjects.forEach(function (item, index) {
+        if (isExpanded) {
+            item.classList.remove('project-visible');
+        } else {
+            setTimeout(function () {
+                item.classList.add('project-visible');
+            }, index * 90);
+        }
+    });
+
+    btn.classList.toggle('expanded');
+
+    if (btnText) {
+        btnText.textContent = isExpanded ? 'Lihat Project Lainnya' : 'Sembunyikan Project';
+    }
+};
 
     // ===== CONTACT FORM (EmailJS) =====
     // index.html: id="contact-Form" | index2.html: id="contactForm"

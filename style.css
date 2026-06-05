@@ -10,32 +10,8 @@
 }
 
 /* ===== BUTTON STYLES ===== */
-.btn-primary-custom {
-    background-color: #e6b449;
-}
-
 .btn-primary-custom:hover {
     background-color: #e6be5f;
-}
-
-/* ===== HEADING SHADOW ===== */
-.heading-shadow {
-    transform: rotate(360deg);
-}
-
-.heading-shadow:hover {
-    transform: rotate(360deg);
-}
-
-/* ===== DROPDOWN ICON ROTATION ===== */
-.dropdown-icon-rotate-on {
-    transform: rotate(180deg);
-    transition: ease-in 1s;
-}
-
-.dropdown-icon-rotate-off {
-    transform: rotate(0deg);
-    transition: ease-out 1s;
 }
 
 /* ===== NAVBAR MAIN STYLES ===== */
