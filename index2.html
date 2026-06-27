@@ -65,7 +65,7 @@
 
                     <!-- Foto versi mobile: posisinya setelah nama agar alurnya lebih enak dibaca -->
                     <div class="hero-mobile-photo d-lg-none">
-                        <img src="assets/images/fotoku2.jpeg" alt="Feri Ferdianto" class="hero-photo">
+                        <img src="assets/images/Me.jpg" alt="Feri Ferdianto" class="hero-photo">
                     </div>
 
                     <p class="hero-description my-4">
@@ -233,163 +233,164 @@
         </div>
     </section>
 
-<!-- ===== PROJECTS ===== -->
-<section id="projects" class="section-dark">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <span class="section-subtitle">Karya</span>
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="section-divider mx-auto"></div>
-            <p class="projects-desc mt-3">
-                Beberapa project yang pernah saya buat atau kerjakan sebagai bagian dari proses belajar.
-            </p>
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section-dark">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Karya</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-divider mx-auto"></div>
+                <p class="projects-desc mt-3">
+                    Beberapa project yang pernah saya buat atau kerjakan sebagai bagian dari proses belajar.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center" id="projectsGrid">
+                <!-- Project 1: Rocket League -->
+                <div class="col-md-6 col-lg-5 project-item">
+                    <div class="project-card featured-project">
+                        <div class="project-image">
+                            <img src="assets/images/gamee.png" alt="Rocket League Clone">
+                            <div class="project-overlay">
+                                <span class="project-overlay-text">Game Project</span>
+                            </div>
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">C++ Game Development</span>
+                            <h4>Rocket League Clone</h4>
+                            <p>
+                                Game sederhana yang dibuat untuk tugas kelompok pada semester ganjil kelas 11.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>C++</span>
+                                <span>SFML</span>
+                                <span>Game Dev</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <button type="button" onclick="changeWeb('game')" class="project-demo-btn">
+                                    Lihat Project <i class="fas fa-arrow-up-right-from-square ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Kaggle Documentation -->
+                <div class="col-md-6 col-lg-5 project-item">
+                    <div class="project-card featured-project">
+                        <div class="project-image">
+                            <img src="assets/images/To-Do-List.png" alt="To-Do List Project">
+                            <div class="project-overlay">
+                                <span class="project-overlay-text">Web Project</span>
+                            </div>
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">Web Development</span>
+                            <h4>To-Do List</h4>
+                            <p>
+                                Aplikasi To-Do List sederhana yang dibuat dengan HTML, CSS, dan JavaScript.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <button type="button" onclick="changeWeb('webku')" class="project-demo-btn">
+                                    Lihat Project <i class="fas fa-arrow-up-right-from-square ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Project tambahan, awalnya disembunyikan -->
+                <div class="col-md-6 col-lg-5 project-item project-hidden">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/facerecognition.png" alt="Face Recognition Project">
+                            <div class="project-overlay">
+                                <span class="project-overlay-text">Python & ML</span>
+                            </div>
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">Python & Machine Learning</span>
+                            <h4>Face Recognition</h4>
+                            <p>
+                                Project ini adalah memanfaatkan teknologi pengenalan wajah menggunakan Python dan
+                                OpenCV.
+                                Saya membuatnya untuk belajar tentang pengolahan citra dan machine learning.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>OpenCV</span>
+                                <span>Machine Learning</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <button type="button" onclick="changeWeb('face')" class="project-demo-btn">
+                                    Lihat Project <i class="fas fa-arrow-up-right-from-square ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-5 project-item project-hidden">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/ResourceHub.png" alt="Personal Resource Hub Project">
+                            <div class="project-overlay">
+                                <span class="project-overlay-text">PHP Native + MySQL</span>
+                            </div>
+                        </div>
+
+                        <div class="project-info">
+                            <span class="project-category">PHP Native + MySQL</span>
+                            <h4>Personal Resource Hub</h4>
+                            <p>
+                                Projek ini adalah memiliki Database dan Backend pertama saya buat.
+                                Dan untuk fitur ada Auth, CRUD, dan Email Verification dan banyak lagi.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>PHPMailer</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript (Vanilla)</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <button type="button" onclick="changeWeb('resource')" class="project-demo-btn">
+                                    Lihat Project <i class="fas fa-arrow-up-right-from-square ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tombol tampilkan / sembunyikan project -->
+            <div class="text-center mt-5">
+                <button class="btn-show-all-projects" id="toggleProjectsBtn" onclick="toggleProjects()">
+                    <span class="btn-text">Lihat Project Lainnya</span>
+                    <i class="fas fa-chevron-down ms-2 btn-icon"></i>
+                </button>
+            </div>
         </div>
-
-        <div class="row g-4 justify-content-center" id="projectsGrid">
-            <!-- Project 1: Rocket League -->
-            <div class="col-md-6 col-lg-5 project-item">
-                <div class="project-card featured-project">
-                    <div class="project-image">
-                        <img src="assets/images/gamee.png" alt="Rocket League Clone">
-                        <div class="project-overlay">
-                            <span class="project-overlay-text">Game Project</span>
-                        </div>
-                    </div>
-
-                    <div class="project-info">
-                        <span class="project-category">C++ Game Development</span>
-                        <h4>Rocket League Clone</h4>
-                        <p>
-                            Game sederhana yang dibuat untuk tugas kelompok pada semester ganjil kelas 11.
-                        </p>
-
-                        <div class="project-tech">
-                            <span>C++</span>
-                            <span>SFML</span>
-                            <span>Game Dev</span>
-                        </div>
-
-                        <div class="project-actions">
-                            <button type="button" onclick="changeWeb('game')" class="project-demo-btn">
-                                Lihat Project <i class="fas fa-arrow-up-right-from-square ms-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2: Kaggle Documentation -->
-            <div class="col-md-6 col-lg-5 project-item">
-                <div class="project-card featured-project">
-                    <div class="project-image">
-                        <img src="assets/images/To-Do-List.png" alt="To-Do List Project">
-                        <div class="project-overlay">
-                            <span class="project-overlay-text">Web Project</span>
-                        </div>
-                    </div>
-
-                    <div class="project-info">
-                        <span class="project-category">Web Development</span>
-                        <h4>To-Do List</h4>
-                        <p>
-                            Aplikasi To-Do List sederhana yang dibuat dengan HTML, CSS, dan JavaScript.
-                        </p>
-
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-
-                        <div class="project-actions">
-                            <button type="button" onclick="changeWeb('webku')" class="project-demo-btn">
-                                Lihat Project <i class="fas fa-arrow-up-right-from-square ms-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: Project tambahan, awalnya disembunyikan -->
-            <div class="col-md-6 col-lg-5 project-item project-hidden">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/facerecognition.png" alt="Face Recognition Project">
-                        <div class="project-overlay">
-                            <span class="project-overlay-text">Python & ML</span>
-                        </div>
-                    </div>
-
-                    <div class="project-info">
-                        <span class="project-category">Python & Machine Learning</span>
-                        <h4>Face Recognition</h4>
-                        <p>
-                            Project ini adalah memanfaatkan teknologi pengenalan wajah menggunakan Python dan OpenCV.
-                            Saya membuatnya untuk belajar tentang pengolahan citra dan machine learning.
-                        </p>
-
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>OpenCV</span>
-                            <span>Machine Learning</span>
-                        </div>
-
-                        <div class="project-actions">
-                            <button type="button" onclick="changeWeb('face')" class="project-demo-btn">
-                                Lihat Project <i class="fas fa-arrow-up-right-from-square ms-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                    <div class="col-md-6 col-lg-5 project-item project-hidden">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/ResourceHub.png" alt="Personal Resource Hub Project">
-                        <div class="project-overlay">
-                            <span class="project-overlay-text">PHP Native + MySQL</span>
-                        </div>
-                    </div>
-
-                    <div class="project-info">
-                        <span class="project-category">PHP Native + MySQL</span>
-                        <h4>Personal Resource Hub</h4>
-                        <p>
-                            Projek ini adalah memiliki Database dan Backend pertama saya buat.
-                            Dan untuk fitur ada Auth, CRUD, dan Email Verification dan banyak lagi.
-                        </p>
-
-                        <div class="project-tech">
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                            <span>PHPMailer</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript (Vanilla)</span>
-                        </div>
-
-                        <div class="project-actions">
-                            <button type="button" onclick="changeWeb('resource')" class="project-demo-btn">
-                                Lihat Project <i class="fas fa-arrow-up-right-from-square ms-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Tombol tampilkan / sembunyikan project -->
-        <div class="text-center mt-5">
-            <button class="btn-show-all-projects" id="toggleProjectsBtn" onclick="toggleProjects()">
-                <span class="btn-text">Lihat Project Lainnya</span>
-                <i class="fas fa-chevron-down ms-2 btn-icon"></i>
-            </button>
-        </div>
-    </div>
-</section>
-<!-- ===== END PROJECTS ===== -->
+    </section>
+    <!-- ===== END PROJECTS ===== -->
 
     <!-- ===== SERTIFIKAT ===== -->
     <section id="sertifikat" class="section-darker">
