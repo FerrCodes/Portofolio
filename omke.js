@@ -54,6 +54,31 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'Escape') window.tutupLightbox();
     });
 
+    // ===== CV MODAL =====
+    window.bukaCV = function () {
+        const cvModal = document.getElementById('cvModal');
+        if (cvModal) cvModal.classList.add('show');
+    };
+
+    window.tutupCV = function () {
+        const cvModal = document.getElementById('cvModal');
+        if (cvModal) cvModal.classList.remove('show');
+    };
+
+    window.zoomCVToLightbox = function () {
+        const cvImg = document.getElementById('cvImg');
+        if (cvImg && cvImg.src) {
+            window.open(cvImg.src, '_blank');
+        }
+    };
+
+    window.zoomLightbox = function () {
+        const lightboxImg = document.getElementById('lightboxImg');
+        if (lightboxImg.src) {
+            window.open(lightboxImg.src, '_blank');
+        }
+    };
+
     // ===== TOGGLE PROJECTS (SHOW/HIDE) =====
     window.toggleProjects = function () {
         const hiddenProjects = document.querySelectorAll('.project-hidden');
@@ -82,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // ===== CONTACT FORM (EmailJS) =====
-    // index.html: id="contact-Form" | index2.html: id="contactForm"
     const contactForm = document.getElementById('contact-Form') || document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const alertMessage = document.getElementById('alertMessage');
@@ -130,64 +154,106 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Toggle Photo Function
-    let currentPhoto = 1; // 1 = fotoku.jpeg, 2 = Me.jpg
-    
-    function togglePhoto() {
-        const profileImage = document.getElementById('profileImage');
-        const photos = [
-            'assets/images/fotoku.jpeg',
-            'assets/images/Me.jpg'
-        ];
-        
-        // Toggle between photos
-        currentPhoto = currentPhoto === 1 ? 2 : 1;
-        profileImage.src = photos[currentPhoto - 1];
-        
-        // Add transition effect
-        profileImage.style.opacity = '0';
-        setTimeout(() => {
-            profileImage.style.opacity = '1';
-        }, 150);
-    }
+});
 
-    // Toggle Skills Card Function
-    function toggleSkills() {
-        const skillsCard = document.getElementById('skillsCard');
-        const toggleBtn = document.getElementById('toggleSkillsBtn');
-        const toggleText = document.getElementById('toggleSkillsText');
-        const icon = toggleBtn.querySelector('i');
+// ===== GLOBAL FUNCTIONS (untuk dipanggil dari HTML) =====
+
+// Toggle Photo Function - untuk halaman pertama
+window.togglePhoto = function() {
+    const profileImage = document.getElementById('profileImage');
+    if (!profileImage) return;
+    
+    let currentPhoto = profileImage.src.includes('Me.jpg') ? 2 : 1;
+    const photos = [
+        'assets/images/fotoku.jpeg',
+        'assets/images/Me.jpg'
+    ];
+    
+    currentPhoto = currentPhoto === 1 ? 2 : 1;
+    profileImage.src = photos[currentPhoto - 1];
+    
+    profileImage.style.opacity = '0';
+    setTimeout(() => {
+        profileImage.style.opacity = '1';
+    }, 150);
+};
+
+// Toggle Skills Card Function - untuk halaman pertama
+window.toggleSkills = function() {
+    const skillsCard = document.getElementById('skillsCard');
+    const toggleBtn = document.getElementById('toggleSkillsBtn');
+    const toggleText = document.getElementById('toggleSkillsText');
+    
+    if (!skillsCard || !toggleBtn || !toggleText) return;
+    
+    const icon = toggleBtn.querySelector('i');
+    
+    if (skillsCard.style.display === 'none' || !skillsCard.style.display) {
+        skillsCard.style.display = 'flex';
+        setTimeout(() => {
+            skillsCard.style.opacity = '1';
+            skillsCard.style.transform = 'translateY(0)';
+        }, 10);
         
-        if (skillsCard.style.display === 'none') {
-            // Show skills card with animation
-            skillsCard.style.display = 'flex';
-            setTimeout(() => {
-                skillsCard.style.opacity = '1';
-                skillsCard.style.transform = 'translateY(0)';
-            }, 10);
-            
-            // Update button text and icon
-            toggleText.textContent = 'Sembunyikan Kemampuan Teknis';
+        toggleText.textContent = 'Sembunyikan Tech Stack';
+        if (icon) {
             icon.classList.remove('fa-eye');
             icon.classList.add('fa-eye-slash');
-            
-            // Smooth scroll to skills card
-            setTimeout(() => {
-                skillsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 100);
-        } else {
-            // Hide skills card
-            skillsCard.style.opacity = '0';
-            skillsCard.style.transform = 'translateY(-20px)';
-            setTimeout(() => {
-                skillsCard.style.display = 'none';
-            }, 300);
-            
-            // Update button text and icon
-            toggleText.textContent = 'Lihat Kemampuan Teknis';
+        }
+        
+        setTimeout(() => {
+            skillsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    } else {
+        skillsCard.style.opacity = '0';
+        skillsCard.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            skillsCard.style.display = 'none';
+        }, 300);
+        
+        toggleText.textContent = 'Lihat Tech Stack';
+        if (icon) {
             icon.classList.remove('fa-eye-slash');
             icon.classList.add('fa-eye');
         }
     }
+};
 
+// ===== DROPDOWN NAVBAR HANDLER (khusus untuk halaman kedua) =====
+document.addEventListener('DOMContentLoaded', function () {
+    const navDropdownWrap = document.getElementById('navDropdownWrap');
+    const navDropdownToggle = document.getElementById('menuDropdown');
+
+    if (navDropdownWrap && navDropdownToggle) {
+        // Click/tap untuk toggle dropdown
+        navDropdownToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const isOpen = navDropdownWrap.classList.toggle('show');
+            navDropdownToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Tutup menu setelah item diklik
+        navDropdownWrap.querySelectorAll('.dropdown-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                navDropdownWrap.classList.remove('show');
+                navDropdownToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Tutup menu ketika klik di luar
+        document.addEventListener('click', function (e) {
+            if (!navDropdownWrap.contains(e.target)) {
+                navDropdownWrap.classList.remove('show');
+                navDropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Tutup menu dengan tombol Escape
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                navDropdownWrap.classList.remove('show');
+                navDropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 });
