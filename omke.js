@@ -5,17 +5,6 @@
     }
 })();
 
-// ===== NAVIGASI PROYEK =====
-function changeWeb(type) {
-    const urls = {
-        game: "http://103.186.167.18:8002/rpl3/game/rocket_league/",
-        webku: "https://ferrcodes.github.io/To-Do-List/",
-        trim: "https://ferrcodes.github.io/Pengepul-Meme/",
-        face: "https://github.com/FerrCodes/FaceRecognition-Final",
-    };
-    if (urls[type]) window.location.href = urls[type];
-}
-
 // ===== DROPDOWN ICON (halaman pertama) =====
 let isClicked = false;
 function omkeGasm() {
