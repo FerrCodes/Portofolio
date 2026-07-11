@@ -12,6 +12,11 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Untuk Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Untuk Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
@@ -64,11 +69,11 @@
     <!--jumbotron split screen-->
     <section id="home" class="section-home">
         <div class="container home-container">
-            <div class="row align-items-center home-row">
+            <div class="row align-items-center justify-content-center home-row">
                 <!-- Kolom Kiri - Foto -->
                 <div class="col-lg-5 col-md-6 text-center mb-4 mb-md-0">
                     <div class="profile-img-wrapper position-relative d-inline-block">
-                        <img class="shadow-lg profile-img" id="profileImage" src="assets/images/fotoku.jpeg" alt="Feri Ferdianto">
+                        <img class="shadow-lg profile-img" id="profileImage" src="assets/images/fotoku.jpg" alt="Feri Ferdianto">
                         <button class="btn-toggle-photo" onclick="togglePhoto()" title="Ganti Foto">
                             <i class="fas fa-sync-alt"></i>
                         </button>
@@ -523,31 +528,49 @@
     <!--contact-->
 
     <!--footer-->
-    <footer class="footer">
-        <div class="container py-4">
-            <!-- Nama & Tagline -->
-            <div class="text-center mb-3">
-                <h5 class="footer-name">F e r d i a n t o</h5>
-                <p class="footer-tagline">Portofolio</p>
-            </div>
-            <!-- Sosmed & Copyright -->
-            <div class="d-flex flex-wrap justify-content-between align-items-center">
-                <small class="footer-copy">© 2025. All rights reserved.</small>
-                <div class="footer-socials">
-                    <a href="https://github.com" class="footer-icon" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github fa-lg"></i>
-                    </a>
-                    <a href="https://instagram.com" class="footer-icon" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-instagram fa-lg"></i>
-                    </a>
-                    <a href="https://linkedin.com" class="footer-icon" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin fa-lg"></i>
-                    </a>
+    <footer class="footer footer-improved">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: Brand (Kiri) -->
+                <div class="footer-brand">
+                    <h5 class="footer-name">Feri Ferdianto</h5>
+                    <p class="footer-tagline">Portofolio</p>
+                    <p class="footer-desc">
+                        Siswa PPLG SMKN 5 Malang yang memiliki minat<br>
+                        di bidang pengembangan web dan AI.
+                    </p>
                 </div>
+
+                <!-- Kolom 2: Navigasi (Tengah) -->
+                <div class="footer-links">
+                    <h5>Navigasi</h5>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#projects">Projek</a></li>
+                        <li><a href="#pendidikan">Pendidikan</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: GitHub (Kanan) -->
+                <div class="footer-github">
+                    <h5>GitHub</h5>
+                    <a href="https://github.com/FerrCodes" target="_blank" rel="noopener noreferrer" class="github-link">
+                        <i class="fab fa-github"></i>
+                        <span>Lihat Profil</span>
+                        <i class="fas fa-arrow-up-right-from-square" style="font-size:12px; opacity:0.6;"></i>
+                    </a>
+                    <p class="footer-credit">Made by Feri</p>
+                </div>
+            </div>
+
+            <!-- Copyright (Bawah) -->
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <!--footer-->
 
 
     <script src="omke.js"></script>
@@ -562,7 +585,7 @@
     function togglePhoto() {
         const profileImage = document.getElementById('profileImage');
         const photos = [
-            'assets/images/fotoku.jpeg',
+            'assets/images/fotoku.jpg',
             'assets/images/Me.jpg'
         ];
         

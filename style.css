@@ -345,53 +345,44 @@ section {
 }
 
 @media (max-width: 576px) {
-    .section-home {
-        min-height: 100vh;
-    }
-
-    .home-container {
-        padding-top: 85px !important;
-        padding-bottom: 20px !important;
-    }
-
-    .home-row {
-        min-height: calc(100vh - 105px) !important;
-        padding: 20px 0 !important;
-    }
-
-    #home h1 {
-        font-size: 1.75rem !important;
-        line-height: 1.3;
-    }
-
-    #home h5 {
-        font-size: 0.9rem !important;
-    }
-
-    #home h4 {
-        font-size: 0.95rem !important;
-    }
-
-    #home .btn-lg {
-        font-size: 0.85rem !important;
-        padding: 0.45rem 1.2rem !important;
-    }
-
-    #home .profile-img {
-        max-width: 150px !important;
-        border-width: 4px !important;
-    }
-
-    #home .d-flex {
-        gap: 1rem !important;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #home .d-flex .btn {
-        width: 100%;
-        max-width: 280px;
-    }
+.section-home {
+min-height: 100vh; /* Ubah dari 50vh ke 100vh */
+}
+.home-container {
+     padding-top: 80px !important; /* Tambah dari 50px */
+     padding-bottom: 30px !important; /* Tambah dari 10px */
+ }
+ .home-row {
+     min-height: calc(100vh - 110px) !important;
+     padding: 30px 0 !important; /* Tambah dari 20px */
+ }
+ #home h1 {
+     font-size: 2rem !important; /* Tambah dari 1.75rem */
+     line-height: 1.3;
+ }
+ #home h5 {
+     font-size: 1rem !important; /* Tambah dari 0.9rem */
+ }
+ #home h4 {
+     font-size: 1.1rem !important; /* Tambah dari 0.95rem */
+ }
+ #home .btn-lg {
+     font-size: 1rem !important; /* Tambah dari 0.85rem */
+     padding: 0.6rem 1.5rem !important; /* Tambah dari 0.45rem 1.2rem */
+ }
+ #home .profile-img {
+     max-width: 200px !important; /* Tambah dari 150px */
+     border-width: 5px !important; /* Tambah dari 4px */
+ }
+ #home .d-flex {
+     gap: 1.2rem !important; /* Tambah dari 1rem */
+     flex-direction: column;
+     align-items: center;
+ }
+ #home .d-flex .btn {
+     width: 100%;
+     max-width: 320px; /* Tambah dari 280px */
+ }
 }
 
 /* ===== RESPONSIVE: TECH STACK GRID (FIX) ===== */
@@ -846,7 +837,7 @@ section {
 
 /* ===== GLOBAL ===== */
 .body-serif {
-    font-family: serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* ===== COLOR UTILITIES ===== */
@@ -899,14 +890,15 @@ section {
 
 /* ===== HOME SECTION ===== */
 .home-container {
-    padding-top: 120px;
-    padding-bottom: 0;
+    padding-top: 100px;
 }
 
 .home-row {
     min-height: calc(100vh - 120px);
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding-left: 8%; /*aku tambahkan ini */
 }
 
 .home-subtitle {
@@ -1139,47 +1131,195 @@ section {
     }
 }
 
-/* ===== FOOTER ===== */
-.footer {
-    background-color: #2e4bff;
+/* ===== FOOTER IMPROVED FOR INDEX ===== */
+.footer-improved {
+    background: #2e4bff;
+    padding: 50px 0 20px;
 }
 
-.footer-name {
-    color: white;
-    font-family: serif;
-    font-size: 1.4rem;
-    font-weight: bold;
+.footer-improved .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-improved .footer-name {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 4px;
 }
 
-.footer-tagline {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    margin-bottom: 0;
+.footer-improved .footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
-.footer-divider {
-    border-color: rgba(255, 255, 255, 0.3);
-    margin: 12px 0;
+.footer-improved .footer-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 320px;
 }
 
-.footer-copy {
-    color: rgba(255, 255, 255, 0.75);
+.footer-improved .footer-links h5,
+.footer-improved .footer-social h5 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 16px;
 }
 
-.footer-socials {
+.footer-improved .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-improved .footer-links ul li a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: inline-block;
+}
+
+.footer-improved .footer-links ul li a:hover {
+    color: #fff;
+    padding-left: 6px;
+}
+
+/* ===== KOLOM GITHUB (Pengganti Sosial Media) ===== */
+.footer-github h5 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.footer-github {
+    text-align: right; /* <-- ini yang membuat semua isi kolom kanan rata kanan */
+}
+
+.footer-github .github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 18px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 18px;
+}
+
+.footer-github .github-link:hover {
+    background: #fff;
+    color: #2e4bff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+    border-color: #fff;
+}
+
+.footer-github .github-link i:first-child {
+    font-size: 22px;
+}
+
+.footer-github .footer-credit {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ===== RESPONSIVE: Pastikan di HP kolom GitHub rata tengah ===== */
+@media (max-width: 768px) {
+    .footer-github {
+        text-align: center; /* kembali ke tengah di HP */
+    }
+    .footer-github .github-link {
+        justify-content: center;
+    }
+}
+
+.footer-improved .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
-.footer-icon {
-    color: white;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    opacity: 0.85;
+.footer-improved .footer-bottom .copyright {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    margin: 0;
 }
 
-.footer-icon:hover {
-    color: white;
-    opacity: 1;
-    transform: translateY(-3px);
+.footer-improved .footer-bottom .copyright-credit {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-improved .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-improved .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .footer-improved .footer-desc {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer-improved .footer-links ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .footer-improved .footer-links ul li a:hover {
+        padding-left: 0;
+    }
+
+    .footer-improved .footer-social-icons {
+        justify-content: center;
+    }
+
+    .footer-improved .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-improved .footer-social-icons a {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
 }

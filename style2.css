@@ -389,94 +389,6 @@ body {
   color: #e6b449; 
 }
 
-/* ===== TECH STACK TAGS ===== */
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-  margin-top: 8px;
-}
-.skill-tags span {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.7);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 500;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-.skill-card:hover .skill-tags span {
-  background: rgba(255,107,107,0.1);
-  border-color: rgba(255,107,107,0.3);
-  color: #ff6b6b;
-}
-
-/* ===== TECHNICAL SKILLS IMPROVEMENT ===== */
-.skill-box {
-    min-height: 120px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.skill-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(46, 75, 255, 0.12);
-}
-
-.skill-status {
-    display: inline-block;
-    margin-top: 4px;
-    color: #666;
-    font-size: 0.78rem;
-}
-
-.tool-box {
-    min-height: 58px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tool-box:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(46, 75, 255, 0.10);
-}
-
-.tool-status {
-    color: #666;
-    font-size: 0.75rem;
-}
-
-/* Responsive technical skill card */
-@media (max-width: 576px) {
-    .skill-box {
-        min-height: 110px;
-        padding: 1rem 0.5rem !important;
-    }
-
-    .skill-box img {
-        width: 48px;
-    }
-
-    .skill-box p {
-        font-size: 0.85rem;
-    }
-
-    .skill-status {
-        font-size: 0.7rem;
-    }
-
-    .tool-box {
-        align-items: flex-start !important;
-    }
-
-    .tool-box span {
-        font-size: 0.9rem;
-    }
-
-    .tool-status {
-        font-size: 0.7rem;
-    }
-}
 
 /* ===== PROJECTS ===== */
 .projects-desc {
@@ -602,6 +514,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
 }
 
 .project-demo-btn {
@@ -1342,28 +1255,122 @@ body {
     }
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER 2 KOLOM (BRAND KIRI - NAVIGASI KANAN) ===== */
 .footer-dramatic {
-    background: #050505;
-    padding: 40px 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    background: #080808;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 50px 0 20px;
 }
 
-.footer-logo {
-    font-size: 22px;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Brand lebih besar, Navigasi di kanan */
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* BRAND (Kiri) */
+.footer-brand .footer-logo {
+    font-size: 24px;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+}
+.footer-brand .footer-tagline {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+.footer-brand .footer-desc {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 320px;
 }
 
-.footer-text {
-    color: rgba(255,255,255,0.45);
+/* NAVIGASI (Kanan) - RATA KANAN */
+.footer-links {
+    text-align: right; /* <-- Kunci agar navigasi ke kanan */
+}
+.footer-links h5 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end; /* biar teksnya rata kanan semua */
+}
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease, padding-right 0.2s ease;
+    display: inline-block;
+}
+.footer-links ul li a:hover {
+    color: #ff6b6b;
+    padding-right: 6px; /* animasi geser ke kiri (karena rata kanan) */
+}
+
+/* FOOTER BAWAH (Copyright) */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.footer-bottom .copyright {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 13px;
+    margin: 0;
+}
+.footer-bottom .copyright-credit {
+    color: rgba(255, 255, 255, 0.3);
     font-size: 13px;
     margin: 0;
 }
 
-.copyright {
-    color: rgba(255,255,255,0.45);
-    font-size: 13px;
+/* ===== RESPONSIVE MOBILE (HP) ===== */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Kembali ke 1 kolom di HP */
+        gap: 28px;
+        text-align: center;
+    }
+    .footer-links {
+        text-align: center; /* Reset rata kanan */
+    }
+    .footer-links ul {
+        align-items: center; /* Reset ke tengah */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+    .footer-links ul li a:hover {
+        padding-right: 0; /* Reset animasi */
+    }
+    .footer-brand .footer-desc {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
 }
 
 /* ===== BACK TO TOP ===== */
@@ -1392,8 +1399,6 @@ body {
 .back-to-top:hover { color: #fff; transform: translateY(-3px); }
 
 /* ===== RESPONSIVE MOBILE FINAL ===== */
-
-/* ===== RESPONSIVE MOBILE FINAL - CONSOLIDATED ===== */
 
 /* Large Screens (1200px+) */
 @media (min-width: 1200px) {
@@ -1579,12 +1584,15 @@ body {
     }
 
     .project-demo-btn {
-        width: 100%;
+        width: fit-content;    /* Sesuai konten */
+        max-width: 200px;      /* Maksimal 200px */
+        margin: 0 auto;        /* Tengah */
     }
 
     .btn-show-all-projects {
-        width: 100%;
-        max-width: 300px;
+        width: fit-content;    /* Sesuai konten */
+        max-width: 300px;      /* Maksimal 300px */
+        margin: 0 auto;        /* Tengah */
     }
 
     /* CERTIFICATES */
@@ -1701,15 +1709,6 @@ body {
 
     .contact-social {
         justify-content: center;
-    }
-
-    /* FOOTER */
-    .footer-dramatic {
-        text-align: center;
-    }
-
-    .copyright {
-        margin-top: 16px;
     }
 
     /* BACK TO TOP */
@@ -2107,9 +2106,8 @@ body {
     }
 
     .project-demo-btn {
-        padding: 8px 14px !important;
-        font-size: 13px !important;
-        width: 100% !important;
+        padding: 6px 12px !important;
+        font-size: 12px !important;
     }
 
     /* CERTIFICATES IMPROVEMENTS */
@@ -2131,9 +2129,9 @@ body {
     }
 
     .social-card-icon {
-        width: 54px !important;
-        height: 54px !important;
-        font-size: 22px !important;
+        width: 56px !important;
+        height: 56px !important;
+        font-size: 24px !important;
     }
 
     .social-card h4 {
@@ -2141,8 +2139,8 @@ body {
     }
 
     .social-card-btn {
-        width: 100% !important;
         padding: 8px 14px !important;
+        width: fit-content !important;
         font-size: 13px !important;
     }
 
