@@ -19,17 +19,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ===== NAVBAR SCROLL =====
     const navbar = document.getElementById('dramaticNavbar') || document.getElementById('mainNavbar');
-    if (navbar) {
-        window.addEventListener('scroll', function () {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-    }
-
-    // ===== BACK TO TOP =====
     const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
+    
+    if (navbar || backToTop) {
+        let ticking = false;
         window.addEventListener('scroll', function () {
-            backToTop.classList.toggle('show', window.scrollY > 300);
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    if (navbar) {
+                        navbar.classList.toggle('scrolled', window.scrollY > 50);
+                    }
+                    if (backToTop) {
+                        backToTop.classList.toggle('show', window.scrollY > 300);
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
     }
 

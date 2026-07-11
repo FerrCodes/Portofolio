@@ -186,8 +186,8 @@ section {
 
 .navbar-main.scrolled {
     background-color: rgba(25, 40, 180, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /*backdrop-filter: blur(10px);*/
+    /*-webkit-backdrop-filter: blur(10px);*/
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -1322,4 +1322,11 @@ min-height: 100vh; /* Ubah dari 50vh ke 100vh */
         height: 38px;
         font-size: 15px;
     }
+}
+
+.profile-img {
+    will-change: transform; /* bantu GPU */
+}
+.card, .project-card, .cert-card {
+    will-change: transform; /* bantu GPU */
 }
