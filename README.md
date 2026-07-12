@@ -4,7 +4,7 @@ Website portofolio pribadi
 
 ## 📖 Tentang
 
-Portofolio ini adalah tugas jurusan awal kelas 2, lalu saya menjadikan Portofolio asli saya
+Portofolio ini adalah tugas jurusan awal kelas 2, lalu saya menjadikan Portofolio asli
 
 ## 🛠️ Tech Stack
 
