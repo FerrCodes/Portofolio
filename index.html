@@ -27,44 +27,99 @@
 
 <body class="body-serif">
 
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top navbar-main" id="mainNavbar">
-        <div class="container">
-            <a class="navbar-brand fs-5" href="#">Feri Ferdianto</a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-link-hover" aria-current="page" href="#">Beranda</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-link-hover" href="#about">Tentang</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-link-hover" href="#projects">Projek</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Lebih Banyak
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#pendidikan">Pendidikan</a></li>
-                            <li><a class="dropdown-item" href="#contact">Kontak saya</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="index2.html">Halaman Kedua</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top navbar-main" id="mainNavbar">
+    <div class="container">
+        <a class="navbar-brand fs-5" href="#">Feri Ferdianto</a>
+
+        <!-- ===== DESKTOP MENU (akan tampil di > 991px) ===== -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-hover" aria-current="page" href="#">Beranda</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-hover" href="#about">Tentang</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-hover" href="#projects">Projek</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Lebih Banyak
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#pendidikan">Pendidikan</a></li>
+                        <li><a class="dropdown-item" href="#contact">Kontak saya</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="index2.html">Halaman Kedua</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </nav>
-    <!--navbar-->
+        
+        <!-- Tombol Hamburger (untuk buka panel) -->
+        <button class="navbar-toggler border-0" id="navToggleBtn" type="button" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== SIDE PANEL ===== -->
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-panel" id="navPanel">
+    <!-- Header Panel -->
+    <div class="nav-panel-header">
+        <span class="nav-panel-brand">Menu</span>
+        <button class="nav-panel-close" id="navCloseBtn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Daftar Menu -->
+    <ul class="nav-panel-list">
+        <li>
+            <a href="#" class="nav-panel-link active">
+                <i class="fas fa-home"></i> Beranda
+            </a>
+        </li>
+        <li>
+            <a href="#about" class="nav-panel-link">
+                <i class="fas fa-user"></i> Tentang
+            </a>
+        </li>
+        <li>
+            <a href="#projects" class="nav-panel-link">
+                <i class="fas fa-folder-open"></i> Projek
+            </a>
+        </li>
+        <li>
+            <a href="#pendidikan" class="nav-panel-link">
+                <i class="fas fa-graduation-cap"></i> Pendidikan
+            </a>
+        </li>
+        <li>
+            <a href="#contact" class="nav-panel-link">
+                <i class="fas fa-envelope"></i> Kontak
+            </a>
+        </li>
+        <li class="nav-panel-divider"></li>
+        <li>
+            <a href="index2.html" class="nav-panel-link">
+                <i class="fas fa-arrow-right"></i> Halaman Kedua
+            </a>
+        </li>
+    </ul>
+
+    <!-- Footer Panel (opsional) -->
+    <div class="nav-panel-footer">
+        <small>© 2025 Feri</small>
+    </div>
+</div>
+<!-- ===== END SIDE PANEL ===== -->
 
     <!--jumbotron split screen-->
     <section id="home" class="section-home">
@@ -205,7 +260,6 @@
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
                                         alt="HTML" width="48" class="mb-2">
                                     <p class="mb-0 fw-semibold small">HTML5</p>
-                                    <small class="skill-status">Dasar</small>
                                 </div>
                             </div>
                             <div class="col-4 col-md-2">
@@ -213,7 +267,6 @@
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
                                         alt="CSS" width="48" class="mb-2">
                                     <p class="mb-0 fw-semibold small">CSS3</p>
-                                    <small class="skill-status">Dasar</small>
                                 </div>
                             </div>
                             <div class="col-4 col-md-2">
@@ -221,7 +274,6 @@
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
                                         alt="JavaScript" width="48" class="mb-2">
                                     <p class="mb-0 fw-semibold small">JavaScript</p>
-                                    <small class="skill-status">Dasar</small>
                                 </div>
                             </div>
                             <div class="col-4 col-md-2">
@@ -229,7 +281,6 @@
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
                                         alt="PHP" width="48" class="mb-2">
                                     <p class="mb-0 fw-semibold small">PHP</p>
-                                    <small class="skill-status">Belajar</small>
                                 </div>
                             </div>
                             <div class="col-4 col-md-2">
@@ -237,25 +288,27 @@
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
                                         alt="MySQL" width="48" class="mb-2">
                                     <p class="mb-0 fw-semibold small">MySQL</p>
-                                    <small class="skill-status">Belajar</small>
                                 </div>
                             </div>
+                            <!-- PostgreSQL -->
                             <div class="col-4 col-md-2">
                                 <div class="skill-box p-3 rounded bg-light-gray h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-                                        alt="Node.js" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">JavaScript (Node.js)</p>
-                                    <small class="skill-status">Dasar</small>
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
+                                        alt="PostgreSQL" width="48" class="mb-2">
+                                    <p class="mb-0 fw-semibold small">PostgreSQL</p>
+                                    <small class="skill-status">Belajar</small>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Divider -->
-                        <hr class="my-3">
-                        <p class="text-muted text-center small fw-semibold mb-3">Framework & Tools</p>
+                        <!-- ===== DIVIDER ===== -->
+                        <hr class="my-4">
 
-                        <!-- Tools Row -->
-                        <div class="row g-3 justify-content-center">
+                        <!-- ===== FRAMEWORK ===== -->
+                        <p class="text-muted text-center small fw-semibold mb-3">
+                            <i class="fas fa-cubes me-2"></i>Framework
+                        </p>
+                        <div class="row g-3 justify-content-center mb-4">
                             <div class="col-6 col-md-4 col-lg-2">
                                 <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg"
@@ -266,16 +319,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
-                                        alt="Laravel" width="24" class="me-2 flex-shrink-0">
-                                    <div>
-                                        <span class="fw-semibold d-block" style="font-size:0.8rem;">Laravel</span>
-                                        <small class="tool-status">PHP Framework</small>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+
+                        <!-- ===== TOOLS & WORKFLOW ===== -->
+                        <p class="text-muted text-center small fw-semibold mb-3">
+                            <i class="fas fa-tools me-2"></i>Tools &amp; Workflow
+                        </p>
+                        <div class="row g-3 justify-content-center">
+                            <!-- Git -->
                             <div class="col-6 col-md-4 col-lg-2">
                                 <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
@@ -286,6 +337,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- GitHub -->
                             <div class="col-6 col-md-4 col-lg-2">
                                 <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"
@@ -296,6 +348,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- VS Code -->
                             <div class="col-6 col-md-4 col-lg-2">
                                 <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"
@@ -306,6 +359,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- XAMPP -->
                             <div class="col-6 col-md-4 col-lg-2">
                                 <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original-wordmark.svg"
@@ -316,32 +370,30 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Sedang Dipelajari -->
-                            <div class="col-12 mt-4">
-                                <h5 class="text-center mb-3" style="color: #2e4bff; font-weight: 490;">
-                                     Sedang Dipelajari
-                                </h5>
-                            </div>
-
-                            <div class="col-6 col-md-4 col-lg-2 mb-3">
-                                <div class="skill-box learning-box">
-                                    <img src="https://skillicons.dev/icons?i=laravel&perline=12" />
-                                    <p>Laravel</p>
+                         <!-- ===== SEDANG DIPELAJARI ===== -->
+                        <hr class="my-4">
+                        <h5 class="text-center mb-3" style="color: #2e4bff; font-weight: 600;">
+                            Sedang Dipelajari
+                        </h5>
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="skill-box p-3 rounded bg-light-gray h-100 text-center">
+                                    <img src="https://skillicons.dev/icons?i=laravel&perline=12" alt="Laravel" width="48" class="mb-2">
+                                    <p class="mb-0 fw-semibold small">Laravel</p>
                                 </div>
                             </div>
-
-                            <div class="col-6 col-md-4 col-lg-2 mb-3">
-                                <div class="skill-box learning-box">
-                                    <img src="https://skillicons.dev/icons?i=typescript&perline=12" alt="TypeScript">
-                                    <p>TypeScript</p>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="skill-box p-3 rounded bg-light-gray h-100 text-center">
+                                    <img src="https://skillicons.dev/icons?i=typescript&perline=12" alt="TypeScript" width="48" class="mb-2">
+                                    <p class="mb-0 fw-semibold small">TypeScript</p>
                                 </div>
                             </div>
-
-                            <div class="col-6 col-md-4 col-lg-2 mb-3">
-                                <div class="skill-box learning-box">
-                                    <img src="https://skillicons.dev/icons?i=react&perline=12" alt="React">
-                                    <p>React</p>
+                            <div class="col-6 col-md-4 col-lg-2">
+                                <div class="skill-box p-3 rounded bg-light-gray h-100 text-center">
+                                    <img src="https://skillicons.dev/icons?i=react&perline=12" alt="React" width="48" class="mb-2">
+                                    <p class="mb-0 fw-semibold small">React</p>
                                 </div>
                             </div>
                         </div>

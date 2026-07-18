@@ -162,6 +162,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// ===== SIDE PANEL NAVBAR =====
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('navToggleBtn');
+    const closeBtn = document.getElementById('navCloseBtn');
+    const overlay = document.getElementById('navOverlay');
+    const panel = document.getElementById('navPanel');
+    const panelLinks = document.querySelectorAll('.nav-panel-link');
+
+    // Fungsi buka panel
+    function openPanel() {
+        panel.classList.add('active');
+        overlay.classList.add('active');
+        toggleBtn.classList.add('active');
+        document.body.style.overflow = 'hidden'; // nonaktifkan scroll
+    }
+
+    // Fungsi tutup panel
+    function closePanel() {
+        panel.classList.remove('active');
+        overlay.classList.remove('active');
+        toggleBtn.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Event: Tombol hamburger
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (panel.classList.contains('active')) {
+                closePanel();
+            } else {
+                openPanel();
+            }
+        });
+    }
+
+    // Event: Tombol close (X)
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closePanel);
+    }
+
+    // Event: Klik overlay (area gelap di belakang panel)
+    if (overlay) {
+        overlay.addEventListener('click', closePanel);
+    }
+
+    // Event: Setiap link di panel (tutup panel setelah diklik)
+    if (panelLinks.length) {
+        panelLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Hapus active dari semua link
+                panelLinks.forEach(function(l) {
+                    l.classList.remove('active');
+                });
+                // Tambahkan active ke link yang diklik
+                this.classList.add('active');
+                // Tutup panel setelah delay kecil (biar animasi smooth)
+                setTimeout(closePanel, 150);
+            });
+        });
+    }
+
+    // Event: Tombol Escape untuk tutup panel
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && panel.classList.contains('active')) {
+            closePanel();
+        }
+    });
+});
+
 // ===== GLOBAL FUNCTIONS (untuk dipanggil dari HTML) =====
 
 // Toggle Photo Function - untuk halaman pertama

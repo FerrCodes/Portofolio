@@ -212,6 +212,367 @@ section {
     color: #2e4bff;
 }
 
+/* ===== MOBILE NAVBAR MODERN ===== */
+
+/* Toggler dengan 3 garis animasi */
+.navbar-toggler {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: transparent !important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background-image: none !important;
+}
+
+/* Animasi saat toggler aktif (menu terbuka) */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Collapse menu mobile dengan efek glassmorphism */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(30, 50, 200, 0.92);
+        border-radius: 16px;
+        padding: 20px 20px 24px;
+        margin-top: 12px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: top center;
+    }
+
+    /* Animasi slide-down saat menu terbuka */
+    .navbar-collapse.collapsing {
+        transform: scaleY(0.8);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    .navbar-collapse.show {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    /* Item menu dengan ikon */
+    .navbar-nav .nav-item {
+        margin: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 12px 14px !important;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: background 0.2s ease;
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff !important;
+    }
+
+    .navbar-nav .nav-link i {
+        width: 20px;
+        text-align: center;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Dropdown di mobile */
+    .navbar-nav .dropdown-menu {
+        background: rgba(255, 255, 255, 0.06);
+        border: none;
+        border-radius: 12px;
+        margin: 4px 0 0 0 !important;
+        padding: 6px 0;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .navbar-nav .dropdown-item {
+        color: rgba(255, 255, 255, 0.8);
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        transition: background 0.15s ease;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .navbar-nav .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+    }
+
+    .navbar-nav .dropdown-item i {
+        width: 18px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+    }
+
+    .navbar-nav .dropdown-divider {
+        border-color: rgba(255, 255, 255, 0.06);
+        margin: 4px 0;
+    }
+
+    /* Toggler tetap di atas */
+    .navbar-toggler {
+        z-index: 1050;
+    }
+}
+
+/* ============================================================
+   MOBILE NAVBAR - SIDE PANEL (SLIDE FROM RIGHT)
+   ============================================================ */
+
+/* ---- Tombol Hamburger (3 garis) ---- */
+.navbar-toggler {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: transparent !important;
+    border: none !important;
+    z-index: 1050;
+    cursor: pointer;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background-image: none !important;
+}
+
+/* Animasi tombol hamburger berubah jadi X (saat panel terbuka) */
+.navbar-toggler.active .navbar-toggler-icon:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.navbar-toggler.active .navbar-toggler-icon:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.navbar-toggler.active .navbar-toggler-icon:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ---- OVERLAY (gelap di belakang panel) ---- */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1060;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ---- SIDE PANEL (dari kanan) ---- */
+.nav-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    max-width: 80%;
+    height: 100vh;
+    background: rgba(20, 35, 180, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1070;
+    transform: translateX(105%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-panel.active {
+    transform: translateX(0);
+}
+
+/* ---- Header Panel ---- */
+.nav-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+}
+
+.nav-panel-brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.nav-panel-close {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-panel-close:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: rotate(90deg);
+}
+
+/* ---- Daftar Menu ---- */
+.nav-panel-list {
+    list-style: none;
+    padding: 16px 16px 0;
+    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.nav-panel-list li {
+    margin-bottom: 4px;
+}
+
+.nav-panel-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-panel-link i {
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s ease;
+}
+
+.nav-panel-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.nav-panel-link:hover i {
+    color: #fff;
+}
+
+.nav-panel-link.active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.nav-panel-link.active i {
+    color: #fff;
+}
+
+/* Divider */
+.nav-panel-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin: 12px 16px !important;
+    padding-top: 0 !important;
+}
+
+/* ---- Footer Panel ---- */
+.nav-panel-footer {
+    padding: 16px 24px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.nav-panel-footer small {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 12px;
+}
+
+
+/* ---- HIDE DEFAULT BOOTSTRAP COLLAPSE (biar nggak ganggu) ---- */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        display: none !important;
+    }
+}
+
+
+/* ---- DESKTOP (> 991px): Panel & Overlay disembunyikan ---- */
+@media (min-width: 992px) {
+    .nav-overlay,
+    .nav-panel {
+        display: none !important;
+    }
+    
+    .navbar-toggler {
+        display: none !important;
+    }
+}
+
 /* ===== MOBILE NAVBAR ===== */
 @media (max-width: 991px) {
     .navbar-collapse {
@@ -1056,8 +1417,20 @@ min-height: 100vh; /* Ubah dari 50vh ke 100vh */
     background-color: #f8f9fa;
     border: 1px solid rgba(46, 75, 255, 0.1);
     border-radius: 0.5rem;
-    padding: 0.75rem;
+    padding: 1rem;
     transition: all 0.3s ease;
+}
+
+.tool-box .fw-semibold {
+    font-size: 0.9rem !important; /* dari 0.8rem menjadi 0.9rem */
+}
+
+.tool-section-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .tool-box:hover {
