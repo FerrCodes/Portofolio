@@ -6,14 +6,6 @@ Website portofolio pribadi
 
 Portofolio ini adalah tugas jurusan awal kelas 2, lalu saya menjadikan Portofolio asli
 
-## 🛠️ Tech Stack
-
-- HTML5, CSS3, JavaScript
-- Bootstrap 5
-- PHP, MySQL
-- Node.js (JavaScript)
-- Git & GitHub
-
 - ## 📂 Halaman
 
 - **Halaman Pertama (`index.html`)** – Profil, Tentang, Tech Stack, Projek, Pendidikan, Kontak.
@@ -23,7 +15,3 @@ Portofolio ini adalah tugas jurusan awal kelas 2, lalu saya menjadikan Portofoli
 ## 📬 Kontak
 
 - Email: ferdiantoferi1303@gmail.com
-
----
-
-**Made with ❤️ by Feri**
