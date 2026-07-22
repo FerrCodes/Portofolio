@@ -332,7 +332,6 @@ body {
     color: #ff6b6b;
 }
 
-
 /* ===== SKILLS ===== */
 .skill-card {
   background: rgba(255,255,255,0.04);
@@ -399,140 +398,14 @@ body {
     line-height: 1.7;
 }
 
-.project-card {
-    height: 100%;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 18px;
-    overflow: hidden;
-    transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
-}
-
-.project-card:hover {
-    border-color: rgba(255, 107, 107, 0.65);
-    background: rgba(255,255,255,0.055);
-    transform: translateY(-5px);
-}
-
-.featured-project {
-    border-color: rgba(255, 107, 107, 0.18);
-}
-
-.project-image {
-    position: relative;
-    overflow: hidden;
-    height: 240px;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.45s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.06);
-}
-
-.project-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.72),
-        rgba(0, 0, 0, 0.08)
-    );
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 18px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-overlay-text {
-    color: #fff;
-    background: rgba(255, 107, 107, 0.9);
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-}
-
-.project-info {
-    padding: 22px;
-}
-
-.project-category {
-    display: inline-block;
+.project-demo-btn-secondary {
+    background: transparent;
+    border: 2px solid #ff6b6b;
     color: #ff6b6b;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 8px;
 }
-
-.project-info h4 {
-    color: #fff;
-    font-size: 21px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.project-info p {
-    color: rgba(255,255,255,0.65);
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 20px;
-}
-
-.project-tech span {
-    background: rgba(255,107,107,0.15);
-    color: #ff6b6b;
-    padding: 4px 11px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.project-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.project-demo-btn {
-    border: none;
-    outline: none;
+.project-demo-btn-secondary:hover {
     background: #ff6b6b;
     color: #fff;
-    padding: 10px 16px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.project-demo-btn:hover {
-    background: #e85555;
-    transform: translateY(-2px);
 }
 
 /* ===== PROJECT TOGGLE SHOW / HIDE ===== */
@@ -612,6 +485,267 @@ body {
     .btn-show-all-projects {
         width: 100%;
         max-width: 320px;
+    }
+}
+
+/* ============================================
+   PROJECT CARD MODERN (VERSI 2.0)
+   ============================================ */
+
+.project-card-modern {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.project-card-modern:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 107, 107, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- GAMBAR --- */
+.project-image-modern {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 */
+    background: #111;
+}
+
+.project-image-modern img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card-modern:hover .project-image-modern img {
+    transform: scale(1.05);
+}
+
+/* --- OVERLAY --- */
+.project-overlay-modern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card-modern:hover .project-overlay-modern {
+    opacity: 1;
+}
+
+.project-badge {
+    background: rgba(255, 107, 107, 0.9);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.project-year {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+/* --- BODY --- */
+.project-body-modern {
+    padding: 20px 22px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header-modern {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.project-header-modern h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.project-status {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 12px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    color: #aaa;
+}
+
+.status-done {
+    background: rgba(52, 199, 89, 0.15);
+    color: #34c759;
+}
+
+.status-wip {
+    background: rgba(255, 204, 0, 0.15);
+    color: #ffcc00;
+}
+
+/* --- DESKRIPSI --- */
+.project-desc-modern {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 6px 0 14px;
+    flex: 1;
+}
+
+/* --- TECH TAGS --- */
+.project-tech-modern {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.tech-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    color: #ccc;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* --- ACTIONS (Tombol) --- */
+.project-actions-modern {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 16px;
+}
+
+.btn-repo-modern {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.btn-repo-modern:hover {
+    background: #ff6b6b;
+    border-color: #ff6b6b;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.btn-demo-modern {
+    background: #ff6b6b;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.btn-demo-modern:hover {
+    background: #e85555;
+    transform: translateX(4px);
+    color: #fff;
+}
+
+/* ===== TECH STACK ICONS (MODERN) ===== */
+.project-tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+    min-height: 36px;
+    align-items: center;
+}
+
+.project-tech-icons img {
+    height: 32px;
+    width: auto;
+    border-radius: 6px;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    filter: grayscale(0.1) brightness(0.9);
+}
+
+.project-tech-icons img:hover {
+    transform: translateY(-3px) scale(1.05);
+    filter: grayscale(0) brightness(1.1);
+}
+
+/* Opsional: Jika kamu ingin ada label kecil di bawah icon (Hybrid) */
+.project-tech-icons .icon-label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    display: block;
+    margin-top: 4px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .project-header-modern {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    .project-actions-modern {
+        flex-wrap: wrap;
+    }
+    .btn-demo-modern {
+        margin-left: 0;
+        width: 50%;
+        justify-content: center;
+    }
+    .btn-repo-modern {
+        width: 44px;
+        height: 44px;
     }
 }
 
