@@ -232,6 +232,52 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// ===== ACTIVE NAV LINK BERDASARKAN SCROLL =====
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const desktopLinks = document.querySelectorAll('.nav-link-custom');
+    const mobileLinks = document.querySelectorAll('.nav-panel-link');
+
+    function updateActiveLink() {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 120; // offset navbar
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        // Jika tidak ada section yang cocok (misal di atas semua section), gunakan 'home'
+        if (!currentSectionId && window.scrollY < 100) {
+            currentSectionId = 'home';
+        }
+
+        // Update desktop links
+        desktopLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSectionId) {
+                link.classList.add('active');
+            }
+        });
+
+        // Update mobile links (side panel)
+        mobileLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSectionId) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Jalankan saat scroll
+    window.addEventListener('scroll', updateActiveLink);
+    // Jalankan saat halaman dimuat
+    updateActiveLink();
+});
+
 // ===== GLOBAL FUNCTIONS (untuk dipanggil dari HTML) =====
 
 // Toggle Photo Function - untuk halaman pertama

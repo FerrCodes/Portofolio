@@ -17,61 +17,84 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <!-- ===== NAVBAR DROPDOWN HOVER ===== -->
-    <nav class="navbar navbar-dark fixed-top" id="dramaticNavbar">
-        <div class="container">
-            <a class="navbar-brand logo-text">
-                <span class="brand-first"></span>
-                <span class="brand-last">2.0</span>
-            </a>
+<!-- ===== NAVBAR MODERN (FULL CUSTOM) ===== -->
+<nav class="navbar-custom" id="dramaticNavbar">
+    <div class="container-custom">
+        <a class="logo-custom" href="#">
+            <span class="brand-last">2.0</span>
+        </a>
 
-            <!-- Dropdown Hover Menu (tanpa JS, murni CSS hover) -->
-            <div class="dropdown-hover" id="navDropdownWrap">
-                <button class="btn btn-menu-dropdown" type="button" id="menuDropdown" aria-expanded="false">
-                    Lebih Banyak<i class="fas fa-chevron-down"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#home"><i class="fas fa-home me-2"></i>Home</a></li>
-                    <li><a class="dropdown-item" href="#projects"><i class="fas fa-folder-open me-2"></i>Projects</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#sertifikat"><i
-                                class="fas fa-certificate me-2"></i>Certificates</a></li>
-                    <li><a class="dropdown-item" href="#medsos"><i class="fas fa-envelope me-2"></i>Find Me Online</a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="index.html"><i class="fas fa-arrow-left me-2"></i>Halaman
-                            Sebelumnya</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        <!-- Desktop Menu -->
+        <ul class="nav-menu-desktop">
+            <li><a href="#home" class="nav-link-custom active">Beranda</a></li>
+            <li><a href="#projects" class="nav-link-custom">Proyek</a></li>
+            <li><a href="#sertifikat" class="nav-link-custom">Sertifikat</a></li>
+            <li><a href="#medsos" class="nav-link-custom">Media Sosial</a></li>
+        </ul>
 
-    <!-- Home -->
-    <section id="home" class="hero-simple">
+        <!-- Mobile Hamburger -->
+        <button class="hamburger-custom" id="navToggleBtn" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== SIDE PANEL (MOBILE) ===== -->
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-panel nav-panel-dark" id="navPanel">
+    <div class="nav-panel-header">
+        <span class="nav-panel-brand">Menu</span>
+        <button class="nav-panel-close" id="navCloseBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="nav-panel-list">
+        <li><a href="#home" class="nav-panel-link active"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="#projects" class="nav-panel-link"><i class="fas fa-folder-open"></i> Proyek</a></li>
+        <li><a href="#sertifikat" class="nav-panel-link"><i class="fas fa-certificate"></i> Sertifikat</a></li>
+        <li><a href="#medsos" class="nav-panel-link"><i class="fas fa-envelope"></i> Media Sosial</a></li>
+        <li class="nav-panel-divider"></li>
+        <li><a href="index.html" class="nav-panel-link"><i class="fas fa-arrow-left"></i> Halaman Utama</a></li>
+    </ul>
+    <div class="nav-panel-footer"><small>© 2026 Feri Ferdianto</small></div>
+</div>
+
+     <!-- ===== HERO MODERN ===== -->
+    <section id="home" class="hero-modern">
         <div class="container">
             <div class="row hero-row align-items-center justify-content-center">
-                <div class="col-lg-8">
-                    <div class="hero-content text-center">
-                        <span class="hero-subtitle mb-3 d-inline-block">
-                            <i class="fas fa-rocket me-2"></i>Selamat datang di
-                        </span>
-                        <h1 class="hero-title">
-                            Halaman <span style="color: #ff6b6b;">Kedua</span>
+                <div class="col-lg-8 col-md-10">
+                    <div class="hero-glass-card">
+                        <div class="hero-badge">
+                            <i class="fas fa-rocket me-2"></i> Selamat datang di
+                        </div>
+                        <h1 class="hero-title-modern">
+                            Halaman <span class="text-gradient">Kedua</span>
                         </h1>
-                        <p class="hero-description my-4">
+                        <p class="hero-desc-modern">
                             Halaman ini menampilkan <span class="text-accent">Proyek</span>, 
                             <span class="text-accent">Sertifikat</span>, dan 
                             <span class="text-accent">Media Sosial</span> saya.
                         </p>
-                        <div class="hero-actions mt-4">
-                            <a href="#projects" class="btn btn-primary-dramatic">
-                                Lihat Semua <i class="fas fa-arrow-down ms-2"></i>
+                        <div class="hero-actions-modern">
+                            <a href="#projects" class="btn-hero-primary">
+                                <i class="fas fa-arrow-down me-2"></i> Lihat Proyek
                             </a>
-                            <a href="index.html" class="btn btn-outline-dramatic">
-                                Kembali ke Halaman Utama
+                            <a href="index.html" class="btn-hero-secondary">
+                                <i class="fas fa-arrow-left me-2"></i> Halaman Utama
                             </a>
+                        </div>
+                        <div class="hero-stats-modern">
+                            <div class="stat-item">
+                                <span class="stat-number">6+</span>
+                                <span class="stat-label">Proyek</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Sertifikat</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">4</span>
+                                <span class="stat-label">Platform</span>
+                            </div>
                         </div>
                     </div>
                 </div>
