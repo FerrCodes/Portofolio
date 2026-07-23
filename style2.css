@@ -19,6 +19,69 @@ body {
 }
 
 /* ============================================================
+   PERFORMANCE FIX - NONAKTIFKAN EFEK BERAT DI MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* ---- 1. MATIKAN BLUR DI NAVBAR ---- */
+    .navbar-modern,
+    .navbar-custom {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(10, 10, 10, 0.95) !important; /* solid, tidak transparan */
+    }
+
+    /* ---- 2. MATIKAN BLUR DI HERO CARD (GLASSMORPHISM) ---- */
+    .hero-glass-card {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(20, 20, 30, 0.92) !important; /* solid gelap */
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* ---- 3. SEMBUNYIKAN BOLA GRADIEN (ORBS) DI HERO ---- */
+    .hero-modern::before,
+    .hero-modern::after {
+        display: none !important;
+    }
+
+    /* ---- 4. KURANGI ANIMASI HOVER PADA CARD (biar ringan) ---- */
+    .project-card-modern:hover {
+        transform: translateY(-4px) !important; /* kurangi efek angkat */
+        box-shadow: none !important;
+    }
+
+    .project-card-modern .project-image-modern img {
+        transition: none !important; /* matikan zoom on hover */
+    }
+    .project-card-modern:hover .project-image-modern img {
+        transform: none !important;
+    }
+
+    /* ---- 5. MATIKAN EFEK FILTER PADA ICON TECH ---- */
+    .project-tech-icons img {
+        filter: none !important; /* matikan grayscale/brightness */
+        transition: none !important;
+    }
+    .project-tech-icons img:hover {
+        transform: none !important;
+        filter: none !important;
+    }
+
+    /* ---- 6. SEDERHANAKAN SIDE PANEL (tanpa blur) ---- */
+    .nav-panel-dark {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(15, 15, 20, 0.98) !important;
+    }
+    .nav-overlay {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(0, 0, 0, 0.7) !important;
+    }
+}
+
+/* ============================================================
    NAVBAR FULL CUSTOM (DESKTOP + MOBILE)
    ============================================================ */
 
