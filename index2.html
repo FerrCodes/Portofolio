@@ -24,13 +24,22 @@
             <span class="brand-last">2.0</span>
         </a>
 
-        <!-- Desktop Menu -->
-        <ul class="nav-menu-desktop">
-            <li><a href="#home" class="nav-link-custom active">Beranda</a></li>
-            <li><a href="#projects" class="nav-link-custom">Proyek</a></li>
-            <li><a href="#sertifikat" class="nav-link-custom">Sertifikat</a></li>
-            <li><a href="#medsos" class="nav-link-custom">Media Sosial</a></li>
-        </ul>
+        <!-- ===== DESKTOP DROPDOWN ===== -->
+        <div class="nav-dropdown-desktop">
+            <button class="nav-dropdown-btn" id="dropdownToggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="nav-dropdown-menu" id="dropdownMenu">
+                <li><a href="#home" class="dropdown-link active">Beranda</a></li>
+                <li><a href="#projects" class="dropdown-link">Proyek</a></li>
+                <li><a href="#sertifikat" class="dropdown-link">Sertifikat</a></li>
+                <li><a href="#medsos" class="dropdown-link">Media Sosial</a></li>
+                <li class="dropdown-divider"></li>
+                <li><a href="index.html" class="dropdown-link btn-outline-dropdown">
+                    <i class="fas fa-arrow-left me-1"></i> Halaman Utama
+                </a></li>
+            </ul>
+        </div>
 
         <!-- Mobile Hamburger -->
         <button class="hamburger-custom" id="navToggleBtn" aria-label="Toggle navigation">
@@ -76,10 +85,7 @@
                         </p>
                         <div class="hero-actions-modern">
                             <a href="#projects" class="btn-hero-primary">
-                                <i class="fas fa-arrow-down me-2"></i> Lihat Proyek
-                            </a>
-                            <a href="index.html" class="btn-hero-secondary">
-                                <i class="fas fa-arrow-left me-2"></i> Halaman Utama
+                                <i class="fas fa-arrow-down me-2"></i> Lihat Semua
                             </a>
                         </div>
                         <div class="hero-stats-modern">
@@ -110,7 +116,7 @@
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="section-divider mx-auto"></div>
                 <p class="projects-desc mt-3">
-                    Beberapa project yang pernah saya buat dan juga sebagai bagian dari proses belajar.
+                    Beberapa project yang pernah saya buat dan dari tugas sekolah, ada juga sebagian dari proses belajar.
                 </p>
             </div>
 
@@ -231,7 +237,7 @@
                             <span class="project-status status-done">Selesai</span>
                         </div>
                         <p class="project-desc-modern">
-                            anding page sekolah ini juga merupakan tugas awal kelas 2
+                            Landing page sekolah ini juga merupakan tugas awal kelas 2
                         </p>
                         <div class="project-tech-icons">
                             <img src="https://skillicons.dev/icons?i=html,css,js&perline=10" alt="" />

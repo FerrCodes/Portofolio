@@ -134,59 +134,352 @@ body {
     background-clip: text;
 }
 
-/* ===== DESKTOP MENU ===== */
-.nav-menu-desktop {
+/* ============================================================
+   NAVBAR DROPDOWN MODERN (DESKTOP) + SIDE PANEL (MOBILE)
+   ============================================================ */
+
+/* ---- Container ---- */
+.container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ---- Navbar Base ---- */
+.navbar-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 14px 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.navbar-custom.scrolled {
+    background: rgba(10, 10, 10, 0.97);
+    padding: 10px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- Logo ---- */
+.logo-custom {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.logo-custom .brand-first { color: #fff; }
+.logo-custom .brand-last {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================================
+   DESKTOP DROPDOWN (>= 992px)
+   ============================================================ */
+.nav-dropdown-desktop {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-btn {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    padding: 8px 22px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+}
+
+.nav-dropdown-btn:hover {
+    background: rgba(255, 107, 107, 0.12);
+    border-color: rgba(255, 107, 107, 0.3);
+    transform: translateY(-2px);
+}
+
+.nav-dropdown-btn i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown-btn.active i {
+    transform: rotate(180deg);
+}
+
+/* ---- Dropdown Menu ---- */
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    min-width: 220px;
+    background: rgba(15, 15, 25, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 8px 0;
     list-style: none;
+    margin: 0;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px) scale(0.96);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top right;
+}
+
+.nav-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.nav-dropdown-menu li {
     margin: 0;
     padding: 0;
 }
 
-.nav-menu-desktop li {
-    margin: 0;
-}
-
-.nav-link-custom {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 10px;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-    font-size: 0.95rem;
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-left-color: #ff6b6b;
+}
+
+.dropdown-link.active {
+    color: #fff;
+    background: rgba(255, 107, 107, 0.08);
+    border-left-color: #ff6b6b;
+}
+
+.dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin: 6px 16px;
+    padding: 0 !important;
+}
+
+/* Tombol "Halaman Utama" di dropdown */
+.btn-outline-dropdown {
+    border: 1.5px solid rgba(255, 107, 107, 0.25) !important;
+    border-radius: 30px !important;
+    margin: 4px 12px 8px !important;
+    padding: 8px 16px !important;
+    justify-content: center;
     transition: all 0.3s ease;
-    position: relative;
 }
 
-/* Efek underline gradien */
-.nav-link-custom::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    width: 0;
-    height: 2.5px;
-    background: linear-gradient(90deg, #ff6b6b, #ff8e53);
-    transition: all 0.35s ease;
-    transform: translateX(-50%);
+.btn-outline-dropdown:hover {
+    background: rgba(255, 107, 107, 0.12) !important;
+    border-color: #ff6b6b !important;
+}
+
+/* ============================================================
+   MOBILE HAMBURGER & SIDE PANEL (< 992px)
+   ============================================================ */
+.hamburger-custom {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1051;
+}
+
+.hamburger-custom span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #fff;
     border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-.nav-link-custom:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.04);
+.hamburger-custom.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
-.nav-link-custom:hover::after {
-    width: 60%;
+.hamburger-custom.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger-custom.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-.nav-link-custom.active {
+/* Sembunyikan dropdown desktop di mobile */
+@media (max-width: 991px) {
+    .nav-dropdown-desktop {
+        display: none !important;
+    }
+    .hamburger-custom {
+        display: flex !important;
+    }
+}
+
+/* Sembunyikan hamburger di desktop */
+@media (min-width: 992px) {
+    .hamburger-custom {
+        display: none !important;
+    }
+}
+
+/* ============================================================
+   SIDE PANEL (Mobile - tetap sama seperti sebelumnya)
+   ============================================================ */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1060;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-panel-dark {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    max-width: 80%;
+    height: 100vh;
+    background: rgba(15, 15, 20, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1070;
+    transform: translateX(105%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.6);
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+.nav-panel-dark.active {
+    transform: translateX(0);
+}
+
+.nav-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+}
+.nav-panel-brand {
+    font-size: 20px;
+    font-weight: 700;
     color: #fff;
 }
-.nav-link-custom.active::after {
-    width: 60%;
+.nav-panel-close {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.nav-panel-close:hover {
+    background: rgba(255, 107, 107, 0.2);
+    transform: rotate(90deg);
+}
+
+.nav-panel-list {
+    list-style: none;
+    padding: 16px 16px 0;
+    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+.nav-panel-list li { margin-bottom: 4px; }
+.nav-panel-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.nav-panel-link i {
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.4);
+}
+.nav-panel-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+.nav-panel-link:hover i { color: #ff6b6b; }
+.nav-panel-link.active {
+    background: rgba(255, 107, 107, 0.1);
+    color: #fff;
+}
+.nav-panel-link.active i { color: #ff6b6b; }
+
+.nav-panel-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin: 12px 16px !important;
+}
+.nav-panel-footer {
+    padding: 16px 24px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+}
+.nav-panel-footer small {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
 }
 
 /* ===== MOBILE HAMBURGER ===== */
