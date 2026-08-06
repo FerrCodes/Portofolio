@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Portofolio</title>
     <link rel="icon" type="image/x-icon" href="assets/images/logo.ico">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono|Kaushan+Script" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Untuk Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- Untuk Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
@@ -25,141 +24,138 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="body-serif">
-
-<!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top navbar-main" id="mainNavbar">
-    <div class="container">
-        <a class="navbar-brand fs-5" href="#">Feri Ferdianto</a>
-
-        <!-- ===== DESKTOP MENU (akan tampil di > 991px) ===== -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-2">
-                    <a class="nav-link nav-link-hover" aria-current="page" href="#">Beranda</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link nav-link-hover" href="#about">Tentang</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Lebih Banyak
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#projects">Projek</a></li>
-                        <li><a class="dropdown-item" href="#pendidikan">Pendidikan</a></li>
-                        <li><a class="dropdown-item" href="#contact">Kontak Email</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="index2.html">Halaman Selanjutnya</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+    <body class="body-serif">
+    
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top navbar-main" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand fs-5" href="#">Feri Ferdianto</a>
         
-        <!-- Tombol Hamburger (untuk buka panel) -->
-        <button class="navbar-toggler border-0" id="navToggleBtn" type="button" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <!-- ===== DESKTOP MENU (akan tampil di > 991px) ===== -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link nav-link-hover" aria-current="page" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link nav-link-hover" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Lebih Banyak
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#projects">Projek</a></li>
+                            <li><a class="dropdown-item" href="#pendidikan">Pendidikan</a></li>
+                            <li><a class="dropdown-item" href="#contact">Kontak Email</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index2.html">Halaman Selanjutnya</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Tombol Hamburger (untuk buka panel) -->
+            <button class="navbar-toggler border-0" id="navToggleBtn" type="button" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== SIDE PANEL ===== -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <div class="nav-panel" id="navPanel">
+        <!-- Header Panel -->
+        <div class="nav-panel-header">
+            <span class="nav-panel-brand">Menu</span>
+            <button class="nav-panel-close" id="navCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Daftar Menu -->
+        <ul class="nav-panel-list">
+            <li>
+                <a href="#" class="nav-panel-link active">
+                    <i class="fas fa-home"></i> Beranda
+                </a>
+            </li>
+            <li>
+                <a href="#about" class="nav-panel-link">
+                    <i class="fas fa-user"></i> Tentang
+                </a>
+            </li>
+            <li>
+                <a href="#projects" class="nav-panel-link">
+                    <i class="fas fa-folder-open"></i> Projek
+                </a>
+            </li>
+            <li>
+                <a href="#pendidikan" class="nav-panel-link">
+                    <i class="fas fa-graduation-cap"></i> Pendidikan
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="nav-panel-link">
+                    <i class="fas fa-envelope"></i> Kontak Email
+                </a>
+            </li>
+            <li class="nav-panel-divider"></li>
+            <li>
+                <a href="index2.html" class="nav-panel-link">
+                    <i class="fas fa-arrow-right"></i> Halaman Kedua
+                </a>
+            </li>
+        </ul>
+
+        <!-- Footer Panel (opsional) -->
+        <div class="nav-panel-footer">
+            <small>© 2025 Feri</small>
+        </div>
     </div>
-</nav>
+    <!-- ===== END SIDE PANEL ===== -->
 
-<!-- ===== SIDE PANEL ===== -->
-<div class="nav-overlay" id="navOverlay"></div>
-<div class="nav-panel" id="navPanel">
-    <!-- Header Panel -->
-    <div class="nav-panel-header">
-        <span class="nav-panel-brand">Menu</span>
-        <button class="nav-panel-close" id="navCloseBtn">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-
-    <!-- Daftar Menu -->
-    <ul class="nav-panel-list">
-        <li>
-            <a href="#" class="nav-panel-link active">
-                <i class="fas fa-home"></i> Beranda
-            </a>
-        </li>
-        <li>
-            <a href="#about" class="nav-panel-link">
-                <i class="fas fa-user"></i> Tentang
-            </a>
-        </li>
-        <li>
-            <a href="#projects" class="nav-panel-link">
-                <i class="fas fa-folder-open"></i> Projek
-            </a>
-        </li>
-        <li>
-            <a href="#pendidikan" class="nav-panel-link">
-                <i class="fas fa-graduation-cap"></i> Pendidikan
-            </a>
-        </li>
-        <li>
-            <a href="#contact" class="nav-panel-link">
-                <i class="fas fa-envelope"></i> Kontak Email
-            </a>
-        </li>
-        <li class="nav-panel-divider"></li>
-        <li>
-            <a href="index2.html" class="nav-panel-link">
-                <i class="fas fa-arrow-right"></i> Halaman Kedua
-            </a>
-        </li>
-    </ul>
-
-    <!-- Footer Panel (opsional) -->
-    <div class="nav-panel-footer">
-        <small>© 2025 Feri</small>
-    </div>
-</div>
-<!-- ===== END SIDE PANEL ===== -->
-
-    <!--jumbotron split screen-->
+        <!--jumbotron split screen-->
     <section id="home" class="section-home">
-        <div class="container home-container">
-            <div class="row align-items-center justify-content-center home-row">
-                <!-- Kolom Kiri - Foto -->
-                <div class="col-lg-5 col-md-6 text-center mb-4 mb-md-0">
-                    <div class="profile-img-wrapper position-relative d-inline-block">
-                        <img class="shadow-lg profile-img" id="profileImage" src="assets/images/fotoku.jpg" alt="Feri Ferdianto">
-                        <button class="btn-toggle-photo" onclick="togglePhoto()" title="Ganti Foto">
+        <div class="container home-container" style="position:relative; z-index:1;">
+            <div class="row align-items-center justify-content-center home-row" style="min-height:100vh;">
+                <div class="col-lg-8 col-md-10 text-center">
+                    <!-- Foto Profil (dengan toggle) -->
+                    <div class="profile-img-wrapper position-relative d-inline-block" style="margin-bottom:30px;">
+                        <img class="shadow-lg profile-img" id="profileImage" src="assets/images/fotoku.jpg" alt="Feri Ferdianto" style="width:240px; height:240px; border-radius:50%; object-fit:cover; border:8px solid rgba(255,255,255,0.2);">
+                        <button class="btn-toggle-photo" onclick="togglePhoto()" title="Ganti Foto" style="position:absolute; bottom:10px; right:10px; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.9); border:2px solid #6ca5ff; color:#6ca5ff; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:10;">
                             <i class="fas fa-sync-alt"></i>
                         </button>
                     </div>
-                </div>
 
-                <!-- Kolom Kanan - Teks -->
-                <div class="col-lg-7 col-md-6">
-                    <h5 class="mb-2 home-subtitle">Halo, Saya</h5>
-                    <h1 class="display-3 fw-bolder mb-3 color-primary">Feri Ferdianto</h1>
-                    <h4 class="mb-4 color-dark">Siswa SMKN 5 Malang | Jurusan PPLG</h4>
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="#about" class="btn btn-lg px-4 btn-primary-main">
-                            Lihat Lebih Banyak <i class="fas fa-arrow-down ms-2"></i>
-                        </a>
-                    </div>
+                    <!-- Nama dengan style Kaushan Script -->
+                    <h1 class="hero-name" style="font-family: 'Kaushan Script', cursive; font-size:clamp(2.5rem, 8vw, 5rem); color:#fff; margin-bottom:10px; transform:rotate(-2deg);">
+                        Feri Ferdianto
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <h3 class="hero-subtitle" style="font-family: 'Space Mono', monospace; font-size:clamp(1rem, 1.5vw, 1.5rem); color:rgba(255,255,255,0.9); font-weight:300; letter-spacing:2px; margin-bottom:20px;">
+                        Siswa SMKN 5 Malang | Jurusan PPLG
+                    </h3>
                 </div>
             </div>
         </div>
     </section>
-    <!--jumbotron split screen-->
 
     <!--about two column-->
     <section id="about" class="section-about">
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col">
-                    <h1 class="fw-bolder section-title-white">Tentang Saya</h1>
+                    <h1 class="fw-bolder section-title-dark">Tentang Saya</h1>
                 </div>
             </div>
 
             <!-- Baris 1: Profil & Info Pribadi -->
-            <div class="row g-4 mb-4">
+            <div class="row g-4 mb-4 justify-content-center">
                 <!-- Kolom Kiri - Profil Singkat -->
                 <div class="col-lg-7">
                     <div class="bg-white rounded-3 shadow p-4 h-100">
@@ -189,41 +185,6 @@
                             <li class="d-flex align-items-center text-dark">
                                 <i class="fas fa-laptop-code me-3 color-primary"></i>
                                 <span>Mengembangkan Project Sederhana</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Kolom Kanan - Informasi Pribadi -->
-                <div class="col-lg-5">
-                    <div class="bg-white rounded-3 shadow p-4 h-100">
-                        <h4 class="fw-bold mb-4 color-primary">
-                            <i class="fas fa-id-card me-2"></i> Info Pribadi
-                        </h4>
-                        <ul class="list-unstyled mb-0">
-                            <li class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                                <span class="text-muted small"><i class="fas fa-user me-2"></i>Nama</span>
-                                <span class="fw-semibold text-dark small">Feri Ferdianto</span>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                                <span class="text-muted small"><i class="fas fa-calendar-alt me-2"></i>Usia</span>
-                                <span class="fw-semibold text-dark small">18 Tahun</span>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                                <span class="text-muted small"><i class="fas fa-map-marker-alt me-2"></i>Lokasi</span>
-                                <span class="fw-semibold text-dark small">Malang, Indonesia</span>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                                <span class="text-muted small"><i class="fas fa-school me-2"></i>Sekolah</span>
-                                <span class="fw-semibold text-dark small">SMKN 5 Malang</span>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                                <span class="text-muted small"><i class="fas fa-book me-2"></i>Jurusan</span>
-                                <span class="fw-semibold text-dark small">PPLG</span>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-start py-2">
-                                <span class="text-muted small"><i class="fas fa-envelope me-2"></i>Email</span>
-                                <span class="fw-semibold text-dark text-end" style="font-size:0.78rem; word-break:break-all; max-width:55%;">ferdiantoferi1303@gmail.com</span>
                             </li>
                         </ul>
                     </div>
