@@ -29,25 +29,18 @@
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top navbar-main" id="mainNavbar">
         <div class="container">
-            <a class="navbar-brand fs-5" href="#">Feri Ferdianto</a>
+            <a class="navbar-brand fs-5" href="#">Feri.</a>
         
             <!-- ===== DESKTOP MENU (akan tampil di > 991px) ===== -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-link-hover" aria-current="page" href="#">Beranda</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link nav-link-hover" href="#about">Tentang</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Lebih Banyak
+                            
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#projects">Projek</a></li>
-                            <li><a class="dropdown-item" href="#pendidikan">Pendidikan</a></li>
+                            <li><a class="dropdown-item" a href="https://yoursit.ee/ferrriiii" target="_blank">yoursit.ee</a></li>
                             <li><a class="dropdown-item" href="#contact">Kontak Email</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="index2.html">Halaman Selanjutnya</a></li>
@@ -58,8 +51,6 @@
             
             <!-- Tombol Hamburger (untuk buka panel) -->
             <button class="navbar-toggler border-0" id="navToggleBtn" type="button" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -79,23 +70,13 @@
         <!-- Daftar Menu -->
         <ul class="nav-panel-list">
             <li>
-                <a href="#" class="nav-panel-link active">
-                    <i class="fas fa-home"></i> Beranda
+                <a href="https://yoursit.ee/ferrriiii" target="_blank" class="nav-panel-link active">
+                    <i class="fas fa-circle-info"></i> yoursit.ee
                 </a>
             </li>
             <li>
                 <a href="#about" class="nav-panel-link">
                     <i class="fas fa-user"></i> Tentang
-                </a>
-            </li>
-            <li>
-                <a href="#projects" class="nav-panel-link">
-                    <i class="fas fa-folder-open"></i> Projek
-                </a>
-            </li>
-            <li>
-                <a href="#pendidikan" class="nav-panel-link">
-                    <i class="fas fa-graduation-cap"></i> Pendidikan
                 </a>
             </li>
             <li>
@@ -150,7 +131,7 @@
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col">
-                    <h1 class="fw-bolder section-title-dark">Tentang Saya</h1>
+                    <h2 class="section-title-retro text-center">Tentang Saya</h2>
                 </div>
             </div>
 
@@ -367,169 +348,123 @@
     </section>
     <!--about two column-->
 
-    <!--projects-->
-    <section id="projects" class="section-projects">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col">
-                    <h1 class="fw-bolder my-5 section-title-projects">Projek</h1>
+    <!-- ===== PROJECTS ===== -->
+<section id="projects" class="section-projects">
+    <div class="container">
+        <h2 class="section-title-retro text-center">Projek</h2>
+        <div class="row g-4 mt-4">
+            <!-- Card 1: Game Rocket League -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card-retro">
+                    <img src="assets/images/gamee.png" alt="Game Rocket League" class="project-img-retro">
+                    <div class="project-body-retro">
+                        <h3>Game: Rocket League</h3>
+                        <p>Game ini dibuat saat tugas kelompok waktu semester ganjil kelas 11.</p>
+                        <div class="project-tags-retro">
+                            <span>Construct 3</span>
+                            <span>Game</span>
+                        </div>
+                        <a href="http://103.186.167.18:8002/rpl3/game/rocket_league/" target="_blank" class="btn-retro">
+                            Lihat <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 text-center">
-                <!-- Card 1: Game Rocket League -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="assets/images/gamee.png" alt="project 1" class="card-img-top"
-                            height="225" role="img" width="100%">
-                        <div class="card-body">
-                            <h3 class="text-center fw-bolder">Game: Rocket League</h3>
-                            <p class="card-text">Game ini dibuat saat tugas kelompok waktu semester ganjil kelas 11</p>
-                            <div class="d-flex justify-content-center align-items-center">
-                            <a href="http://103.186.167.18:8002/rpl3/game/rocket_league/" 
-                               class="project-demo-btn" 
-                               target="_blank" 
-                               rel="noopener noreferrer">
-                               <i class="btn btn-sm btn-dark">Lihat</i>
-                            </a>
-                            </div>
+
+            <!-- Card 2: To-Do List -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card-retro">
+                    <img src="assets/images/To-Do-List.png" alt="To-Do List" class="project-img-retro">
+                    <div class="project-body-retro">
+                        <h3>To-Do List</h3>
+                        <p>Website To-Do List sederhana dengan HTML, CSS, dan JavaScript.</p>
+                        <div class="project-tags-retro">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
                         </div>
+                        <a href="https://ferrcodes.github.io/To-Do-List/" target="_blank" class="btn-retro">
+                            Lihat <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Card 2: -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="assets/images/To-Do-List.png" alt="project 2" class="card-img-top"
-                            height="225" role="img" width="100%">
-                        <div class="card-body">
-                            <h3 class="text-center fw-bolder">To-Do List</h3>
-                            <p class="card-text">Ini adalah website To-Do List sederhana yang dibuat dengan HTML, CSS,
-                                dan JavaScript.</p>
-                            <div class="d-flex justify-content-center align-items-center">
-                            <a href="https://ferrcodes.github.io/To-Do-List/" 
-                               class="project-demo-btn" 
-                               target="_blank" 
-                               rel="noopener noreferrer">
-                               <i class="btn btn-sm btn-dark">Lihat</i>
-                            </a>
-                            </div>
+            <!-- Card 3: Landing Page Sekolah -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card-retro">
+                    <img src="assets/images/sekolah.png" alt="Landing Page Sekolah" class="project-img-retro">
+                    <div class="project-body-retro">
+                        <h3>Landing Page Sekolah</h3>
+                        <p>Landing page sekolah yang dibuat sebagai tugas awal kelas 2.</p>
+                        <div class="project-tags-retro">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Bootstrap</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: -->
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="assets/images/sekolah.png" alt="project 3" class="card-img-top"
-                            height="225" role="img" width="100%">
-                        <div class="card-body">
-                            <h3 class="text-center fw-bolder">Landing Page</h3>
-                            <p class="card-text">Landing page sekolah ini juga merupakan tugas awal kelas 2
-                            </p>
-                            <div class="d-flex justify-content-center align-items-center">
-                            <a href="https://ferrcodes.github.io/Landing-Page-Sekolah/" 
-                               class="project-demo-btn" 
-                               target="_blank" 
-                               rel="noopener noreferrer">
-                               <i class="btn btn-sm btn-dark">Lihat</i>
-                            </a>
-                            </div>
-                        </div>
+                        <a href="https://ferrcodes.github.io/Landing-Page-Sekolah/" target="_blank" class="btn-retro">
+                            Lihat <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!--projects-->
+    </div>
+</section>
 
-    <!--pendidikan-->
-    <section id="pendidikan" class="section-pendidikan">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col">
-                    <h1 class="fw-bolder section-title-serif">Pendidikan</h1>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <!-- Timeline Item 1 - SMK -->
-                    <div class="d-flex mb-4 position-relative">
-                        <div class="me-4 text-center timeline-col">
-                            <div class="timeline-circle timeline-circle-primary shadow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
-                                    class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
-                                    <path
-                                        d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
-                                </svg>
-                            </div>
-                            <div class="mx-auto timeline-line timeline-line-primary"></div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div class="bg-white rounded shadow p-4">
-                                <span class="badge mb-2 badge-primary">2024 - Sekarang</span>
-                                <h4 class="fw-bold mb-2">SMKN 5 Malang</h4>
-                                <p class="mb-0 text-muted">Jurusan: Pengembangan Perangkat Lunak dan Gim (PPLG)</p>
+    <!-- ===== EXPERIENCE & EDUCATION ===== -->
+        <section id="pendidikan" class="section-pendidikan">
+            <div class="container">
+                <div class="row">
+                    <!-- Kolom Kiri: Experience -->
+                    <div class="col-md-6">
+                        <h2 class="section-title-retro">Pengalaman</h2>
+                        <div class="retro-list">
+                            <div class="retro-item">
+                                <h4>Perpustakaan UB</h4>
+                                <span class="retro-date">Juli 2026 - Januari 2027</span>
+                                <p class="retro-desc">
+                                    PKL - Mengelola data skripsi dan membantu digitalisasi arsip.
+                                </p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Timeline Item 2 - SMP -->
-                    <div class="d-flex mb-4 position-relative">
-                        <div class="me-4 text-center timeline-col">
-                            <div class="timeline-circle timeline-circle-secondary shadow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
-                                    class="bi bi-book-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
-                                </svg>
+                
+                    <!-- Kolom Kanan: Education -->
+                    <div class="col-md-6">
+                        <h2 class="section-title-retro">Pendidikan</h2>
+                        <div class="retro-list">
+                            <!-- SMK -->
+                            <div class="retro-item">
+                                <h4>SMKN 5 Malang</h4>
+                                <span class="retro-date">2024 - Sekarang</span>
+                                <p class="retro-desc">Jurusan PPLG (Pengembangan Perangkat Lunak dan Gim)</p>
                             </div>
-                            <div class="mx-auto timeline-line timeline-line-secondary"></div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div class="bg-white rounded shadow p-4">
-                                <span class="badge mb-2 badge-secondary">2021 - 2024</span>
-                                <h4 class="fw-bold mb-2">SMPN 5 Malang</h4>
-                                <p class="mb-0 text-muted">Sekolah Menengah Pertama</p>
+                            <!-- SMP -->
+                            <div class="retro-item">
+                                <h4>SMPN 5 Malang</h4>
+                                <span class="retro-date">2021 - 2024</span>
+                                <p class="retro-desc">Sekolah Menengah Pertama</p>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 3 - SD -->
-                    <div class="d-flex position-relative">
-                        <div class="me-4 text-center timeline-col">
-                            <div class="timeline-circle timeline-circle-accent shadow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
-                                    class="bi bi-house-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
-                                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div class="bg-white rounded shadow p-4">
-                                <span class="badge mb-2 badge-accent">2015 - 2021 (Pernah SD dua kali)</span>
-                                <h4 class="fw-bold mb-2">SDN Lowokwaru 2 Malang</h4>
-                                <p class="mb-0 text-muted">Sekolah Dasar</p>
+                            <!-- SD -->
+                            <div class="retro-item">
+                                <h4>SDN Lowokwaru 2 Malang</h4>
+                                <span class="retro-date">2015 - 2021</span>
+                                <p class="retro-desc">Sekolah Dasar</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--pendidikan-->
+        </section>
 
     <!--contact-->
     <section id="contact" class="section-contact">
         <div class="container col-xl-10 col-xxl-8 px-4">
             <div class="row align-items-center g-lg-5">
                 <div class="col-lg-7 text-center text-lg-start">
-                    <h1 class="display-4 fw-bold lh-1 mb-3">Kontak</h1>
-                    <p class="col-lg-10 fs-4">Jika ada saran atau masukan, silakan kirimkan melalui form Email berikut</p>
+                    <h2 class="section-title-retro text-center">Kontak</h2>
+                    <p class="section-subtitle-retro text-center">Hubungi saya jika ada pertanyaan atau kerjasama.</p>
                 </div>
                 <div class="col-md-10 mx-auto col-lg-5">
                     <form id="contact-Form" class="p-4 p-md-5 border rounded-3 bg-white shadow">
@@ -568,7 +503,7 @@
             <div class="footer-grid">
                 <!-- Kolom 1: Brand (Kiri) -->
                 <div class="footer-brand">
-                    <h5 class="footer-name">Feri Ferdianto</h5>
+                    <h5 class="footer-name">Feri.</h5>
                     <p class="footer-tagline">Portofolio</p>
                 </div>
 

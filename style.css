@@ -436,162 +436,340 @@ section {
 }
 
 /* ============================================================
-   PROJECTS
+   PROJECTS - TEMA RETRO
    ============================================================ */
 .section-projects {
     background: #e8e8e8;
     padding: 80px 0;
 }
 
-.section-title-projects {
-    color: #1a2332;
+.section-title-retro {
     font-family: 'Times New Roman', serif;
     font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a2332;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
 }
 
-.section-projects .card {
+.section-title-retro.text-center {
+    text-align: center;
+}
+
+.section-title-retro.text-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ===== PROJECT CARD RETRO ===== */
+.project-card-retro {
     background: #fff;
     border: 3px solid #1a2332;
     border-radius: 0;
-    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
     transition: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-.section-projects .card:hover {
+.project-card-retro:hover {
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.18);
     transform: none;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.section-projects .card h3 {
-    color: #1a2332;
+/* ===== GAMBAR ===== */
+.project-img-retro {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #1a2332;
+    background: #f4f4f4;
+}
+
+/* ===== BODY CARD ===== */
+.project-body-retro {
+    padding: 18px 20px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-body-retro h3 {
     font-family: 'Times New Roman', serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1a2332;
+    margin-bottom: 6px;
 }
 
-.section-projects .card-text {
-    color: #222;
+.project-body-retro p {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 12px;
 }
 
-.section-projects .project-demo-btn {
-    background-color: #1a2332;
+/* ===== TAGS ===== */
+.project-tags-retro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.project-tags-retro span {
+    background: #f4f4f4;
+    border: 2px solid #1a2332;
+    border-radius: 0;
+    padding: 2px 12px;
+    font-family: 'Times New Roman', serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #1a2332;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===== TOMBOL RETRO ===== */
+.btn-retro {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a2332;
     color: #fff;
     border: 2px solid #6ca5ff;
     border-radius: 0;
-    padding: 6px 16px;
+    padding: 8px 20px;
     font-family: 'Times New Roman', serif;
+    font-size: 0.9rem;
     font-weight: bold;
-    font-size: 0.85rem;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
     text-decoration: none;
-    display: inline-block;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+    transition: none;
+    width: fit-content;
 }
 
-.section-projects .project-demo-btn:hover {
-    background-color: #6ca5ff;
+.btn-retro:hover {
+    background: #6ca5ff;
     color: #1a2332;
     border-color: #1a2332;
-    transform: none;
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 
-.section-projects .project-demo-btn .btn-dark {
-    background: transparent !important;
-    color: #fff !important;
-    border: none !important;
-    padding: 0 !important;
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+    .section-projects {
+        padding: 50px 0 !important;
+    }
+
+    .section-title-retro {
+        font-size: 2rem !important;
+    }
+
+    .section-subtitle-retro {
+        font-size: 1rem;
+        padding: 0 16px;
+    }
+
+    .project-img-retro {
+        height: 170px;
+    }
+
+    .project-body-retro {
+        padding: 14px 16px 16px;
+    }
+
+    .project-body-retro h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-body-retro p {
+        font-size: 0.85rem;
+    }
+
+    .project-tags-retro span {
+        font-size: 0.65rem;
+        padding: 2px 10px;
+    }
+
+    .btn-retro {
+        padding: 6px 16px;
+        font-size: 0.8rem;
+    }
 }
 
-.section-projects .project-demo-btn:hover .btn-dark {
-    color: #1a2332 !important;
+@media (max-width: 576px) {
+    .section-title-retro {
+        font-size: 1.5rem !important;
+    }
+
+    .project-img-retro {
+        height: 150px;
+    }
+
+    .project-body-retro {
+        padding: 12px 14px 14px;
+    }
+
+    .project-body-retro h3 {
+        font-size: 1rem;
+    }
+
+    .project-body-retro p {
+        font-size: 0.8rem;
+    }
+
+    .btn-retro {
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .project-tags-retro span {
+        font-size: 0.6rem;
+        padding: 2px 8px;
+    }
 }
 
 /* ============================================================
-   PENDIDIKAN
+   EXPERIENCE & EDUCATION - RETRO 2 KOLOM
    ============================================================ */
 .section-pendidikan {
     background: #e8e8e8;
     padding: 80px 0;
 }
 
-.section-pendidikan .section-title-serif {
-    color: #1a2332;
+.section-title-retro {
     font-family: 'Times New Roman', serif;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1a2332;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    position: relative;
 }
 
-.section-pendidikan .bg-white {
-    background: #fff !important;
-    border: 3px solid #1a2332;
-    border-radius: 0;
-    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
-}
-
-.section-pendidikan .text-muted {
-    color: #555 !important;
-}
-
-.timeline-circle {
+/* Garis dekoratif di bawah judul (opsional, efek retro) */
+.section-title-retro::after {
+    content: '';
+    position: absolute;
+    left: 0;
     width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    height: 3px;
+}
+
+/* ===== RETRO LIST ===== */
+.retro-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== RETRO ITEM ===== */
+.retro-item {
+    background: #fff;
     border: 3px solid #1a2332;
-}
-
-.timeline-circle-primary {
-    background-color: #6ca5ff;
-}
-
-.timeline-circle-secondary {
-    background-color: #4a7fc7;
-}
-
-.timeline-circle-accent {
-    background-color: #8a9ba8;
-}
-
-.timeline-line {
-    width: 3px;
-    height: 100px;
-}
-
-.timeline-line-primary {
-    background-color: #1a2332;
-}
-
-.timeline-line-secondary {
-    background-color: #1a2332;
-}
-
-.badge-primary {
-    background-color: #1a2332;
-    color: #fff;
     border-radius: 0;
-    padding: 6px 12px;
+    padding: 16px 20px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+    transition: none;
 }
 
-.badge-secondary {
-    background-color: #4a7fc7;
-    color: #fff;
-    border-radius: 0;
-    padding: 6px 12px;
+.retro-item:hover {
+    box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.15);
+    transform: none;
 }
 
-.badge-accent {
-    background-color: #8a9ba8;
-    color: #fff;
-    border-radius: 0;
-    padding: 6px 12px;
+.retro-item h4 {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #1a2332;
+    margin-bottom: 2px;
 }
 
-.timeline-col {
-    min-width: 80px;
+.retro-item .retro-date {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #6ca5ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.retro-item .retro-desc {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.95rem;
+    color: #444;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+    .section-pendidikan {
+        padding: 50px 0 !important;
+    }
+
+    .section-title-retro {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .section-title-retro::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .retro-item {
+        padding: 14px 16px;
+    }
+
+    .retro-item h4 {
+        font-size: 1rem;
+    }
+
+    .retro-item .retro-date {
+        font-size: 0.7rem;
+    }
+
+    .retro-item .retro-desc {
+        font-size: 0.85rem;
+    }
+
+    .col-md-6 {
+        margin-bottom: 30px;
+    }
+    .col-md-6:last-child {
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 576px) {
-    .timeline-line {
-        display: none;
+    .section-title-retro {
+        font-size: 1.2rem;
+    }
+
+    .retro-item {
+        padding: 12px 14px;
+    }
+
+    .retro-item h4 {
+        font-size: 0.95rem;
+    }
+
+    .retro-item .retro-desc {
+        font-size: 0.8rem;
     }
 }
 
