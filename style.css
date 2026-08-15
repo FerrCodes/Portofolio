@@ -363,15 +363,71 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     }
 }
 
-/* =========================================
-   7. SKILLS SECTION
-========================================= */
-.skill-item { padding: 20px; }
-.skill-icon { width: 60px; height: 60px; margin-bottom: 15px; }
-.skill-item h5 { 
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 1rem; 
-    color: #1a1a1a; 
+/* ===== CORE TECH STACK STYLE ===== */
+.section-skills-core {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.skill-box-core {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-box-core:hover {
+    border-color: rgba(23, 139, 185, 0.2);
+    background: #f8f8f8;
+    transform: translateY(-5px);
+}
+
+/* Efek Grayscale to Color */
+.skill-box-core img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-box-core:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+.skill-box-core span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #8c9398;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.skill-box-core:hover span {
+    color: #178bb9;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .skill-box-core {
+        padding: 20px 15px;
+    }
+    
+    .skill-box-core img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .skill-box-core span {
+        font-size: 0.75rem;
+    }
 }
 
 /* =========================================
