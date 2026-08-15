@@ -147,6 +147,12 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     transition: all 0.3s ease;
 }
 
+.divider-retro2 {
+    width: 215px; 
+    height: 1px;
+    background: #000000;
+}
+
 .overlay.active { opacity: 1; visibility: visible; }
 
 /* =========================================

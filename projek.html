@@ -1,911 +1,741 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>2.0</title>
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page - Portofolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
 </head>
-
 <body>
-    <!-- ===== NAVBAR MODERN (FULL CUSTOM) ===== -->
-    <nav class="navbar-custom" id="dramaticNavbar">
-        <div class="container-custom">
-            <a class="logo-custom" href="#">
-                <span class="brand-last">2.0</span>
-            </a>
 
-            <!-- ===== DESKTOP DROPDOWN ===== -->
-            <div class="nav-dropdown-desktop">
-                <button class="nav-dropdown-btn" id="dropdownToggle">
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <ul class="nav-dropdown-menu" id="dropdownMenu">
-                    <li><a href="#home" class="dropdown-link active">Beranda</a></li>
-                    <li><a href="#projects" class="dropdown-link">Proyek</a></li>
-                    <li><a href="#sertifikat" class="dropdown-link">Sertifikat</a></li>
-                    <li><a href="#medsos" class="dropdown-link">Media Sosial</a></li>
-                    <li class="dropdown-divider"></li>
-                    <li><a href="index.html" class="dropdown-link btn-outline-dropdown">
-                            <i class="fas fa-arrow-left me-1"></i> Halaman Utama
-                        </a></li>
-                </ul>
-            </div>
-
-            <!-- Mobile Hamburger -->
-            <button class="hamburger-custom" id="navToggleBtn" aria-label="Toggle navigation">
+    <!-- NAVBAR SAMA DENGAN INDEX.HTML -->
+    <nav class="navbar-custom scrolled">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="brand-logo">FERI.</a>
+            <button class="hamburger-btn" id="menuToggle">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- ===== SIDE PANEL (MOBILE) ===== -->
-    <div class="nav-overlay" id="navOverlay"></div>
-    <div class="nav-panel nav-panel-dark" id="navPanel">
-        <div class="nav-panel-header">
-            <span class="nav-panel-brand">Menu</span>
-            <button class="nav-panel-close" id="navCloseBtn"><i class="fas fa-times"></i></button>
+    <!-- SIDE PANEL (Sama persis index.html) -->
+    <div class="side-panel" id="sidePanel">
+        <div class="panel-header">
+            <span class="panel-brand">MENU</span>
+            <button class="close-btn" id="menuClose"><i class="fas fa-times"></i></button>
         </div>
-        <ul class="nav-panel-list">
-            <li><a href="#home" class="nav-panel-link active"><i class="fas fa-home"></i> Beranda</a></li>
-            <li><a href="#projects" class="nav-panel-link"><i class="fas fa-folder-open"></i> Proyek</a></li>
-            <li><a href="#sertifikat" class="nav-panel-link"><i class="fas fa-certificate"></i> Sertifikat</a></li>
-            <li><a href="#medsos" class="nav-panel-link"><i class="fas fa-envelope"></i> Media Sosial</a></li>
-            <li class="nav-panel-divider"></li>
-            <li><a href="index.html" class="nav-panel-link"><i class="fas fa-arrow-left"></i> Halaman Utama</a></li>
+        <ul class="panel-links">
+            <li><a href="#full-stack">Full Tech Stack</a></li>
+            <li><a href="#all-projects" class="pb-1">Semua Projek</a></li>
+            <div class="divider-retro2"></div>
+            <li><a href="index.html">← Halaman Sebelumnya</a></li>
         </ul>
-        <div class="nav-panel-footer"><small>© 2026 Feri Ferdianto</small></div>
+        <div class="panel-footer">
+            <small>© 2026 Feri.</small>
+        </div>
     </div>
+    <div class="overlay" id="overlay"></div>
 
-    <!-- ===== HERO SIMPLE ===== -->
-    <section id="home" class="hero-simple">
+    <!-- FULL TECH STACK SECTION -->
+    <section id="full-stack" class="section-padding bg-white">
         <div class="container">
-            <div class="hero-box">
-                <h1 class="hero-title">Halaman Kedua</h1>
-                <p class="hero-desc">
-                    Koleksi projek, sertifikat dan media sosial
-                </p>
+            <div class="row justify-content-center mb-5">
+                <div class="text-center">
+                    <h2 class="section-title-retro mt-5">FULL TECH STACK</h2>
+                    <div class="divider-retro"></div>
+                    <p class="retro-p mt-3" style="max-width: 100%;">
+                        Teknologi yang saya gunakan sehari-hari dan yang sedang saya pelajari.
+                    </p>
+                </div>
+            </div>
+        
+            <div class="skill-matrix-container">
+            
+                <!-- Group 1: Frontend Core -->
+                <div class="skill-group-box">
+                    <h4 class="skill-group-label">FRONTEND CORE</h4>
+                    <div class="skill-grid-mini">
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original-wordmark.svg" alt="Bootstrap">
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Group 2: Backend & Database -->
+                <div class="skill-group-box">
+                    <h4 class="skill-group-label">BACKEND &amp; DB</h4>
+                    <div class="skill-grid-mini">
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP">
+                            <span>PHP</span>
+                        </div>
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL">
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Group 3: Tools & Workflow -->
+                <div class="skill-group-box">
+                    <h4 class="skill-group-label">TOOLS &amp; WORKFLOW</h4>
+                    <div class="skill-grid-mini">
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git">
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub">
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item-mini">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original-wordmark.svg" alt="VS Code">
+                            <span>VS Code</span>
+                        </div>
+                        <div class="skill-item-mini">
+                            <img src="https://skillicons.dev/icons?i=xampp" alt="XAMPP">
+                            <span>XAMPP</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Group 4: Modern Exploration -->
+                <div class="skill-group-box modern-exploration">
+                    <h4 class="skill-group-label">MODERN EXPLORATION</h4>
+                    <div class="skill-grid-mini modern-grid">
+                        <div class="skill-item-mini learning-tag">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript">
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="skill-item-mini learning-tag">
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React">
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item-mini learning-tag">
+                            <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind">
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="skill-item-mini learning-tag">
+                            <img src="https://skillicons.dev/icons?i=supabase" alt="Supabase">
+                            <span>Supabase</span>
+                        </div>
+                        <div class="skill-item-mini learning-tag">
+                            <img src="https://skillicons.dev/icons?i=postgresql" alt="PostgreSQL">
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item-mini learning-tag">
+                            <img src="https://skillicons.dev/icons?i=astro" alt="Astro">
+                            <span>Astro</span>
+                        </div>
+                        <div class="skill-item-mini learning-tag">
+                            <img src="https://skillicons.dev/icons?i=laravel" alt="Laravel">
+                            <span>Laravel</span>
+                        </div>
+                    </div>
+                    <p class="learning-note">
+                        <i class="fas fa-book-open me-2"></i> Sedang dalam proses pembelajaran
+                    </p>
+                </div>
+            
             </div>
         </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section-dark">
+    <!-- ============================================================
+     ALL PROJECTS SECTION - REDESIGNED + MODAL PREVIEW
+     ============================================================ -->
+    <section id="all-projects" class="section-padding bg-light">
         <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-subtitle">Proyek</span>
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="section-divider mx-auto"></div>
-                <p class="projects-desc mt-3">
-                    Beberapa projek yang pernah saya buat dan dari tugas sekolah, ada juga sebagian dari proses belajar.
-                </p>
+            <div class="row justify-content-center mb-5">
+                <div class="text-center">
+                    <h2 class="section-title-retro">PROJEK</h2>
+                    <div class="divider-retro"></div>
+                    <p class="retro-p mt-3" style="max-width: 100%;">
+                        Semua projek ini adalah hasil dari proses belajar dan ada juga dari sebagian tugas sekolah.
+                    </p>
+                </div>
             </div>
 
-            <div class="row g-4 justify-content-center" id="projectsGrid">
-                <!-- Project Card 1: Note App -->
-                <div class="col-md-6 col-xl-5 project-item">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/NoteApp.png" alt="Note App" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <span class="project-badge">Mobile App</span>
-                                <span class="project-year">2026</span>
+            <!-- FILTER KATEGORI -->
+            <div class="project-filter-buttons">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="web">Web App</button>
+                <button class="filter-btn" data-filter="landing">Landing Page</button>
+                <button class="filter-btn" data-filter="system">Sistem</button>
+            </div>
+
+            <!-- LIST PROJEK -->
+            <div class="project-list-container">
+            
+                <!-- ==========================================================
+                    NoteApp
+                ========================================================== -->
+                <div class="project-case-card" data-category="web">
+                    <div class="case-row">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/NoteApp.png', 'NoteApp')">
+                            <img src="assets/images/projek/NoteApp.png" alt="To-Do List App">
+                            <div class="img-overlay-hint">
+                                <i class="fas fa-expand"></i> Klik untuk preview
                             </div>
                         </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>My Notepad - Note App</h4>
-                                <span class="project-status status-done">Completed</span>
+                        <div class="case-info-col">
+                            <h3>NoteApp</h3>
+                            <div class="case-meta">
+                                <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                                <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>Mobile App</span>
                             </div>
-                            <p class="project-desc-modern">
-                                Aplikasi mobile Catatan dengan fitur, Tambah catatan baru dan mengedit
+                            <p class="case-desc">
+                                Aplikasi mobile Catatan dengan fitur, Tambah catatan baru dan mengedit.
                             </p>
-
-                            <!-- Project Features -->
-                            <div class="project-features">
-                                <span class="feature-tag">CRUD Operations</span>
+                            <div class="case-features">
                                 <span class="feature-tag">Local Storage</span>
                                 <span class="feature-tag">Material Design</span>
+                                <span class="feature-tag">Chat Via Email</span>
                             </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
+                            <div class="case-tech-row">
+                                <div class="tech-item">    
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" />
+                                    <span>Flutter</span>
                                 </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=flutter" alt="Flutter" />
-                                        <span>Flutter</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=dart" alt="Dart" />
-                                        <span>Dart</span>
-                                    </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" />
+                                    <span>Dart</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" />
+                                    <span>Firebase</span>
                                 </div>
                             </div>
-
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/Note-Apps" target="_blank" class="btn-repo-modern"
-                                    title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
-                                </a>
-                                <a href="https://github.com/FerrCodes/Note-Apps#-aplikasi-my-notepad-" target="_blank"
-                                    class="btn-demo-modern">
-                                    <i class="fas fa-book-open me-2"></i>
-                                    Documentation
+                            <div class="case-actions">
+                                <a href="https://github.com/FerrCodes/Note-Apps" target="_blank" class="btn-jd-source">
+                                    <i class="fab fa-github me-2"></i>Source Code
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Web Batik -->
-                <div class="col-md-6 col-xl-5 project-item">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/WebBatik.png" alt="Batik" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <span class="project-badge">Website</span>
-                                <span class="project-year">2026</span>
+                <!-- ==========================================================
+                     Landing Page Budaya Batik
+                ========================================================== -->
+                <div class="project-case-card" data-category="landing">
+                    <div class="case-row">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/WebBatik.png', 'Tentang Batik')">
+                            <img src="assets/images/projek/WebBatik.png" alt="School Landing Page">
+                            <div class="img-overlay-hint">
+                                <i class="fas fa-expand"></i> Klik untuk preview
                             </div>
                         </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>Website Budaya Batik</h4>
-                                <span class="project-status status-done">Completed</span>
+                        <div class="case-info-col">
+                            <h3>Budaya Batik</h3>
+                            <div class="case-meta">
+                                <span class="case-meta-item"><i class="fas fa-user-tie"></i>work in group</span>
+                                <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>Landing Page</span>
                             </div>
-                            <p class="project-desc-modern">
+                            <p class="case-desc">
                                 Website edukasi yang menampilkan berbagai macam batik tradisional Indonesia.
-                                Bagian tugas P5 dari sekolah
+                                Bagian tugas P5 dari sekolah.
                             </p>
-
-                            <!-- Project Features -->
-                            <div class="project-features">
+                            <div class="case-features">
                                 <span class="feature-tag">Responsive Design</span>
                                 <span class="feature-tag">Interactive Gallery</span>
                                 <span class="feature-tag">Cultural Content</span>
                             </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
+                            <div class="case-tech-row">
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                                    <span>HTML5</span>
                                 </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=html" alt="HTML5" />
-                                        <span>HTML5</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=css" alt="CSS3" />
-                                        <span>CSS3</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
-                                        <span>JavaScript</span>
-                                    </div>
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                                    <span>CSS3</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                    <span>JavaScript</span>
                                 </div>
                             </div>
-
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/Website-Batik" target="_blank"
-                                    class="btn-repo-modern" title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
+                            <div class="case-actions">
+                                <a href="https://ferrcodes.github.io/Website-Batik/" target="_blank" class="btn-jd-view-all">
+                                    <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
                                 </a>
-                                <a href="https://ferrcodes.github.io/Website-Batik/" target="_blank"
-                                    class="btn-demo-modern">
-                                    <i class="fas fa-external-link-alt me-2"></i>
-                                    Live Demo
+                                <a href="https://github.com/FerrCodes/Website-Batik" target="_blank" class="btn-jd-source">
+                                    <i class="fab fa-github me-2"></i>Source Code
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3: To-Do List -->
-                <div class="col-md-6 col-xl-5 project-item project-hidden">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/To-Do-List.png" alt="To-Do List" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <span class="project-badge">Web App</span>
-                                <span class="project-year">2026</span>
+                <!-- ==========================================================
+                    To-Do List
+                ========================================================== -->
+                <div class="project-case-card" data-category="web">
+                    <div class="case-row">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/To-Do-List.png', 'To-Do-List')">
+                            <img src="assets/images/projek/To-Do-List.png" alt="To-Do-List">
+                            <div class="img-overlay-hint">
+                                <i class="fas fa-expand"></i> Klik untuk preview
                             </div>
                         </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>To-Do List</h4>
-                                <span class="project-status status-done">Completed</span>
+                        <div class="case-info-col">
+                            <h3>To-Do-List</h3>
+                            <div class="case-meta">
+                                <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                                <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>Task</span>
                             </div>
-                            <p class="project-desc-modern">
-                                To-Do-List ini Vanilla website untuk mencoba membuat fiturnya seperti Tambah, Filter, dan Prioritas juga
+                            <p class="case-desc">
+                                Projek ini saya mencoba mengasah skill saya pada murni JavaScript, seperti Fitur, Logika dan Fungsi,
                             </p>
-
-                            <!-- Project Features -->
-                            <div class="project-features">
+                            <div class="case-features">
                                 <span class="feature-tag">Task Management</span>
                                 <span class="feature-tag">Priority System</span>
                                 <span class="feature-tag">Local Storage</span>
                             </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
+                            <div class="case-tech-row">
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                                    <span>HTML5</span>
                                 </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=html" alt="HTML5" />
-                                        <span>HTML5</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=css" alt="CSS3" />
-                                        <span>CSS3</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
-                                        <span>JavaScript</span>
-                                    </div>
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                                    <span>CSS3</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                    <span>JavaScript</span>
                                 </div>
                             </div>
-
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/To-Do-List" target="_blank"
-                                    class="btn-repo-modern" title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
+                            <div class="case-actions">
+                                <a href="https://ferrcodes.github.io/To-Do-List/" target="_blank" class="btn-jd-view-all">
+                                    <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
                                 </a>
-                                <a href="https://ferrcodes.github.io/To-Do-List/" target="_blank"
-                                    class="btn-demo-modern">
-                                    <i class="fas fa-external-link-alt me-2"></i>
-                                    Live Demo
+                                <a href="https://github.com/FerrCodes/To-Do-List" target="_blank" class="btn-jd-source">
+                                    <i class="fab fa-github me-2"></i>Source Code
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 4: Landing Page Sekolah-->
-                <div class="col-md-6 col-xl-5 project-item project-hidden">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/sekolah.png" alt="Landing Page" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <span class="project-badge">Landing Page</span>
-                                <span class="project-year">2026</span>
+                <!-- ==========================================================
+                    Sekolah
+                ========================================================== -->
+                <div class="project-case-card" data-category="landing">
+                    <div class="case-row">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/sekolah.png', 'SMK Negeri 5 Malang')">
+                            <img src="assets/images/projek/sekolah.png" alt="To-Do-List">
+                            <div class="img-overlay-hint">
+                                <i class="fas fa-expand"></i> Klik untuk preview
                             </div>
                         </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>Landing Page</h4>
-                                <span class="project-status status-done">Completed</span>
+                        <div class="case-info-col">
+                            <h3>Sekolah SMKN 5 Malang</h3>
+                            <div class="case-meta">
+                                <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                                <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>Landing Page</span>
                             </div>
-                            <p class="project-desc-modern">
-                                Landing page ini bagian dari tugas sekolah untuk melengkapi nilai waktu kelas dua
+                            <p class="case-desc">
+                                Landing page ini bagian dari tugas sekolah untuk melengkapi nilai waktu kelas dua.
                             </p>
-
-                            <!-- Project Features -->
-                            <div class="project-features">
-                                <span class="feature-tag">Modern Design</span>
+                            <div class="case-features">
                                 <span class="feature-tag">School Theme</span>
                             </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
+                            <div class="case-tech-row">
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                                    <span>HTML5</span>
                                 </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=html" alt="HTML5" />
-                                        <span>HTML5</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=css" alt="CSS3" />
-                                        <span>CSS3</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
-                                        <span>JavaScript</span>
-                                    </div>
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                                    <span>CSS3</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                    <span>JavaScript</span>
                                 </div>
                             </div>
-
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/Landing-Page-Sekolah" target="_blank"
-                                    class="btn-repo-modern" title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
+                            <div class="case-actions">
+                                <a href="https://ferrcodes.github.io/Landing-Page-Sekolah/" target="_blank" class="btn-jd-view-all">
+                                    <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
                                 </a>
-                                <a href="https://ferrcodes.github.io/Landing-Page-Sekolah/" target="_blank"
-                                    class="btn-demo-modern">
-                                    <i class="fas fa-external-link-alt me-2"></i>
-                                    Live Demo
+                                <a href="https://github.com/FerrCodes/Landing-Page-Sekolah" target="_blank" class="btn-jd-source">
+                                    <i class="fab fa-github me-2"></i>Source Code
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 5: Fanpage Hanni -->
-                <div class="col-md-6 col-xl-5 project-item project-hidden">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/PersonaHanni.png" alt="Fanpage" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <span class="project-badge">Fan Website</span>
-                                <span class="project-year">2026</span>
+                <!-- ==========================================================
+                    🧸
+                ========================================================== -->
+                <div class="project-case-card favorite-project" data-category="web">
+                    <div class="card-emoji">🧸</div>
+                    <div class="case-badge">⭐ PROJEK FAVORIT</div>
+                    <div class="case-row">
+
+                        <!-- Kolom Gambar (klik untuk modal preview) -->
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/PersonaHanni.png', 'Her')">
+                            <img src="assets/images/projek/PersonaHanni.png" alt="Hanni">
+                            <div class="img-overlay-hint">
+                                <i class="fas fa-expand"></i> Klik untuk preview
                             </div>
                         </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>Fanpage</h4>
-                                <span class="project-status status-done">Completed</span>
-                            </div>
-                            <p class="project-desc-modern">
-                                Tujuan untuk membuat Fanpage ini adalah hanya menunjukan rasa tertarik pada Member Idol tersebut
-                            </p>
 
-                            <!-- Project Features -->
-                            <div class="project-features">
-                                <span class="feature-tag">K-Pop Theme</span>
-                                <span class="feature-tag">Photo Gallery</span>
+                        <!-- Kolom Info -->
+                        <div class="case-info-col">
+                            <h3>Persona Hanni</h3>
+
+                            <div class="case-meta">
+                                <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                                <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>Fanpage</span>
+                            </div>
+                            <p class="case-desc">
+                                Tujuan untuk membuat Fanpage ini adalah hanya untuk menunjukan rasa tertarik pada Member Idol tersebut, 
+                                dengan menyamakan Sifat dan Kepribadinnya dia untuk menyesuaikan Fitur, Tema, dan Konsep lainnya.
+                            </p>
+                            <div class="case-features">
                                 <span class="feature-tag">Aesthetic UI</span>
+                                <span class="feature-tag">Photo Gallery</span>
+                                <span class="feature-tag">K-Pop Theme</span>
                             </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
+                            <div class="case-tech-row">
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                                    <span>HTML5</span>
                                 </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=html" alt="HTML5" />
-                                        <span>HTML5</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=css" alt="CSS3" />
-                                        <span>CSS3</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
-                                        <span>JavaScript</span>
-                                    </div>
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                                    <span>CSS3</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                    <span>JavaScript</span>
                                 </div>
                             </div>
 
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/Persona-Hanni" target="_blank"
-                                    class="btn-repo-modern" title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
+                            <!-- Tombol Aksi -->
+                            <div class="case-actions">
+                                <a href="https://ferrcodes.github.io/Persona-Hanni/" target="_blank" class="btn-jd-view-all">
+                                    <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
                                 </a>
-                                <a href="https://ferrcodes.github.io/Persona-Hanni/" target="_blank"
-                                    class="btn-demo-modern">
-                                    <i class="fas fa-external-link-alt me-2"></i>
-                                    Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Face Recognition -->
-                <div class="col-md-6 col-xl-5 project-item project-hidden">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/facerecognition.png" alt="Face Recognition" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <span class="project-badge">Machine Learning</span>
-                                <span class="project-year">2026</span>
-                            </div>
-                        </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>Face Recognition System</h4>
-                                <span class="project-status status-done">Completed</span>
-                            </div>
-                            <p class="project-desc-modern">
-                                Sistem pengenalan wajah yang menerima foto dari smartphone, memprosesnya di PC,
-                                 dan menghasilkan laporan identifikasi dalam format JSON dan Excel.
-                            </p>
-
-                            <!-- Project Features -->
-                            <div class="project-features">
-                                <span class="feature-tag">Real-time Detection</span>
-                                <span class="feature-tag">Machine Learning</span>
-                                <span class="feature-tag">Computer Vision</span>
-                            </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
-                                </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=python" alt="Python" />
-                                        <span>Python</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=opencv" alt="OpenCV" />
-                                        <span>OpenCV</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/FaceRecognition-Final" target="_blank"
-                                    class="btn-repo-modern" title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
-                                </a>
-                                <a href="https://github.com/FerrCodes/FaceRecognition-Final#-face-recognition-system--smartphone-to-pc"
-                                    target="_blank" class="btn-demo-modern">
-                                    <i class="fas fa-book-open me-2"></i>
-                                    Documentation
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: Personal Resource Hub -->
-                <div class="col-md-6 col-xl-5 project-item project-hidden">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/ResourceHub.png" alt="Personal Resource Hub" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <span class="project-badge">Full-Stack</span>
-                                <span class="project-year">2026</span>
-                            </div>
-                        </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>Personal Resource Hub</h4>
-                                <span class="project-status status-wip">In Development</span>
-                            </div>
-                            <p class="project-desc-modern">
-                               Personal Resource Hub adalah aplikasi web manajemen koleksi sumber daya digital (link dari YouTube, Spotify, Instagram, artikel, dll) yang dibangun dengan PHP Native dan MySQL.
-                                Proyek ini adalah portofolio full-stack pertama yang saya
-                            </p>
-
-                            <!-- Project Features -->
-                            <div class="project-features">
-                                <span class="feature-tag">Authentication</span>
-                                <span class="feature-tag">Email Verification</span>
-                                <span class="feature-tag">CRUD System</span>
-                                <span class="feature-tag">Database Integration</span>
-                            </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
-                                </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=php" alt="PHP" />
-                                        <span>PHP</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" />
-                                        <span>MySQL</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" />
-                                        <span>JavaScript</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=html" alt="HTML5" />
-                                        <span>HTML5</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=css" alt="CSS3" />
-                                        <span>CSS3</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/Personal-Resource-Hub" target="_blank"
-                                    class="btn-repo-modern" title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
-                                </a>
-                                <a href="https://personalhub-feri.freepage.cc/login.php" target="_blank"
-                                    class="btn-demo-modern">
-                                    <i class="fas fa-external-link-alt me-2"></i>
-                                    Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 8: Moodwave -->
-                <div class="col-md-6 col-xl-5 project-item project-hidden">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/Moodwave.png" alt="Moodwave" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <span class="project-badge">Laravel</span>
-                                <span class="project-year">2026</span>
-                            </div>
-                        </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>Moodwave</h4>
-                                <span class="project-status status-wip">In Development</span>
-                            </div>
-                            <p class="project-desc-modern">
-                               Moodwave adalah aplikasi web jurnal harian berbasis suasana hati dan musik. Bagian dari projek LSP Teknologi Digital.
-                            </p>
-
-                            <!-- Project Features -->
-                            <div class="project-features">
-                                <span class="feature-tag">Laravel</span>
-                                <span class="feature-tag">Authentication</span>
-                                <span class="feature-tag">Arsip Soundtrack</span>
-                            </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
-                                </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=laravel" alt="PHP" />
-                                        <span>Laravel</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=mysql" alt="HTML5" />
-                                        <span>MySQL</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=tailwindcss" alt="CSS3" />
-                                        <span>Tailwind CSS</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/Personal-Resource-Hub" target="_blank"
-                                    class="btn-repo-modern" title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
-                                </a>
-                                <a href="https://github.com/FerrCodes/Moodwave#-moodwave"
-                                    target="_blank" class="btn-demo-modern">
-                                    <i class="fas fa-book-open me-2"></i>
-                                    Documentation
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 9: Journal -->
-                <div class="col-md-6 col-xl-5 project-item project-hidden">
-                    <div class="project-card-modern">
-                        <div class="project-image-modern">
-                            <img src="assets/images/JournalApp.png" alt="Personal Resource Hub" loading="lazy">
-                            <div class="project-overlay-modern">
-                                <div class="badge-group">
-                                    <span class="project-badge-favorit">Favorit</span>
-                                </div>
-                                <span class="project-year">2026</span>
-                            </div>
-                        </div>
-                        <div class="project-body-modern">
-                            <div class="project-header-modern">
-                                <h4>Journal</h4>
-                                <span class="project-status status-wip">In Development</span>
-                            </div>
-                            <p class="project-desc-modern">
-                               Sebuah ruang digital pribadi untuk mencatat pikiran, perasaan, dan momen sehari-hari.
-                               Projek ini adalah sebagai proses belajar Typescript dengan database modern
-                            </p>
-
-                            <!-- Project Features -->
-                            <div class="project-features">
-                                <span class="feature-tag">Pencatatan Jurnal</span>
-                                <span class="feature-tag">Statistik</span>
-                                <span class="feature-tag">Dashboard</span>
-                                <span class="feature-tag">UI/UX Modern</span>
-                                <span class="feature-tag">Full-Stack Journal Application using React and Supabase</span>
-                            </div>
-
-                            <!-- Tech Stack -->
-                            <div class="project-tech-stack">
-                                <div class="tech-header">
-                                    <i class="fas fa-code me-2"></i>
-                                    <span>Tech Stack:</span>
-                                </div>
-                                <div class="project-tech-icons">
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=react" alt="PHP" />
-                                        <span>React</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=typescript" alt="MySQL" />
-                                        <span>Typescript</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=vite" alt="JavaScript" />
-                                        <span>Vite</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=tailwindcss" alt="HTML5" />
-                                        <span>TaildWind</span>
-                                    </div>
-                                    <div class="tech-item">
-                                        <img src="https://skillicons.dev/icons?i=supabase" alt="CSS3" />
-                                        <span>Supabase</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project Links -->
-                            <div class="project-actions-modern">
-                                <a href="https://github.com/FerrCodes/Journal" target="_blank"
-                                    class="btn-repo-modern" title="View Source Code">
-                                    <i class="fab fa-github"></i>
-                                    <span>Repository</span>
-                                </a>
-                                <a href="https://github.com/FerrCodes/Journal#-journal-app"
-                                    target="_blank" class="btn-demo-modern">
-                                    <i class="fas fa-book-open me-2"></i>
-                                    Documentation
-                                </a>
-                            </div>
+                                <a href="https://github.com/FerrCodes/Persona-Hanni" target="_blank" class="btn-jd-source">
+                                    <i class="fab fa-github me-2"></i>Source Code
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-            <!-- Tombol tampilkan / sembunyikan project -->
-            <div class="text-center mt-5">
-                <button class="btn-show-all-projects" id="toggleProjectsBtn" onclick="toggleProjects()">
-                    <span class="btn-text">Lihat Project Lainnya</span>
-                    <i class="fas fa-chevron-down ms-2 btn-icon"></i>
-                </button>
+            <!-- ==========================================================
+                    Face Recognition System
+            ========================================================== -->
+            <div class="project-case-card" data-category="system">
+                <div class="case-row">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/facerecognition.png', 'Pengenalan Wajah')">
+                        <img src="assets/images/projek/facerecognition.png" alt="To-Do-List">
+                        <div class="img-overlay-hint">
+                            <i class="fas fa-expand"></i> Klik untuk preview
+                        </div>
+                    </div>
+                    <div class="case-info-col">
+                        <h3>Face Recognition System</h3>
+                        <div class="case-meta">
+                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>ML</span>
+                        </div>
+                        <p class="case-desc">
+                            Sistem pengenalan wajah yang menerima foto dari smartphone, memprosesnya di PC,
+                            dan menghasilkan laporan identifikasi dalam format JSON dan Excel.
+                        </p>
+                        <div class="case-features">
+                            <span class="feature-tag">Machine Learning</span>
+                            <span class="feature-tag">Computer Vision</span>
+                        </div>
+                        <div class="case-tech-row">
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" />
+                                <span>OpenCV</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="https://github.com/FerrCodes/FaceRecognition-Final#-face-recognition-system--smartphone-to-pc" target="_blank" class="btn-jd-view-all">
+                                <i class="fas fa-book-open me-2"></i>Lihat Dokumentasi
+                            </a>
+                            <a href="https://github.com/FerrCodes/FaceRecognition-Final" target="_blank" class="btn-jd-source">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- ===== END PROJECTS ===== -->
 
-    <!-- ===== SERTIFIKAT ===== -->
-    <section id="sertifikat" class="section-darker">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-subtitle">Pencapaian</span>
-                <h2 class="section-title">Certificates</h2>
-                <div class="section-divider mx-auto"></div>
+            <!-- ==========================================================
+                Personal Resource Hub
+            ========================================================== -->
+            <div class="project-case-card" data-category="web">
+                <div class="case-row">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/ResourceHub.png', 'Personal Resource Hub - Pengelola Link')">
+                        <img src="assets/images/projek/ResourceHub.png" alt="To-Do-List">
+                        <div class="img-overlay-hint">
+                            <i class="fas fa-expand"></i> Klik untuk preview
+                        </div>
+                    </div>
+                    <div class="case-info-col">
+                        <h3>Personal Resource Hub</h3>
+                        <div class="case-meta">
+                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>PHP Native</span>
+                        </div>
+                        <p class="case-desc">
+                            Personal Resource Hub adalah aplikasi web manajemen koleksi sumber daya digital 
+                            (link dari YouTube, Spotify, Instagram, artikel, dll) yang dibangun dengan PHP Native dan MySQL.
+                            Proyek ini adalah portofolio full-stack pertama yang saya.
+                        </p>
+                        <div class="case-features">
+                            <span class="feature-tag">Authentication</span>
+                            <span class="feature-tag">Email Verification</span>
+                            <span class="feature-tag">CRUD System</span>
+                            <span class="feature-tag">Database Integration</span>
+                        </div>
+                        <div class="case-tech-row">
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
+                                <span>PHP</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+                                <span>MySQL</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="https://personalhub-feri.freepage.cc/login.php" target="_blank" class="btn-jd-view-all">
+                                <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                            </a>
+                            <a href="https://github.com/FerrCodes/Personal-Resource-Hub" target="_blank" class="btn-jd-source">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row g-4 justify-content-center">
-                <!-- Sertifikat 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="cert-card" onclick="bukaLightbox('assets/images/1.png', 'Belajar Dasar AI')">
-                        <div class="cert-image">
-                            <img src="assets/images/1.png" alt="Sertifikat 1">
-                            <div class="cert-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="cert-info">
-                            <span class="cert-issuer"><i class="fas fa-award me-2"></i>Dicoding</span>
-                            <h5 class="cert-title">Belajar Dasar AI</h5>
-                            <span class="cert-date">Oktober 2025</span>
+
+            <!-- ==========================================================
+                Moodwave
+            ========================================================== -->
+            <div class="project-case-card" data-category="web">
+                <div class="case-row">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/Moodwave.png', 'Moodwave, Jurnal biasa')">
+                        <img src="assets/images/projek/Moodwave.png" alt="To-Do-List">
+                        <div class="img-overlay-hint">
+                            <i class="fas fa-expand"></i> Klik untuk preview
                         </div>
                     </div>
-                </div>
-                <!-- Sertifikat 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="cert-card" onclick="bukaLightbox('assets/images/claude.png', 'Claude Code 101')">
-                        <div class="cert-image">
-                            <img src="assets/images/claude.png" alt="Sertifikat 2">
-                            <div class="cert-overlay">
-                                <i class="fas fa-search-plus"></i>
+                    <div class="case-info-col">
+                        <h3>Moodwave</h3>
+                        <div class="case-meta">
+                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>Laravel</span>
+                        </div>
+                        <p class="case-desc">
+                        Moodwave adalah aplikasi web jurnal harian berbasis suasana hati dan musik. 
+                        Bagian dari projek LSP Teknologi Digital.
+                        </p>
+                        <div class="case-features">
+                            <span class="feature-tag">Laravel - Blade</span>
+                            <span class="feature-tag">Authentication</span>
+                            <span class="feature-tag">Arsip Soundtrack</span>
+                        </div>
+                        <div class="case-tech-row">
+                            <div class="tech-item">      
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" />
+                                <span>Laravel</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+                                <span>MySQL</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                                <span>Tailwind</span>
                             </div>
                         </div>
-                        <div class="cert-info">
-                            <span class="cert-issuer"><i class="fas fa-award me-2"></i>Course Claude</span>
-                            <h5 class="cert-title">Claude Code 101</h5>
-                            <span class="cert-date">Mei 2026</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sertifikat 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="cert-card" onclick="bukaLightbox('assets/images/ML.png', 'Machine Learning')">
-                        <div class="cert-image">
-                            <img src="assets/images/ML.png" alt="Sertifikat 3">
-                            <div class="cert-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="cert-info">
-                            <span class="cert-issuer"><i class="fas fa-award me-2"></i>Kaggle</span>
-                            <h5 class="cert-title">Machine Learning</h5>
-                            <span class="cert-date">Januari 2026</span>
+                        <div class="case-actions">
+                            <a href="https://github.com/FerrCodes/Moodwave#-moodwave" target="_blank" class="btn-jd-view-all">
+                                <i class="fas fa-book-open me-2"></i>Lihat Dokumentasi
+                            </a>
+                            <a href="https://github.com/FerrCodes/Moodwave" target="_blank" class="btn-jd-source">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- ==========================================================
+                Journal
+            ========================================================== -->
+            <div class="project-case-card favorite-project" data-category="web">
+                <div class="case-badge">⭐ PROJEK FAVORIT</div>
+                <div class="case-row">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/JournalApp.png', 'JournalAPP - Web Aplikasi Jurnal modern')">
+                        <img src="assets/images/projek/JournalApp.png" alt="To-Do-List">
+                        <div class="img-overlay-hint">
+                            <i class="fas fa-expand"></i> Klik untuk preview
+                        </div>
+                    </div>
+                    <div class="case-info-col">
+                        <h3>Journal</h3>
+                        <div class="case-meta">
+                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>FULL-STACK</span>
+                        </div>
+                        <p class="case-desc">
+                            Projek ini bukan seperti Jurnal biasa tapi menggunakan Stack dan UI yang lebih modern, 
+                            dengan ada nya fitur ganti bahasa serta upload foto jika ingin menambahkan jurnal baru atau saat 
+                            ingin di edit.
+                        </p>
+                        <div class="case-features">
+                            <span class="feature-tag">Pencatatan Jurnal</span>
+                            <span class="feature-tag">UI/UX Modern</span>
+                            <span class="feature-tag">i18n</span>
+                            <span class="feature-tag">Full-Stack Journal Application using React and Supabase</span>
+                        </div>
+                        <div class="case-tech-row">
+                            <div class="tech-item">     
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                                <span>Typescript</span>
+                            </div>
+                            <div class="tech-item">    
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                                <span>React</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" />
+                                <span>ViteJS</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                                <span>Tailwind</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
+                                <span>Supabase</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="https://journal-khaki-zeta.vercel.app/" target="_blank" class="btn-jd-view-all">
+                                <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                            </a>
+                            <a href="https://github.com/FerrCodes/Journal" target="_blank" class="btn-jd-source">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox-overlay" id="lightboxOverlay" onclick="tutupLightbox()">
-        <div class="lightbox-box" onclick="event.stopPropagation()">
-            <button class="lightbox-close" onclick="tutupLightbox()"><i class="fas fa-times"></i></button>
-            <div class="lightbox-controls">
-                <button class="lightbox-zoom" onclick="zoomLightbox()"><i class="fas fa-search-plus"></i></button>
+    <!-- FOOTER -->
+    <footer class="footer-retro">
+        <div class="container text-center">
+            <h3 class="footer-brand">PORTOFOLIO</h3>
+            <p class="footer-tagline">Berusaha menjadi yang terbaik di bidang Web Development dan Problem Solving, <br>
+                 serta terus belajar dan beradaptasi diri dan skill. <br> - Feri.</p>
+            <div class="social-links mb-4">
+                <a href="https://github.com/FerrCodes" target="_blank"><i class="fab fa-github"></i></a>
             </div>
-            <img src="" alt="" id="lightboxImg">
-            <p class="lightbox-caption" id="lightboxCaption"></p>
+            <p class="copyright">© 2026 Ferdian. All rights reserved.</p>
         </div>
-    </div>
-
-    <!-- CV Modal -->
-    <div class="lightbox-overlay" id="cvModal" onclick="tutupCV()">
-        <div class="lightbox-box" onclick="event.stopPropagation()">
-            <button class="lightbox-close" onclick="tutupCV()"><i class="fas fa-times"></i></button>
-            <div class="lightbox-controls">
-                <button class="lightbox-zoom" onclick="zoomCVToLightbox()"><i class="fas fa-search-plus"></i></button>
-            </div>
-            <img src="assets/images/CV-ku.jpg" alt="CV Feri Ferdianto" id="cvImg">
-            <div class="cv-placeholder" id="cvPlaceholder" style="display: none;">
-                <i class="fas fa-file-pdf"></i>
-                <p>CV akan ditampilkan di sini</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== MEDIA SOSIAL ===== -->
-    <section id="medsos" class="section-darker">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-subtitle">Platform</span>
-                <h2 class="section-title">Find Me Online</h2>
-                <div class="section-divider mx-auto"></div>
-                <p class="social-section-desc mt-3">
-                    Terkadang aktif di beberapa platform media sosial...
-                </p>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-                <!-- Instagram -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="social-card">
-                        <div class="social-card-icon instagram">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <h4>Instagram</h4>
-                        <a href="https://www.instagram.com/imnotferrriii" target="_blank" rel="noopener noreferrer"
-                            class="social-card-btn">
-                            Lihat Profil<i class="fas fa-arrow-up-right-from-square ms-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- TikTok -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="social-card">
-                        <div class="social-card-icon tiktok">
-                            <i class="fab fa-tiktok"></i>
-                        </div>
-                        <h4>TikTok</h4>
-                        <a href="https://www.tiktok.com/@ferrriii._?is_from_webapp=1&sender_device=pc" target="_blank"
-                            rel="noopener noreferrer" class="social-card-btn">
-                            Lihat Profil<i class="fas fa-arrow-up-right-from-square ms-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- X -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="social-card">
-                        <div class="social-card-icon x-twitter">
-                            <i class="fab fa-x-twitter"></i>
-                        </div>
-                        <h4>X</h4>
-                        <a href="https://x.com/imnotferrriii" target="_blank" rel="noopener noreferrer"
-                            class="social-card-btn">
-                            Lihat Profil<i class="fas fa-arrow-up-right-from-square ms-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="social-card">
-                        <div class="social-card-icon tiktok">
-                            <i class="fab fa-discord"></i>
-                        </div>
-                        <h4>Discord</h4>
-                        <a href="https://discord.com/users/701465345524891700" target="_blank" rel="noopener noreferrer"
-                            class="social-card-btn">
-                            Lihat Profil<i class="fas fa-arrow-up-right-from-square ms-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer-dramatic">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Kolom 1: Brand -->
-                <div class="footer-brand">
-                    <p class="footer-tagline">Portofolio</p>
-                    <p class="footer-desc">
-                        Berusaha menjadi yang terbaik di bidang <br>
-                        Web Development dan Problem Solving, serta terus belajar dan beradaptasi diri dan skill. <br>
-                        - Feri.
-                    </p>
-                </div>
-
-                <!-- Kolom 2: Navigasi Cepat -->
-                <div class="footer-links">
-                    <h5>Navigasi</h5>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#projects">Projek</a></li>
-                        <li><a href="#sertifikat">Sertifikat</a></li>
-                        <li><a href="#medsos">Media Sosial</a></li>
-                    </ul>
-                </div>
-
-                <!-- Copyright -->
-                <div class="footer-bottom">
-                    <p class="copyright">
-                        &copy; 2026 <span class="brand-first">
-                            All rights reserved.
-                    </p>
-                </div>
-            </div>
     </footer>
 
-    <!-- Back to Top -->
-    <a href="#home" class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="omke.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
+    <!-- ============================================================
+     MODAL PREVIEW GAMBAR PROJEK
+     ============================================================ -->
+    <div id="projectModal" class="project-modal-overlay" onclick="closeProjectModal()">
+        <div class="project-modal-content" onclick="event.stopPropagation();">
+            <button class="project-modal-close" onclick="closeProjectModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalPreviewImg" src="" alt="Project Preview">
+            <p id="modalPreviewTitle" class="modal-preview-title"></p>
+        </div>
+    </div>
+
+    <!-- Filter Kategori Projek (boleh dipindah ke script.js kalau mau) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-case-card');
+
+            filterButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const filter = btn.getAttribute('data-filter');
+
+                    filterButtons.forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+
+                    projectCards.forEach(function (card) {
+                        const match = filter === 'all' || card.getAttribute('data-category') === filter;
+                        card.classList.toggle('is-hidden', !match);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
 </html>

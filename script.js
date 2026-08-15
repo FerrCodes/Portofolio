@@ -127,53 +127,76 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-    // ===== CERTIFICATE MODAL LOGIC =====
-    const certData = {
-        dicoding: {
-            title: "Dicoding Indonesia",
-            issuer: "Belajar Dasar AI",
-            img: "assets/images/sertifikat/1.png",
-        },
-        kaggle: {
-            title: "Kaggle",
-            issuer: "Intro to Machine Learning",
-            img: "assets/images/sertifikat/ML.png",
-        },
-        claude: {
-            title: "Claude Code",
-            issuer: "Claude Code 101",
-            img: "assets/images/sertifikat/claude.png",
-        }
-    };
-
-    function openCertModal(certId) {
-        const cert = certData[certId];
-        if (!cert) return;
-
-        document.getElementById('modalCertTitle').textContent = cert.title;
-        document.getElementById('modalCertIssuer').textContent = cert.issuer;
-        document.getElementById('modalCertImg').src = cert.img;
-        
-        const modal = document.getElementById('certModal');
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+// ===== CERTIFICATE MODAL LOGIC =====
+const certData = {
+    dicoding: {
+        title: "Dicoding Indonesia",
+        issuer: "Belajar Dasar AI",
+        img: "assets/images/sertifikat/1.png",
+    },
+    kaggle: {
+        title: "Kaggle",
+        issuer: "Intro to Machine Learning",
+        img: "assets/images/sertifikat/ML.png",
+    },
+    claude: {
+        title: "Claude Code",
+        issuer: "Claude Code 101",
+        img: "assets/images/sertifikat/claude.png",
     }
-
-    function closeCertModal() {
+};
+function openCertModal(certId) {
+    const cert = certData[certId];
+    if (!cert) return;
+    document.getElementById('modalCertTitle').textContent = cert.title;
+    document.getElementById('modalCertIssuer').textContent = cert.issuer;
+    document.getElementById('modalCertImg').src = cert.img;
+    
+    const modal = document.getElementById('certModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeCertModal() {
+    const modal = document.getElementById('certModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+// Event Listener untuk menutup modal saat klik area luar atau tombol ESC
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('certModal');
+    if (e.target === modal) closeCertModal();
+});
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
         const modal = document.getElementById('certModal');
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
+        if (modal && modal.classList.contains('active')) closeCertModal();
     }
+});
 
-    // Event Listener untuk menutup modal saat klik area luar atau tombol ESC
-    document.addEventListener('click', function(e) {
-        const modal = document.getElementById('certModal');
-        if (e.target === modal) closeCertModal();
-    });
+// ===== MODAL PREVIEW PROJEK =====
+function openProjectModal(imageSrc, title) {
+    const modal = document.getElementById('projectModal');
+    const img = document.getElementById('modalPreviewImg');
+    const titleEl = document.getElementById('modalPreviewTitle');
+    img.src = imageSrc;
+    titleEl.textContent = title || 'Preview';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            const modal = document.getElementById('certModal');
-            if (modal && modal.classList.contains('active')) closeCertModal();
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Tutup dengan tombol ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('projectModal');
+        if (modal && modal.classList.contains('active')) {
+            closeProjectModal();
         }
-    });
+    }
+});
+
