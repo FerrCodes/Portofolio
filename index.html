@@ -38,6 +38,7 @@
             <li><a href="#learning">Learning Journey</a></li>
             <li><a href="#skills">Tech Stack</a></li>
             <li><a href="#projek">Projek</a></li>
+            <li><a href="#certificates">Sertifikat</a></li>
             <li><a href="#kontak">Kontak</a></li>
         </ul>
         <div class="panel-footer">
@@ -259,6 +260,62 @@
         </div>
     </section>
 
+    <!-- CERTIFICATES SECTION (ELEGANT MASONRY STYLE) -->
+    <section id="certificates" class="section-cert-elegant">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title-retro">SERTIFIKAT</h2>
+                    <div class="divider-retro"></div>
+                    <p class="retro-p mt-3" style="max-width: 100%;">Pencapaian yang pernah saya kerjakan kursus online.</p>
+                </div>
+            </div>
+
+            <div class="cert-grid-elegant">
+
+                <!-- Certificate 1: Dicoding -->
+                <div class="cert-card-elegant" onclick="openCertModal('dicoding')">
+                    <div class="cert-header-elegant">
+                        <span class="cert-year">2025</span>
+                        <h3>Dicoding Indonesia</h3>
+                    </div>
+                    <p class="cert-course">Belajar Dasar AI</p>
+                    <div class="cert-action-elegant">
+                        <span>Lihat Detail</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: Kaggle -->
+                <div class="cert-card-elegant" onclick="openCertModal('kaggle')">
+                    <div class="cert-header-elegant">
+                        <span class="cert-year">2026</span>
+                        <h3>Kaggle</h3>
+                    </div>
+                    <p class="cert-course">Intro to Machine Learning</p>
+                    <div class="cert-action-elegant">
+                        <span>Lihat Detail</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: Claude Code -->
+                <div class="cert-card-elegant" onclick="openCertModal('claude')">
+                    <div class="cert-header-elegant">
+                        <span class="cert-year">2026</span>
+                        <h3>Claude Code</h3>
+                    </div>
+                    <p class="cert-course">Claude Code 101</p>
+                    <div class="cert-action-elegant">
+                        <span>Lihat Detail</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- CONTACT SECTION -->
     <section id="kontak" class="section-padding bg-white">
         <div class="container">
@@ -307,5 +364,21 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+
+    <!-- MODAL SERTIFIKAT -->
+    <div id="certModal" class="jd-modal-overlay">
+        <div class="jd-modal-content cert-modal-content">
+            <button class="jd-modal-close" onclick="closeCertModal()"><i class="fas fa-times"></i></button>
+
+            <div class="cert-modal-body">
+                <h3 id="modalCertTitle">Judul Sertifikat</h3>
+                <p id="modalCertIssuer">Penerbit</p>
+                <div class="cert-image-wrapper">
+                    <!-- Ganti src dengan path foto sertifikasmu -->
+                    <img id="modalCertImg" src="assets/images/sertifikat/1.png" alt="Certificate Preview">
+                </div>
+        </div>
+    </div>
+
 </body>
 </html>

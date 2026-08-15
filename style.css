@@ -768,6 +768,255 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     }
 }
 
+/* ===== CERTIFICATE MODAL OVERLAY (WAJIB ADA!) ===== */
+.jd-modal-overlay {
+    position: fixed !important;       /* Kunci agar melayang di atas semua konten */
+    inset: 0 !important;              /* Menutupi seluruh layar (top/right/bottom/left: 0) */
+    background: rgba(255, 255, 255, 0.95) !important; /* Background putih transparan */
+    z-index: 99999 !important;        /* Pastikan di atas navbar & footer */
+    display: flex !important;         /* Untuk menengahkan konten modal */
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(8px);       /* Efek blur pada background */
+}
+
+.jd-modal-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Style Konten Dalam Modal Sertifikat */
+.cert-modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    border: 3px solid #1a1a1a;
+    box-shadow: 20px 20px 0 rgba(23, 139, 185, 0.15);
+    position: relative;
+    overflow-y: auto;
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jd-modal-overlay.active .cert-modal-content {
+    transform: translateY(0);
+}
+
+.jd-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jd-modal-close:hover {
+    background: #178bb9;
+    transform: rotate(90deg);
+}
+
+.cert-modal-body {
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.cert-modal-body h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.cert-modal-body > p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.cert-image-wrapper {
+    border: 3px solid #1a1a1a;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 10px 10px 0 rgba(23, 139, 185, 0.1);
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+}
+
+.cert-image-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive Mobile Modal */
+@media (max-width: 768px) {
+    .cert-modal-body { padding: 30px 20px; }
+    .cert-modal-body h3 { font-size: 1.4rem; }
+    .cert-image-wrapper img { max-height: 300px; }
+}
+
+/* =========================================
+   CERTIFICATES ELEGANT STYLE
+========================================= */
+.section-cert-elegant {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.cert-grid-elegant {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert-card-elegant {
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    padding: 40px 35px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+}
+
+/* Garis aksen di kiri kartu */
+.cert-card-elegant::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #178bb9;
+    transform: scaleY(0);
+    transition: transform 0.4s ease;
+    transform-origin: bottom;
+}
+
+.cert-card-elegant:hover {
+    background: #fff;
+    border-color: rgba(23, 139, 185, 0.3);
+    box-shadow: 0 20px 40px rgba(23, 139, 185, 0.08);
+    transform: translateY(-5px);
+}
+
+.cert-card-elegant:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+.cert-header-elegant {
+    margin-bottom: 15px;
+}
+
+.cert-year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #999;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cert-card-elegant h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.3;
+    transition: color 0.3s;
+}
+
+.cert-card-elegant:hover h3 {
+    color: #178bb9;
+}
+
+.cert-course {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.cert-action-elegant {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.cert-card-elegant:hover .cert-action-elegant {
+    opacity: 1;
+    transform: translateY(0);
+    color: #178bb9;
+}
+
+.cert-action-elegant i {
+    transition: transform 0.3s;
+}
+
+.cert-card-elegant:hover .cert-action-elegant i {
+    transform: translateX(5px);
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .cert-grid-elegant {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cert-card-elegant {
+        padding: 30px 25px;
+        min-height: auto;
+    }
+    
+    /* Di mobile, action selalu terlihat */
+    .cert-action-elegant {
+        opacity: 1;
+        transform: translateY(0);
+        margin-top: 20px;
+    }
+}
+
 /* =========================================
    11. CONTACT & FOOTER
 ========================================= */
