@@ -1,607 +1,316 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portofolio</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo.ico">
-    <link href="https://fonts.googleapis.com/css?family=Space+Mono|Kaushan+Script" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Untuk Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Untuk Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat (Bold) & Open Sans (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-    <body class="body-serif">
-    
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top navbar-main" id="mainNavbar">
-        <div class="container">
-            <a class="navbar-brand fs-5" href="#">Feri.</a>
-        
-            <!-- ===== DESKTOP MENU (akan tampil di > 991px) ===== -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" a href="https://yoursit.ee/ferrriiii" target="_blank">yoursit.ee</a></li>
-                            <li><a class="dropdown-item" href="#contact">Kontak Email</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="index2.html">Halaman Selanjutnya</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- Tombol Hamburger (untuk buka panel) -->
-            <button class="navbar-toggler border-0" id="navToggleBtn" type="button" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <!-- NAVBAR MINIMALIS -->
+    <nav class="navbar-custom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#beranda" class="brand-logo">FERI.</a>
+            <button class="hamburger-btn" id="menuToggle">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- ===== SIDE PANEL ===== -->
-    <div class="nav-overlay" id="navOverlay"></div>
-    <div class="nav-panel" id="navPanel">
-        <!-- Header Panel -->
-        <div class="nav-panel-header">
-            <span class="nav-panel-brand">Menu</span>
-            <button class="nav-panel-close" id="navCloseBtn">
-                <i class="fas fa-times"></i>
-            </button>
+    <!-- SIDE PANEL MENU -->
+    <div class="side-panel" id="sidePanel">
+        <div class="panel-header">
+            <span class="panel-brand">MENU</span>
+            <button class="close-btn" id="menuClose"><i class="fas fa-times"></i></button>
         </div>
-
-        <!-- Daftar Menu -->
-        <ul class="nav-panel-list">
-            <li>
-                <a href="https://yoursit.ee/ferrriiii" target="_blank" class="nav-panel-link active">
-                    <i class="fas fa-circle-info"></i> yoursit.ee
-                </a>
-            </li>
-            <li>
-                <a href="#about" class="nav-panel-link">
-                    <i class="fas fa-user"></i> Tentang
-                </a>
-            </li>
-            <li>
-                <a href="#contact" class="nav-panel-link">
-                    <i class="fas fa-envelope"></i> Kontak Email
-                </a>
-            </li>
-            <li class="nav-panel-divider"></li>
-            <li>
-                <a href="index2.html" class="nav-panel-link">
-                    <i class="fas fa-arrow-right"></i> Halaman Kedua
-                </a>
-            </li>
+        <ul class="panel-links">
+            <li><a href="#beranda" class="active">Beranda</a></li>
+            <li><a href="#tentang">Tentang Saya</a></li>
+            <li><a href="#learning">Learning Journey</a></li>
+            <li><a href="#skills">Tech Stack</a></li>
+            <li><a href="#projek">Projek</a></li>
+            <li><a href="#kontak">Kontak</a></li>
         </ul>
-
-        <!-- Footer Panel (opsional) -->
-        <div class="nav-panel-footer">
-            <small>© 2025 Feri</small>
+        <div class="panel-footer">
+            <small>© 2026 Feri.</small>
         </div>
     </div>
-    <!-- ===== END SIDE PANEL ===== -->
+    <div class="overlay" id="overlay"></div>
 
-        <!--jumbotron split screen-->
-    <section id="home" class="section-home">
-        <div class="container home-container" style="position:relative; z-index:1;">
-            <div class="row align-items-center justify-content-center home-row" style="min-height:100vh;">
-                <div class="col-lg-8 col-md-10 text-center">
-                    <!-- Foto Profil (dengan toggle) -->
-                    <div class="profile-img-wrapper position-relative d-inline-block" style="margin-bottom:30px;">
-                        <img class="shadow-lg profile-img" id="profileImage" src="assets/images/fotoku.jpg" alt="Feri Ferdianto" style="width:240px; height:240px; border-radius:50%; object-fit:cover; border:8px solid rgba(255,255,255,0.2);">
-                        <button class="btn-toggle-photo" onclick="togglePhoto()" title="Ganti Foto" style="position:absolute; bottom:10px; right:10px; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.9); border:2px solid #6ca5ff; color:#6ca5ff; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:10;">
-                            <i class="fas fa-sync-alt"></i>
-                        </button>
-                    </div>
-
-                    <!-- Nama dengan style Kaushan Script -->
-                    <h1 class="hero-name" style="font-family: 'Kaushan Script', cursive; font-size:clamp(2.5rem, 8vw, 5rem); color:#fff; margin-bottom:10px; transform:rotate(-2deg);">
-                        Feri Ferdianto
+    <!-- HERO SECTION -->
+    <section id="beranda" class="hero-section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 hero-text-col">
+                    <h1 class="hero-name">
+                        F<span class="accent-red">E</span>RI<br>
+                        FERDI<span class="accent-yellow">AN</span>TO
                     </h1>
-
-                    <!-- Subtitle -->
-                    <h3 class="hero-subtitle" style="font-family: 'Space Mono', monospace; font-size:clamp(1rem, 1.5vw, 1.5rem); color:rgba(255,255,255,0.9); font-weight:300; letter-spacing:2px; margin-bottom:20px;">
-                        Siswa SMKN 5 Malang | Jurusan PPLG
-                    </h3>
+                    <p class="hero-subtitle"></p>
+                    <div class="hero-decoration"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--about two column-->
-    <section id="about" class="section-about">
+    <!-- ABOUT SECTION -->
+    <section id="tentang" class="section-padding bg-light">
         <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col">
-                    <h2 class="section-title-retro text-center">Tentang Saya</h2>
+            <!-- Judul Section -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title-retro">TENTANG SAYA</h2>
+                    <div class="divider-retro"></div>
                 </div>
             </div>
 
-            <!-- Baris 1: Profil & Info Pribadi -->
-            <div class="row g-4 mb-4 justify-content-center">
-                <!-- Kolom Kiri - Profil Singkat -->
-                <div class="col-lg-7">
-                    <div class="bg-white rounded-3 shadow p-4 h-100">
-                        <h4 class="fw-bold mb-3 color-primary">
-                            <i class="fas fa-user-circle me-2"></i> Profil Singkat
-                        </h4>
-                        <p class="fs-6 lh-lg text-dark mb-3">
-                            Halo! Perkenalkan, nama saya <strong>Feri Ferdianto</strong>. Saya adalah siswa
-                            <strong>SMKN 5 Malang</strong> jurusan
-                            <strong>PPLG (Pengembangan Perangkat Lunak dan Gim)</strong>.
-                        </p>
-                        <p class="fs-6 lh-lg text-dark mb-4">
-                            Saya memiliki ketertarikan yang besar dalam dunia pengembangan web serta eksplorasi
-                            teknologi baru seperti AI. Saya selalu bersemangat untuk terus belajar, mengembangkan
-                            kemampuan teknis, dan mencari pengalaman baru yang menantang.
-                        </p>
-                        <h6 class="fw-bold mb-3 color-primary">Hobi & Minat:</h6>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2 d-flex align-items-center text-dark">
-                                <i class="fas fa-code me-3 color-primary"></i>
-                                <span>Coding & Web Development</span>
-                            </li>
-                            <li class="mb-2 d-flex align-items-center text-dark">
-                                <i class="fas fa-microchip me-3 color-primary"></i>
-                                <span>Belajar Teknologi Baru</span>
-                            </li>
-                            <li class="d-flex align-items-center text-dark">
-                                <i class="fas fa-laptop-code me-3 color-primary"></i>
-                                <span>Mengembangkan Project Sederhana</span>
-                            </li>
-                        </ul>
+            <!-- Konten Utama -->
+            <div class="row align-items-center g-5 justify-content-center">
+
+                <!-- KOLOM FOTO -->
+                <div class="col-md-5 col-lg-4 text-center">
+                    <div class="profile-frame-retro mx-auto">
+                        <img src="assets/images/me/fotoku.jpg" alt="Fer" class="profile-img-retro">
                     </div>
                 </div>
-            </div>
 
-            <!-- Tombol Toggle Tech Stack -->
-            <div class="row g-4 mt-2">
-                <div class="col-12 text-center">
-                    <button class="btn btn-primary-main btn-lg" onclick="toggleSkills()" id="toggleSkillsBtn">
-                        <i class="fas fa-eye me-2"></i>
-                        <span id="toggleSkillsText">Lihat Tech Stack</span>
-                    </button>
+                <!-- KOLOM TEKS -->
+                <div class="col-md-7 col-lg-6">
+                    <h3 class="retro-title">Profil Singkat</h3>
+                    <p class="retro-text">
+                        Halo! Perkenalkan, nama saya <strong>Feri Ferdianto</strong>. Saya adalah siswa
+                        <strong>SMKN 5 Malang</strong> jurusan
+                        <strong>PPLG (Pengembangan Perangkat Lunak dan Gim)</strong>.
+                    </p>
+                    <p class="retro-text">
+                        Saya sangat tertarik dunia teknologi digital dan tertarik dengan Coding dan terutama di bidang <strong>Web Development.</strong> 
+                        Karena saya suka mencari solusi disaat mengubah baris kode, fungsi kode atau bereksperimen, disaat 
+                        saya membuat suatu projek atau memperbaiki error disuatu baris kode tersebut. 
+                        Dan Saat ini saya juga terus mengembangkan kemampuan di bidang web development dengan mempelajari 
+                        dan mengembangkan project menggunakan TypeScript, React, Tailwind CSS, Astro, dan Supabase.
+                    </p>
+
+                    <h3 class="retro-title mt-4">Hobi &amp; Minat:</h3>
+                    <ul class="retro-list">
+                        <li>Coding &amp; Web Development</li>
+                        <li>Belajar Teknologi Baru</li>
+                        <li>Mengembangkan Project Sederhana</li>
+                        <li>Mendengarkan Musik</li>
+                    </ul>
                 </div>
+
             </div>
-
-            <!-- Baris 2: Tech Stack (Full Width) - Hidden by default -->
-            <div class="row g-4 mt-1" id="skillsCard" style="display: none;">
-                <div class="col-12">
-                    <div class="bg-white rounded-3 shadow p-4">
-                        <h4 class="fw-bold mb-4 color-primary text-center">
-                            <i class="fas fa-tools me-2"></i> Tech Stack
-                        </h4>
-
-                        <!-- Skill Utama -->
-                        <div class="row g-3 text-center mb-4">
-                            <div class="col-4 col-md-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
-                                        alt="HTML" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">HTML5</p>
-                                </div>
-                            </div>
-                            <div class="col-4 col-md-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
-                                        alt="CSS" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">CSS3</p>
-                                </div>
-                            </div>
-                            <div class="col-4 col-md-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                                        alt="JavaScript" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">JavaScript</p>
-                                </div>
-                            </div>
-                            <div class="col-4 col-md-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
-                                        alt="PHP" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">PHP</p>
-                                </div>
-                            </div>
-                            <div class="col-4 col-md-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
-                                        alt="MySQL" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">MySQL</p>
-                                </div>
-                            </div>
-                            <!-- PostgreSQL -->
-                            <div class="col-4 col-md-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
-                                        alt="PostgreSQL" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">PostgreSQL</p>
-                                    <small class="skill-status">Belajar</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ===== DIVIDER ===== -->
-                        <hr class="my-4">
-
-                        <!-- ===== FRAMEWORK ===== -->
-                        <p class="text-muted text-center small fw-semibold mb-3">
-                            <i class="fas fa-cubes me-2"></i>Framework
-                        </p>
-                        <div class="row g-3 justify-content-center mb-4">
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg"
-                                        alt="Bootstrap" width="24" class="me-2 flex-shrink-0">
-                                    <div>
-                                        <span class="fw-semibold d-block" style="font-size:0.8rem;">Bootstrap</span>
-                                        <small class="tool-status">Framework CSS</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ===== TOOLS & WORKFLOW ===== -->
-                        <p class="text-muted text-center small fw-semibold mb-3">
-                            <i class="fas fa-tools me-2"></i>Tools &amp; Workflow
-                        </p>
-                        <div class="row g-3 justify-content-center">
-                            <!-- Git -->
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-                                        alt="Git" width="24" class="me-2 flex-shrink-0">
-                                    <div>
-                                        <span class="fw-semibold d-block" style="font-size:0.8rem;">Git</span>
-                                        <small class="tool-status">Version Control</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- GitHub -->
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"
-                                        alt="GitHub" width="24" class="me-2 flex-shrink-0">
-                                    <div>
-                                        <span class="fw-semibold d-block" style="font-size:0.8rem;">GitHub</span>
-                                        <small class="tool-status">Code Repository</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- VS Code -->
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"
-                                        alt="VS Code" width="24" class="me-2 flex-shrink-0">
-                                    <div>
-                                        <span class="fw-semibold d-block" style="font-size:0.8rem;">VS Code</span>
-                                        <small class="tool-status">Code Editor</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- XAMPP -->
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="d-flex align-items-center p-2 rounded bg-light-gray tool-box h-100">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original-wordmark.svg"
-                                        alt="XAMPP" width="24" class="me-2 flex-shrink-0">
-                                    <div>
-                                        <span class="fw-semibold d-block" style="font-size:0.8rem;">XAMPP</span>
-                                        <small class="tool-status">Local Server</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- ===== SEDANG DIPELAJARI ===== -->
-                        <hr class="my-4">
-                        <h5 class="text-center mb-3" style="color: #2e4bff; font-weight: 600;">
-                            Sedang Dipelajari
-                        </h5>
-                        <div class="row g-3 justify-content-center">
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100 text-center">
-                                    <img src="https://skillicons.dev/icons?i=laravel&perline=12" alt="Laravel" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">Laravel</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100 text-center">
-                                    <img src="https://skillicons.dev/icons?i=typescript&perline=12" alt="TypeScript" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">TypeScript</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-2">
-                                <div class="skill-box p-3 rounded bg-light-gray h-100 text-center">
-                                    <img src="https://skillicons.dev/icons?i=react&perline=12" alt="React" width="48" class="mb-2">
-                                    <p class="mb-0 fw-semibold small">React</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Badge Info -->
-                        <div class="mt-4 p-3 rounded bg-accent text-center">
-                            <i class="fas fa-lightbulb me-2 text-white"></i>
-                            <em class="text-white">Fokus membangun pondasi yang kuat</em>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
-    <!--about two column-->
 
-    <!-- ===== PROJECTS ===== -->
-<section id="projects" class="section-projects">
-    <div class="container">
-        <h2 class="section-title-retro text-center">Projek</h2>
-        <div class="row g-4 mt-4">
-            <!-- Card 1: Game Rocket League -->
-            <div class="col-md-6 col-lg-4">
-                <div class="project-card-retro">
-                    <img src="assets/images/gamee.png" alt="Game Rocket League" class="project-img-retro">
-                    <div class="project-body-retro">
-                        <h3>Game: Rocket League</h3>
-                        <p>Game ini dibuat saat tugas kelompok waktu semester ganjil kelas 11.</p>
-                        <div class="project-tags-retro">
-                            <span>Construct 3</span>
-                            <span>Game</span>
-                        </div>
-                        <a href="http://103.186.167.18:8002/rpl3/game/rocket_league/" target="_blank" class="btn-retro">
-                            Lihat <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
+    <!-- Proses Pemlajaran SECTION -->
+    <section id="learning" class="section-services-jd">
+        <div class="container-fluid p-0">
+            <div class="service-row-jd">
+                <div class="row g-0 align-items-stretch">
+                    <div class="col-md-6 service-text-jd bg-red-jd">
+                        <h3>MEMBUAT PROJEK SEBANYAK MUNGKIN</h3>
+                        <p>Sudah berbulan-bulan dan sampai sekarang, saya berusaha mencoba membuat dan mengembangkan projek 
+                            sederhana sebanyak mungkin dan mengasah dan mencari solusi error di baris kode tersebut dan terus memperbaikinya.
+                        </p>
+                    </div>
+                    <div class="col-md-6 service-img-jd">
+                        <img src="assets/images/learning-journey/image1.png" alt="Membuat Projek Sebanyak Mungkin">
                     </div>
                 </div>
             </div>
-
-            <!-- Card 2: To-Do List -->
-            <div class="col-md-6 col-lg-4">
-                <div class="project-card-retro">
-                    <img src="assets/images/To-Do-List.png" alt="To-Do List" class="project-img-retro">
-                    <div class="project-body-retro">
-                        <h3>To-Do List</h3>
-                        <p>Website To-Do List sederhana dengan HTML, CSS, dan JavaScript.</p>
-                        <div class="project-tags-retro">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <a href="https://ferrcodes.github.io/To-Do-List/" target="_blank" class="btn-retro">
-                            Lihat <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
+            <div class="service-row-jd reverse-layout">
+                <div class="row g-0 align-items-stretch">
+                    <div class="col-md-6 service-img-jd order-1">
+                        <img src="assets/images/learning-journey/image2.png" alt="Mulai Mencoba dan Bereksperimen">
+                    </div>
+                    <div class="col-md-6 service-text-jd bg-white-jd order-2">
+                        <h3>MULAI MENCOBA DAN BEREKSPERIMEN</h3>
+                        <p>Seiring belajar dan proses pembuatan projek, saya mencoba untuk memakai teknologi modern seperti Typescript berbasis JavaScript dengan tambahan sintaks 
+                            tipe data yang kuat, karena bahasa pemograman itu saya pelajari sendiri yaitu tidak boleh memakai Tipe data yang tidak ada di Tipe data kita buat. 
+                        </p>
                     </div>
                 </div>
             </div>
-
-            <!-- Card 3: Landing Page Sekolah -->
-            <div class="col-md-6 col-lg-4">
-                <div class="project-card-retro">
-                    <img src="assets/images/sekolah.png" alt="Landing Page Sekolah" class="project-img-retro">
-                    <div class="project-body-retro">
-                        <h3>Landing Page Sekolah</h3>
-                        <p>Landing page sekolah yang dibuat sebagai tugas awal kelas 2.</p>
-                        <div class="project-tags-retro">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>Bootstrap</span>
-                        </div>
-                        <a href="https://ferrcodes.github.io/Landing-Page-Sekolah/" target="_blank" class="btn-retro">
-                            Lihat <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
+            <div class="service-row-jd">
+                <div class="row g-0 align-items-stretch">
+                    <div class="col-md-6 service-text-jd bg-red-jd">
+                        <h3>PROBLEM SOLVING</h3>
+                        <p>Coding bukan hanya soal mengetik sintaks, tapi memecahkan masalah yang rumit dan kompleks. Di era modern ini, kehadiran AI sangat membantu saya untuk lebih cepat menemukan penyebab error dan memahami alur logika yang salah. 
+                            Namun, pada akhirnya, saya tetap harus memahami setiap solusi yang diberikan — karena AI adalah alat, bukan pengganti pola pikir engineer
+                        </p>
+                    </div>
+                    <div class="col-md-6 service-img-jd">
+                        <img src="assets/images/learning-journey/image3.png" alt="Problem Solving">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- ===== EXPERIENCE & EDUCATION ===== -->
-        <section id="pendidikan" class="section-pendidikan">
-            <div class="container">
-                <div class="row">
-                    <!-- Kolom Kiri: Experience -->
-                    <div class="col-md-6">
-                        <h2 class="section-title-retro">Pengalaman</h2>
-                        <div class="retro-list">
-                            <div class="retro-item">
-                                <h4>PKL di Perpustakaan UB (Universitas Brawijaya)</h4>
-                                <span class="retro-date">Juli 2026 - Sekarang</span>
-                                <p class="retro-desc">
-                                    Menginput data skripsi mahasiswa lalu di upload ke Repo UB Library
-                                </p>
-                            </div>
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title-retro">TECH STACK</h2>
+                    <div class="divider-retro"></div>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3 text-center skill-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" class="skill-icon">
+                    <h5>HTML5</h5>
+                </div>
+                <div class="col-6 col-md-3 text-center skill-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" class="skill-icon">
+                    <h5>CSS3</h5>
+                </div>
+                <div class="col-6 col-md-3 text-center skill-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon">
+                    <h5>JavaScript</h5>
+                </div>
+                <div class="col-6 col-md-3 text-center skill-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" class="skill-icon">
+                    <h5>PHP</h5>
+                </div>
+                <div class="col-6 col-md-3 text-center skill-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" class="skill-icon">
+                    <h5>MySQL</h5>
+                </div>
+                <div class="col-6 col-md-3 text-center skill-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" class="skill-icon">
+                    <h5>Git</h5>
+                </div>
+                <div class="col-6 col-md-3 text-center skill-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" class="skill-icon">
+                    <h5>GitHub</h5>
+                </div>
+                <div class="col-6 col-md-3 text-center skill-item">
+                    <img src="https://skillicons.dev/icons?i=laravel" alt="Laravel" class="skill-icon">
+                    <h5>Laravel</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projek" class="section-projects-jd">
+        <div class="container">
+            <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mb-5">
+                        <h2 class="section-title-retro">PROJEK</h2>
+                        <div class="divider-retro"></div>
+                    </div>
+                </div>
+
+            <!-- Grid Galeri (3 Proyek Utama) -->
+            <div class="row g-0 jd-gallery-row">
+
+                <!-- Project 1 -->
+                <div class="col-md-4 col-sm-6 jd-gallery-item">
+                    <div class="jd-img-wrapper">
+                        <img src="assets/images/projek/gamee.png" alt="Rocket League Game">
+                        <div class="jd-overlay">
+                            <h3>Rocket League</h3>
+                            <p>Construct 3</p>
+                            <a href="http://103.186.167.18:8002/rpl3/game/rocket_league/" target="_blank" class="jd-link"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                
-                    <!-- Kolom Kanan: Education -->
-                    <div class="col-md-6">
-                        <h2 class="section-title-retro">Pendidikan</h2>
-                        <div class="retro-list">
-                            <!-- SMK -->
-                            <div class="retro-item">
-                                <h4>SMKN 5 Malang</h4>
-                                <span class="retro-date">2024 - Sekarang</span>
-                                <p class="retro-desc">Jurusan PPLG (Pengembangan Perangkat Lunak dan Gim)</p>
-                            </div>
-                            <!-- SMP -->
-                            <div class="retro-item">
-                                <h4>SMPN 5 Malang</h4>
-                                <span class="retro-date">2021 - 2024</span>
-                                <p class="retro-desc">Sekolah Menengah Pertama</p>
-                            </div>
-                            <!-- SD -->
-                            <div class="retro-item">
-                                <h4>SDN Lowokwaru 2 Malang</h4>
-                                <span class="retro-date">2015 - 2021</span>
-                                <p class="retro-desc">Sekolah Dasar</p>
-                            </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-4 col-sm-6 jd-gallery-item">
+                    <div class="jd-img-wrapper">
+                        <img src="assets/images/projek/To-Do-List.png" alt="To-Do List App">
+                        <div class="jd-overlay">
+                            <h3>To-Do List</h3>
+                            <p>Vanilla JS | Productivity</p>
+                            <a href="https://ferrcodes.github.io/To-Do-List/" target="_blank" class="jd-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-4 col-sm-6 jd-gallery-item">
+                    <div class="jd-img-wrapper">
+                        <img src="assets/images/projek/sekolah.png" alt="School Landing Page">
+                        <div class="jd-overlay">
+                            <h3>Landing Page Sekolah</h3>
+                            <p>HTML, CSS & JS | UI/UX</p>
+                            <a href="https://ferrcodes.github.io/Landing-Page-Sekolah/" target="_blank" class="jd-link"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-    <!--contact-->
-    <section id="contact" class="section-contact">
-        <div class="container col-xl-10 col-xxl-8 px-4">
-            <div class="row align-items-center g-lg-5">
-                <div class="col-lg-7 text-center text-lg-start">
-                    <h2 class="section-title-retro text-center">Kontak</h2>
-                    <p class="section-subtitle-retro text-center">Jika ada masukan dan kritik, kirim di form berikut</p>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="index2.html#projects" class="btn-jd-view-all">
+                        VIEW ALL PROJECTS <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
                 </div>
-                <div class="col-md-10 mx-auto col-lg-5">
-                    <form id="contact-Form" class="p-4 p-md-5 border rounded-3 bg-white shadow">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="user_name" placeholder="Nama Anda"
-                                name="from_name" required>
-                            <label for="user_name">Nama</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="user_email" placeholder="name@example.com"
-                                name="user_email" required>
-                            <label for="user_email">Email</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" placeholder="Pesan Anda" name="message"
-                                style="height: 100px" required></textarea>
-                            <label for="message">Pesan</label>
-                        </div>
-                        <button class="w-100 btn btn-lg btn-submit" type="submit" id="submitBtn">Kirim</button>
-                        <hr class="my-4">
-                        <small class="text-body-secondary">* Form ini telah diperbaiki
-                        </small>
+            </div>
+        </div>
+    </section>
 
-                        <!-- Alert Success/Error -->
-                        <div id="alertMessage" class="alert mt-3" style="display: none;" role="alert"></div>
+    <!-- CONTACT SECTION -->
+    <section id="kontak" class="section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title-retro">KONTAK</h2>
+                    <div class="divider-retro"></div>
+                    <p class="retro-p mt-3" style="max-width: 100%;">Jika ada masukan dan kritik, kirim di form berikut</p>
+                    <div id="alertMessage" style="display:none;"></div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8"> <!-- Lebar kolom disesuaikan -->
+                    <form id="contactForm" class="retro-form">
+                        <input type="text" id="user_name" class="form-control-retro" placeholder="Nama Lengkap" required>
+
+                        <input type="email" id="user_email" class="form-control-retro" placeholder="Alamat Email" required>
+
+                        <textarea id="message" class="form-control-retro" rows="5" placeholder="Tulis pesan di sini..." required></textarea>
+
+                        <!-- Gunakan class btn-retro-submit yang baru -->
+                        <button type="submit" id="submitBtn" class="btn-retro-submit">
+                            Kirim Pesan
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <!--contact-->
 
-    <!--footer-->
-    <footer class="footer footer-improved">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Kolom 1: Brand (Kiri) -->
-                <div class="footer-brand">
-                    <h5 class="footer-name">Feri.</h5>
-                    <p class="footer-tagline">Portofolio</p>
-                </div>
-
-                <!-- Kolom 2: Navigasi (Tengah) -->
-                <div class="footer-links">
-                    <h5>Navigasi</h5>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#about">Tentang</a></li>
-                        <li><a href="#projects">Projek</a></li>
-                        <li><a href="#pendidikan">Pendidikan</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </div>
-
-                <!-- Kolom 3: GitHub (Kanan) -->
-                <div class="footer-github">
-                    <h5>GitHub</h5>
-                    <a href="https://github.com/FerrCodes" target="_blank" rel="noopener noreferrer" class="github-link">
-                        <i class="fab fa-github"></i>
-                        <span>Lihat Profil</span>
-                        <i class="fas fa-arrow-up-right-from-square" style="font-size:12px; opacity:0.6;"></i>
-                    </a>
-                    <p class="footer-credit">Made by Feri</p>
-                </div>
+    <!-- FOOTER -->
+    <footer class="footer-retro">
+        <div class="container text-center">
+            <h3 class="footer-brand">PORTOFOLIO</h3>
+            <p class="footer-tagline">Web Developer & Problem Solver</p>
+            <div class="social-links mb-4">
+                <a href="https://github.com/FerrCodes" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/imnotferrriii" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/imnotferrriii" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
-
-            <!-- Copyright (Bawah) -->
-            <div class="footer-bottom">
-                <p class="copyright">&copy; 2025 All rights reserved.</p>
-            </div>
+            <p class="copyright">© 2026 Feri. All rights reserved.</p>
         </div>
     </footer>
 
-
-    <script src="omke.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
-
 </html>
-
-<script>
-    // Toggle Photo Function
-    let currentPhoto = 1; // 1 = fotoku.jpeg, 2 = Me.jpg
-    
-    function togglePhoto() {
-        const profileImage = document.getElementById('profileImage');
-        const photos = [
-            'assets/images/fotoku.jpg',
-            'assets/images/Me2.jpg'
-        ];
-        
-        // Toggle between photos
-        currentPhoto = currentPhoto === 1 ? 2 : 1;
-        profileImage.src = photos[currentPhoto - 1];
-        
-        // Add transition effect
-        profileImage.style.opacity = '0';
-        setTimeout(() => {
-            profileImage.style.opacity = '1';
-        }, 150);
-    }
-
-    // Toggle Skills Card Function
-    function toggleSkills() {
-        const skillsCard = document.getElementById('skillsCard');
-        const toggleBtn = document.getElementById('toggleSkillsBtn');
-        const toggleText = document.getElementById('toggleSkillsText');
-        const icon = toggleBtn.querySelector('i');
-        
-        if (skillsCard.style.display === 'none') {
-            // Show skills card with animation
-            skillsCard.style.display = 'flex';
-            setTimeout(() => {
-                skillsCard.style.opacity = '1';
-                skillsCard.style.transform = 'translateY(0)';
-            }, 10);
-            
-            // Update button text and icon
-            toggleText.textContent = 'Sembunyikan Tech Stack';
-            icon.classList.remove('fa-eye');
-            icon.classList.add('fa-eye-slash');
-            
-            // Smooth scroll to skills card
-            setTimeout(() => {
-                skillsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 100);
-        } else {
-            // Hide skills card
-            skillsCard.style.opacity = '0';
-            skillsCard.style.transform = 'translateY(-20px)';
-            setTimeout(() => {
-                skillsCard.style.display = 'none';
-            }, 300);
-            
-            // Update button text and icon
-            toggleText.textContent = 'Lihat Tech Stack';
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye');
-        }
-    }
-</script>
