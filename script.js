@@ -200,6 +200,23 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+// ===== GANTI FOTO PROFIL =====
+function changePhoto(filename, button) {
+    // Ganti gambar
+    const img = document.getElementById('profileImage');
+    if (img) {
+        img.src = 'assets/images/me/' + filename;
+        // Hapus class active dari semua tombol
+        document.querySelectorAll('.profile-switch-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // Tambah class active ke tombol yang diklik
+        if (button) {
+            button.classList.add('active');
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-case-card')

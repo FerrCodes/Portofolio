@@ -57,8 +57,6 @@
                         F<span class="accent-red">E</span>RI<br>
                         FERDI<span class="accent-yellow">AN</span>TO
                     </h1>
-                    <p class="hero-subtitle"></p>
-                    <div class="hero-decoration"></div>
                 </div>
             </div>
         </div>
@@ -77,7 +75,13 @@
                 <!-- KOLOM FOTO -->
                 <div class="col-md-5 col-lg-4 text-center">
                     <div class="profile-frame-retro mx-auto">
-                        <img src="assets/images/me/fotoku.jpg" alt="Fer" class="profile-img-retro">
+                        <img src="assets/images/me/Me2.jpg" alt="Fer" class="profile-img-retro" id="profileImage">
+                    </div>
+
+                    <!-- Tombol Ganti Foto -->
+                    <div class="profile-btn-wrapper text-center mt-3">
+                        <button class="profile-switch-btn active" onclick="changePhoto('Me2.jpg', this)">Default</button>
+                        <button class="profile-switch-btn" onclick="changePhoto('fotoku.jpg', this)">RPL Banget</button>
                     </div>
                 </div>
 

@@ -310,6 +310,62 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     border-bottom: none;
 }
 
+/* ============================================================
+   TOMBOL GANTI FOTO PROFIL
+   ============================================================ */
+.profile-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.profile-switch-btn {
+    padding: 8px 20px;
+    border: 2px solid #178bb9;
+    background: transparent;
+    color: #178bb9;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-switch-btn:hover {
+    background: #178bb9;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(23, 139, 185, 0.25);
+}
+
+.profile-switch-btn.active {
+    background: #178bb9;
+    color: #fff;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .profile-switch-btn {
+        font-size: 0.6rem;
+        padding: 6px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-btn-wrapper {
+        gap: 6px;
+    }
+    .profile-switch-btn {
+        font-size: 0.55rem;
+        padding: 5px 12px;
+    }
+}
+
 /* ===== RESPONSIF MOBILE ===== */
 @media (max-width: 768px) {
     #about {
