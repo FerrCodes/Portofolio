@@ -200,3 +200,18 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-case-card')
+    filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const filter = btn.getAttribute('data-filter')
+            filterButtons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active')
+            projectCards.forEach(function (card) {
+                const match = filter === 'all' || card.getAttribute('data-category') === filter;
+                card.classList.toggle('is-hidden', !match);
+            });
+        });
+    });
+});
