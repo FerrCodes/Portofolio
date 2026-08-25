@@ -31,7 +31,6 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 .section-title-retro {
     font-size: clamp(2rem, 5vw, 3rem);
     letter-spacing: -1px;
-    margin-bottom: 10px;
 }
 
 .divider-retro {
@@ -39,6 +38,71 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     height: 4px;
     background: #178bb9;
     margin: 0 auto;
+}
+
+/* ============================================================
+   HERO SECTION - OPSI 1 (Background Soft)
+   ============================================================ */
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #f7f7f7; /* Soft grey */;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Badge kecil di atas nama */
+.hero-badge {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #178bb9;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    border: 1px solid rgba(23, 139, 185, 0.15);
+    padding: 4px 16px;
+    border-radius: 30px;
+    background: rgba(23, 139, 185, 0.04);
+}
+
+/* Nama */
+.hero-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 0;
+    letter-spacing: -2px;
+    color: #1a1a1a;
+}
+
+.hero-name .accent-text {
+    color: #178bb9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+    }
+
+    .hero-name {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+    }
+    .hero-badge {
+        font-size: 0.5rem;
+        padding: 3px 12px;
+    }
 }
 
 /* =========================================
@@ -1408,7 +1472,7 @@ textarea.form-control-retro {
    12. RESPONSIVE DESIGN
 ========================================= */
 @media (max-width: 991px) {
-    .hero-section { text-align: center; padding-top: 120px; }
+    .hero-section { text-align: center; }
     .hero-name { font-size: clamp(3rem, 15vw, 6rem); }
     .hero-decoration { display: none; }
     .bento-grid { grid-template-columns: repeat(2, 1fr); }
