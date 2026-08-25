@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portofolio - Feri Ferdianto">
-    <title>Full Section Page - Portofolio</title>
+    <title>Detail Page - Portofolio</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
-    <link rel="icon" href="assets/images/me/Me2.jpg" type="image/jpg">
+    <link rel="icon" href="assets/images/me/favicon.png" type="image/jpg">
 </head>
 <body>
 
@@ -36,9 +36,10 @@
             <button class="close-btn" id="menuClose"><i class="fas fa-times"></i></button>
         </div>
         <ul class="panel-links">
-            <li><a href="#social-media" class="active">Sosial Media</a></li>
             <li><a href="#full-stack">Full Tech Stack</a></li>
-            <li><a href="#all-projects" class="pb-1">Semua Projek</a></li>
+            <li><a href="#all-projects">Semua Projek</a></li>
+            <div class="divider-retro2"></div>
+            <li><a href="case-study/index.html" class="pt-4">Studi Kasus</a></li>
             <div class="divider-retro2"></div>
             <li><a href="index.html">Halaman Sebelumnya</a></li>
         </ul>
@@ -47,51 +48,6 @@
         </div>
     </div>
     <div class="overlay" id="overlay"></div>
-
-    <!-- ============================================================
-     SOCIAL MEDIA
-     ============================================================ -->
-    <section id="social-media" class="section-padding bg-light mt-9">
-        <div class="container">
-            <div class="row justify-content-center pt-4">
-                <div class="text-center">
-                    <h2 class="section-title-retro">MEDIA SOSIAL</h2>
-                    <div class="divider-retro"></div>
-                    <p class="retro-p mt-3" style="max-width: 100%;">
-                        Platform yang saya gunakan dan terkadang aktif dibeberapa saja.
-                    </p>
-                </div>
-            </div>
-
-            <div class="social-grid-container">
-                <!-- GitHub -->
-                <a href="https://github.com/FerrCodes" target="_blank" class="social-card">
-                    <img src="https://skillicons.dev/icons?i=github" alt="GitHub">
-                    <span>GitHub</span>
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/imnotferrriii" target="_blank" class="social-card">
-                    <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram">
-                    <span>Instagram</span>
-                </a>
-                <!-- LinkedIn
-                <a href="https://linkedin.com/in/feri-ferdianto" target="_blank" class="social-card">
-                    <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
-                    <span>LinkedIn</span>
-                </a>-->
-                <!-- Twitter/X -->
-                <a href="https://x.com/imnotferrriii" target="_blank" class="social-card">
-                    <img src="https://skillicons.dev/icons?i=twitter" alt="Twitter">
-                    <span>X</span>
-                </a>
-                <!-- Discord -->
-                <a href="https://discord.gg/ferrcodes" target="_blank" class="social-card">
-                    <img src="https://skillicons.dev/icons?i=discord" alt="Discord">
-                    <span>Discord</span>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- FULL TECH STACK SECTION -->
     <section id="full-stack" class="section-padding bg-white">
@@ -446,7 +402,7 @@
                 ========================================================== -->
                 <div class="project-case-card favorite-project" data-category="web">
                     <div class="card-emoji">🧸</div>
-                    <div class="case-badge">⭐ PROJEK FAVORIT</div>
+                    <div class="case-badge">⭐ FAVORIT</div>
                     <div class="case-row">
 
                         <!-- Kolom Gambar (klik untuk modal preview) -->
@@ -504,7 +460,7 @@
             </div>
 
             <!-- ==========================================================
-                    Face Recognition System
+                Face Recognition System
             ========================================================== -->
             <div class="project-case-card" data-category="system">
                 <div class="case-row">
@@ -542,6 +498,9 @@
                         <div class="case-actions">
                             <a href="https://github.com/FerrCodes/FaceRecognition-Final#-face-recognition-system--smartphone-to-pc" target="_blank" class="btn-jd-view-all">
                                 <i class="fas fa-book-open me-2"></i>Lihat Dokumentasi
+                            </a>
+                            <a href="case-study/index.html" class="btn-jd-view-all">
+                               <i class="fas fa-book-open me-2"></i>Lihat Studi Kasus
                             </a>
                             <a href="https://github.com/FerrCodes/FaceRecognition-Final" target="_blank" class="btn-jd-source">
                                 <i class="fab fa-github me-2"></i>Source Code
@@ -671,7 +630,7 @@
                 Journal
             ========================================================== -->
             <div class="project-case-card favorite-project" data-category="web">
-                <div class="case-badge">⭐ PROJEK FAVORIT</div>
+                <div class="case-badge">⭐ FAVORIT</div>
                 <div class="case-row">
                     <div class="case-img-col" onclick="openProjectModal('assets/images/projek/JournalApp.png', 'JournalAPP - Web Aplikasi Jurnal modern')">
                         <img src="assets/images/projek/JournalApp.png" alt="To-Do-List" loading="lazy">

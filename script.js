@@ -22,9 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle) menuToggle.addEventListener('click', openPanel);
     if (menuClose) menuClose.addEventListener('click', closePanel);
     if (overlay) overlay.addEventListener('click', closePanel);
-    panelLinks.forEach(link => {
-        link.addEventListener('click', () => setTimeout(closePanel, 200));
-    });
+    // ===== NONAKTIFKAN AUTO CLOSE SAAT KLIK LINK =====
+// panelLinks.forEach(link => {
+//     link.addEventListener('click', () => setTimeout(closePanel, 200));
+// });
 
     // ===== NAVBAR SCROLL EFFECT =====
     const navbar = document.querySelector('.navbar-custom');
@@ -231,4 +232,33 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+});
+
+// ===== DROPDOWN PROJEK =====
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu-custom');
+
+    if (dropdownToggle && dropdownMenu) {
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isOpen = dropdownMenu.classList.contains('open');
+            dropdownMenu.classList.toggle('open');
+            dropdownToggle.classList.toggle('open');
+
+            // Tutup dropdown lain jika ada (opsional)
+            // Tidak perlu karena hanya satu dropdown
+        });
+
+        // Tutup dropdown saat klik di luar (opsional)
+        document.addEventListener('click', function(e) {
+            const panel = document.querySelector('.side-panel');
+            if (panel && panel.classList.contains('active')) {
+                // Jika klik di luar dropdown, biarkan tetap terbuka (tidak otomatis tutup)
+                // Biar user experience lebih nyaman
+            }
+        });
+    }
 });

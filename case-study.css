@@ -1,0 +1,839 @@
+/* ============================================================
+   CASE STUDY - CLEAN & MINIMALIS
+   Kartu Favorit Dibuat Berbeda Secara Jelas
+   ============================================================ */
+
+/* ===== HERO SECTION ===== */
+.hero-case {
+    padding: 140px 0 50px;
+    background: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.hero-case h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.hero-case .badge {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #178bb9;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero-case .divider {
+    width: 36px;
+    height: 2px;
+    background: #178bb9;
+    margin: 0 auto 16px;
+}
+
+.hero-case p {
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.9;
+}
+
+/* ===== LIST CASE STUDY ===== */
+.case-list {
+    padding: 50px 0 80px;
+    background: #fafafa;
+}
+
+.case-list .container {
+    max-width: 820px;
+}
+
+/* ============================================================
+   KARTU BIASA (3 KARTU PERTAMA)
+   ============================================================ */
+.tech-case-card {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 26px 32px;
+    margin-bottom: 18px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.tech-case-card:hover {
+    border-color: #178bb9;
+    box-shadow: 0 4px 16px rgba(23, 139, 185, 0.06);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   KARTU FAVORIT (JOURNALAPP) - BEDA JELAS
+   ============================================================ */
+.favorite-highlight {
+    background: #f8fcff;
+    border: 1px solid #178bb9;
+    border-radius: 12px;
+    padding: 32px 38px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 28px rgba(23, 139, 185, 0.08);
+    transition: all 0.25s ease;
+}
+
+.favorite-highlight:hover {
+    border-color: #178bb9;
+    box-shadow: 0 12px 40px rgba(23, 139, 185, 0.13);
+    transform: translateY(-3px);
+}
+
+/* ===== META ROW (TAG + TAHUN) ===== */
+.card-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tech-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    background: #f0f0f0;
+    color: #555;
+}
+
+.tag-new {
+    background: #e6f3fa;
+    color: #0a5f7a;
+}
+
+.tag-fav {
+    background: #fef9e7;
+    color: #8a6d0b;
+    border: 1px solid #fde68a;
+}
+
+.tag-ml {
+    background: #f0edff;
+    color: #4c3d8a;
+}
+
+.tag-php {
+    background: #f1f4f8;
+    color: #2d3a4a;
+}
+
+.tech-year {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #bbb;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== JUDUL ===== */
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+    transition: color 0.2s ease;
+}
+
+/* Judul di kartu favorit sedikit lebih besar */
+.favorite-highlight .card-title {
+    font-size: 1.5rem;
+}
+
+.tech-case-card:hover .card-title,
+.favorite-highlight:hover .card-title {
+    color: #178bb9;
+}
+
+/* ===== DESKRIPSI ===== */
+.card-desc {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 18px;
+    max-width: 90%;
+}
+
+/* Deskripsi di kartu favorit lebih lega */
+.favorite-highlight .card-desc {
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+/* ============================================================
+   TOMBOL BACA STUDI KASUS - OPSI 4 (LINGKARAN BERGESER)
+   ============================================================ */
+.btn-read-case {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 6px 0;
+    transition: all 0.25s ease;
+}
+
+.btn-read-case .circle-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #1a1a1a;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.btn-read-case .circle-arrow i {
+    font-size: 0.6rem;
+    transition: transform 0.3s ease;
+    color: #1a1a1a;
+}
+
+/* Hover efek */
+.tech-case-card:hover .btn-read-case,
+.favorite-highlight:hover .btn-read-case {
+    color: #178bb9;
+}
+
+.tech-case-card:hover .btn-read-case .circle-arrow,
+.favorite-highlight:hover .btn-read-case .circle-arrow {
+    border-color: #178bb9;
+    background: #178bb9;
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(23, 139, 185, 0.2);
+}
+
+.tech-case-card:hover .btn-read-case .circle-arrow i,
+.favorite-highlight:hover .btn-read-case .circle-arrow i {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* ===== TOMBOL KEMBALI ===== */
+.back-wrap {
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 28px;
+    border-top: 1px solid #eaeaea;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #1a1a1a;
+    border: 2px solid #e0e0e0;
+    padding: 10px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.btn-back:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+    border-color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================================
+   CASE STUDY DETAIL - SUB BAGIAN & KODE
+   ============================================================ */
+
+/* ---- Sub-bagian di dalam case block ---- */
+.case-sub-block {
+    margin-top: 20px;
+}
+
+.case-sub-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #178bb9;
+    margin-bottom: 6px;
+}
+
+/* Garis pemisah antar sub-bagian */
+.case-divider {
+    border: 0;
+    border-top: 1px solid #eaeaea;
+    margin: 22px 0;
+}
+
+/* ---- Placeholder Gambar Error ---- */
+.case-image-placeholder {
+    margin: 20px 0 16px;
+}
+
+.placeholder-box {
+    background: #f5f5f5;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.placeholder-box i {
+    color: #bbb;
+    display: block;
+}
+
+.placeholder-note {
+    display: block;
+    font-size: 0.7rem;
+    color: #bbb;
+    margin-top: 6px;
+}
+
+/* ---- Blok Kode (background gelap seperti terminal) ---- */
+.code-block {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 16px 0 10px;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #d4d4d4;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.code-block code {
+    font-family: 'Courier New', monospace;
+    color: #d4d4d4;
+}
+
+/* ---- Responsif ---- */
+@media (max-width: 768px) {
+    .case-sub-title {
+        font-size: 0.85rem;
+    }
+    .placeholder-box {
+        padding: 28px 16px;
+        font-size: 0.8rem;
+    }
+    .code-block {
+        padding: 14px 16px;
+    }
+    .code-block pre {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .case-sub-title {
+        font-size: 0.8rem;
+    }
+    .placeholder-box {
+        padding: 20px 12px;
+        font-size: 0.7rem;
+    }
+    .code-block pre {
+        font-size: 0.65rem;
+    }
+}
+
+/* ===== GAMBAR ERROR DI CASE STUDY ===== */
+.case-error-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.image-caption {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .case-error-image {
+        border-radius: 8px;
+    }
+    .image-caption {
+        font-size: 0.7rem;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .hero-case {
+        padding: 110px 0 30px;
+    }
+    .hero-case h1 {
+        font-size: 2rem;
+    }
+    .hero-case p {
+        font-size: 0.88rem;
+        padding: 0 16px;
+    }
+    .case-list {
+        padding: 36px 0 56px;
+    }
+    .tech-case-card {
+        padding: 20px 20px;
+        border-radius: 10px;
+    }
+    .favorite-highlight {
+        padding: 26px 24px;
+    }
+    .card-title {
+        font-size: 1.15rem;
+    }
+    .favorite-highlight .card-title {
+        font-size: 1.3rem;
+    }
+    .card-desc {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+    .favorite-highlight .card-desc {
+        font-size: 0.88rem;
+    }
+    .btn-read-case {
+        font-size: 0.6rem;
+        gap: 10px;
+    }
+    .btn-read-case .circle-arrow {
+        width: 26px;
+        height: 26px;
+    }
+    .btn-read-case .circle-arrow i {
+        font-size: 0.5rem;
+    }
+    .btn-back {
+        padding: 8px 20px;
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-case {
+        padding: 90px 0 24px;
+    }
+    .hero-case h1 {
+        font-size: 1.6rem;
+    }
+    .hero-case p {
+        font-size: 0.82rem;
+    }
+    .tech-case-card {
+        padding: 16px 14px;
+    }
+    .favorite-highlight {
+        padding: 20px 16px;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    .favorite-highlight .card-title {
+        font-size: 1.15rem;
+    }
+    .card-desc {
+        font-size: 0.82rem;
+    }
+    .favorite-highlight .card-desc {
+        font-size: 0.85rem;
+    }
+    .tech-tag {
+        font-size: 0.45rem;
+        padding: 2px 10px;
+    }
+    .tech-year {
+        font-size: 0.6rem;
+    }
+    .btn-read-case {
+        font-size: 0.55rem;
+        gap: 8px;
+    }
+    .btn-read-case .circle-arrow {
+        width: 22px;
+        height: 22px;
+    }
+    .btn-read-case .circle-arrow i {
+        font-size: 0.45rem;
+    }
+}
+
+/* ===== HERO DETAIL (SELARAS DENGAN INDEX) ===== */
+.hero-case-detail {
+    padding: 140px 0 50px;
+    background: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.badge-detail {
+    display: inline-block;
+    background: transparent;
+    color: #178bb9;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    padding: 0 0 4px 0;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #178bb9;
+}
+
+.hero-case-detail h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.divider-detail {
+    width: 36px;
+    height: 2px;
+    background: #178bb9;
+    margin: 0 auto 16px;
+}
+
+.hero-desc {
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.9;
+}
+
+/* ============================================================
+   TECH STACK - RESPONSIF
+   ============================================================ */
+
+/* Ukuran default untuk desktop */
+.case-tech-row .tech-item img {
+    width: 47px;
+    height: 47px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .case-tech-row .tech-item img {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .case-tech-row {
+        gap: 14px 20px;
+    }
+    
+    .tech-item span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Kecil (max-width: 480px) */
+@media (max-width: 480px) {
+    .case-tech-row .tech-item img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .case-tech-row {
+        gap: 10px 14px;
+    }
+    
+    .tech-item span {
+        font-size: 0.5rem;
+    }
+}
+
+/* ============================================================
+Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
+============================================================ */
+.case-study-img {
+    filter: grayscale(100%) contrast(1.05);
+    transition: all 0.5s ease;
+}
+.project-case-card:hover .case-study-img {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.03);
+}
+
+.hero-case-detail {
+    padding: 140px 0 50px;
+    background: #f8f8f8;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.badge-detail {
+    background: #178bb9;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-size: 0.7rem;
+    padding: 6px 20px;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.hero-case-detail h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.divider-detail {
+    width: 60px;
+    height: 4px;
+    background: #178bb9;
+    margin: 0 auto 20px;
+}
+
+.hero-desc {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.05rem;
+    color: #555;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.section-carousel {
+    padding: 40px 0 30px;
+    background: #fff;
+}
+
+.carousel-inner {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.section-tech-stack {
+    background: #fff;
+}
+
+.tech-stack-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    padding-top: 26px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.case-tech-row {
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 30px;
+}
+
+.tech-item img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.35s ease;
+}
+
+.tech-item:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: translateY(-4px) scale(1.08);
+}
+
+.tech-item span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.section-case-content {
+    padding: 40px 0 80px;
+    background: #fff;
+}
+
+.section-title-case {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.divider-case {
+    width: 60px;
+    height: 4px;
+    background: #178bb9;
+    margin: 0 auto 40px;
+}
+
+.case-block {
+    margin-bottom: 32px;
+}
+
+.case-block-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #178bb9;
+    margin-bottom: 8px;
+}
+
+.case-block-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    margin: 0;
+}
+
+.case-actions-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.case-actions-detail .btn-jd-view-all,
+.case-actions-detail .btn-jd-source {
+    flex: 0 1 auto;
+    min-width: 140px;
+    max-width: 220px;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+/* ---- Responsif Gabungan ---- */
+@media (max-width: 768px) {
+    .hero-case, .hero-case-detail {
+        padding: 120px 0 30px;
+    }
+    
+    .hero-case h1, .hero-case-detail h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-case p, .hero-desc {
+        font-size: 0.95rem;
+        padding: 0 16px;
+    }
+    
+    .case-list { padding: 50px 0; }
+    
+    .tech-case-card {
+        padding: 25px;
+        margin-bottom: 16px;
+    }
+    
+    .card-title { font-size: 1.15rem; }
+    .card-desc { font-size: 0.9rem; }
+    
+    .tech-item img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .case-actions-detail {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .case-actions-detail .btn-jd-view-all,
+    .case-actions-detail .btn-jd-source {
+        flex: 1 1 auto;
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-item img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .card-desc { font-size: 0.85rem; }
+    
+    .tech-tag {
+        font-size: 0.55rem;
+        padding: 3px 8px;
+    }
+}       

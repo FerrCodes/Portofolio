@@ -155,6 +155,83 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 
 .overlay.active { opacity: 1; visibility: visible; }
 
+/* ===== DROPDOWN DI SIDE PANEL ===== */
+.panel-links .dropdown-li {
+    position: relative;
+    list-style: none;
+}
+
+.panel-links .dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 6px 0;
+}
+
+.panel-links .dropdown-toggle:hover {
+    color: #178bb9;
+}
+
+.panel-links .dropdown-toggle i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+}
+
+.panel-links .dropdown-toggle.open i {
+    transform: rotate(180deg);
+}
+
+/* ---- Dropdown Menu ---- */
+.dropdown-menu-custom {
+    max-height: 0;
+    overflow: hidden;
+    list-style: none;
+    padding: 0 0 0 20px;
+    margin: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    opacity: 0;
+    border-left: 2px solid transparent;
+}
+
+.dropdown-menu-custom.open {
+    max-height: 300px;
+    opacity: 1;
+    padding: 8px 0 8px 20px;
+    border-left-color: #178bb9;
+}
+
+.dropdown-menu-custom li {
+    margin-bottom: 8px;
+}
+
+.dropdown-menu-custom li:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-menu-custom a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 4px 0;
+}
+
+.dropdown-menu-custom a:hover {
+    color: #178bb9;
+    transform: translateX(6px);
+}
+
 /* =========================================
    4. HERO SECTION (PURE TYPOGRAPHIC)
 ========================================= */
@@ -1076,6 +1153,147 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
         opacity: 1;
         transform: translateY(0);
         margin-top: 20px;
+    }
+}
+
+/* ============================================================
+   SOCIAL MEDIA SECTION
+   ============================================================ */
+.social-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 30px 20px 24px;
+    background: #fff;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.social-card:hover {
+    border-color: #178bb9;
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(23, 139, 185, 0.12);
+}
+
+.social-card img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
+}
+
+.social-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.08);
+}
+
+.social-card span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.social-card:hover span {
+    color: #178bb9;
+}
+
+.social-card small {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.social-card:hover small {
+    color: #666;
+}
+
+/* ---- Warna Hover Khusus per Platform (opsional) ---- */
+.social-card[href*="github"]:hover {
+    border-color: #333;
+}
+.social-card[href*="instagram"]:hover {
+    border-color: #E4405F;
+}
+.social-card[href*="linkedin"]:hover {
+    border-color: #0A66C2;
+}
+.social-card[href*="youtube"]:hover {
+    border-color: #FF0000;
+}
+.social-card[href*="twitter"]:hover {
+    border-color: #1DA1F2;
+}
+.social-card[href*="discord"]:hover {
+    border-color: #5865F2;
+}
+
+/* ---- Responsive Mobile ---- */
+@media (max-width: 768px) {
+    .social-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        max-width: 500px;
+    }
+
+    .social-card {
+        padding: 22px 14px 18px;
+    }
+
+    .social-card img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .social-card span {
+        font-size: 0.8rem;
+    }
+
+    .social-card small {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .social-card {
+        padding: 18px 12px 14px;
+    }
+
+    .social-card img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .social-card span {
+        font-size: 0.75rem;
+    }
+
+    .social-card small {
+        font-size: 0.6rem;
     }
 }
 
