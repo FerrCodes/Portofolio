@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Studi Kasus - Personal Branding Landing Page" />
-    <title>Studi Kasus: Personal Branding</title>
+    <title>Studi Kasus: Journal App</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -53,10 +53,11 @@
     <header class="hero-case-detail">
         <div class="container text-center">
             <span class="badge-detail">STUDI KASUS</span>
-            <h1>Personal Branding</h1>
+            <h1>Journal App</h1>
             <div class="divider-detail"></div>
             <p class="hero-desc">
-                Landing page modern untuk persiapan memulai karir sebagai <strong>freelance web developer</strong>.
+                Aplikasi jurnal harian berbasis web modern dengan dukungan multi-bahasa (ID/EN), 
+                tracking mood visual, export PDF, dan keamanan database tingkat lanjut menggunakan Supabase RLS.
             </p>
         </div>
     </header>
@@ -71,19 +72,27 @@
                     <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../assets/images/case-study/personal-branding/Screenshot (205).png" class="d-block w-100" alt="Personal Branding - Halaman Utama" loading="lazy" />
+                                <img src="../assets/images/case-study/journalApp/Screenshot (208).png" class="d-block w-100" alt="Personal Branding - Halaman Utama" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/personal-branding/Screenshot (207).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/journalApp/Screenshot (209).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/personal-branding/Screenshot (206).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/journalApp/Screenshot (210).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/case-study/journalApp/Screenshot (211).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/case-study/journalApp/Screenshot (214).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
                             </div>
                         </div>
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
                             <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4"></button>
                         </div>
 
                     </div>
@@ -102,24 +111,24 @@
                     <h3 class="tech-stack-title text-center">Tech Stack</h3>
                     <div class="case-tech-row justify-content-center">
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" alt="Astro" />
-                            <span>Astro</span>
-                        </div>
-                        <div class="tech-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" />
-                            <span>TypeScript</span>
+                            <span>Typescript</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
                             <span>React</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" />
+                        <div class="tech-item">   
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
                             <span>Tailwind</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg" alt="Framer Motion" />
-                            <span>Framer Motion</span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
+                            <span>Supabase</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" />
+                            <span>Vercel</span>
                         </div>
                     </div>
                 </div>
@@ -142,11 +151,13 @@
                     <div class="case-block">
                         <h4 class="case-block-title">1. Masalah</h4>
                         <p class="case-block-text">
-                            <strong>Masalah Awal:</strong> Karena ingin mencoba menjadi Freelance dan menjual jasa bisa membuat Web dan Memperbaiki masalah kode, 
-                            tapi saya belum memiliki Web atau Landing Page untuk menunjukan kepada klien jika saya bisa menunjukan saya bisa membuat Web atau memperbaiki kode dan perfoma Website.<br>
-                            <strong>Keputusan:</strong> Saya belum memiliki pengalaman membuat Landing Page yang lebih bagus, modern, dan bahkan belum pernah memakai Tech Stack (Tumpukan Teknologi) 
-                            yang modern, jadi saya memutuskan mencoba membuat Personal Branding dengan menggunakan Tech Stack yang modern seperti sekarang yaitu Astro, Typescript, React, Tailwind, Framer Motion, 
-                            Karena saya tahu Tech Stack yang dipakai itu memberikan kesan "Premium" tanpa mengorbankan performa.
+                            <strong>Masalah Awal:</strong> Saya berfikiran untuk membuat aplikasi membuat web app Jurnal tapi dengan Fitur upload foto, ganti bahasa, kalender, statistik, favorit dan arsip dan export ke PDF.
+                            Karena saya belum tahu teknologi apa yang akan di gunakan jadi saya memakai Typescript untuk bahasa pemogramannya untuk membuat projek, struktur, konsep dan UI nya memakai Tailwind dan beberapa komponen 
+                            dari React juga.<br>
+                            <strong>Keputusan:</strong> Saya memilih Tech Stack (Tumpukan Teknologi) nya yaitu Typescript, React, Tailwind, Supabase dan Vercel untuk deploy dengan tujuan projek nya karena 
+                            saya ingin mempunyai projek Tech Stack modern, jadi dengan keputusan saya itu untuk memilih empat Tech Stack nya, dengan proses membuat projek dan juga proses belajar ekosistem dan 
+                            dan Tipe data yang tidak boleh sembarang di Typescript saat mencoba bereksperimen waktu membuat tipe data sendiri dengan sesuai yang sudah ada. Dan untuk UI dan desain lainnya saya pilih 
+                            Tailwind CSS karena mudah untuk di Styling di baris kode nya dan untuk Icon saya memilih lucide.dev untuk icon modern projek ini.
                         </p>
                     </div>
 
@@ -160,7 +171,15 @@
                         <div class="case-sub-block">
                             <h5 class="case-sub-title">2.1 Kebutuhan</h5>
                             <p class="case-block-text">
-                                Kecepatan & SEO, Interaktivitas, Styling, Hosting, Form Handling
+                                <strong>•</strong> Implementasi multi-bahasa dilakukan setelah aplikasi hampir selesai sebagai tantangan teknis untuk memastikan skalabilitas kode.<br>
+                                <strong>•</strong> Mempercepat pengembangan UI responsif dan konsistensi desain antara mode terang/gelap.<br>
+                                <strong>•</strong> Memilih BaaS ini karena Row Level Security (RLS)-nya memungkinkan saya membuat sistem multi-user yang aman tanpa perlu setup backend server manual. Fitur Storage-nya juga sangat membantu untuk upload foto jurnal.<br>
+                                <strong>•</strong> Web app harus tetap berjalan dan stabil<br>
+                                <strong>•</strong> Bisa diakses di desktop dan mobile (responsive)<br>
+                                <strong>•</strong> Ingin memiliki versi APK native<br>
+                                <strong>•</strong> Proses development tidak boleh terlalu rumit<br>
+
+
                             </p>
                         </div>
 
@@ -170,9 +189,16 @@
                         <div class="case-sub-block">
                             <h5 class="case-sub-title">2.2 Pilihan Stack</h5>
                             <p class="case-block-text">
-                                Astro untuk static site generation, 
-                                TypeScript untuk type safety, React untuk komponen interaktif, Tailwind untuk styling cepat, 
-                                dan Framer Motion untuk animasi halus.
+                                <strong>•</strong> React + TypeScript untuk UI & type safety.<br>
+                                <strong>•</strong> Vite untuk Build tool super cepat<br>
+                                <strong>•</strong> Tailwind CSS untuk Styling cepat & konsisten<br>
+                                <strong>•</strong> Supabase	Database, autentikasi, realtime<br>
+                                <strong>•</strong> date-fns untuk Manipulasi tanggal<br>
+                                <strong>•</strong> sonner untuk Toast notification modern<br>
+                                <strong>•</strong> lucide-react	Icon library<br>
+                                <strong>•</strong> react-toastify Legacy toast (diganti ke sonner)<br>
+                                <strong>•</strong> react-router-dom	untuk Routing halaman<br>
+                                <strong>•</strong> recharts	untuk Grafik statistik<br>
                             </p>
                         </div>
 
@@ -182,11 +208,10 @@
                         <div class="case-sub-block">
                             <h5 class="case-sub-title">2.3 Alasan Utama</h5>
                             <p class="case-block-text">
-                                <strong>• Astro:</strong> Static Site Generation (SSG) bawaan membuat website sangat cepat dan ramah SEO – penting agar klien mudah menemukan website di Google.<br>
-                                <strong>• React + Framer Motion:</strong> Untuk komponen interaktif (marquee draggable, lightbox zoom, mobile menu) – memberikan kesan "premium" tanpa mengorbankan performa.<br>
-                                <strong>• Tailwind CSS:</strong> Memungkinkan desain brutalis/industrial dengan cepat dan konsisten di semua section.<br>
-                                <strong>• Vercel (sementara):</strong> Untuk sementara hosting ke Vercel untuk bisa lihat oleh publik atau orang lain.<br>
-                                <strong>• Formspree:</strong> Tanpa backend, form kontak langsung mengirim email ke saya – solusi paling simpel untuk MVP.
+                                <strong>• Tetap di Web:</strong> Untuk sementara proses jadinya projek ini di Web, karena untuk dibuat versi APK nya ada masalah konflik pada Library<br>
+                                <strong>• Sonner > react-toastify:</strong> Lebih modern, lebih ringan (7KB vs 20KB), rich colors, expandable.<br>
+                                <strong>• PrivateRoute:</strong> Proteksi halaman agar user harus login dulu.<br>
+                                <strong>• Activity Logs:</strong> Mencatat aktivitas user (login, logout, create, update, delete) langsung dari frontend ke Supabase.<br>
                             </p>
                         </div>
                     </div>
@@ -198,10 +223,23 @@
                         <h4 class="case-block-title">3. Kendala Teknis</h4>
 
                         <p class="case-block-text">
-                            <strong>• Integrasi Astro + React State:</strong> Kesulitan awal saat membuat Hamburger Menu. Script inline di .astro gagal berkomunikasi dengan state React di .tsx karena perbedaan lifecycle hydration. Solusinya: 
-                            Memindahkan logika toggle sepenuhnya ke dalam React component dan menggunakan global event listener yang robust.<br>
-                            <strong>• Responsivitas Tipografi Masif:</strong> Headline text-9xl terlihat gagah di desktop tapi hancur/terpotong di mobile. Butuh iterasi berkali-kali menyesuaikan clamp(), line-height, dan padding container agar tetap "bold" tapi aman di semua viewport.<br>
-                            <strong>• TypeScript Strictness di file .astro:</strong> Error atribut SVG (strokeLinecap vs stroke-linecap) karena perbedaan standar JSX dan HTML native. Ini memaksa kita untuk lebih teliti membedakan konteks file .tsx dan .astro.
+                            <strong>• React Native + Supabase Tidak Kompatibel:</strong> Error: Cannot assign to property 'protocol' which has only a getter
+                                    Penyebab: Supabase SDK versi 2.39+ menggunakan module events yang tidak ada di React Native.
+                                    Solusi: Downgrade ke Supabase SDK 2.38.4 + polyfill events, tapi tetap bermasalah. Akhirnya memutuskan kembali ke web.<br>
+                            <strong>• Timezone Bug di Kalender:</strong> Error: Tanggal di kalender salah karena toISOString() mengubah waktu ke UTC.
+                                    Solusi: Pakai date-fns dengan format lokal 'yyyy-MM-dd'.<br>
+                            <strong>• Text Overflow di Mobile:</strong> Error: Judul dan konten jurnal panjang melebar ke kanan di layar kecil.
+                                    Solusi: Pakai class truncate di Tailwind.<br>
+                            <strong>• Dropdown Profil di Sidebar Tidak Muncul Saat Collapsed:</strong> Error: Avatar di sidebar tidak bisa diklik saat sidebar dicuitkan.
+                                    Solusi: Pindahkan dropdown ke luar sidebar dengan position: fixed.<br>
+                            <strong>• ESLint Warning "setState in useEffect":</strong> Error: Calling setState synchronously within an effect can trigger cascading renders
+                                    Solusi: Tambahkan // eslint-disable-next-line atau pakai useCallback.<br>
+                            <strong>• Toast Notifikasi Tidak Update:</strong> Error: Terakhir Login tidak berubah setelah login ulang.
+                                    Penyebab: Data diambil dari loginLogs[0] (yang pertama/terlama), bukan yang terbaru.
+                                    Solusi: Ambil loginLogs[loginLogs.length - 1] (yang terakhir).<br>
+                            <strong>• Trigger Login di Supabase Gagal:</strong> Error: Login gagal setelah buat trigger di auth.users.
+                                    Penyebab: Supabase membatasi akses ke schema auth. Trigger tidak bisa insert ke activity_logs karena RLS.
+                                    Solusi: Hapus trigger, pindahkan logika insert ke frontend (supabase.from('activity_logs').insert()).<br>
                         </p>
                         <!-- Gambar Error / Kode 
                         <div class="case-image-placeholder">
@@ -231,9 +269,9 @@
                     <div class="case-block">
                         <h4 class="case-block-title">4. Solusi</h4>
                         <p class="case-block-text">
-                            <strong>• Modular Component Architecture:</strong> Memecah UI menjadi komponen kecil (FadeIn, ProjectCard, MobileMenu, DraggableMarquee). Ini membuat kode maintainable dan reusable.<br>
-                            <strong>• Hybrid Contact Strategy:</strong> Menggabungkan Formspree (untuk formalitas/email) + WhatsApp Direct Link (untuk konversi cepat). Ini menyelesaikan masalah "friction" klien yang malas isi form panjang.<br>
-                            <strong>• Custom Favicon & Meta Tags:</strong> Membuat favicon SVG manual dengan gradient biru premium dan melengkapi Open Graph tags. Ini menyelesaikan masalah "first impression" saat link dibagikan di sosmed.<br>
+                            <strong>• Kembali ke Web:</strong> Memang selalu error saat menjalan versi APK nya dengan menggunakan React Native bahkan sampai mencoba Expo dan CLI dan hasilnya 
+                            tetap saja error di Library nya bahkan Konflik selalu jika versi Librarynya terbaru atau lama bahkan ada yang tertimpa, jadi memutuskan di Web saja untuk memperbaiki segala yang masih kurang. 
+                            Jadi saya tidak memutuskan memaksa ke membuat versi APK nya.<br>
                         </p>
                     </div>
 
@@ -241,16 +279,19 @@
                     <div class="case-block">
                         <h4 class="case-block-title">5. Pelajaran yang Didapat</h4>
                         <p class="case-block-text">
-                            <strong>Kontrol Penuh Itu Penting: Sebagai developer, kita harus paham setiap baris kode yang kita tulis. Jangan asal copy-paste solusi AI tanpa mengerti why dan how-nya. Insiden "Header yang diubah-ubah" mengajarkan pentingnya ownership atas kode sendiri.</strong>
+                            <strong>Terburu-buru ke React Native Tanpa Cek Kompatibilitas Library: Supabase SDK versi terbaru TIDAK kompatibel dengan React Native CLI. 
+                                Seharusnya dari awal saya cek dulu dokumentasi atau informasi yang jelas dengan sebelum memutuskan membuat versi APK nya...
+                                tapi saya tahu waktu itu memang bersamaan dengan Proses terjun langsung belajar ekosistem React Native, Expo dan CLI, jadinya saya 
+                                3 hari terbuang untuk hal ini dan sampai Burnout diwaktu itu untuk mencoba berbagai cara yang saya tahu dan bisa.</strong>
                         </p>
                     </div>
 
                     <!-- ===== TOMBOL AKSI ===== -->
                     <div class="case-actions-detail">
-                        <a href="https://studio-ferrcodes.vercel.app/" target="_blank" class="btn-jd-view-all">
+                        <a href="https://journal-khaki-zeta.vercel.app/" target="_blank" class="btn-jd-view-all">
                             <i class="fas fa-arrow-up-right-from-square me-2"></i>Lihat Hasil
                         </a>
-                        <a href="https://github.com/FerrCodes/Studio-Ferrcodes" target="_blank" class="btn-jd-source">
+                        <a href="https://github.com/FerrCodes/Journal" target="_blank" class="btn-jd-source">
                             <i class="fab fa-github me-2"></i>Source Code
                         </a>
                     </div>
