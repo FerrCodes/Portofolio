@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Studi Kasus - Personal Branding Landing Page" />
-    <title>Studi Kasus: Personal Branding</title>
+    <meta name="description" content="Studi Kasus - Face Recognition" />
+    <title>Studi Kasus: Face Recognition</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -53,10 +53,11 @@
     <header class="hero-case-detail">
         <div class="container text-center">
             <span class="badge-detail">STUDI KASUS</span>
-            <h1>Personal Branding</h1>
+            <h1>Face Recognition</h1>
             <div class="divider-detail"></div>
             <p class="hero-desc">
-                Landing page modern untuk persiapan memulai karir sebagai <strong>freelance web developer</strong>.
+                Sistem pengenalan wajah berbasis web yang menerima foto dari smartphone, 
+                memprosesnya secara online, dan menghasilkan laporan dalam format Excel.
             </p>
         </div>
     </header>
@@ -71,21 +72,24 @@
                     <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../assets/images/case-study/personal-branding/Screenshot (205).png" class="d-block w-100" alt="Personal Branding - Halaman Utama" loading="lazy" />
+                                <img src="../assets/images/case-study/faceRecognition/Screenshot (215).png" class="d-block w-100" alt="Personal Branding - Halaman Utama" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/personal-branding/Screenshot (207).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/faceRecognition/Screenshot (217).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/personal-branding/Screenshot (206).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/faceRecognition/Screenshot (218).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/case-study/faceRecognition/Screenshot (219).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
                             </div>
                         </div>
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
                             <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -101,25 +105,17 @@
                 <div class="col-lg-10">
                     <h3 class="tech-stack-title text-center">Tech Stack</h3>
                     <div class="case-tech-row justify-content-center">
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" alt="Astro" />
-                            <span>Astro</span>
+                        <div class="tech-item">          
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                            <span>Python</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" />
-                            <span>TypeScript</span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" />
+                            <span>OpenCV</span>
                         </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
-                            <span>React</span>
-                        </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" />
-                            <span>Tailwind</span>
-                        </div>
-                        <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg" alt="Framer Motion" />
-                            <span>Framer Motion</span>
+                        <div class="tech-item">       
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg" />
+                            <span>Streamlit</span>
                         </div>
                     </div>
                 </div>
@@ -142,11 +138,19 @@
                     <div class="case-block">
                         <h4 class="case-block-title">1. Masalah</h4>
                         <p class="case-block-text">
-                            <strong>Masalah Awal:</strong> Karena ingin mencoba menjadi Freelance dan menjual jasa bisa membuat Web dan Memperbaiki masalah kode, 
-                            tapi saya belum memiliki Web atau Landing Page untuk menunjukan kepada klien jika saya bisa menunjukan saya bisa membuat Web atau memperbaiki kode dan perfoma Website.<br>
-                            <strong>Keputusan:</strong> Saya belum memiliki pengalaman membuat Landing Page yang lebih bagus, modern, dan bahkan belum pernah memakai Tech Stack (Tumpukan Teknologi) 
-                            yang modern, jadi saya memutuskan mencoba membuat Personal Branding dengan menggunakan Tech Stack yang modern seperti sekarang yaitu Astro, Typescript, React, Tailwind, Framer Motion, 
-                            Karena saya tahu Tech Stack yang dipakai itu memberikan kesan "Premium" tanpa mengorbankan performa.
+                            <strong>Masalah Awal:</strong> Guru jurusan saya menyuruh membuat projek Machine Learning untuk mengenali wajah dengan cara wajah seseorang menggunakan 
+                            Hp, kemudian hasil fotonya di pindahkan ke PC untuk di deteksi lalu nanti hasilnya terbentuk file .xlsx (Excel)<br>
+                            <strong>Keputusan:</strong> Saya membuat konsep alur nya seperti ini:
+                            <ul class="case-list-flow">
+                                <li>📱 Smartphone (ambil foto)</li>
+                                <li>⬆️ Upload ke Web App (Streamlit)</li>
+                                <li>🧠 DeepFace + FaceNet (deteksi &amp; perbandingan)</li>
+                                <li>📊 Hasil: <strong>DIKENAL</strong> / <strong>TIDAK DIKENAL</strong></li>
+                                <li>📄 Export ke Excel (Batch Mode)</li>
+                                <li>✅ Selesai</li>
+                            </ul>
+                            Saya menggunakan DeepFace sebagai library utama karena lebih mudah diinstal dan sudah menyediakan model FaceNet yang siap pakai.<br>
+                            Saya juga memilih Streamlit untuk membuat antarmuka web agar proyek bisa diakses publik.
                         </p>
                     </div>
 
@@ -160,7 +164,11 @@
                         <div class="case-sub-block">
                             <h5 class="case-sub-title">2.1 Kebutuhan</h5>
                             <p class="case-block-text">
-                                Kecepatan & SEO, Interaktivitas, Styling, Hosting, Form Handling
+                                <strong>•</strong> Deteksi wajah akurat, menggunakan model deep learning yang sudah teruji.<br>
+                                <strong>•</strong> Batch processing, bisa memproses banyak foto sekaligus.<br>
+                                <strong>•</strong> Export ke Excel, hasil deteksi harus bisa diunduh sebagai laporan.<br>
+                                <strong>•</strong> Web app publik, bisa diakses tanpa instalasi.<br>
+                                <strong>•</strong> Multi-mode, single upload untuk testing, batch upload untuk produksi.<br>
                             </p>
                         </div>
 
@@ -170,9 +178,16 @@
                         <div class="case-sub-block">
                             <h5 class="case-sub-title">2.2 Pilihan Stack</h5>
                             <p class="case-block-text">
-                                Astro untuk static site generation, 
-                                TypeScript untuk type safety, React untuk komponen interaktif, Tailwind untuk styling cepat, 
-                                dan Framer Motion untuk animasi halus.
+                                <strong>•</strong> Python 3.11, Bahasa pemrograman utama.<br>
+                                <strong>•</strong> DeepFace,	Library face recognition dengan model FaceNet.<br>
+                                <strong>•</strong> Streamlit, Framework web untuk antarmuka.<br>
+                                <strong>•</strong> Pandas & Openpyxl, Ekspor hasil ke Excel.<br>
+                                <strong>•</strong> OpenCV, Pemrosesan gambar.<br>
+                                <strong>•</strong> sonner untuk Toast notification modern.<br>
+                                <strong>•</strong> lucide-react	Icon library.<br>
+                                <strong>•</strong> react-toastify Legacy toast (diganti ke sonner).<br>
+                                <strong>•</strong> react-router-dom	untuk Routing halaman.<br>
+                                <strong>•</strong> recharts	untuk Grafik statistik.<br>
                             </p>
                         </div>
 
@@ -182,11 +197,9 @@
                         <div class="case-sub-block">
                             <h5 class="case-sub-title">2.3 Alasan Utama</h5>
                             <p class="case-block-text">
-                                <strong>• Astro:</strong> Static Site Generation (SSG) bawaan membuat website sangat cepat dan ramah SEO – penting agar klien mudah menemukan website di Google.<br>
-                                <strong>• React + Framer Motion:</strong> Untuk komponen interaktif (marquee draggable, lightbox zoom, mobile menu) – memberikan kesan "premium" tanpa mengorbankan performa.<br>
-                                <strong>• Tailwind CSS:</strong> Memungkinkan desain brutalis/industrial dengan cepat dan konsisten di semua section.<br>
-                                <strong>• Vercel (sementara):</strong> Untuk sementara hosting ke Vercel untuk bisa lihat oleh publik atau orang lain.<br>
-                                <strong>• Formspree:</strong> Tanpa backend, form kontak langsung mengirim email ke saya – solusi paling simpel untuk MVP.
+                                <strong>• DeepFace > face_recognition:</strong> Tidak perlu install dlib yang bermasalah di Windows, lebih mudah di-deploy ke cloud.<br>
+                                <strong>• Streamlit > Flask:</strong> Lebih cepat untuk membuat antarmuka web, tidak perlu HTML, CSS, JavaScript.<br>
+                                <strong>• FaceNet > Model lain:</strong> Akurasi tinggi dan sudah tersedia di DeepFace.<br>
                             </p>
                         </div>
                     </div>
@@ -198,11 +211,42 @@
                         <h4 class="case-block-title">3. Kendala Teknis</h4>
 
                         <p class="case-block-text">
-                            <strong>• Integrasi Astro + React State:</strong> Kesulitan awal saat membuat Hamburger Menu. Script inline di .astro gagal berkomunikasi dengan state React di .tsx karena perbedaan lifecycle hydration. Solusinya: 
-                            Memindahkan logika toggle sepenuhnya ke dalam React component dan menggunakan global event listener yang robust.<br>
-                            <strong>• Responsivitas Tipografi Masif:</strong> Headline text-9xl terlihat gagah di desktop tapi hancur/terpotong di mobile. Butuh iterasi berkali-kali menyesuaikan clamp(), line-height, dan padding container agar tetap "bold" tapi aman di semua viewport.<br>
-                            <strong>• TypeScript Strictness di file .astro:</strong> Error atribut SVG (strokeLinecap vs stroke-linecap) karena perbedaan standar JSX dan HTML native. Ini memaksa kita untuk lebih teliti membedakan konteks file .tsx dan .astro.
-                        </p>
+                            <strong>• Python 3.14 tidak kompatibel dengan dlib:</strong><br>
+                                    - Penyebab: Python 3.14 belum didukung library<br>
+                                    - Solusi: Downgrade ke Python 3.11<br>
+
+                            <strong>• Error tf-keras tidak ditemukan:</strong><br>
+                                    - Penyebab: TensorFlow 2.21+ butuh tf-keras terpisah<br>
+                                    - Solusi: pip install tf-keras<br>
+
+                            <strong>• Error openpyxl tidak ditemukan:</strong><br>
+                                    = Penyebab: Pandas butuh engine untuk Excel
+                                    - Solusi: pip install openpyxl<br>
+
+                            <strong>• Error libGL.so.1 di Streamlit Cloud:</strong><br>
+                                    - Penyebab: OpenCV butuh library sistem di cloud<br>
+                                    - Solusi: Hapus packages.txt, pakai opencv-python-headless<br>
+
+                            <strong>• DeepFace tidak bisa diimport di cloud:</strong><br>
+                                    - Penyebab: Versi tidak kompatibel<br>
+                                    - Solusi: Gunakan versi stabil deepface==0.0.79<br>
+
+                            <strong>• Foto tidak terdeteksi wajahnya:</strong><br>
+                                    - Penyebab: Deteksi wajah terlalu ketat<br>
+                                    - Solusi: Tambahkan enforce_detection=False<br>
+
+                            <strong>• Batch processing lambat:</strong><br>
+                                    - Penyebab: Render ulang halaman terus-menerus<br>
+                                    - Solusi: Gunakan st.empty() dan tampilkan hasil setelah selesai<br>
+
+                            <strong>• Scroll patah-patah:</strong><br>
+                                    - Penyebab: Gambar besar dimuat di setiap iterasi<br>
+                                    - Solusi: Resize gambar dengan thumbnail()<br>
+                        </p><br>
+                        <strong>Kendala Terbesar: libGL.so.1 error di Streamlit Cloud</strong><br>
+                                - Penyebab: OpenCV membutuhkan library sistem libGL yang tidak tersedia di environment cloud.<br>
+                                - Solusi: Hapus packages.txt, gunakan opencv-python-headless yang tidak membutuhkan libGL<br>
+                                Butuh 3 kali percobaan deploy sampai berhasil.
                         <!-- Gambar Error / Kode 
                         <div class="case-image-placeholder">
                             <img 
@@ -231,9 +275,11 @@
                     <div class="case-block">
                         <h4 class="case-block-title">4. Solusi</h4>
                         <p class="case-block-text">
-                            <strong>• Modular Component Architecture:</strong> Memecah UI menjadi komponen kecil (FadeIn, ProjectCard, MobileMenu, DraggableMarquee). Ini membuat kode maintainable dan reusable.<br>
-                            <strong>• Hybrid Contact Strategy:</strong> Menggabungkan Formspree (untuk formalitas/email) + WhatsApp Direct Link (untuk konversi cepat). Ini menyelesaikan masalah "friction" klien yang malas isi form panjang.<br>
-                            <strong>• Custom Favicon & Meta Tags:</strong> Membuat favicon SVG manual dengan gradient biru premium dan melengkapi Open Graph tags. Ini menyelesaikan masalah "first impression" saat link dibagikan di sosmed.<br>
+                            <strong>Untuk menyelesaikan proyek ini:</strong> Saya mengganti library utama dari face_recognition ke DeepFace karena lebih mudah diinstal dan tidak membutuhkan dlib yang bermasalah di Windows. 
+                            Untuk antarmuka, saya memilih Streamlit agar bisa membuat web app dengan cepat tanpa harus menulis HTML, CSS, atau JavaScript. 
+                            Sistem dirancang dengan dua mode: Single Upload untuk testing cepat dan Batch Upload & Export untuk memproses banyak foto sekaligus dengan progress bar, tabel hasil, dan tombol download Excel. 
+                            Performa juga dioptimalkan dengan meresize gambar sebelum ditampilkan dan menampilkan hasil batch setelah semua foto selesai diproses, sehingga scrolling terasa halus. 
+                            Setelah beberapa kali percobaan deploy dan perbaikan konfigurasi, akhirnya aplikasi berhasil dideploy ke Streamlit Cloud dan bisa diakses publik dengan stabil.<br>
                         </p>
                     </div>
 
@@ -241,16 +287,17 @@
                     <div class="case-block">
                         <h4 class="case-block-title">5. Pelajaran yang Didapat</h4>
                         <p class="case-block-text">
-                            <strong>Kontrol Penuh Itu Penting: Sebagai developer, kita harus paham setiap baris kode yang kita tulis. Jangan asal copy-paste solusi AI tanpa mengerti why dan how-nya. Insiden "Header yang diubah-ubah" mengajarkan pentingnya ownership atas kode sendiri.</strong>
+                            <strong>Jangan Menyerah pada Error: Saya hampir menyerah ketika error libGL.so.1 muncul berkali-kali. 
+                            Tapi dengan mencoba pendekatan berbeda (hapus packages.txt, ganti versi OpenCV), akhirnya berhasil.</strong>
                         </p>
                     </div>
 
                     <!-- ===== TOMBOL AKSI ===== -->
                     <div class="case-actions-detail">
-                        <a href="https://studio-ferrcodes.vercel.app/" target="_blank" class="btn-jd-view-all">
+                        <a href="https://facerecognition-facial-recognition-system-learning.streamlit.app/" target="_blank" class="btn-jd-view-all">
                             <i class="fas fa-arrow-up-right-from-square me-2"></i>Lihat Hasil
                         </a>
-                        <a href="https://github.com/FerrCodes/Studio-Ferrcodes" target="_blank" class="btn-jd-source">
+                        <a href="https://github.com/FerrCodes/FaceRecognition" target="_blank" class="btn-jd-source">
                             <i class="fab fa-github me-2"></i>Source Code
                         </a>
                     </div>

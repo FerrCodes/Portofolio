@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Studi Kasus - Personal Branding Landing Page" />
+    <meta name="description" content="Studi Kasus - Jounal App" />
     <title>Studi Kasus: Journal App</title>
 
     <!-- Bootstrap 5 CSS -->
@@ -223,23 +223,36 @@
                         <h4 class="case-block-title">3. Kendala Teknis</h4>
 
                         <p class="case-block-text">
-                            <strong>• React Native + Supabase Tidak Kompatibel:</strong> Error: Cannot assign to property 'protocol' which has only a getter
-                                    Penyebab: Supabase SDK versi 2.39+ menggunakan module events yang tidak ada di React Native.
-                                    Solusi: Downgrade ke Supabase SDK 2.38.4 + polyfill events, tapi tetap bermasalah. Akhirnya memutuskan kembali ke web.<br>
-                            <strong>• Timezone Bug di Kalender:</strong> Error: Tanggal di kalender salah karena toISOString() mengubah waktu ke UTC.
-                                    Solusi: Pakai date-fns dengan format lokal 'yyyy-MM-dd'.<br>
-                            <strong>• Text Overflow di Mobile:</strong> Error: Judul dan konten jurnal panjang melebar ke kanan di layar kecil.
-                                    Solusi: Pakai class truncate di Tailwind.<br>
-                            <strong>• Dropdown Profil di Sidebar Tidak Muncul Saat Collapsed:</strong> Error: Avatar di sidebar tidak bisa diklik saat sidebar dicuitkan.
-                                    Solusi: Pindahkan dropdown ke luar sidebar dengan position: fixed.<br>
-                            <strong>• ESLint Warning "setState in useEffect":</strong> Error: Calling setState synchronously within an effect can trigger cascading renders
-                                    Solusi: Tambahkan // eslint-disable-next-line atau pakai useCallback.<br>
-                            <strong>• Toast Notifikasi Tidak Update:</strong> Error: Terakhir Login tidak berubah setelah login ulang.
-                                    Penyebab: Data diambil dari loginLogs[0] (yang pertama/terlama), bukan yang terbaru.
-                                    Solusi: Ambil loginLogs[loginLogs.length - 1] (yang terakhir).<br>
-                            <strong>• Trigger Login di Supabase Gagal:</strong> Error: Login gagal setelah buat trigger di auth.users.
-                                    Penyebab: Supabase membatasi akses ke schema auth. Trigger tidak bisa insert ke activity_logs karena RLS.
-                                    Solusi: Hapus trigger, pindahkan logika insert ke frontend (supabase.from('activity_logs').insert()).<br>
+                            <strong>• React Native + Supabase Tidak Kompatibel:</strong><br>
+                                    - Error: Cannot assign to property 'protocol' which has only a getter<br>
+                                    - Penyebab: Supabase SDK versi 2.39+ menggunakan module events yang tidak ada di React Native.<br>
+                                    - Solusi: Downgrade ke Supabase SDK 2.38.4 + polyfill events, tapi tetap bermasalah. Akhirnya memutuskan kembali ke web.<br>
+
+                            <strong>• Timezone Bug di Kalender:</strong><br>
+                                    - Error: Tanggal di kalender salah karena toISOString() mengubah waktu ke UTC.<br>
+                                    - Solusi: Pakai date-fns dengan format lokal 'yyyy-MM-dd'.<br>
+
+                            <strong>• Text Overflow di Mobile:</strong><br>
+                                    - Error: Judul dan konten jurnal panjang melebar ke kanan di layar kecil.<br>
+                                    - Solusi: Pakai class truncate di Tailwind.<br>
+
+                            <strong>• Dropdown Profil di Sidebar Tidak Muncul Saat Collapsed:</strong><br>
+                                    - Error: Avatar di sidebar tidak bisa diklik saat sidebar dicuitkan.<br>
+                                    - Solusi: Pindahkan dropdown ke luar sidebar dengan position: fixed.<br>
+
+                            <strong>• ESLint Warning "setState in useEffect":</strong><br>
+                                    - Error: Calling setState synchronously within an effect can trigger cascading renders<br>
+                                    - Solusi: Tambahkan // eslint-disable-next-line atau pakai useCallback.<br>
+
+                            <strong>• Toast Notifikasi Tidak Update:</strong><br>
+                                    - Error: Terakhir Login tidak berubah setelah login ulang.<br>
+                                    - Penyebab: Data diambil dari loginLogs[0] (yang pertama/terlama), bukan yang terbaru.<br>
+                                    - Solusi: Ambil loginLogs[loginLogs.length - 1] (yang terakhir).<br>
+
+                            <strong>• Trigger Login di Supabase Gagal:</strong><br>
+                                    - Error: Login gagal setelah buat trigger di auth.users.<br>
+                                    - Penyebab: Supabase membatasi akses ke schema auth. Trigger tidak bisa insert ke activity_logs karena RLS.<br>
+                                    - Solusi: Hapus trigger, pindahkan logika insert ke frontend (supabase.from('activity_logs').insert()).<br>
                         </p>
                         <!-- Gambar Error / Kode 
                         <div class="case-image-placeholder">
