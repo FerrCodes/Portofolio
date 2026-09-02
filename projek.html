@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (Modern) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
@@ -23,9 +25,14 @@
     <nav class="navbar-custom scrolled">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="index.html" class="brand-logo">FERI.</a>
-            <button class="hamburger-btn" id="menuToggle">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
+                <button class="hamburger-btn" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -89,7 +96,7 @@
             
                 <!-- Group 2: Backend & Database -->
                 <div class="skill-group-box">
-                    <h4 class="skill-group-label">BACKEND &amp; DB</h4>
+                    <h4 class="skill-group-label">BACKEND &amp; DATABASE</h4>
                     <div class="skill-grid-mini">
                         <div class="skill-item-mini">
                             <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP">
@@ -159,7 +166,7 @@
                         </div>
                     </div>
                     <p class="learning-note">
-                        <i class="fas fa-book-open me-2"></i> Sedang dalam proses pembelajaran
+                        <i class="fas fa-book-open me-2"></i> Proses sedang belajar dan eksplorasi teknologi modern
                     </p>
                 </div>
             
@@ -185,6 +192,7 @@
             <!-- FILTER KATEGORI -->
             <div class="project-filter-buttons">
                 <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="favorite">Favorit</button>
                 <button class="filter-btn" data-filter="web">Web App</button>
                 <button class="filter-btn" data-filter="landing">Landing Page</button>
                 <button class="filter-btn" data-filter="system">Sistem</button>
@@ -400,7 +408,7 @@
                 <!-- ==========================================================
                     🧸
                 ========================================================== -->
-                <div class="project-case-card favorite-project" data-category="web">
+                <div class="project-case-card favorite-project" data-category="favorite">
                     <div class="card-emoji">🧸</div>
                     <div class="case-badge">⭐ FAVORIT</div>
                     <div class="case-row">
@@ -626,7 +634,7 @@
             <!-- ==========================================================
                 Journal
             ========================================================== -->
-            <div class="project-case-card favorite-project" data-category="web">
+            <div class="project-case-card favorite-project" data-category="favorite">
                 <div class="case-badge">⭐ FAVORIT</div>
                 <div class="case-row">
                     <div class="case-img-col" onclick="openProjectModal('assets/images/projek/JournalApp.png', 'JournalAPP - Web Aplikasi Jurnal modern')">
@@ -683,6 +691,67 @@
                                 <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
                             </a>
                             <a href="https://github.com/FerrCodes/Journal" target="_blank" class="btn-jd-source">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================
+                Personal Branding
+            ========================================================== -->
+            <div class="project-case-card" data-category="landing">
+                <div class="case-row">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/Personal-Branding.png', 'Studio FerrCodes')">
+                        <img src="assets/images/projek/Personal-Branding.png" alt="Personal Branding" loading="lazy">
+                        <div class="img-overlay-hint">
+                            <i class="fas fa-expand"></i> Klik untuk preview
+                        </div>
+                    </div>
+                    <div class="case-info-col">
+                        <h3>Studio FerrCodes</h3>
+                        <div class="case-meta">
+                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>Freelance</span>
+                        </div>
+                        <p class="case-desc">
+                            Landing page ini adalah projek untuk memulai menjadi Freelance Web Developer, 
+                            dengan menawarkan jasa pembuatan website, landing page, dan design UI/UX.
+                        </p>
+                        <div class="case-features">
+                            <span class="feature-tag">UI/UX Design</span>
+                            <span class="feature-tag">Hybrid Agency</span>
+                            <span class="feature-tag">Personal Branding</span>
+                        </div>
+                        <div class="case-tech-row">
+                            <div class="tech-item">      
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" />
+                                <span>Astro</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                                <span>React</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                                <span>Typescript</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                                <span>Tailwind</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg" />
+                                <span>Framer Motion</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="https://studio-ferrcodes.vercel.app/" target="_blank" class="btn-jd-view-all">
+                                <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                            </a>
+                            <a href="https://github.com/FerrCodes/Studio-Ferrcodes" target="_blank" class="btn-jd-source">
                                 <i class="fab fa-github me-2"></i>Source Code
                             </a>
                         </div>

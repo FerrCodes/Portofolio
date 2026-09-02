@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../style2.css" />
@@ -23,9 +24,14 @@
     <nav class="navbar-custom scrolled">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="../index.html" class="brand-logo">FERI.</a>
-            <button class="hamburger-btn" id="menuToggle">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
+                <button class="hamburger-btn" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 

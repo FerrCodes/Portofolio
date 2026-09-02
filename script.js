@@ -114,18 +114,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // FILTER PROJEK (DI projek.html)
+    // FILTER PROJEK (DENGAN FAVORIT)
     // ============================================================
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-case-card');
+    
     if (filterButtons.length > 0 && projectCards.length > 0) {
         filterButtons.forEach(function(btn) {
             btn.addEventListener('click', function() {
                 const filter = btn.getAttribute('data-filter');
+                
                 filterButtons.forEach(function(b) { b.classList.remove('active'); });
                 btn.classList.add('active');
+            
                 projectCards.forEach(function(card) {
-                    const match = filter === 'all' || card.getAttribute('data-category') === filter;
+                    const category = card.getAttribute('data-category') || '';
+                    const categories = category.split(' '); // Pisahkan jika ada spasi (contoh: "web favorite")
+                    
+                    let match = false;
+                    if (filter === 'all') {
+                        match = true;
+                    } else if (filter === 'favorite') {
+                        match = categories.includes('favorite');
+                    } else {
+                        match = categories.includes(filter);
+                    }
+                
                     card.classList.toggle('is-hidden', !match);
                 });
             });
@@ -284,4 +298,53 @@ document.addEventListener('DOMContentLoaded', function() {
             window.closeProjectModal();
         }
     });
+
+    // ============================================================
+    // THEME TOGGLE - LUCIDE ICON
+    // ============================================================
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Inisialisasi Lucide Icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+    
+    if (themeToggle) {
+        // Cek preferensi dari localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            const icon = themeToggle.querySelector('.theme-icon');
+            if (icon) {
+                icon.setAttribute('data-lucide', 'sun');
+            }
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+    
+        // Event klik
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            
+            const icon = this.querySelector('.theme-icon');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'sun');
+                }
+            } else {
+                localStorage.setItem('theme', 'light');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'moon');
+                }
+            }
+        
+            // Refresh icon Lucide
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    }
 });

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../style2.css" />
@@ -24,9 +25,14 @@
     <nav class="navbar-custom scrolled">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="../index.html" class="brand-logo">FERI.</a>
-            <button class="hamburger-btn" id="menuToggle">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
+                <button class="hamburger-btn" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -72,16 +78,16 @@
                     <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../assets/images/case-study/faceRecognition/Screenshot (215).png" class="d-block w-100" alt="Personal Branding - Halaman Utama" loading="lazy" />
+                                <img src="../assets/images/case-study/faceRecognition/Screenshot (215).png" class="d-block w-100" alt="halaman beranda" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/faceRecognition/Screenshot (217).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/faceRecognition/Screenshot (217).png" class="d-block w-100" alt="halaman batch mode" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/faceRecognition/Screenshot (218).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/faceRecognition/Screenshot (218).png" class="d-block w-100" alt="halaman telah mendeteksi wajah" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/faceRecognition/Screenshot (219).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/faceRecognition/Screenshot (219).png" class="d-block w-100" alt="halaman hasil laporan" loading="lazy" />
                             </div>
                         </div>
                         <div class="carousel-indicators">

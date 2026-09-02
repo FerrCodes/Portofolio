@@ -271,6 +271,299 @@
 }
 
 /* ============================================================
+   CASE STUDY INDEX (index2.html) - DARK MODE FIX
+   ============================================================ */
+
+/* ---- Hero Case ---- */
+body.dark-mode .hero-case {
+    background: #121212 !important;
+    border-bottom-color: #2a2a2a !important;
+}
+
+body.dark-mode .hero-case h1 {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .hero-case .badge {
+    color: #178bb9 !important;
+    border-bottom-color: #178bb9 !important;
+}
+
+body.dark-mode .hero-case p {
+    color: #aaaaaa !important;
+}
+
+body.dark-mode .hero-case .divider {
+    background: #178bb9 !important;
+}
+
+/* ---- Tombol Baca Studi Kasus (Lingkaran + Teks) ---- */
+body.dark-mode .btn-read-case {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .btn-read-case .circle-arrow {
+    border-color: #aaaaaa !important;
+    background: transparent !important;
+}
+
+body.dark-mode .btn-read-case .circle-arrow i {
+    color: #aaaaaa !important;
+}
+
+/* Hover state */
+body.dark-mode .tech-case-card:hover .btn-read-case {
+    color: #178bb9 !important;
+}
+
+body.dark-mode .tech-case-card:hover .btn-read-case .circle-arrow {
+    border-color: #178bb9 !important;
+    background: #178bb9 !important;
+    box-shadow: 0 4px 16px rgba(23, 139, 185, 0.25) !important;
+}
+
+body.dark-mode .tech-case-card:hover .btn-read-case .circle-arrow i {
+    color: #ffffff !important;
+}
+
+/* ---- Kartu Studi Kasus (di index2.html) ---- */
+body.dark-mode .tech-case-card {
+    background: #1e1e1e !important;
+    border-color: #2a2a2a !important;
+}
+
+body.dark-mode .tech-case-card:hover {
+    border-color: #178bb9 !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .tech-case-card .card-title {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .tech-case-card .card-desc {
+    color: #aaaaaa !important;
+}
+
+/* ---- Favorite Highlight ---- */
+body.dark-mode .favorite-highlight {
+    background: #1a2530 !important;
+    border-color: #178bb9 !important;
+}
+
+body.dark-mode .favorite-highlight .card-title {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .favorite-highlight .card-desc {
+    color: #aaaaaa !important;
+}
+
+/* ---- Tag & Tahun ---- */
+body.dark-mode .tech-tag {
+    background: #2a2a2a !important;
+    color: #aaaaaa !important;
+}
+
+body.dark-mode .tag-new {
+    background: #0a2a3a !important;
+    color: #4db8e0 !important;
+}
+
+body.dark-mode .tag-fav {
+    background: #2a2510 !important;
+    color: #f5c842 !important;
+    border-color: #4a3f1a !important;
+}
+
+body.dark-mode .tag-ml {
+    background: #1a1530 !important;
+    color: #8b7fd6 !important;
+}
+
+body.dark-mode .tag-php {
+    background: #1a1a1a !important;
+    color: #aaaaaa !important;
+}
+
+body.dark-mode .tech-year {
+    color: #777777 !important;
+}
+
+/* ---- Tombol Kembali ---- */
+body.dark-mode .btn-back {
+    border-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .btn-back:hover {
+    background: #e0e0e0 !important;
+    color: #121212 !important;
+    border-color: #e0e0e0 !important;
+}
+
+/* ---- Back Wrap (garis pembatas) ---- */
+body.dark-mode .back-wrap {
+    border-top-color: #2a2a2a !important;
+}
+
+/* ============================================================
+   STUDI KASUS - DARK MODE (SEMUA HALAMAN)
+   ============================================================ */
+
+/* ---- Hero Case Detail (personal-branding.html) ---- */
+body.dark-mode .hero-case-detail {
+    background: #121212 !important;
+    border-bottom-color: #2a2a2a !important;
+}
+
+body.dark-mode .badge-detail {
+    color: #ffffff !important;
+    border-bottom-color: #178bb9 !important;
+}
+
+body.dark-mode .hero-case-detail h1 {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .hero-desc {
+    color: #aaaaaa !important;
+}
+
+body.dark-mode .divider-detail {
+    background: #178bb9 !important;
+}
+
+/* ---- Carousel (section-carousel) ---- */
+body.dark-mode .section-carousel {
+    background: #121212 !important;
+}
+
+body.dark-mode .carousel-inner {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ---- Tech Stack (section-tech-stack) ---- */
+body.dark-mode .section-tech-stack {
+    background: #121212 !important;
+}
+
+body.dark-mode .tech-stack-title {
+    color: #e0e0e0 !important;
+}
+
+/* ---- Case Content (section-case-content) ---- */
+body.dark-mode .section-case-content {
+    background: #121212 !important;
+}
+
+body.dark-mode .section-title-case {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .divider-case {
+    background: #178bb9 !important;
+}
+
+/* ---- Case Block (isi studi kasus) ---- */
+body.dark-mode .case-block {
+    background: transparent !important;
+}
+
+body.dark-mode .case-block-title {
+    color: #178bb9 !important;
+}
+
+body.dark-mode .case-block-text {
+    color: #cccccc !important;
+}
+
+body.dark-mode .case-block-text strong {
+    color: #e0e0e0 !important;
+}
+
+/* ---- Sub bagian (2.1, 2.2, 2.3) ---- */
+body.dark-mode .case-sub-title {
+    color: #4db8e0 !important;
+}
+
+body.dark-mode .case-divider {
+    border-top-color: #2a2a2a !important;
+}
+
+/* ---- Blok Kode ---- */
+body.dark-mode .code-block {
+    background: #0d0d0d !important;
+    border: 1px solid #2a2a2a !important;
+}
+
+body.dark-mode .code-block pre {
+    color: #d4d4d4 !important;
+}
+
+body.dark-mode .code-block code {
+    color: #d4d4d4 !important;
+}
+
+/* ---- Placeholder Gambar ---- */
+body.dark-mode .placeholder-box {
+    background: #1a1a1a !important;
+    border-color: #2a2a2a !important;
+    color: #777777 !important;
+}
+
+body.dark-mode .placeholder-box i {
+    color: #444444 !important;
+}
+
+body.dark-mode .placeholder-note {
+    color: #555555 !important;
+}
+
+/* ---- Caption Gambar ---- */
+body.dark-mode .image-caption {
+    color: #888888 !important;
+}
+
+/* ---- Tombol Aksi di Detail Case ---- */
+body.dark-mode .case-actions-detail {
+    border-top-color: #2a2a2a !important;
+}
+
+body.dark-mode .case-actions-detail .btn-jd-view-all {
+    background: #178bb9 !important;
+    border-color: #178bb9 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .case-actions-detail .btn-jd-view-all:hover {
+    background: #0f6f94 !important;
+    border-color: #0f6f94 !important;
+}
+
+body.dark-mode .case-actions-detail .btn-jd-source {
+    border-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .case-actions-detail .btn-jd-source:hover {
+    background: #e0e0e0 !important;
+    color: #121212 !important;
+}
+
+/* ---- List Alur (Face Recognition) ---- */
+body.dark-mode .case-list-flow li {
+    color: #cccccc !important;
+    border-bottom-color: #2a2a2a !important;
+}
+
+body.dark-mode .case-list-flow li::before {
+    color: #178bb9 !important;
+}
+
+/* ============================================================
    CASE STUDY DETAIL - SUB BAGIAN & KODE
    ============================================================ */
 

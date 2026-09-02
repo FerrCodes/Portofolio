@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Studi Kasus - Jounal App" />
+    <meta name="description" content="Studi Kasus - Journal App" />
     <title>Studi Kasus: Journal App</title>
 
     <!-- Bootstrap 5 CSS -->
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../style2.css" />
@@ -24,9 +25,14 @@
     <nav class="navbar-custom scrolled">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="../index.html" class="brand-logo">FERI.</a>
-            <button class="hamburger-btn" id="menuToggle">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
+                <button class="hamburger-btn" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -72,19 +78,19 @@
                     <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../assets/images/case-study/journalApp/Screenshot (208).png" class="d-block w-100" alt="Personal Branding - Halaman Utama" loading="lazy" />
+                                <img src="../assets/images/case-study/journalApp/Screenshot (208).png" class="d-block w-100" alt="Halaman login" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/journalApp/Screenshot (209).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/journalApp/Screenshot (209).png" class="d-block w-100" alt="Halaman dashboard" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/journalApp/Screenshot (210).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/journalApp/Screenshot (210).png" class="d-block w-100" alt="Halaman statistik" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/journalApp/Screenshot (211).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/journalApp/Screenshot (211).png" class="d-block w-100" alt="Halaman detail jurnal" loading="lazy" />
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/images/case-study/journalApp/Screenshot (214).png" class="d-block w-100" alt="Personal Branding - Tentang" loading="lazy" />
+                                <img src="../assets/images/case-study/journalApp/Screenshot (214).png" class="d-block w-100" alt="Halaman aktivitas" loading="lazy" />
                             </div>
                         </div>
                         <div class="carousel-indicators">

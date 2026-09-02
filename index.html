@@ -12,19 +12,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts: Montserrat (Bold) & Open Sans (Body) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/images/me/favicon.png" type="image/jpg" loading="lazy">
 </head>
 <body>
 
-    <!-- NAVBAR MINIMALIS -->
     <nav class="navbar-custom">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="#beranda" class="brand-logo">FERI.</a>
-            <button class="hamburger-btn" id="menuToggle">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
+                <button class="hamburger-btn" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
     <div class="overlay" id="overlay"></div>
@@ -70,7 +75,7 @@
                         FERI<br />
                         <span class="accent-text">FERDIANTO</span>
                     </h1>
-                    <span class="hero-badge">ASPIRING FULL STACK ENGINEER &amp; PROBLEM SOLVING</span>
+                    <span class="hero-badge">ASPIRING FULL STACK ENGINEER &amp; PROBLEM SOLVER</span>
                 </div>
             </div>
         </div>

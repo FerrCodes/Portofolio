@@ -296,6 +296,703 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     transform: translateX(6px);
 }
 
+/* ============================================================
+   NAVBAR - DENGAN THEME TOGGLE
+   ============================================================ */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Tombol Toggle Tema */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.9rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    padding: 4px 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    color: #178bb9;
+}
+
+/* ===== THEME TOGGLE - LUCIDE ICON ===== */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn .theme-icon {
+    width: 27px;
+    height: 27px;
+    color: var(--text-primary);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-toggle-btn:hover .theme-icon {
+    color: var(--accent);
+}
+
+/* Saat toggle, rotasi halus */
+body.dark-mode .theme-toggle-btn .theme-icon {
+    transform: rotate(360deg);
+}
+
+/* ============================================================
+   DARK MODE - VARIABEL & STYLE
+   ============================================================ */
+
+/* ----- Variabel Warna (Light Mode Default) ----- */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f8f8;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --border-color: #eaeaea;
+    --accent: #178bb9;
+    --accent-hover: #0f6f94;
+    --shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* ----- Dark Mode ----- */
+body.dark-mode {
+    --bg-primary: #121212;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --border-color: #2a2a2a;
+    --accent: #2a9fd6;
+    --accent-hover: #4db8e0;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Terapkan variabel ke elemen */
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar-custom {
+    background: var(--bg-primary);
+    transition: background 0.3s ease;
+}
+
+.navbar-custom.scrolled {
+    background: var(--bg-primary);
+    box-shadow: 0 2px 20px var(--shadow);
+}
+
+.brand-logo {
+    color: var(--text-primary);
+}
+
+.hamburger-btn span {
+    background: var(--text-primary);
+}
+
+.theme-toggle-btn {
+    color: var(--text-primary);
+}
+
+/* Hero */
+.hero-section {
+    background: var(--bg-primary);
+}
+
+.hero-name {
+    color: var(--text-primary);
+}
+
+.hero-tagline {
+    color: var(--text-secondary);
+}
+
+/* Card & Section */
+.section-padding.bg-light {
+    background: var(--bg-secondary);
+}
+
+.section-padding.bg-white {
+    background: var(--bg-primary);
+}
+
+.tech-case-card,
+.project-case-card,
+.cert-card-elegant,
+.skill-box-core,
+.skill-group-box {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.tech-case-card:hover,
+.project-case-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 12px 40px var(--shadow);
+}
+
+/* Teks */
+.retro-text,
+.retro-list li,
+.card-desc,
+.case-desc,
+.hero-desc,
+.hero-case p,
+.footer-tagline {
+    color: var(--text-secondary);
+}
+
+.card-title,
+.retro-title,
+.section-title-retro,
+.case-block-title {
+    color: var(--text-primary);
+}
+
+/* Divider */
+.divider-retro,
+.divider-detail,
+.divider-case {
+    background: var(--accent);
+}
+
+/* Form */
+.form-control-retro {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.form-control-retro:focus {
+    border-color: var(--accent);
+    box-shadow: 4px 4px 0 rgba(23, 139, 185, 0.1);
+}
+
+/* Footer */
+.footer-retro {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-brand {
+    color: var(--text-primary);
+}
+
+.footer-tagline {
+    color: var(--text-secondary);
+}
+
+.copyright {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+/* Tombol */
+.btn-retro-submit {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn-retro-submit:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.btn-jd-view-all {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn-jd-view-all:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.btn-jd-source {
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-jd-source:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.btn-back {
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-back:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+/* Side Panel */
+.side-panel {
+    background: var(--bg-primary);
+}
+
+.panel-links a {
+    color: var(--text-primary);
+}
+
+.panel-links a:hover {
+    color: var(--accent);
+}
+
+.panel-footer {
+    color: var(--text-secondary);
+}
+
+/* Tech Stack */
+.skill-box-core img,
+.tech-item img {
+    filter: grayscale(100%) opacity(0.6);
+}
+
+.skill-box-core:hover img,
+.tech-item:hover img {
+    filter: grayscale(0%) opacity(1);
+}
+
+/* Scrollbar (Opsional) */
+body.dark-mode ::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* ===== SIDE PANEL - PERBAIKAN DARK MODE ===== */
+
+/* Tombol Close (silang) */
+body.dark-mode .close-btn {
+    color: #e0e0e0;
+}
+
+body.dark-mode .close-btn:hover {
+    color: #178bb9;
+}
+
+/* Teks "Projek" di dropdown toggle */
+body.dark-mode .panel-links .dropdown-toggle {
+    color: #e0e0e0;
+}
+
+body.dark-mode .panel-links .dropdown-toggle:hover {
+    color: #178bb9;
+}
+
+/* Teks di dropdown menu (sub menu Projek) */
+body.dark-mode .dropdown-menu-custom a {
+    color: #aaaaaa;
+}
+
+body.dark-mode .dropdown-menu-custom a:hover {
+    color: #178bb9;
+}
+
+/* Divider di side panel */
+body.dark-mode .divider-retro2 {
+    background: #2a2a2a;
+}
+
+/* Teks "Kembali" dan link lainnya di side panel */
+body.dark-mode .panel-links a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .panel-links a:hover {
+    color: #178bb9;
+}
+
+body.dark-mode .panel-links a.active {
+    color: #178bb9;
+}
+
+/* Panel footer */
+body.dark-mode .panel-footer {
+    color: #888;
+}
+
+/* Panel header (teks MENU) */
+body.dark-mode .panel-brand {
+    color: #e0e0e0;
+}
+
+/* ============================================================
+   DARK MODE - PERBAIKAN GLOBAL (UNTUK SEMUA ELEMEN)
+   ============================================================ */
+
+body.dark-mode {
+    background: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* === SEMUA SECTION === */
+body.dark-mode section {
+    background: #121212 !important;
+}
+
+body.dark-mode .bg-light,
+body.dark-mode .bg-white,
+body.dark-mode #tentang,
+body.dark-mode #skills,
+body.dark-mode #projek,
+body.dark-mode #certificates,
+body.dark-mode #social-media,
+body.dark-mode #kontak,
+body.dark-mode .section-padding {
+    background: #121212 !important;
+}
+
+/* === KARTU & CARD === */
+body.dark-mode .tech-case-card,
+body.dark-mode .project-case-card,
+body.dark-mode .cert-card-elegant,
+body.dark-mode .skill-box-core,
+body.dark-mode .skill-group-box,
+body.dark-mode .profile-frame-retro,
+body.dark-mode .social-card {
+    background: #1e1e1e !important;
+    border-color: #2a2a2a !important;
+}
+
+/* === TEKS === */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode .card-title,
+body.dark-mode .retro-title,
+body.dark-mode .section-title-retro,
+body.dark-mode .case-block-title,
+body.dark-mode .hero-name,
+body.dark-mode .brand-logo,
+body.dark-mode .panel-brand,
+body.dark-mode .footer-brand {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode p,
+body.dark-mode .retro-text,
+body.dark-mode .retro-list li,
+body.dark-mode .card-desc,
+body.dark-mode .case-desc,
+body.dark-mode .hero-desc,
+body.dark-mode .hero-case p,
+body.dark-mode .footer-tagline,
+body.dark-mode .copyright,
+body.dark-mode .case-block-text {
+    color: #aaaaaa !important;
+}
+
+/* === HERO === */
+body.dark-mode .hero-section {
+    background: #121212 !important;
+}
+
+body.dark-mode .hero-tagline {
+    color: #aaaaaa !important;
+}
+
+/* === LEARNING JOURNEY === */
+body.dark-mode .service-text-jd.bg-white-jd {
+    background: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .service-text-jd.bg-red-jd {
+    background: #0a3a4a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .service-text-jd h3 {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .service-text-jd p {
+    color: #bbbbbb !important;
+}
+
+/* === FORM === */
+body.dark-mode .form-control-retro {
+    background: #1e1e1e !important;
+    border-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .form-control-retro::placeholder {
+    color: #666666 !important;
+}
+
+/* === FOOTER === */
+body.dark-mode .footer-retro {
+    background: #0a0a0a !important;
+    border-top: 1px solid #1a1a1a !important;
+}
+
+/* === SIDE PANEL === */
+body.dark-mode .side-panel {
+    background: #1a1a1a !important;
+}
+
+body.dark-mode .panel-links a {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .panel-links a:hover {
+    color: #178bb9 !important;
+}
+
+body.dark-mode .close-btn {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .divider-retro2 {
+    background: #2a2a2a !important;
+}
+
+/* === OVERLAY === */
+body.dark-mode .overlay {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* === TOMBOL === */
+body.dark-mode .btn-jd-view-all {
+    background: #178bb9 !important;
+    border-color: #178bb9 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-jd-view-all:hover {
+    background: #0f6f94 !important;
+    border-color: #0f6f94 !important;
+}
+
+body.dark-mode .btn-jd-source {
+    border-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .btn-jd-source:hover {
+    background: #e0e0e0 !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .btn-retro-submit {
+    background: #178bb9 !important;
+    border-color: #178bb9 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-retro-submit:hover {
+    background: #0f6f94 !important;
+    border-color: #0f6f94 !important;
+}
+
+body.dark-mode .btn-back {
+    border-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .btn-back:hover {
+    background: #e0e0e0 !important;
+    color: #121212 !important;
+}
+
+/* === DIVIDER === */
+body.dark-mode .divider-retro,
+body.dark-mode .divider-detail,
+body.dark-mode .divider-case {
+    background: #178bb9 !important;
+}
+
+/* === BORDER === */
+body.dark-mode .profile-frame-retro {
+    border-color: #2a2a2a !important;
+}
+
+body.dark-mode .tech-case-card,
+body.dark-mode .project-case-card {
+    border-color: #2a2a2a !important;
+}
+
+/* === SCROLLBAR === */
+body.dark-mode ::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #1a1a1a !important;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #333 !important;
+    border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #444 !important;
+}
+
+/* ===== TENTANG SAYA - PROFIL SINGKAT ===== */
+body.dark-mode .retro-text {
+    color: #cccccc !important;
+}
+
+body.dark-mode .retro-text strong {
+    color: #e0e0e0 !important;
+}
+
+/* ===== LIST HOBI ===== */
+body.dark-mode .retro-list li {
+    color: #bbbbbb !important;
+    border-bottom-color: #2a2a2a !important;
+}
+
+body.dark-mode .retro-list li::before {
+    color: #178bb9 !important;
+}
+
+/* ===== JUDUL DI TENTANG SAYA ===== */
+body.dark-mode .retro-title {
+    color: #e0e0e0 !important;
+}
+
+/* ===== TOMBOL GANTI FOTO ===== */
+body.dark-mode .profile-switch-btn {
+    border-color: #2a2a2a !important;
+    color: #cccccc !important;
+}
+
+body.dark-mode .profile-switch-btn:hover {
+    background: #178bb9 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .profile-switch-btn.active {
+    background: #178bb9 !important;
+    color: #ffffff !important;
+    border-color: #178bb9 !important;
+}
+
+/* ===== FOOTER - LIGHT MODE (TETAP PUTIH) ===== */
+.footer-retro .footer-brand {
+    color: #ffffff !important;
+}
+
+.footer-retro .footer-tagline {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.footer-retro .copyright {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.footer-retro .social-links a:hover {
+    color: #178bb9 !important;
+}
+
+/* ============================================================
+   PROJEK.HTML - DARK MODE FIX
+   ============================================================ */
+
+/* ---- Skill Item Mini (di Tech Stack) ---- */
+body.dark-mode .skill-item-mini {
+    background: #252525 !important;
+    border-color: #333333 !important;
+}
+
+body.dark-mode .skill-item-mini span {
+    color: #cccccc !important;
+}
+
+body.dark-mode .skill-item-mini:hover {
+    border-color: #178bb9 !important;
+    box-shadow: 4px 4px 0 rgba(23, 139, 185, 0.15) !important;
+}
+
+/* ---- Filter Button (di atas daftar projek) ---- */
+body.dark-mode .filter-btn {
+    background: #1e1e1e !important;
+    color: #aaaaaa !important;
+    border-color: #333333 !important;
+}
+
+body.dark-mode .filter-btn:hover {
+    border-color: #178bb9 !important;
+    color: #178bb9 !important;
+}
+
+body.dark-mode .filter-btn.active {
+    background: #178bb9 !important;
+    color: #ffffff !important;
+    border-color: #178bb9 !important;
+    box-shadow: 0 6px 20px rgba(23, 139, 185, 0.25) !important;
+}
+
+/* ---- Feature Tag (di dalam card projek) ---- */
+body.dark-mode .feature-tag {
+    background: #1a2a33 !important;
+    color: #4db8e0 !important;
+    border-color: rgba(23, 139, 185, 0.2) !important;
+}
+
+body.dark-mode .feature-tag i {
+    color: #4db8e0 !important;
+}
+
+body.dark-mode .feature-tag:hover {
+    background: #178bb9 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .feature-tag:hover i {
+    color: #ffffff !important;
+}
+
 /* =========================================
    4. HERO SECTION (PURE TYPOGRAPHIC)
 ========================================= */
@@ -971,19 +1668,25 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     }
 }
 
-/* ===== CERTIFICATE MODAL OVERLAY (WAJIB ADA!) ===== */
+/* ============================================================
+   MODAL SERTIFIKAT - DESAIN MODERN
+   ============================================================ */
+
+/* ---- Overlay Modal ---- */
 .jd-modal-overlay {
-    position: fixed !important;       /* Kunci agar melayang di atas semua konten */
-    inset: 0 !important;              /* Menutupi seluruh layar (top/right/bottom/left: 0) */
-    background: rgba(255, 255, 255, 0.95) !important; /* Background putih transparan */
-    z-index: 99999 !important;        /* Pastikan di atas navbar & footer */
-    display: flex !important;         /* Untuk menengahkan konten modal */
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    z-index: 99999 !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
-    backdrop-filter: blur(8px);       /* Efek blur pada background */
+    padding: 20px;
 }
 
 .jd-modal-overlay.active {
@@ -991,75 +1694,82 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     visibility: visible !important;
 }
 
-/* Style Konten Dalam Modal Sertifikat */
+/* ---- Konten Modal ---- */
 .cert-modal-content {
-    background: #fff;
+    background: #ffffff;
+    border-radius: 24px;
     width: 90%;
-    max-width: 700px;
+    max-width: 720px;
     max-height: 90vh;
-    border: 3px solid #1a1a1a;
-    box-shadow: 20px 20px 0 rgba(23, 139, 185, 0.15);
     position: relative;
     overflow-y: auto;
-    transform: translateY(30px);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(30px) scale(0.96);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Animasi masuk */
 .jd-modal-overlay.active .cert-modal-content {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
+/* ---- Tombol Close (Elegan) ---- */
 .jd-modal-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 16px;
+    right: 16px;
     width: 40px;
     height: 40px;
-    background: #1a1a1a;
-    color: #fff;
+    background: rgba(0, 0, 0, 0.05);
+    color: #1a1a1a;
     border: none;
+    border-radius: 50%;
     font-size: 1.2rem;
     cursor: pointer;
-    z-index: 100;
-    transition: all 0.3s;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .jd-modal-close:hover {
     background: #178bb9;
-    transform: rotate(90deg);
+    color: #ffffff;
+    transform: rotate(90deg) scale(1.1);
 }
 
+/* ---- Body Modal ---- */
 .cert-modal-body {
-    padding: 50px 40px;
+    padding: 48px 40px 40px;
     text-align: center;
 }
 
 .cert-modal-body h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: 900;
     color: #1a1a1a;
-    margin-bottom: 5px;
-    text-transform: uppercase;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
 }
 
 .cert-modal-body > p {
-    color: #666;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    margin-bottom: 30px;
-    font-weight: 600;
+    color: #666;
+    margin-bottom: 28px;
 }
 
+/* ---- Gambar Sertifikat ---- */
 .cert-image-wrapper {
-    border: 3px solid #1a1a1a;
-    padding: 10px;
-    background: #fff;
-    box-shadow: 10px 10px 0 rgba(23, 139, 185, 0.1);
-    margin-bottom: 30px;
-    display: inline-block;
-    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    background: #f8f8f8;
+    padding: 8px;
+    border: 1px solid #eaeaea;
 }
 
 .cert-image-wrapper img {
@@ -1068,7 +1778,161 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     max-height: 500px;
     object-fit: contain;
     display: block;
-    margin: 0 auto;
+    border-radius: 12px;
+}
+
+/* ============================================================
+   DARK MODE - MODAL SERTIFIKAT
+   ============================================================ */
+body.dark-mode .cert-modal-content {
+    background: #1e1e1e;
+    border-color: #2a2a2a;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .cert-modal-body h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .cert-modal-body > p {
+    color: #aaaaaa;
+}
+
+body.dark-mode .cert-image-wrapper {
+    background: #121212;
+    border-color: #2a2a2a;
+}
+
+body.dark-mode .jd-modal-close {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e0e0;
+}
+
+body.dark-mode .jd-modal-close:hover {
+    background: #178bb9;
+    color: #ffffff;
+}
+
+/* ============================================================
+   CERTIFICATE CARD - FIX "LIHAT DETAIL" DI DARK MODE
+   ============================================================ */
+
+/* Pastikan teks "Lihat Detail" tidak menyatu di dark mode */
+body.dark-mode .cert-action-elegant {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .cert-action-elegant span {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .cert-action-elegant i {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .cert-card-elegant:hover .cert-action-elegant {
+    color: #178bb9 !important;
+}
+
+body.dark-mode .cert-card-elegant:hover .cert-action-elegant span {
+    color: #178bb9 !important;
+}
+
+body.dark-mode .cert-card-elegant:hover .cert-action-elegant i {
+    color: #178bb9 !important;
+}
+
+/* Kartu sertifikat di dark mode */
+body.dark-mode .cert-card-elegant {
+    background: #1e1e1e !important;
+    border-color: #2a2a2a !important;
+}
+
+body.dark-mode .cert-card-elegant:hover {
+    background: #252525 !important;
+    border-color: #178bb9 !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .cert-card-elegant h3 {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .cert-card-elegant .cert-course {
+    color: #aaaaaa !important;
+}
+
+body.dark-mode .cert-card-elegant .cert-year {
+    color: #777777 !important;
+}
+
+/* ============================================================
+   MODAL PREVIEW PROJEK - PERBAIKAN DARK MODE
+   ============================================================ */
+
+/* ---- Overlay Modal ---- */
+.project-modal-overlay {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+/* ---- Konten Modal ---- */
+.project-modal-content {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ---- Gambar di dalam modal ---- */
+.project-modal-content img {
+    border-radius: 12px;
+    background: #f8f8f8; /* Background abu-abu tipis di belakang gambar */
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* ---- Judul Preview ---- */
+.modal-preview-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 12px;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   DARK MODE - MODAL PROJEK
+   ============================================================ */
+body.dark-mode .project-modal-content {
+    background: #1e1e1e;
+    border-color: #2a2a2a;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .project-modal-content img {
+    background: #121212; /* Background gelap di belakang gambar */
+}
+
+body.dark-mode .modal-preview-title {
+    color: #e0e0e0;
+}
+
+/* ---- Tombol Close Modal Projek ---- */
+body.dark-mode .project-modal-close {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e0e0;
+}
+
+body.dark-mode .project-modal-close:hover {
+    background: #178bb9;
+    color: #ffffff;
 }
 
 /* Responsive Mobile Modal */
