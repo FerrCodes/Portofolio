@@ -776,16 +776,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 
-    <!-- ============================================================
-     MODAL PREVIEW GAMBAR PROJEK
-     ============================================================ -->
+    <!-- ===== MODAL PREVIEW PROJEK ===== -->
     <div id="projectModal" class="project-modal-overlay" onclick="closeProjectModal()">
-        <div class="project-modal-content" onclick="event.stopPropagation();">
+        <div class="project-modal-box" onclick="event.stopPropagation();">
             <button class="project-modal-close" onclick="closeProjectModal()">
                 <i class="fas fa-times"></i>
             </button>
-            <img id="modalPreviewImg" src="" alt="Project Preview" loading="lazy">
-            <p id="modalPreviewTitle" class="modal-preview-title"></p>
+            <img id="modalPreviewImg" src="" alt="Preview Projek" loading="lazy" />
+            <p id="modalPreviewTitle" class="project-modal-title"></p>
         </div>
     </div>
 

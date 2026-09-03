@@ -434,18 +434,13 @@
     <!-- Custom JS -->
     <script src="script.js"></script>
 
-    <!-- MODAL SERTIFIKAT -->
-    <div id="certModal" class="jd-modal-overlay">
-        <div class="jd-modal-content cert-modal-content">
-            <button class="jd-modal-close" onclick="closeCertModal()"><i class="fas fa-times"></i></button>
-
-            <div class="cert-modal-body">
-                <h3 id="modalCertTitle">Judul Sertifikat</h3>
-                <p id="modalCertIssuer">Penerbit</p>
-                <div class="cert-image-wrapper">
-                    <!-- Ganti src dengan path foto sertifikasmu -->
-                    <img id="modalCertImg" src="assets/images/sertifikat/1.png" alt="Certificate Preview" loading="lazy">
-                </div>
+    <!-- ===== MODAL SERTIFIKAT (TOMBOL DI LUAR) ===== -->
+    <div id="certModal" class="cert-modal-overlay" onclick="closeCertModal()">
+        <button class="cert-modal-close" onclick="event.stopPropagation(); closeCertModal();">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="cert-modal-box" onclick="event.stopPropagation();">
+            <img id="modalCertImg" src="assets/images/sertifikat/1.png" alt="Sertifikat" loading="lazy" />
         </div>
     </div>
 

@@ -191,6 +191,55 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
+    // THEME TOGGLE - LUCIDE ICON
+    // ============================================================
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Inisialisasi Lucide Icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+    
+    if (themeToggle) {
+        // Cek preferensi dari localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            const icon = themeToggle.querySelector('.theme-icon');
+            if (icon) {
+                icon.setAttribute('data-lucide', 'sun');
+            }
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+    
+        // Event klik
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            
+            const icon = this.querySelector('.theme-icon');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'sun');
+                }
+            } else {
+                localStorage.setItem('theme', 'light');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'moon');
+                }
+            }
+        
+            // Refresh icon Lucide
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    }
+
+    // ============================================================
     // GANTI FOTO PROFIL (HANYA JIKA ADA)
     // ============================================================
     window.changePhoto = function(filename, button) {
@@ -298,53 +347,4 @@ document.addEventListener('DOMContentLoaded', function() {
             window.closeProjectModal();
         }
     });
-
-    // ============================================================
-    // THEME TOGGLE - LUCIDE ICON
-    // ============================================================
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    // Inisialisasi Lucide Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-    
-    if (themeToggle) {
-        // Cek preferensi dari localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            const icon = themeToggle.querySelector('.theme-icon');
-            if (icon) {
-                icon.setAttribute('data-lucide', 'sun');
-            }
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        }
-    
-        // Event klik
-        themeToggle.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-            
-            const icon = this.querySelector('.theme-icon');
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                if (icon) {
-                    icon.setAttribute('data-lucide', 'sun');
-                }
-            } else {
-                localStorage.setItem('theme', 'light');
-                if (icon) {
-                    icon.setAttribute('data-lucide', 'moon');
-                }
-            }
-        
-            // Refresh icon Lucide
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        });
-    }
 });
