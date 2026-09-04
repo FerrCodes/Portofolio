@@ -19,6 +19,70 @@ body {
     overflow-x: hidden;
 }
 
+/* ============================================================
+   CV
+   ============================================================ */
+
+.btn-view-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid #178bb9;
+    padding: 10px 22px;
+    margin-top: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-view-cv:hover {
+    background: #178bb9;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(23, 139, 185, 0.2);
+}
+
+/* ---- Dark Mode ---- */
+body.dark-mode .cv-modal-box {
+    background: #1e1e1e;
+}
+
+body.dark-mode .cv-modal-close {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e0e0;
+}
+
+body.dark-mode .cv-modal-close:hover {
+    background: #178bb9;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-view-cv {
+    color: #e0e0e0;
+}
+
+body.dark-mode .btn-view-cv:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .btn-download-cv {
+    background: #178bb9;
+    border-color: #178bb9;
+    color: #fff;
+}
+
+body.dark-mode .btn-download-cv:hover {
+    background: #0f6f94;
+    border-color: #0f6f94;
+}
+
 /* =========================================
    2. TYPOGRAPHY & UTILITIES
 ========================================= */
@@ -2457,6 +2521,95 @@ textarea.form-control-retro {
     font-size: 0.8rem; 
     color: rgba(255,255,255,0.4); 
     margin-top: 30px; 
+}
+
+/* ============================================================
+   THANK YOU PAGE
+   ============================================================ */
+
+.thankyou-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 0 60px;
+    background: var(--bg-primary);
+}
+
+.thankyou-icon {
+    font-size: 4.5rem;
+    color: #178bb9;
+    margin-bottom: 20px;
+}
+
+.thankyou-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.thankyou-divider {
+    width: 60px;
+    height: 4px;
+    background: #178bb9;
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}
+
+.thankyou-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.thankyou-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Dark Mode */
+body.dark-mode .thankyou-section {
+    background: #121212;
+}
+
+body.dark-mode .thankyou-text {
+    color: #aaaaaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .thankyou-section {
+        padding: 100px 0 40px;
+        min-height: 70vh;
+    }
+
+    .thankyou-icon {
+        font-size: 3.5rem;
+    }
+
+    .thankyou-text {
+        font-size: 1rem;
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .thankyou-icon {
+        font-size: 3rem;
+    }
+
+    .thankyou-title {
+        font-size: 1.6rem;
+    }
+
+    .thankyou-text {
+        font-size: 0.95rem;
+    }
 }
 
 /* =========================================

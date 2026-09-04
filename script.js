@@ -170,23 +170,20 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             emailjs.send('service_jikxbjd', 'template_beqfhmy', formData)
-                .then(function() {
-                    alertMessage.className = 'alert alert-success mt-2';
-                    alertMessage.style.display = 'block';
-                    alertMessage.innerHTML = '<strong>Berhasil!</strong> Pesan terkirim. Terima kasih!';
-                    contactForm.reset();
-                    setTimeout(function() { alertMessage.style.display = 'none'; }, 5000);
-                })
-                .catch(function(error) {
-                    alertMessage.className = 'alert alert-danger mt-2';
-                    alertMessage.style.display = 'block';
-                    alertMessage.innerHTML = '<strong>Gagal!</strong> ' + JSON.stringify(error);
-                    setTimeout(function() { alertMessage.style.display = 'none'; }, 7000);
-                })
-                .finally(function() {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = defaultLabel;
-                });
+            .then(function() {
+                // Redirect ke halaman terima kasih
+                window.location.href = 'thanks.html';
+            })
+            .catch(function(error) {
+                alertMessage.className = 'alert alert-danger mt-2';
+                alertMessage.style.display = 'block';
+                alertMessage.innerHTML = '<strong>Gagal!</strong> ' + JSON.stringify(error);
+                setTimeout(function() { alertMessage.style.display = 'none'; }, 7000);
+            })
+            .finally(function() {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = defaultLabel;
+            });
         });
     }
 
