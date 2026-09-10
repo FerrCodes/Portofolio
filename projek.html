@@ -198,108 +198,196 @@
                 <button class="filter-btn active" data-filter="all">Semua</button>
                 <button class="filter-btn" data-filter="favorite">Favorit</button>
                 <button class="filter-btn" data-filter="web">Web App</button>
+                <button class="filter-btn" data-filter="app">Aplikasi</button>
                 <button class="filter-btn" data-filter="landing">Landing Page</button>
                 <button class="filter-btn" data-filter="system">Sistem</button>
             </div>
 
             <!-- LIST PROJEK -->
             <div class="project-list-container">
-            
+
                 <!-- ==========================================================
-                    NoteApp
+                    Laundry54F
                 ========================================================== -->
                 <div class="project-case-card" data-category="web">
                     <div class="case-row">
-                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/NoteApp.png', 'NoteApp')">
-                            <img src="assets/images/projek/NoteApp.png" alt="To-Do List App" loading="lazy">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/Laundry54F.png', 'Laundry 54F - Sistem Manajemen Laundry')">
+                            <img src="assets/images/projek/Laundry54F.png" alt="To-Do-List" loading="lazy">
                             <div class="img-overlay-hint">
                                 <i class="fas fa-expand"></i> Klik untuk preview
                             </div>
                         </div>
                         <div class="case-info-col">
-                            <h3>NoteApp</h3>
+                            <h3>Laundry 54F</h3>
                             <div class="case-meta">
                                 <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
                                 <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
-                                <span class="case-meta-item"><i class="fas fa-tag"></i>Mobile App</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>Nextjs</span>
                             </div>
                             <p class="case-desc">
-                                Aplikasi mobile Catatan dengan fitur, Tambah catatan baru dan mengedit.
+                                Booking laundry online dengan sistem pembayaran terintegrasi Midtrans 
+                                (QRIS, E-Wallet, Kartu Kredit). Fitur: booking laundry, tracking status, dan lainnya
                             </p>
                             <div class="case-features">
-                                <span class="feature-tag">Local Storage</span>
-                                <span class="feature-tag">Material Design</span>
-                                <span class="feature-tag">Chat Via Email</span>
+                                <span class="feature-tag">MidTrans</span>
+                                <span class="feature-tag">Payment Gateaway</span>
+                                <span class="feature-tag">Admin/Customer</span>
                             </div>
                             <div class="case-tech-row">
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                                    <span>Typescript</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                                    <span>React</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+                                    <span>Nextjs</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                                    <span>Tailwind</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
+                                    <span>Supabase</span>
+                                </div>
+                            </div>
+                            <div class="case-actions">
+                                <a href="https://laundry54f.vercel.app/" target="_blank" class="btn-jd-view-all">
+                                    <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                                </a>
+                                <a href="https://github.com/FerrCodes/Laundry" target="_blank" class="btn-jd-source">
+                                    <i class="fab fa-github me-2"></i>Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==========================================================
+                    Personal Branding
+                ========================================================== -->
+                <div class="project-case-card" data-category="landing">
+                    <div class="case-row">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/Personal-Branding.png', 'Studio FerrCodes')">
+                            <img src="assets/images/projek/Personal-Branding.png" alt="Personal Branding" loading="lazy">
+                            <div class="img-overlay-hint">
+                                <i class="fas fa-expand"></i> Klik untuk preview
+                            </div>
+                        </div>
+                        <div class="case-info-col">
+                            <h3>Studio FerrCodes</h3>
+                            <div class="case-meta">
+                                <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                                <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>Freelance</span>
+                            </div>
+                            <p class="case-desc">
+                                Landing page ini adalah projek untuk memulai menjadi Freelance Web Developer, 
+                                dengan menawarkan jasa pembuatan website, landing page, dan design UI/UX.
+                            </p>
+                            <div class="case-features">
+                                <span class="feature-tag">UI/UX Design</span>
+                                <span class="feature-tag">Hybrid Agency</span>
+                                <span class="feature-tag">Personal Branding</span>
+                            </div>
+                            <div class="case-tech-row">
+                                <div class="tech-item">      
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" />
+                                    <span>Astro</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                                    <span>React</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                                    <span>Typescript</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                                    <span>Tailwind</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg" />
+                                    <span>Framer Motion</span>
+                                </div>
+                            </div>
+                            <div class="case-actions">
+                                <a href="https://studio-ferrcodes.vercel.app/" target="_blank" class="btn-jd-view-all">
+                                    <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                                </a>
+                                <a href="https://github.com/FerrCodes/Studio-Ferrcodes" target="_blank" class="btn-jd-source">
+                                    <i class="fab fa-github me-2"></i>Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==========================================================
+                    Journal
+                ========================================================== -->
+                <div class="project-case-card favorite-project" data-category="favorite">
+                    <div class="case-badge">⭐ FAVORIT</div>
+                    <div class="case-row">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/JournalApp.png', 'JournalAPP - Web Aplikasi Jurnal modern')">
+                            <img src="assets/images/projek/JournalApp.png" alt="To-Do-List" loading="lazy">
+                            <div class="img-overlay-hint">
+                                <i class="fas fa-expand"></i> Klik untuk preview
+                            </div>
+                        </div>
+                        <div class="case-info-col">
+                            <h3>Journal</h3>
+                            <div class="case-meta">
+                                <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                                <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>FULL-STACK</span>
+                            </div>
+                            <p class="case-desc">
+                                Projek ini bukan seperti Jurnal biasa tapi menggunakan Stack dan UI yang lebih modern, 
+                                dengan ada nya fitur ganti bahasa serta upload foto jika ingin menambahkan jurnal baru atau saat 
+                                ingin di edit.
+                            </p>
+                            <div class="case-features">
+                                <span class="feature-tag">Pencatatan Jurnal</span>
+                                <span class="feature-tag">UI/UX Modern</span>
+                                <span class="feature-tag">i18n</span>
+                                <span class="feature-tag">Full-Stack Journal Application using React and Supabase</span>
+                            </div>
+                            <div class="case-tech-row">
+                                <div class="tech-item">     
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                                    <span>Typescript</span>
+                                </div>
                                 <div class="tech-item">    
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" />
-                                    <span>Flutter</span>
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                                    <span>React</span>
                                 </div>
                                 <div class="tech-item">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" />
-                                    <span>Dart</span>
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" />
+                                    <span>ViteJS</span>
                                 </div>
                                 <div class="tech-item">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" />
-                                    <span>Firebase</span>
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                                    <span>Tailwind</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
+                                    <span>Supabase</span>
                                 </div>
                             </div>
                             <div class="case-actions">
-                                <a href="https://github.com/FerrCodes/Note-Apps" target="_blank" class="btn-jd-source">
-                                    <i class="fab fa-github me-2"></i>Source Code
+                                <a href="case-study/journalApp.html" class="btn-jd-view-all">
+                                   <i class="fas fa-book-open me-2"></i>Lihat Studi Kasus
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ==========================================================
-                     Landing Page Budaya Batik
-                ========================================================== -->
-                <div class="project-case-card" data-category="landing">
-                    <div class="case-row">
-                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/WebBatik.png', 'Tentang Batik')">
-                            <img src="assets/images/projek/WebBatik.png" alt="School Landing Page" loading="lazy">
-                            <div class="img-overlay-hint">
-                                <i class="fas fa-expand"></i> Klik untuk preview
-                            </div>
-                        </div>
-                        <div class="case-info-col">
-                            <h3>Budaya Batik</h3>
-                            <div class="case-meta">
-                                <span class="case-meta-item"><i class="fas fa-user-tie"></i>work in group</span>
-                                <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
-                                <span class="case-meta-item"><i class="fas fa-tag"></i>Landing Page</span>
-                            </div>
-                            <p class="case-desc">
-                                Website edukasi yang menampilkan berbagai macam batik tradisional Indonesia.
-                                Bagian tugas P5 dari sekolah.
-                            </p>
-                            <div class="case-features">
-                                <span class="feature-tag">Responsive Design</span>
-                                <span class="feature-tag">Interactive Gallery</span>
-                                <span class="feature-tag">Cultural Content</span>
-                            </div>
-                            <div class="case-tech-row">
-                                <div class="tech-item">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
-                                    <span>HTML5</span>
-                                </div>
-                                <div class="tech-item">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
-                                    <span>CSS3</span>
-                                </div>
-                                <div class="tech-item">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
-                                    <span>JavaScript</span>
-                                </div>
-                            </div>
-                            <div class="case-actions">
-                                <a href="https://ferrcodes.github.io/Website-Batik/" target="_blank" class="btn-jd-view-all">
+                                <a href="https://journal-khaki-zeta.vercel.app/" target="_blank" class="btn-jd-view-all">
                                     <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
                                 </a>
-                                <a href="https://github.com/FerrCodes/Website-Batik" target="_blank" class="btn-jd-source">
+                                <a href="https://github.com/FerrCodes/Journal" target="_blank" class="btn-jd-source">
                                     <i class="fab fa-github me-2"></i>Source Code
                                 </a>
                             </div>
@@ -308,32 +396,43 @@
                 </div>
 
                 <!-- ==========================================================
-                    To-Do List
+                    Personal Resource Hub
                 ========================================================== -->
                 <div class="project-case-card" data-category="web">
                     <div class="case-row">
-                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/To-Do-List.png', 'To-Do-List')">
-                            <img src="assets/images/projek/To-Do-List.png" alt="To-Do-List" loading="lazy">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/ResourceHub.png', 'Personal Resource Hub - Pengelola Link')">
+                            <img src="assets/images/projek/ResourceHub.png" alt="To-Do-List" loading="lazy">
                             <div class="img-overlay-hint">
                                 <i class="fas fa-expand"></i> Klik untuk preview
                             </div>
                         </div>
                         <div class="case-info-col">
-                            <h3>To-Do-List</h3>
+                            <h3>Personal Resource Hub</h3>
                             <div class="case-meta">
                                 <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
                                 <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
-                                <span class="case-meta-item"><i class="fas fa-tag"></i>Task</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>PHP Native</span>
                             </div>
                             <p class="case-desc">
-                                Projek ini saya mencoba mengasah skill saya pada murni JavaScript, seperti Fitur, Logika dan Fungsi,
+                                Personal Resource Hub adalah aplikasi web manajemen koleksi sumber daya digital 
+                                (link dari YouTube, Spotify, Instagram, artikel, dll) yang dibangun dengan PHP Native dan MySQL.
+                                Proyek ini adalah portofolio full-stack pertama yang saya.
                             </p>
                             <div class="case-features">
-                                <span class="feature-tag">Task Management</span>
-                                <span class="feature-tag">Priority System</span>
-                                <span class="feature-tag">Local Storage</span>
+                                <span class="feature-tag">Authentication</span>
+                                <span class="feature-tag">Email Verification</span>
+                                <span class="feature-tag">CRUD System</span>
+                                <span class="feature-tag">Database Integration</span>
                             </div>
                             <div class="case-tech-row">
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
+                                    <span>PHP</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+                                    <span>MySQL</span>
+                                </div>
                                 <div class="tech-item">
                                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
                                     <span>HTML5</span>
@@ -348,10 +447,10 @@
                                 </div>
                             </div>
                             <div class="case-actions">
-                                <a href="https://ferrcodes.github.io/To-Do-List/" target="_blank" class="btn-jd-view-all">
+                                <a href="https://personalhub-feri.freepage.cc/login.php" target="_blank" class="btn-jd-view-all">
                                     <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
                                 </a>
-                                <a href="https://github.com/FerrCodes/To-Do-List" target="_blank" class="btn-jd-source">
+                                <a href="https://github.com/FerrCodes/Personal-Resource-Hub" target="_blank" class="btn-jd-source">
                                     <i class="fab fa-github me-2"></i>Source Code
                                 </a>
                             </div>
@@ -360,48 +459,49 @@
                 </div>
 
                 <!-- ==========================================================
-                    Sekolah
+                    Face Recognition System
                 ========================================================== -->
-                <div class="project-case-card" data-category="landing">
+                <div class="project-case-card" data-category="system">
                     <div class="case-row">
-                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/sekolah.png', 'SMK Negeri 5 Malang')">
-                            <img src="assets/images/projek/sekolah.png" alt="To-Do-List" loading="lazy">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/facerecognition.png', 'Pengenalan Wajah')">
+                            <img src="assets/images/projek/facerecognition.png" alt="To-Do-List" loading="lazy">
                             <div class="img-overlay-hint">
                                 <i class="fas fa-expand"></i> Klik untuk preview
                             </div>
                         </div>
                         <div class="case-info-col">
-                            <h3>Sekolah SMKN 5 Malang</h3>
+                            <h3>Face Recognition System</h3>
                             <div class="case-meta">
                                 <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
                                 <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
-                                <span class="case-meta-item"><i class="fas fa-tag"></i>Landing Page</span>
+                                <span class="case-meta-item"><i class="fas fa-tag"></i>ML</span>
                             </div>
                             <p class="case-desc">
-                                Landing page ini bagian dari tugas sekolah untuk melengkapi nilai waktu kelas dua.
+                                Sistem pengenalan wajah yang menerima foto dari smartphone, memprosesnya di PC,
+                                dan menghasilkan laporan identifikasi dalam format JSON dan Excel.
                             </p>
                             <div class="case-features">
-                                <span class="feature-tag">School Theme</span>
+                                <span class="feature-tag">Machine Learning</span>
+                                <span class="feature-tag">Computer Vision</span>
                             </div>
                             <div class="case-tech-row">
                                 <div class="tech-item">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
-                                    <span>HTML5</span>
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                                    <span>Python</span>
                                 </div>
                                 <div class="tech-item">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
-                                    <span>CSS3</span>
-                                </div>
-                                <div class="tech-item">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
-                                    <span>JavaScript</span>
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" />
+                                    <span>OpenCV</span>
                                 </div>
                             </div>
                             <div class="case-actions">
-                                <a href="https://ferrcodes.github.io/Landing-Page-Sekolah/" target="_blank" class="btn-jd-view-all">
-                                    <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                                <a href="https://facerecognition-facial-recognition-system-learning.streamlit.app/" target="_blank" class="btn-jd-view-all">
+                                        <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                                    </a>
+                                <a href="case-study/facerecognition.html" class="btn-jd-view-all">
+                                   <i class="fas fa-book-open me-2"></i>Lihat Studi Kasus
                                 </a>
-                                <a href="https://github.com/FerrCodes/Landing-Page-Sekolah" target="_blank" class="btn-jd-source">
+                                <a href="https://github.com/FerrCodes/FaceRecognition-Final" target="_blank" class="btn-jd-source">
                                     <i class="fab fa-github me-2"></i>Source Code
                                 </a>
                             </div>
@@ -472,91 +572,30 @@
             </div>
 
             <!-- ==========================================================
-                Face Recognition System
+                Sekolah
             ========================================================== -->
-            <div class="project-case-card" data-category="system">
+            <div class="project-case-card" data-category="landing">
                 <div class="case-row">
-                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/facerecognition.png', 'Pengenalan Wajah')">
-                        <img src="assets/images/projek/facerecognition.png" alt="To-Do-List" loading="lazy">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/sekolah.png', 'SMK Negeri 5 Malang')">
+                        <img src="assets/images/projek/sekolah.png" alt="To-Do-List" loading="lazy">
                         <div class="img-overlay-hint">
                             <i class="fas fa-expand"></i> Klik untuk preview
                         </div>
                     </div>
                     <div class="case-info-col">
-                        <h3>Face Recognition System</h3>
+                        <h3>Sekolah SMKN 5 Malang</h3>
                         <div class="case-meta">
                             <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
                             <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
-                            <span class="case-meta-item"><i class="fas fa-tag"></i>ML</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>Landing Page</span>
                         </div>
                         <p class="case-desc">
-                            Sistem pengenalan wajah yang menerima foto dari smartphone, memprosesnya di PC,
-                            dan menghasilkan laporan identifikasi dalam format JSON dan Excel.
+                            Landing page ini bagian dari tugas sekolah untuk melengkapi nilai waktu kelas dua.
                         </p>
                         <div class="case-features">
-                            <span class="feature-tag">Machine Learning</span>
-                            <span class="feature-tag">Computer Vision</span>
+                            <span class="feature-tag">School Theme</span>
                         </div>
                         <div class="case-tech-row">
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-                                <span>Python</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" />
-                                <span>OpenCV</span>
-                            </div>
-                        </div>
-                        <div class="case-actions">
-                            <a href="case-study/facerecognition.html" class="btn-jd-view-all">
-                               <i class="fas fa-book-open me-2"></i>Lihat Studi Kasus
-                            </a>
-                            <a href="https://github.com/FerrCodes/FaceRecognition-Final" target="_blank" class="btn-jd-source">
-                                <i class="fab fa-github me-2"></i>Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ==========================================================
-                Personal Resource Hub
-            ========================================================== -->
-            <div class="project-case-card" data-category="web">
-                <div class="case-row">
-                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/ResourceHub.png', 'Personal Resource Hub - Pengelola Link')">
-                        <img src="assets/images/projek/ResourceHub.png" alt="To-Do-List" loading="lazy">
-                        <div class="img-overlay-hint">
-                            <i class="fas fa-expand"></i> Klik untuk preview
-                        </div>
-                    </div>
-                    <div class="case-info-col">
-                        <h3>Personal Resource Hub</h3>
-                        <div class="case-meta">
-                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
-                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
-                            <span class="case-meta-item"><i class="fas fa-tag"></i>PHP Native</span>
-                        </div>
-                        <p class="case-desc">
-                            Personal Resource Hub adalah aplikasi web manajemen koleksi sumber daya digital 
-                            (link dari YouTube, Spotify, Instagram, artikel, dll) yang dibangun dengan PHP Native dan MySQL.
-                            Proyek ini adalah portofolio full-stack pertama yang saya.
-                        </p>
-                        <div class="case-features">
-                            <span class="feature-tag">Authentication</span>
-                            <span class="feature-tag">Email Verification</span>
-                            <span class="feature-tag">CRUD System</span>
-                            <span class="feature-tag">Database Integration</span>
-                        </div>
-                        <div class="case-tech-row">
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
-                                <span>PHP</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
-                                <span>MySQL</span>
-                            </div>
                             <div class="tech-item">
                                 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
                                 <span>HTML5</span>
@@ -571,10 +610,164 @@
                             </div>
                         </div>
                         <div class="case-actions">
-                            <a href="https://personalhub-feri.freepage.cc/login.php" target="_blank" class="btn-jd-view-all">
+                            <a href="https://ferrcodes.github.io/Landing-Page-Sekolah/" target="_blank" class="btn-jd-view-all">
                                 <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
                             </a>
-                            <a href="https://github.com/FerrCodes/Personal-Resource-Hub" target="_blank" class="btn-jd-source">
+                            <a href="https://github.com/FerrCodes/Landing-Page-Sekolah" target="_blank" class="btn-jd-source">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================
+                 Landing Page Budaya Batik
+            ========================================================== -->
+            <div class="project-case-card" data-category="landing">
+                <div class="case-row">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/WebBatik.png', 'Tentang Batik')">
+                        <img src="assets/images/projek/WebBatik.png" alt="School Landing Page" loading="lazy">
+                        <div class="img-overlay-hint">
+                            <i class="fas fa-expand"></i> Klik untuk preview
+                        </div>
+                    </div>
+                    <div class="case-info-col">
+                        <h3>Budaya Batik</h3>
+                        <div class="case-meta">
+                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>work in group</span>
+                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>Landing Page</span>
+                        </div>
+                        <p class="case-desc">
+                            Website edukasi yang menampilkan berbagai macam batik tradisional Indonesia.
+                            Bagian tugas P5 dari sekolah.
+                        </p>
+                        <div class="case-features">
+                            <span class="feature-tag">Responsive Design</span>
+                            <span class="feature-tag">Interactive Gallery</span>
+                            <span class="feature-tag">Cultural Content</span>
+                        </div>
+                        <div class="case-tech-row">
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="https://ferrcodes.github.io/Website-Batik/" target="_blank" class="btn-jd-view-all">
+                                <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                            </a>
+                            <a href="https://github.com/FerrCodes/Website-Batik" target="_blank" class="btn-jd-source">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================
+                NoteApp
+            ========================================================== -->
+            <div class="project-case-card" data-category="app">
+                <div class="case-row">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/NoteApp.png', 'NoteApp')">
+                        <img src="assets/images/projek/NoteApp.png" alt="To-Do List App" loading="lazy">
+                        <div class="img-overlay-hint">
+                            <i class="fas fa-expand"></i> Klik untuk preview
+                        </div>
+                    </div>
+                    <div class="case-info-col">
+                        <h3>NoteApp</h3>
+                        <div class="case-meta">
+                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>Mobile App</span>
+                        </div>
+                        <p class="case-desc">
+                            Aplikasi mobile Catatan dengan fitur, Tambah catatan baru dan mengedit.
+                        </p>
+                        <div class="case-features">
+                            <span class="feature-tag">Local Storage</span>
+                            <span class="feature-tag">Material Design</span>
+                            <span class="feature-tag">Chat Via Email</span>
+                        </div>
+                        <div class="case-tech-row">
+                            <div class="tech-item">    
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" />
+                                <span>Flutter</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" />
+                                <span>Dart</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" />
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="https://github.com/FerrCodes/Note-Apps" target="_blank" class="btn-jd-source">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================================
+                To-Do List
+            ========================================================== -->
+            <div class="project-case-card" data-category="web">
+                <div class="case-row">
+                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/To-Do-List.png', 'To-Do-List')">
+                        <img src="assets/images/projek/To-Do-List.png" alt="To-Do-List" loading="lazy">
+                        <div class="img-overlay-hint">
+                            <i class="fas fa-expand"></i> Klik untuk preview
+                        </div>
+                    </div>
+                    <div class="case-info-col">
+                        <h3>To-Do-List</h3>
+                        <div class="case-meta">
+                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
+                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
+                            <span class="case-meta-item"><i class="fas fa-tag"></i>Task</span>
+                        </div>
+                        <p class="case-desc">
+                            Projek ini saya mencoba mengasah skill saya pada murni JavaScript, seperti Fitur, Logika dan Fungsi,
+                        </p>
+                        <div class="case-features">
+                            <span class="feature-tag">Task Management</span>
+                            <span class="feature-tag">Priority System</span>
+                            <span class="feature-tag">Local Storage</span>
+                        </div>
+                        <div class="case-tech-row">
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="case-actions">
+                            <a href="https://ferrcodes.github.io/To-Do-List/" target="_blank" class="btn-jd-view-all">
+                                <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
+                            </a>
+                            <a href="https://github.com/FerrCodes/To-Do-List" target="_blank" class="btn-jd-source">
                                 <i class="fab fa-github me-2"></i>Source Code
                             </a>
                         </div>
@@ -628,134 +821,6 @@
                                 <i class="fas fa-book-open me-2"></i>Lihat Dokumentasi
                             </a>
                             <a href="https://github.com/FerrCodes/Moodwave" target="_blank" class="btn-jd-source">
-                                <i class="fab fa-github me-2"></i>Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ==========================================================
-                Journal
-            ========================================================== -->
-            <div class="project-case-card favorite-project" data-category="favorite">
-                <div class="case-badge">⭐ FAVORIT</div>
-                <div class="case-row">
-                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/JournalApp.png', 'JournalAPP - Web Aplikasi Jurnal modern')">
-                        <img src="assets/images/projek/JournalApp.png" alt="To-Do-List" loading="lazy">
-                        <div class="img-overlay-hint">
-                            <i class="fas fa-expand"></i> Klik untuk preview
-                        </div>
-                    </div>
-                    <div class="case-info-col">
-                        <h3>Journal</h3>
-                        <div class="case-meta">
-                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
-                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
-                            <span class="case-meta-item"><i class="fas fa-tag"></i>FULL-STACK</span>
-                        </div>
-                        <p class="case-desc">
-                            Projek ini bukan seperti Jurnal biasa tapi menggunakan Stack dan UI yang lebih modern, 
-                            dengan ada nya fitur ganti bahasa serta upload foto jika ingin menambahkan jurnal baru atau saat 
-                            ingin di edit.
-                        </p>
-                        <div class="case-features">
-                            <span class="feature-tag">Pencatatan Jurnal</span>
-                            <span class="feature-tag">UI/UX Modern</span>
-                            <span class="feature-tag">i18n</span>
-                            <span class="feature-tag">Full-Stack Journal Application using React and Supabase</span>
-                        </div>
-                        <div class="case-tech-row">
-                            <div class="tech-item">     
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
-                                <span>Typescript</span>
-                            </div>
-                            <div class="tech-item">    
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
-                                <span>React</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" />
-                                <span>ViteJS</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
-                                <span>Tailwind</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
-                                <span>Supabase</span>
-                            </div>
-                        </div>
-                        <div class="case-actions">
-                            <a href="case-study/journalApp.html" class="btn-jd-view-all">
-                               <i class="fas fa-book-open me-2"></i>Lihat Studi Kasus
-                            </a>
-                            <a href="https://journal-khaki-zeta.vercel.app/" target="_blank" class="btn-jd-view-all">
-                                <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
-                            </a>
-                            <a href="https://github.com/FerrCodes/Journal" target="_blank" class="btn-jd-source">
-                                <i class="fab fa-github me-2"></i>Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ==========================================================
-                Personal Branding
-            ========================================================== -->
-            <div class="project-case-card" data-category="landing">
-                <div class="case-row">
-                    <div class="case-img-col" onclick="openProjectModal('assets/images/projek/Personal-Branding.png', 'Studio FerrCodes')">
-                        <img src="assets/images/projek/Personal-Branding.png" alt="Personal Branding" loading="lazy">
-                        <div class="img-overlay-hint">
-                            <i class="fas fa-expand"></i> Klik untuk preview
-                        </div>
-                    </div>
-                    <div class="case-info-col">
-                        <h3>Studio FerrCodes</h3>
-                        <div class="case-meta">
-                            <span class="case-meta-item"><i class="fas fa-user-tie"></i>Solo</span>
-                            <span class="case-meta-item"><i class="fas fa-calendar-alt"></i>2026</span>
-                            <span class="case-meta-item"><i class="fas fa-tag"></i>Freelance</span>
-                        </div>
-                        <p class="case-desc">
-                            Landing page ini adalah projek untuk memulai menjadi Freelance Web Developer, 
-                            dengan menawarkan jasa pembuatan website, landing page, dan design UI/UX.
-                        </p>
-                        <div class="case-features">
-                            <span class="feature-tag">UI/UX Design</span>
-                            <span class="feature-tag">Hybrid Agency</span>
-                            <span class="feature-tag">Personal Branding</span>
-                        </div>
-                        <div class="case-tech-row">
-                            <div class="tech-item">      
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" />
-                                <span>Astro</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
-                                <span>React</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
-                                <span>Typescript</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
-                                <span>Tailwind</span>
-                            </div>
-                            <div class="tech-item">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg" />
-                                <span>Framer Motion</span>
-                            </div>
-                        </div>
-                        <div class="case-actions">
-                            <a href="https://studio-ferrcodes.vercel.app/" target="_blank" class="btn-jd-view-all">
-                                <i class="fas fa-arrow-up-right-from-square me-2"></i>Kunjungi
-                            </a>
-                            <a href="https://github.com/FerrCodes/Studio-Ferrcodes" target="_blank" class="btn-jd-source">
                                 <i class="fab fa-github me-2"></i>Source Code
                             </a>
                         </div>
