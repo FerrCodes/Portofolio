@@ -11,7 +11,7 @@
     <meta property="og:title" content="Feri Ferdianto — Full Stack Engineer">
     <meta property="og:description" content="Portofolio Feri Ferdianto, siswa SMKN 5 Malang. Berisi proyek web development dan studi kasus teknis.">
     <link rel="canonical" href="https://ferrcodes.github.io/Portofolio/">
-    <meta property="og:image" content="https://domainmu.com/assets/images/me/preview.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/FerrCodes/Portofolio/main/assets/images/me/preview.png">
     <meta property="og:url" content="https://ferrcodes.github.io/Portofolio/">
 
     <!-- Structured Data -->
@@ -34,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Feri Ferdianto — Full Stack Engineer">
     <meta name="twitter:description" content="Portofolio Feri Ferdianto, siswa SMKN 5 Malang.">
-    <meta name="twitter:image" content="https://domainmu.com/assets/images/me/preview.png">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/FerrCodes/Portofolio/main/assets/images/me/preview.png">
 
     <!-- Preconnect ke Google Fonts & CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,15 +54,22 @@
     <link rel="icon" href="assets/images/me/favicon.png" type="image/jpg" loading="lazy">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" class="scroll-to-top" data-tooltip="Kembali ke Atas" aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="scroll-icon"></i>
+    </button>
 
     <nav class="navbar-custom">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="#beranda" class="brand-logo">FERI.</a>
             <div class="nav-actions">
-                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                <button id="themeToggle" class="theme-toggle-btn" data-tooltip="Ganti Tema" data-tooltip-pos="bottom" aria-label="Toggle theme">
                     <i data-lucide="moon" class="theme-icon"></i>
                 </button>
-                <button class="hamburger-btn" id="menuToggle">
+                <button class="hamburger-btn" id="menuToggle" data-tooltip="Buka Side Panel" data-tooltip-pos="bottom">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -163,7 +170,7 @@
                         <li>Mengembangkan Project Sederhana</li>
                         <li>Mendengarkan Musik</li>
                     </ul>
-                    <a href="assets/images/cv/CV.pdf" target="_blank" class="btn-view-cv">
+                    <a href="#tentang" target="_blank" class="btn-view-cv" data-tooltip="CV dalam proses pembuatan" data-tooltip-pos="top">
                         <i class="fas fa-file-pdf me-2"></i>Lihat CV
                     </a>
                 </div>

@@ -15,20 +15,27 @@
     
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../style2.css" />
-    <link rel="stylesheet" href="../case-study/case-study.css" />
+    <link rel="stylesheet" href="case-study.css" />
     <link rel="icon" href="../assets/images/me/favicon.png" type="image/jpg" />
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" class="scroll-to-top" data-tooltip="Kembali ke Atas" aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="scroll-icon"></i>
+    </button>
 
     <!-- NAVBAR MINIMALIS (Sama seperti index.html utama) -->
     <nav class="navbar-custom scrolled">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="../index.html" class="brand-logo">FERI.</a>
             <div class="nav-actions">
-                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                <button id="themeToggle" class="theme-toggle-btn" data-tooltip="Ganti Tema" data-tooltip-pos="bottom" aria-label="Toggle theme">
                     <i data-lucide="moon" class="theme-icon"></i>
                 </button>
-                <button class="hamburger-btn" id="menuToggle">
+                <button class="hamburger-btn" id="menuToggle" data-tooltip="Buka Side Panel" data-tooltip-pos="bottom">
                     <span></span><span></span><span></span>
                 </button>
             </div>

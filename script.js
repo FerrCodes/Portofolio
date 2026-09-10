@@ -344,4 +344,46 @@ document.addEventListener('DOMContentLoaded', function() {
             window.closeProjectModal();
         }
     });
+
+    // ============================================================
+    // SCROLL PROGRESS BAR
+    // ============================================================
+    const scrollProgress = document.getElementById('scrollProgress');
+
+    if (scrollProgress) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+    }
+
+    // ============================================================
+    // SCROLL TO TOP
+    // ============================================================
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    if (scrollToTopBtn) {
+        // Tampilkan / sembunyikan tombol berdasarkan scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Klik → scroll ke atas dengan halus
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    // Re-render Lucide icons setelah semua elemen dimuat
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 });
