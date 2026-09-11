@@ -2616,6 +2616,47 @@ body.dark-mode .project-modal-box img {
     }
 }
 
+/* ============================================================
+   SOCIAL MEDIA ICON - SIMPLE ICONS
+   ============================================================ */
+
+.social-card .social-icon-img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
+}
+
+.social-card:hover .social-icon-img {
+    filter: grayscale(0%);
+    transform: scale(1.08);
+}
+
+/* Dark Mode - Icon yang gelap jadi terang */
+body.dark-mode .social-card img[src*="000000"] {
+    filter: invert(1) grayscale(100%);
+}
+
+body.dark-mode .social-card:hover img[src*="000000"] {
+    filter: invert(1) grayscale(0%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-card .social-icon-img {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-card .social-icon-img {
+        width: 38px;
+        height: 38px;
+    }
+}
+
 /* =========================================
    11. CONTACT & FOOTER
 ========================================= */
