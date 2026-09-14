@@ -1,9 +1,12 @@
-# Portofolio Pribadi
+# Portofolio
 
-## Tentang
+Portofolio pribadi Feri Ferdianto. <br>
+Berisi proyek web development, studi kasus teknis, dan perjalanan belajar.
 
-Portofolio ini adalah tugas jurusan awal kelas 2, lalu saya menjadikan Portofolio asli
+## Tech Stack
+- HTML5, CSS3, JavaScript
+- Bootstrap 5
+- Lucide Icons
 
 ## Kontak
-
 - Email: ferdiantoferi1303@gmail.com
