@@ -2853,6 +2853,53 @@ body.dark-mode .thankyou-text {
     }
 }
 
+/* ============================================================
+   LUCIDE ICONS - UKURAN & WARNA
+   ============================================================ */
+
+/* Default ukuran icon Lucide */
+[data-lucide] {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Icon di tombol */
+.btn-jd-view-all [data-lucide],
+.btn-jd-source [data-lucide],
+.btn-back [data-lucide] {
+    width: 16px;
+    height: 16px;
+}
+
+/* Icon di side panel */
+.panel-links [data-lucide] {
+    width: 20px;
+    height: 20px;
+}
+
+/* Icon sosial media (footer) */
+.social-links [data-lucide] {
+    width: 24px;
+    height: 24px;
+}
+
+/* Icon scroll to top */
+.scroll-to-top [data-lucide] {
+    width: 22px;
+    height: 22px;
+}
+
+/* Icon close button */
+.close-btn [data-lucide],
+.cert-modal-close [data-lucide],
+.project-modal-close [data-lucide] {
+    width: 20px;
+    height: 20px;
+}
+
 /* =========================================
    12. RESPONSIVE DESIGN
 ========================================= */

@@ -1069,6 +1069,36 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
     white-space: nowrap;
 }
 
+/* ============================================================
+   ICON LUCIDE DI TOMBOL BACA STUDI KASUS
+   ============================================================ */
+
+/* Icon di dalam lingkaran */
+.btn-read-case .circle-arrow [data-lucide] {
+    width: 16px;
+    height: 16px;
+    color: #1a1a1a; /* Default (light mode) */
+    stroke-width: 2.5;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Saat hover, icon jadi putih (karena lingkaran jadi biru) */
+.tech-case-card:hover .btn-read-case .circle-arrow [data-lucide],
+.favorite-highlight:hover .btn-read-case .circle-arrow [data-lucide] {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* Dark Mode */
+body.dark-mode .btn-read-case .circle-arrow [data-lucide] {
+    color: #e0e0e0;
+}
+
+body.dark-mode .tech-case-card:hover .btn-read-case .circle-arrow [data-lucide],
+body.dark-mode .favorite-highlight:hover .btn-read-case .circle-arrow [data-lucide] {
+    color: #ffffff;
+}
+
 /* ---- Responsif Gabungan ---- */
 @media (max-width: 768px) {
     .hero-case, .hero-case-detail {
