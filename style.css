@@ -397,22 +397,6 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     letter-spacing: 2px;
 }
 
-.hamburger-btn {
-    background: none; 
-    border: none; 
-    cursor: pointer;
-    display: flex; 
-    flex-direction: column; 
-    gap: 6px;
-}
-
-.hamburger-btn span {
-    width: 30px; 
-    height: 3px; 
-    background: #1a1a1a;
-    transition: all 0.3s ease;
-}
-
 .side-panel {
     position: fixed; 
     top: 0; 
@@ -617,6 +601,109 @@ body.dark-mode .theme-toggle-btn .theme-icon {
 }
 
 /* ============================================================
+   NAV DROPDOWN (SETTINGS)
+   ============================================================ */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+}
+
+.settings-btn:hover {
+    color: var(--accent);
+}
+
+.settings-btn .settings-icon {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* Menu Dropdown */
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 230px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Item Dropdown */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-secondary);
+    color: var(--accent);
+}
+
+.dropdown-item [data-lucide] {
+    width: 18px;
+    height: 18px;
+}
+
+/* Info (tidak bisa diklik) */
+.dropdown-info {
+    cursor: default;
+    opacity: 0.7;
+    font-size: 0.75rem;
+}
+
+.dropdown-info:hover {
+    background: none;
+    color: var(--text-secondary);
+}
+
+/* Dark Mode */
+body.dark-mode .nav-dropdown-menu {
+    background: #1e1e1e;
+    border-color: #2a2a2a;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .dropdown-item:hover {
+    background: #252525;
+}
+
+/* ============================================================
    DARK MODE - VARIABEL & STYLE
    ============================================================ */
 
@@ -667,8 +754,41 @@ body {
     color: var(--text-primary);
 }
 
-.hamburger-btn span {
-    background: var(--text-primary);
+/* ============================================================
+   HAMBURGER ICON (LUCIDE)
+   ============================================================ */
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+    color: var(--accent);
+}
+
+.hamburger-icon {
+    width: 28px !important;
+    height: 28px !important;
+    stroke-width: 2 !important;
+    transition: all 0.3s ease;
+}
+
+.close-btn .close-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--text-primary);
+}
+
+.hamburger-btn:hover .hamburger-icon {
+    transform: scale(1.1);
 }
 
 .theme-toggle-btn {

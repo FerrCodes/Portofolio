@@ -29,15 +29,29 @@
     </button>
 
     <!-- ===== NAVBAR ===== -->
-    <nav class="navbar-custom scrolled">
+    <nav class="navbar-custom">
         <div class="container d-flex justify-content-between align-items-center">
-            <a href="../index.html" class="brand-logo">FERI.</a>
+            <a href="#beranda" class="brand-logo">FERI.</a>
             <div class="nav-actions">
-                <button id="themeToggle" class="theme-toggle-btn" data-tooltip="Ganti Tema" data-tooltip-pos="bottom" aria-label="Toggle theme">
-                    <i data-lucide="moon" class="theme-icon"></i>
-                </button>
-                <button class="hamburger-btn" id="menuToggle" data-tooltip="Buka Side Panel" data-tooltip-pos="bottom">
-                    <span></span><span></span><span></span>
+                <!-- Dropdown Settings -->
+                <div class="nav-dropdown">
+                    <button id="settingsToggle" class="settings-btn" data-tooltip="Lainnya" data-tooltip-pos="bottom" aria-label="Pengaturan">
+                        <i data-lucide="ellipsis" class="settings-icon"></i>
+                    </button>
+                    <div class="nav-dropdown-menu" id="settingsMenu">
+                        <button class="dropdown-item" id="themeToggle">
+                            <i data-lucide="moon" class="theme-icon"></i>
+                            <span>Ganti Tema</span>
+                        </button>
+                        <div class="dropdown-item dropdown-info">
+                            <i data-lucide="clock"></i>
+                            <span id="lastUpdated">Terakhir diupdate: —</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hamburger Menu -->
+                <button class="hamburger-btn" id="menuToggle" data-tooltip="Buka Side Panel" data-tooltip-pos="bottom" aria-label="Menu">
+                    <i data-lucide="text-align-end" class="hamburger-icon"></i>
                 </button>
             </div>
         </div>

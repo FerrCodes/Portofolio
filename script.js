@@ -387,3 +387,51 @@ document.addEventListener('DOMContentLoaded', function() {
         lucide.createIcons();
     }
 });
+
+// ============================================================
+// NAV DROPDOWN (SETTINGS)
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const settingsToggle = document.getElementById('settingsToggle');
+    const settingsMenu = document.getElementById('settingsMenu');
+
+    if (settingsToggle && settingsMenu) {
+        // Buka/tutup dropdown
+        settingsToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            settingsMenu.classList.toggle('open');
+        });
+
+        // Tutup dropdown saat klik di luar
+        document.addEventListener('click', function(e) {
+            if (!settingsMenu.contains(e.target) && e.target !== settingsToggle) {
+                settingsMenu.classList.remove('open');
+            }
+        });
+
+        // Tutup dropdown saat ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                settingsMenu.classList.remove('open');
+            }
+        });
+    }
+
+    // ============================================================
+    // LAST UPDATED (DARI GITHUB)
+    // ============================================================
+    const lastUpdatedEl = document.getElementById('lastUpdated');
+
+    if (lastUpdatedEl) {
+        fetch('https://api.github.com/repos/FerrCodes/Portofolio/commits?per_page=1')
+            .then(response => response.json())
+            .then(data => {
+                const lastCommit = new Date(data[0].commit.author.date);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                lastUpdatedEl.textContent = 'Terakhir diupdate: ' + lastCommit.toLocaleDateString('id-ID', options);
+            })
+            .catch(() => {
+                lastUpdatedEl.textContent = 'Terakhir diperbarui: —';
+            });
+    }
+});
