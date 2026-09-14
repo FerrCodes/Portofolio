@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Studi Kasus - Laundry App" />
+    <title>Studi Kasus: Laundry App</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../style2.css" />
+    <link rel="stylesheet" href="case-study.css" />
+    <link rel="icon" href="../assets/images/me/favicon.png" type="image/jpg" />
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" class="scroll-to-top" data-tooltip="Kembali ke Atas" aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="scroll-icon"></i>
+    </button>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar-custom scrolled">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="../index.html" class="brand-logo">FERI.</a>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" data-tooltip="Ganti Tema" data-tooltip-pos="bottom" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
+                <button class="hamburger-btn" id="menuToggle" data-tooltip="Buka Side Panel" data-tooltip-pos="bottom">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== SIDE PANEL ===== -->
+    <div class="side-panel" id="sidePanel">
+        <div class="panel-header">
+            <span class="panel-brand">MENU</span>
+            <button class="close-btn" id="menuClose" data-tooltip="Tutup Side Panel" data-tooltip-pos="left"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="panel-links">
+            <li><a href="../case-study/index2.html">Kembali</a></li>
+            <div class="divider-retro2"></div>
+            <li><a href="../projek.html#all-projects"> Kembali ke Halaman Semua Projek</a></li>
+        </ul>
+        <div class="panel-footer">
+            <small>© 2026 Feri.</small>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ============================================================
+         HERO CASE STUDY
+    ============================================================ -->
+    <header class="hero-case-detail">
+        <div class="container text-center">
+            <span class="badge-detail">STUDI KASUS</span>
+            <h1>Laundry 54F</h1>
+            <div class="divider-detail"></div>
+            <p class="hero-desc">
+                Booking laundry online dengan sistem pembayaran digital (QRIS, E-Wallet, Kartu Kredit), 
+                dashboard admin lengkap, dan keamanan database tingkat lanjut menggunakan Supabase RLS.
+            </p>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         CAROUSEL FOTO PROYEK
+    ============================================================ -->
+    <section class="section-carousel">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/images/case-study/laundry/halaman-login.png" class="d-block w-100" alt="Halaman login" loading="lazy" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/case-study/laundry/dashboard-customer.png" class="d-block w-100" alt="Halaman customer" loading="lazy" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/case-study/laundry/halaman-booking.png" class="d-block w-100" alt="Halaman booking" loading="lazy" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/case-study/laundry/dashboard-admin.png" class="d-block w-100" alt="Halaman admin dashboard" loading="lazy" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/images/case-study/laundry/halaman-detail-order.png" class="d-block w-100" alt="Halaman detail order" loading="lazy" />
+                            </div>
+                        </div>
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TECH STACK
+    ============================================================ -->
+    <section class="section-tech-stack">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h3 class="tech-stack-title text-center">Tech Stack</h3>
+                    <div class="case-tech-row justify-content-center">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+                            <span>Next.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" />
+                            <span>Typescript</span>
+                        </div>
+                        <div class="tech-item">   
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
+                            <span>Supabase</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" />
+                            <span>Vercel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ISI STUDI KASUS
+    ============================================================ -->
+    <section class="section-case-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <h2 class="section-title-case text-center">Studi Kasus</h2>
+                    <div class="divider-case mx-auto"></div>
+
+                    <!-- ===== 1. MASALAH ===== -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">1. Masalah</h4>
+                        <p class="case-block-text">
+                            <strong>Masalah Awal:</strong> Saya ingin membuat projek booking laundry online yang modern dengan fitur pembayaran digital (QRIS, E-Wallet, Kartu Kredit), 
+                            dashboard admin lengkap, tracking status order, dan keamanan database tingkat lanjut. Karena saya ingin membangun proyek dengan Tech Stack modern, 
+                            saya memilih Next.js 16 dengan App Router, TypeScript, Tailwind CSS, Supabase, dan Midtrans sebagai payment gateway.<br>
+                            <strong>Keputusan:</strong> Saya memilih Tech Stack (Tumpukan Teknologi) yaitu Next.js, TypeScript, Tailwind CSS, Supabase, dan Midtrans untuk deploy di Vercel. 
+                            Tujuan proyek ini adalah untuk membuat aplikasi laundry online yang siap production dengan sistem pembayaran digital, 
+                            manajemen order yang rapi, dan keamanan data customer yang terjamin. Saya juga belajar banyak tentang middleware role-based, 
+                            RLS (Row Level Security), dan integrasi webhook Midtrans.
+                        </p>
+                    </div>
+
+                    <!-- ============================================================
+                         2. PENDEKATAN (DENGAN 3 SUB-BAGIAN + GARIS PEMISAH)
+                    ============================================================ -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">2. Pendekatan &amp; Alasan Memilih Tech Stack</h4>
+
+                        <!-- Sub 2.1 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">2.1 Kebutuhan</h5>
+                            <p class="case-block-text">
+                                <strong>•</strong> Membangun aplikasi laundry online dengan sistem pembayaran digital (QRIS, E-Wallet, Kartu Kredit) menggunakan Midtrans.<br>
+                                <strong>•</strong> Memisahkan akses customer dan admin dengan middleware role-based (Supabase Auth + Middleware).<br>
+                                <strong>•</strong> Memilih Supabase karena Row Level Security (RLS)-nya memungkinkan saya membuat sistem multi-user yang aman tanpa perlu setup backend server manual.<br>
+                                <strong>•</strong> Aplikasi harus responsif di desktop dan mobile.<br>
+                                <strong>•</strong> Dashboard admin untuk kelola order, layanan, dan customer.<br>
+                                <strong>•</strong> Tracking status order dari "Menunggu" hingga "Sudah Diambil".<br>
+                                <strong>•</strong> Proses development tidak boleh terlalu rumit.<br>
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 2.2 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">2.2 Pilihan Stack</h5>
+                            <p class="case-block-text">
+                                <strong>•</strong> Next.js 16 + TypeScript untuk framework dan type safety.<br>
+                                <strong>•</strong> Tailwind CSS untuk styling cepat & konsisten.<br>
+                                <strong>•</strong> Supabase untuk Database, Auth, dan RLS.<br>
+                                <strong>•</strong> Midtrans untuk Payment Gateway (QRIS, E-Wallet, Kartu Kredit).<br>
+                                <strong>•</strong> Lucide React untuk Icon library.<br>
+                                <strong>•</strong> Vercel untuk Deploy.<br>
+                                <strong>•</strong> ngrok/localtunnel untuk testing webhook di local.<br>
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 2.3 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">2.3 Alasan Utama</h5>
+                            <p class="case-block-text">
+                                <strong>• Next.js + App Router:</strong> Routing modern, server components, dan mudah di-deploy ke Vercel.<br>
+                                <strong>• Supabase RLS:</strong> Keamanan data customer tanpa perlu backend manual.<br>
+                                <strong>• Midtrans:</strong> Payment gateway populer di Indonesia, support QRIS, OVO, Gopay, DANA, dan Kartu Kredit.<br>
+                                <strong>• Webhook:</strong> Update status pembayaran otomatis setelah customer bayar.<br>
+                                <strong>• Role-based middleware:</strong> Customer tidak bisa akses halaman admin, dan sebaliknya.<br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ============================================================
+                         3. KENDALA TEKNIS
+                    ============================================================ -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">3. Kendala Teknis</h4>
+
+                        <p class="case-block-text">
+                            <strong>• Error "Two Parallel Pages" di Next.js:</strong><br>
+                                    - Error: You cannot have two parallel pages that resolve to the same path. Please check /(admin) and /(customer).<br>
+                                    - Penyebab: Adanya folder route group (admin) dan customer (tanpa kurung) yang bentrok.<br>
+                                    - Solusi: Hapus folder yang salah, gunakan hanya satu struktur folder.<br>
+
+                            <strong>• Error RLS "Permission Denied":</strong><br>
+                                    - Error: permission denied for table orders / profiles / payments.<br>
+                                    - Penyebab: RLS aktif tapi policy belum dibuat atau GRANT belum diberikan.<br>
+                                    - Solusi: Berikan GRANT SELECT/UPDATE/INSERT dan buat policy yang sesuai untuk customer dan admin.<br>
+
+                            <strong>• Error Midtrans "Sequence Permission Denied":</strong><br>
+                                    - Error: permission denied for sequence order_number_seq.<br>
+                                    - Penyebab: Trigger order_number menggunakan SEQUENCE yang tidak diberi izin ke role authenticated.<br>
+                                    - Solusi: GRANT USAGE, SELECT ON SEQUENCE order_number_seq TO authenticated.<br>
+
+                            <strong>• Webhook Midtrans Tidak Berjalan di Localhost:</strong><br>
+                                    - Error: Midtrans tidak bisa mengirim webhook ke http://localhost:3000.<br>
+                                    - Penyebab: Localhost tidak bisa diakses dari internet.<br>
+                                    - Solusi: Gunakan ngrok atau localtunnel untuk membuat URL publik sementara.<br>
+
+                            <strong>• Error "useSearchParams() should be wrapped in Suspense":</strong><br>
+                                    - Error: useSearchParams() should be wrapped in a suspense boundary at page "/customer/booking".<br>
+                                    - Penyebab: Client Component pakai useSearchParams() tanpa Suspense boundary.<br>
+                                    - Solusi: Bungkus komponen dengan Suspense di page.tsx, pindahkan logika ke komponen terpisah.<br>
+
+                            <strong>• Redirect Loop di Vercel (ERR_TOO_MANY_REDIRECTS):</strong><br>
+                                    - Error: laundry54f.vercel.app redirected you too many times.<br>
+                                    - Penyebab: Middleware redirect terus-menerus antara /auth/login dan /customer.<br>
+                                    - Solusi: Perbaiki logic middleware, pastikan redirect hanya terjadi sekali.<br>
+
+                            <strong>• Error "Column profiles_1.email does not exist":</strong><br>
+                                    - Error: column profiles_1.email does not exist.<br>
+                                    - Penyebab: Email ada di auth.users, bukan di profiles.<br>
+                                    - Solusi: Hapus email dari query profiles, gunakan dummy email atau join ke auth.users.<br>
+                        </p>
+                    </div>
+
+                    <!-- ===== 4. SOLUSI ===== -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">4. Solusi</h4>
+                        <p class="case-block-text">
+                            <strong>• Konsisten dengan Satu Struktur Folder:</strong> Saya memutuskan untuk hanya menggunakan satu struktur folder (tanpa route group ganda) 
+                            agar tidak ada konflik di Next.js. Ini membuat routing lebih sederhana dan mudah dipahami.<br>
+                            <strong>• RLS Bertahap:</strong> Saya aktifkan RLS secara bertahap, dimulai dari tabel yang paling sensitif (orders, profiles, payments), 
+                            lalu buat policy yang sesuai untuk customer dan admin.<br>
+                            <strong>• Webhook Testing dengan Ngrok:</strong> Saya gunakan ngrok untuk testing webhook Midtrans di localhost, 
+                            lalu setelah deploy ke Vercel, webhook berjalan otomatis tanpa perlu ngrok lagi.<br>
+                            <strong>• Suspense Boundary:</strong> Saya pindahkan logika useSearchParams() ke komponen terpisah dan bungkus dengan Suspense di page.tsx.<br>
+                            <strong>• Middleware yang Lebih Sederhana:</strong> Saya perbaiki logic middleware agar tidak terjadi redirect loop, 
+                            dengan memastikan redirect hanya terjadi sekali berdasarkan role user.<br>
+                        </p>
+                    </div>
+
+                    <!-- ===== 5. PELAJARAN ===== -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">5. Pelajaran yang Didapat</h4>
+                        <p class="case-block-text">
+                            <strong>Pentingnya Memahami RLS Sebelum Production:</strong> Saya belajar bahwa RLS di Supabase sangat powerful tapi juga bisa menjadi sumber error 
+                            jika tidak dipahami dengan baik. Awalnya saya matikan RLS untuk development, tapi setelah deploy ke Vercel, saya sadar bahwa 
+                            RLS harus diaktifkan untuk keamanan data customer. Saya juga belajar cara membuat policy yang tepat untuk customer dan admin.<br><br>
+                            <strong>Webhook Itu Vital untuk Payment Gateway:</strong> Saya belajar bahwa redirect URL saja tidak cukup untuk mengkonfirmasi pembayaran. 
+                            Webhook dari server Midtrans adalah satu-satunya cara yang aman untuk update status pembayaran. Saya juga belajar cara verifikasi signature 
+                            untuk mencegah webhook palsu.<br><br>
+                            <strong>Jangan Terburu-buru ke Production:</strong> Saya sempat mengalami redirect loop di Vercel karena middleware yang belum sempurna. 
+                            Pelajaran berharga: test dulu di localhost dengan berbagai skenario sebelum deploy ke production.<br>
+                        </p>
+                    </div>
+
+                    <!-- ===== TOMBOL AKSI ===== -->
+                    <div class="case-actions-detail">
+                        <a href="https://laundry54f.vercel.app/" target="_blank" class="btn-jd-view-all">
+                            <i class="fas fa-arrow-up-right-from-square me-2"></i>Lihat Hasil
+                        </a>
+                        <a href="https://github.com/FerrCodes/Laundry" target="_blank" class="btn-jd-source">
+                            <i class="fab fa-github me-2"></i>Source Code
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="footer-retro">
+        <div class="container text-center">
+            <h3 class="footer-brand">PORTOFOLIO</h3>
+            <p class="footer-tagline">Aspiring Full Stack Engineer</p>
+            <div class="social-links mb-4">
+                <a href="https://github.com/FerrCodes" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2026 Feri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         SCRIPTS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>
