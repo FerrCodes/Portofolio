@@ -1714,6 +1714,141 @@ body.dark-mode .feature-tag:hover i {
     }
 }
 
+/* ============================================================
+   NEXT UP - SKILL GROUP
+   ============================================================ */
+
+.skill-group-box.next-up {
+    grid-column: 1 / -1;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 35px 30px;
+    background: #fff8e6;
+    border: 1px solid #f5e6b8;
+}
+
+.skill-group-box.next-up:hover {
+    border-color: #f2c94c;
+    box-shadow: 0 10px 30px rgba(242, 201, 76, 0.1);
+}
+
+/* Label khusus Next Up */
+.skill-group-box.next-up .skill-group-label {
+    border-bottom-color: #f2c94c;
+    color: #8a6d0b;
+}
+
+/* Grid Next Up */
+.skill-group-box.next-up .next-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+    gap: 12px;
+}
+
+.skill-group-box.next-up .next-grid .skill-item-mini {
+    flex: 0 1 calc(25% - 9px);
+    min-width: 140px;
+}
+
+/* Tag "Next Up" */
+.next-tag {
+    position: relative;
+    overflow: visible;
+}
+
+.next-tag::after {
+    content: 'NEXT';
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    font-size: 0.5rem;
+    font-weight: 800;
+    background: #f2c94c;
+    color: #1a1a1a;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(242, 201, 76, 0.3);
+    white-space: nowrap;
+}
+
+/* Note Next Up */
+.next-note {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #8a6d0b;
+    text-align: center;
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #f5e6b8;
+    letter-spacing: 0.5px;
+}
+
+/* Dark Mode */
+body.dark-mode .skill-group-box.next-up {
+    background: #2a2510;
+    border-color: #4a3f1a;
+}
+
+body.dark-mode .skill-group-box.next-up:hover {
+    border-color: #f2c94c;
+    box-shadow: 0 10px 30px rgba(242, 201, 76, 0.15);
+}
+
+body.dark-mode .skill-group-box.next-up .skill-group-label {
+    color: #f5c842;
+    border-bottom-color: #f5c842;
+}
+
+body.dark-mode .next-tag::after {
+    background: #f5c842;
+    color: #1a1a1a;
+}
+
+body.dark-mode .next-note {
+    color: #d4b85c;
+    border-top-color: #4a3f1a;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .skill-group-box.next-up .next-grid .skill-item-mini {
+        flex: 0 1 calc(33.333% - 8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .skill-group-box.next-up {
+        padding: 24px 18px;
+    }
+
+    .skill-group-box.next-up .next-grid .skill-item-mini {
+        flex: 0 1 calc(50% - 5px);
+    }
+
+    .next-tag::after {
+        font-size: 0.45rem;
+        padding: 1px 6px;
+        top: -6px;
+        right: -3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-group-box.next-up .next-grid .skill-item-mini {
+        flex: 0 1 100%;
+    }
+
+    .next-tag::after {
+        font-size: 0.4rem;
+        padding: 1px 5px;
+        top: -5px;
+        right: -2px;
+    }
+}
+
 /* =========================================
    8. LEARNING JOURNEY - FIXED
 ========================================= */

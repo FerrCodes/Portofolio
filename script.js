@@ -262,16 +262,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 issuer: "Belajar Dasar AI",
                 img: "assets/images/sertifikat/1.png",
             },
+            python: {
+                title: "Python",
+                issuer: "Dasar dasar Python",
+                img: "assets/images/sertifikat/Python.png",
+            },
             kaggle: {
                 title: "Kaggle",
                 issuer: "Intro to Machine Learning",
                 img: "assets/images/sertifikat/ML.png",
             },
-            claude: {
-                title: "Claude Code",
-                issuer: "Claude Code 101",
-                img: "assets/images/sertifikat/claude.png",
-            }
         };
         const cert = certData[certId];
         if (!cert) return;
