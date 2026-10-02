@@ -33,22 +33,9 @@
         <div class="container d-flex justify-content-between align-items-center">
             <a href="../index.html" class="brand-logo">FERI.</a>
             <div class="nav-actions">
-                <!-- Dropdown Settings -->
-                <div class="nav-dropdown">
-                    <button id="settingsToggle" class="settings-btn" data-tooltip="Lainnya" data-tooltip-pos="bottom" aria-label="Pengaturan">
-                        <i data-lucide="ellipsis" class="settings-icon"></i>
-                    </button>
-                    <div class="nav-dropdown-menu" id="settingsMenu">
-                        <button class="dropdown-item" id="themeToggle">
-                            <i data-lucide="moon" class="theme-icon"></i>
-                            <span>Ganti Tema</span>
-                        </button>
-                        <div class="dropdown-item dropdown-info">
-                            <i data-lucide="clock"></i>
-                            <span id="lastUpdated">Terakhir diupdate: —</span>
-                        </div>
-                    </div>
-                </div>
+                <button id="settingsToggle" class="settings-btn" data-tooltip="Lainnya" data-tooltip-pos="bottom" aria-label="Pengaturan">
+                    <i data-lucide="chevron-left" class="settings-icon"></i>
+                </button>
                 <!-- Hamburger Menu -->
                 <button class="hamburger-btn" id="menuToggle" data-tooltip="Buka Side Panel" data-tooltip-pos="bottom" aria-label="Menu">
                     <i data-lucide="text-align-end" class="hamburger-icon"></i>
@@ -360,6 +347,29 @@
     ============================================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../script.js"></script>
+
+    <!-- ===== SLIDE PANEL PENGATURAN ===== -->
+    <div id="settingsOverlay" class="settings-overlay" onclick="closeSettingsPanel()"></div>
+    <div id="settingsPanel" class="settings-panel">
+        <div class="settings-panel-header">
+            <button class="settings-panel-close" onclick="closeSettingsPanel()">
+                <i data-lucide="chevron-right"></i>
+            </button>
+            <h4>Lainnya</h4>
+        </div>
+        <div class="settings-panel-body">
+            <!-- Ganti Tema -->
+            <button class="settings-panel-item" id="themeToggle">
+                <i data-lucide="moon" class="theme-icon"></i>
+                <span>Ganti Tema</span>
+            </button>
+            <!-- Info Update -->
+            <div class="settings-panel-item settings-panel-info">
+                <i data-lucide="clock"></i>
+                <span id="lastUpdated">Terakhir diupdate: —</span>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

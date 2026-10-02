@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portofolio - Feri Ferdianto">
-    <title>Feri Ferdianto — Full Stack Engineer</title>
+    <title>Feri Ferdianto — Software Engineer</title>
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Feri Ferdianto",
-      "jobTitle": "Full Stack Engineer",
+      "jobTitle": "Software Engineer",
       "url": "https://ferrcodes.github.io/Portofolio/",
       "sameAs": [
         "https://github.com/FerrCodes",
@@ -66,22 +66,9 @@
         <div class="container d-flex justify-content-between align-items-center">
             <a href="#beranda" class="brand-logo">FERI.</a>
             <div class="nav-actions">
-                <!-- Dropdown Settings -->
-                <div class="nav-dropdown">
-                    <button id="settingsToggle" class="settings-btn" data-tooltip="Lainnya" data-tooltip-pos="bottom" aria-label="Pengaturan">
-                        <i data-lucide="ellipsis" class="settings-icon"></i>
-                    </button>
-                    <div class="nav-dropdown-menu" id="settingsMenu">
-                        <button class="dropdown-item" id="themeToggle">
-                            <i data-lucide="moon" class="theme-icon"></i>
-                            <span>Ganti Tema</span>
-                        </button>
-                        <div class="dropdown-item dropdown-info">
-                            <i data-lucide="clock"></i>
-                            <span id="lastUpdated">Terakhir diupdate: —</span>
-                        </div>
-                    </div>
-                </div>
+                <button id="settingsToggle" class="settings-btn" data-tooltip="Lainnya" data-tooltip-pos="bottom" aria-label="Pengaturan">
+                    <i data-lucide="chevron-left" class="settings-icon"></i>
+                </button>
                 <!-- Hamburger Menu -->
                 <button class="hamburger-btn" id="menuToggle" data-tooltip="Buka Side Panel" data-tooltip-pos="bottom" aria-label="Menu">
                     <i data-lucide="text-align-end" class="hamburger-icon"></i>
@@ -277,9 +264,7 @@
                         <span>Bootstrap 5</span>
                     </div>
                 </div>
-
             </div>
-
             <!-- Link ke Halaman Kedua untuk Skill Lengkap -->
             <div class="text-center mt-5">
                 <a href="projek.html#full-stack" class="btn-jd-view-all">
@@ -305,11 +290,11 @@
                 <!-- Project 1 -->
                 <div class="col-md-4 col-sm-6 jd-gallery-item">
                     <div class="jd-img-wrapper">
-                        <img src="assets/images/projek/gamee.png" alt="Rocket League Game" loading="lazy">
+                        <img src="assets/images/projek/ResourceHub.png" alt="Rocket League Game" loading="lazy">
                         <div class="jd-overlay">
-                            <h3>Rocket League</h3>
-                            <p>Construct 3</p>
-                            <a href="http://103.186.167.18:8002/rpl3/game/rocket_league/" target="_blank" class="jd-link"><i class="fas fa-external-link-alt"></i></a>
+                            <h3>Personal Resource Hub</h3>
+                            <p>PHP Native & MySQL | Pengelola Link</p>
+                            <a href="https://personalhub-feri.freepage.cc/login.php" target="_blank" class="jd-link"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
@@ -497,6 +482,28 @@
         </button>
         <div class="cert-modal-box" onclick="event.stopPropagation();">
             <img id="modalCertImg" src="assets/images/sertifikat/1.png" alt="Sertifikat" loading="lazy" />
+        </div>
+    </div>
+   <!-- ===== SLIDE PANEL PENGATURAN ===== -->
+    <div id="settingsOverlay" class="settings-overlay" onclick="closeSettingsPanel()"></div>
+    <div id="settingsPanel" class="settings-panel">
+        <div class="settings-panel-header">
+            <button class="settings-panel-close" onclick="closeSettingsPanel()">
+                <i data-lucide="chevron-right"></i>
+            </button>
+            <h4>Lainnya</h4>
+        </div>
+        <div class="settings-panel-body">
+            <!-- Ganti Tema -->
+            <button class="settings-panel-item" id="themeToggle">
+                <i data-lucide="moon" class="theme-icon"></i>
+                <span>Ganti Tema</span>
+            </button>
+            <!-- Info Update -->
+            <div class="settings-panel-item settings-panel-info">
+                <i data-lucide="clock"></i>
+                <span id="lastUpdated">Terakhir diupdate: —</span>
+            </div>
         </div>
     </div>
 

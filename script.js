@@ -435,3 +435,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 });
+
+    // ============================================================
+    // SLIDE PANEL PENGATURAN
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        const settingsToggle = document.getElementById('settingsToggle');
+        const settingsPanel = document.getElementById('settingsPanel');
+        const settingsOverlay = document.getElementById('settingsOverlay');
+    
+        if (settingsToggle && settingsPanel && settingsOverlay) {
+            // Buka panel
+            settingsToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                settingsPanel.classList.add('active');
+                settingsOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        
+            // Tutup dengan ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && settingsPanel.classList.contains('active')) {
+                    closeSettingsPanel();
+                }
+            });
+        }
+    });
+    
+    // Fungsi global (di luar DOMContentLoaded)
+    function closeSettingsPanel() {
+        const panel = document.getElementById('settingsPanel');
+        const overlay = document.getElementById('settingsOverlay');
+        if (panel && overlay) {
+            panel.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
