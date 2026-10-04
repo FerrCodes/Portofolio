@@ -5,7 +5,7 @@
 
 /* ===== HERO SECTION ===== */
 .hero-case {
-    padding: 140px 0 50px;
+    padding: 100px 0 40px;
     background: #ffffff;
     text-align: center;
     border-bottom: 1px solid #f0f0f0;
@@ -846,6 +846,126 @@ body.dark-mode .case-list-flow li::before {
     line-height: 1.9;
 }
 
+.case-block-text code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #ffd60a;
+}
+
+/* ============================================================
+   BREADCRUMB KHUSUS CASE STUDY
+   ============================================================ */
+
+.breadcrumb-case {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #666;    
+    /* Posisi */
+    /* Samakan dengan container */
+    margin: 0 auto 20px auto;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.breadcrumb-case-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-case-link:hover {
+    color: #178bb9;
+}
+
+.breadcrumb-case-link [data-lucide] {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+}
+
+.breadcrumb-case-sep {
+    color: #999;
+    opacity: 0.6;
+    font-weight: 600;
+}
+
+.breadcrumb-case-current {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Dark Mode */
+body.dark-mode .breadcrumb-case {
+    color: #aaaaaa;
+}
+
+body.dark-mode .breadcrumb-case-link {
+    color: #aaaaaa;
+}
+
+body.dark-mode .breadcrumb-case-link:hover {
+    color: #4db8e0;
+}
+
+body.dark-mode .breadcrumb-case-current {
+    color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .breadcrumb-case {
+        font-size: 0.75rem;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrumb-case {
+        font-size: 0.7rem;
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    .breadcrumb-case-link [data-lucide] {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* ============================================================
+       HERO CASE - RESPONSIVE PADDING
+       ============================================================ */
+    
+    /* Tablet */
+    @media (max-width: 768px) {
+        .hero-case,
+        .hero-case-detail {
+            padding: 100px 0 30px !important;
+        }
+    }
+    
+    /* HP */
+    @media (max-width: 480px) {
+        .hero-case,
+        .hero-case-detail {
+            padding: 80px 0 24px !important;
+        }
+    
+        .breadcrumb-case {
+            margin-bottom: 31px !important;
+        }
+    }
+}
+
 /* ============================================================
    TECH STACK - RESPONSIF
    ============================================================ */
@@ -903,7 +1023,7 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
 }
 
 .hero-case-detail {
-    padding: 140px 0 50px;
+    padding: 100px 0 50px;
     background: #f8f8f8;
     text-align: center;
     border-bottom: 1px solid #eee;

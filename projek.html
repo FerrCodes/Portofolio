@@ -67,6 +67,15 @@
     <!-- FULL TECH STACK SECTION -->
     <section id="full-stack" class="section-padding bg-white">
         <div class="container">
+            <!-- ===== BREADCRUMB ===== -->
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <a href="index.html" class="breadcrumb-link">
+                    <i data-lucide="house"></i>
+                    <span>Beranda</span>
+                </a>
+                <span class="breadcrumb-sep">/</span>
+                <span class="breadcrumb-current">Projek</span>
+            </nav>
             <div class="row justify-content-center mb-5">
                 <div class="text-center">
                     <h2 class="section-title-retro mt-5">FULL TECH STACK</h2>
@@ -234,6 +243,65 @@
 
             <!-- LIST PROJEK -->
             <div class="project-list-container">
+
+                <!-- ==========================================================
+                    Journal
+                ========================================================== -->
+                <div class="project-case-card favorite-project" data-category="favorite">
+                    <div class="case-badge">⭐ FAVORIT</div>
+                    <div class="case-row">
+                        <div class="case-img-col" onclick="openProjectModal('assets/images/projek/Demo.jpg', 'NoteNest - Native Mobile App Jurnal Modern')">
+                            <img src="assets/images/projek/Demo.jpg" alt="To-Do-List" loading="lazy">
+                            <div class="img-overlay-hint">
+                                <i data-lucide="maximize"></i> Klik untuk preview
+                            </div>
+                        </div>
+                        <div class="case-info-col">
+                            <h3>NoteNest</h3>
+                            <div class="case-meta">
+                                <span class="case-meta-item"><i data-lucide="user-round"></i>Solo</span>
+                                <span class="case-meta-item"><i data-lucide="calendar-fold"></i>2026</span>
+                                <span class="case-meta-item"><i data-lucide="tag"></i>Flutter</span>
+                            </div>
+                            <p class="case-desc">
+                               Adalah aplikasi jurnal pribadi dengan fitur lengkap: tulis jurnal, unggah foto dari galeri atau kamera, 
+                               lacak mood harian, dan pantau statistik semua jurnal yang ada secara offline, dan mendukung dua bahasa.
+                            </p>
+                            <div class="case-features">
+                                <span class="feature-tag">Dart</span>
+                                <span class="feature-tag">image_picker</span>
+                                <span class="feature-tag">i18n</span>
+                                <span class="feature-tag">IOS Design</span>
+                            </div>
+                            <div class="case-tech-row">
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" />
+                                    <span>Flutter</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" />
+                                    <span>Dart</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" />
+                                    <span>Android SDK</span>
+                                </div>
+                                <div class="tech-item">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" />
+                                    <span>Kotlin</span>
+                                </div>
+                            </div>
+                            <div class="case-actions">
+                                <a href="case-study/noteNest.html" class="btn-jd-view-all">
+                                   <i data-lucide="book-open"></i>Lihat Studi Kasus
+                                </a>
+                                <a href="https://github.com/FerrCodes/Note-Nest" target="_blank" class="btn-jd-source">
+                                    <i class="fab fa-github me-2"></i>Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- ==========================================================
                     Laundry54F

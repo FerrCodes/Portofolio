@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Studi Kasus - NoteNest" />
+    <title>Studi Kasus: NoteNest</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../style2.css" />
+    <link rel="stylesheet" href="case-study.css" />
+    <link rel="icon" href="../assets/images/me/favicon.png" type="image/jpg" />
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" class="scroll-to-top" data-tooltip="Kembali ke Atas" aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="scroll-icon"></i>
+    </button>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar-custom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="../index.html" class="brand-logo">FERI.</a>
+            <div class="nav-actions">
+                <button id="settingsToggle" class="settings-btn" data-tooltip="Lainnya" data-tooltip-pos="bottom" aria-label="Pengaturan">
+                    <i data-lucide="chevron-left" class="settings-icon"></i>
+                </button>
+                <button class="hamburger-btn" id="menuToggle" data-tooltip="Buka Side Panel" data-tooltip-pos="bottom" aria-label="Menu">
+                    <i data-lucide="text-align-end" class="hamburger-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== SIDE PANEL ===== -->
+    <div class="side-panel" id="sidePanel">
+        <div class="panel-header">
+            <span class="panel-brand">MENU</span>
+            <button class="close-btn" id="menuClose" data-tooltip="Tutup Side Panel" data-tooltip-pos="left"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="panel-links">
+            <li><a href="../case-study/index2.html">Kembali</a></li>
+            <div class="divider-retro2"></div>
+            <li><a href="../projek.html#all-projects"> Kembali ke Halaman Semua Projek</a></li>
+        </ul>
+        <div class="panel-footer">
+            <small>© 2026 Feri.</small>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ============================================================
+         HERO CASE STUDY
+    ============================================================ -->
+    <header class="hero-case-detail">
+        <div class="container">
+            <nav class="breadcrumb-case" aria-label="Breadcrumb">
+                <a href="../index.html" class="breadcrumb-case-link">
+                    <i data-lucide="house"></i>
+                    <span>Beranda</span>
+                </a>
+                <span class="breadcrumb-case-sep">/</span>
+                <a href="../projek.html" class="breadcrumb-case-link">Projek</a>
+                <span class="breadcrumb-case-sep">/</span>
+                <a href="index2.html" class="breadcrumb-case-link">Studi Kasus</a>
+                <span class="breadcrumb-case-sep">/</span>
+                <span class="breadcrumb-case-current">NoteNest</span>
+            </nav>  
+            <div class="text-center">
+            <span class="badge-detail">STUDI KASUS</span>
+            <h1>NoteNest</h1>
+            <div class="divider-detail"></div>
+            <p class="hero-desc">
+                Aplikasi jurnal pribadi berbasis Flutter dengan dukungan multi-bahasa (ID/EN), 
+                tracking mood, upload foto dari galeri atau kamera, statistik menulis, 
+                dan notifikasi reminder harian — semua berjalan 100% offline dengan Hive.
+            </p>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         CAROUSEL FOTO PROYEK
+    ============================================================ -->
+    <section class="section-carousel">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/images/case-study/NoteNest/Demo.jpg" class="d-block w-100" alt="Halaman Reflect" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TECH STACK
+    ============================================================ -->
+    <section class="section-tech-stack">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h3 class="tech-stack-title text-center">Tech Stack</h3>
+                    <div class="case-tech-row justify-content-center">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" />
+                            <span>Flutter</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" />
+                            <span>Dart</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" />
+                            <span>Android SDK</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" />
+                            <span>Kotlin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ISI STUDI KASUS
+    ============================================================ -->
+    <section class="section-case-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <h2 class="section-title-case text-center">Studi Kasus</h2>
+                    <div class="divider-case mx-auto"></div>
+
+                    <!-- ===== 1. MASALAH ===== -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">1. Masalah</h4>
+                        <p class="case-block-text">
+                            <strong>Masalah Awal:</strong> Saya ingin membuat aplikasi secara native, UI dan ingin tahu cara aplikasi bekerja dibaliknya dan ekosistem Android semua itu, tapi saya tidak mau pakai React Native karena sebelumnya saya sudah pernah mencoba dan berakhir burnout karena konflik Library yang tidak ada habisnya.<br> 
+                            Karena sebelumnya saya sudah pernah mencoba React Native dan berakhir burnout karena konflik Library yang tidak ada habisnya, saya memutuskan untuk pindah ke Flutter dan mulai dari nol.<br>
+                            <strong>Keputusan:</strong> Saya memilih Flutter karena satu bahasa (Dart) bisa dipakai untuk Android saja tanpa harus setup native code yang rumit. Untuk database lokal saya memilih Hive karena ringan dan tidak butuh konfigurasi Gradle tambahan, sedangkan untuk fitur-fitur native seperti kamera, galeri, dan notifikasi saya pakai package resmi yang sudah stabil di ekosistem Flutter.
+                        </p>
+                    </div>
+
+                    <!-- ============================================================
+                         2. PENDEKATAN
+                    ============================================================ -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">2. Pendekatan &amp; Alasan Memilih Tech Stack</h4>
+
+                        <!-- Sub 2.1 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">2.1 Kebutuhan</h5>
+                            <p class="case-block-text">
+                                <strong>•</strong> Aplikasi harus bisa dipakai 100% offline, jadi tidak boleh bergantung pada server atau internet.<br>
+                                <strong>•</strong> User harus bisa menulis jurnal, upload foto dari galeri atau ambil langsung dari kamera, dan lacak mood harian.<br>
+                                <strong>•</strong> Perlu ada fitur statistik untuk melihat streak menulis, kalender bulanan, grafik mingguan, dan distribusi mood.<br>
+                                <strong>•</strong> Aplikasi harus mendukung multi-bahasa (Indonesia & Inggris) supaya bisa dipakai lebih luas.<br>
+                                <strong>•</strong> Perlu notifikasi pengingat harian supaya user konsisten menulis jurnal.<br>
+                                <strong>•</strong> UI harus mengikuti gaya iOS yang minimalis, gelap, dan tenang.<br>
+                                <strong>•</strong> Harus bisa di-build jadi APK release yang bisa dibagikan ke siapa saja.
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 2.2 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">2.2 Pilihan Stack</h5>
+                            <p class="case-block-text">
+                                <strong>•</strong> Flutter untuk framework UI & build ke native Android<br>
+                                <strong>•</strong> Dart sebagai bahasa pemrograman utama<br>
+                                <strong>•</strong> Hive untuk database lokal (NoSQL)<br>
+                                <strong>•</strong> flutter_local_notifications untuk reminder harian<br>
+                                <strong>•</strong> image_picker untuk kamera & galeri<br>
+                                <strong>•</strong> fl_chart untuk grafik statistik<br>
+                                <strong>•</strong> intl + flutter_localizations untuk multi-bahasa<br>
+                                <strong>•</strong> url_launcher untuk buka Instagram, GitHub, Email, WhatsApp<br>
+                                <strong>•</strong> share_plus untuk export jurnal<br>
+                                <strong>•</strong> font_awesome_flutter untuk ikon brand<br>
+                                <strong>•</strong> Inter sebagai font utama aplikasi
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 2.3 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">2.3 Alasan Utama</h5>
+                            <p class="case-block-text">
+                                <strong>• Pindah dari React Native ke Flutter:</strong> Karena di React Native saya sering kena konflik Library yang tidak jelas penyebabnya, sedangkan di Flutter semua package dikelola dengan lebih rapi dan stabil.<br>
+                                <strong>• Hive > SQLite:</strong> Hive lebih ringan, tidak butuh setup native code, dan cocok untuk aplikasi kecil-menengah seperti jurnal.<br>
+                                <strong>• 100% Offline:</strong> Karena ini jurnal pribadi, saya tidak mau data user dikirim ke server. Semua data disimpan lokal di HP user.<br>
+                                <strong>• Dark Mode Only:</strong> Karena tema gelap lebih nyaman untuk aplikasi jurnal yang dipakai malam hari, dan lebih terlihat premium.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ============================================================
+                         3. KENDALA TEKNIS
+                    ============================================================ -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">3. Kendala Teknis</h4>
+
+                        <p class="case-block-text">
+                            <strong>• Konflik Gradle pada Package shared_preferences:</strong><br>
+                                    - Error: Could not close incremental caches in ...shared_preferences_android...<br>
+                                    - Penyebab: Cache Gradle korup karena proyek di drive D: tapi cache di drive C:.<br>
+                                    - Solusi: Ganti shared_preferences dengan Hive untuk menghindari konflik native code.<br>
+
+                            <strong>• Konflik Gradle pada Package image_picker:</strong><br>
+                                    - Error: Could not close incremental caches in ...image_picker_android...<br>
+                                    - Penyebab: Sama, drive conflict antara proyek dan cache.<br>
+                                    - Solusi: Tambahkan kotlin.incremental=false di gradle.properties.<br>
+
+                            <strong>• Kotlin Daemon Compilation Failed:</strong><br>
+                                    - Error: Daemon compilation failed, java.lang.Exception<br>
+                                    - Penyebab: RAM laptop terbatas untuk compile Kotlin.<br>
+                                    - Solusi: Set RAM Gradle & Kotlin daemon di gradle.properties, matikan Gradle daemon.<br>
+
+                            <strong>• Error Desugaring di flutter_local_notifications:</strong><br>
+                                    - Error: Dependency ':flutter_local_notifications' requires core library desugaring to be enabled<br>
+                                    - Penyebab: Package butuh fitur Java 8+ di Android versi lama.<br>
+                                    - Solusi: Aktifkan isCoreLibraryDesugaringEnabled dan tambahkan desugar_jdk_libs:2.1.4.<br>
+
+                            <strong>• kotlinOptions Deprecated di AGP 9.0:</strong><br>
+                                    - Error: 'var jvmTarget: String' is deprecated. Please migrate to the compilerOptions DSL.<br>
+                                    - Penyebab: Android Gradle Plugin 9.0 mengubah cara konfigurasi Kotlin.<br>
+                                    - Solusi: Pindahkan konfigurasi ke blok kotlin { compilerOptions { } }.<br>
+
+                            <strong>• AndroidManifest.xml Salah Struktur:</strong><br>
+                                    - Error: unexpected element &lt;receiver&gt; found in &lt;manifest&gt;<br>
+                                    - Penyebab: Tag &lt;receiver&gt; ditaruh di luar &lt;application&gt;.<br>
+                                    - Solusi: Pindahkan semua &lt;receiver&gt; ke dalam &lt;application&gt;.<br>
+
+                            <strong>• MainActivity ClassNotFoundException:</strong><br>
+                                    - Error: Didn't find class "com.notenest.app.MainActivity"<br>
+                                    - Penyebab: Package name di build.gradle.kts sudah diubah ke com.notenest.app, tapi file MainActivity.kt masih pakai package lama.<br>
+                                    - Solusi: Ubah baris package di MainActivity.kt dan pindahkan file ke folder yang sesuai.<br>
+
+                            <strong>• Foto Preset Tidak Muncul di APK Release:</strong><br>
+                                    - Error: PathNotFoundException: Cannot retrieve length of file, path = 'assets/presets/photo-1.jpg'<br>
+                                    - Penyebab: _buildImage cuma handle http & file, tapi tidak handle assets.<br>
+                                    - Solusi: Tambahkan cabang ketiga di _buildImage untuk handle assets dengan Image.asset.<br>
+
+                            <strong>• Error Kotlin Incremental Muncul Lagi di Proyek Baru:</strong><br>
+                                    - Error: Same as before — Could not close incremental caches<br>
+                                    - Penyebab: Proyek baru di drive D:, cache masih di drive C:.<br>
+                                    - Solusi: Pindahkan PUB_CACHE ke D:\FlutterCache lewat environment variable, dan masalah hilang permanen.<br>
+                        </p>
+                    </div>
+
+                    <!-- ===== 4. SOLUSI ===== -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">4. Solusi</h4>
+                        <p class="case-block-text">
+                            <strong>• Setup Permanen Anti-Error:</strong> Setelah menghadapi puluhan error Gradle yang sama berulang-ulang, saya akhirnya memindahkan cache Flutter ke drive yang sama dengan proyek (D:\FlutterCache) lewat environment variable PUB_CACHE. Sejak saat itu, error Kotlin incremental hilang permanen tanpa perlu set kotlin.incremental=false di setiap proyek baru.<br>
+                            <strong>• Pindah dari React Native ke Flutter:</strong> Setelah 3 hari burnout mencoba memperbaiki konflik Library di React Native tanpa hasil, saya memutuskan pindah ke Flutter dan mulai dari nol. Meskipun butuh belajar Dart dari awal, hasilnya jauh lebih stabil dan menyenangkan.<br>
+                            <strong>• Rilis APK Release:</strong> Setelah melewati semua error, saya build APK release (53.9 MB), test di HP sendiri, lalu upload ke GitHub Releases v1.1.0. Sekarang siapapun bisa download dan install langsung dari halaman GitHub.
+                        </p>
+                    </div>
+
+                    <!-- ===== 5. PELAJARAN ===== -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">5. Pelajaran yang Didapat</h4>
+                        <p class="case-block-text">
+                            <strong>Jangan Terburu-Buru Pindah Framework Tanpa Cek Ekosistemnya: Saya sempat burnout 3 hari di React Native karena konflik Library yang tidak jelas, padahal kalau dari awal saya cek kompatibilitas dan ekosistemnya, saya bisa langsung pindah ke Flutter dan menghemat waktu. Tapi dari situ saya belajar bahwa setiap framework punya ekosistem sendiri, dan yang paling penting adalah memilih tool yang cocok dengan cara kerja kita — bukan yang paling populer.</strong><br><br>
+                            <strong>Setup Itu 50% Keberhasilan: Dari semua error yang saya hadapi, sebagian besar bukan karena kode saya salah, tapi karena setup environment yang kurang tepat. Setelah saya atur cache di drive yang sama dengan proyek, exclude antivirus, dan set environment variable dengan benar, error-error itu hilang sendiri. Pelajaran pentingnya: investasi waktu untuk setup yang benar itu worth it.</strong>
+                        </p>
+                    </div>
+
+                    <!-- ===== 6. ANALOGI & KONSEP BARU ===== -->
+                    <div class="case-block">
+                        <h4 class="case-block-title">6. Analogi &amp; Konsep Baru</h4>
+                        <p class="case-block-text">
+                            Selama mengerjakan NoteNest, saya banyak menemukan istilah dan konsep yang belum pernah saya sentuh di dunia Web. 
+                            Supaya lebih mudah dipahami, saya tuliskan analogi-analoginya di sini.
+                        </p>
+
+                        <!-- Sub 6.1 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">6.1 Gradle — Si Mandor Proyek</h5>
+                            <p class="case-block-text">
+                                <strong>Analogi:</strong> Bayangkan kamu mau membangun rumah. Kamu punya desainnya (kode Dart), tapi desain saja tidak cukup — kamu butuh semen, batu bata, tukang, dan alat berat. 
+                                <strong>Gradle itu mandor proyeknya.</strong> Dia yang pesan material (download library), panggil tukang (compile kode Kotlin/Java), dan rakit semuanya jadi rumah (file APK).<br>
+                                <strong>Kenapa rumit?</strong> Karena Gradle harus support ribuan model HP Android, dari Android 5 sampai Android 15. Setiap HP punya spesifikasi berbeda, dan Gradle harus memastikan aplikasimu bisa jalan di semuanya. 
+                                Itulah kenapa Gradle sering error — bukan karena kodenya salah, tapi karena "proyeknya" terlalu besar untuk diatur.
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 6.2 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">6.2 Kotlin &amp; Java — Bahasa Native Android</h5>
+                            <p class="case-block-text">
+                                <strong>Analogi:</strong> Kalau Dart itu bahasa yang kamu pakai untuk ngobrol dengan Flutter, maka <strong>Kotlin dan Java</strong> itu bahasa yang dipakai untuk ngobrol langsung dengan Android. 
+                                Flutter tidak bisa langsung bicara ke Android — dia butuh "penerjemah" yang namanya Kotlin/Java.<br>
+                                <strong>Kenapa penting?</strong> Setiap kali kamu pakai fitur native (kamera, notifikasi, galeri), Flutter akan memanggil kode Kotlin di balik layar. 
+                                Kalau kode Kotlin-nya error, aplikasimu juga error — meskipun kode Dart-mu 100% benar.
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 6.3 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">6.3 Kotlin Daemon — Si Tukang yang Butuh Tenaga</h5>
+                            <p class="case-block-text">
+                                <strong>Analogi:</strong> Kotlin Daemon itu seperti tukang bangunan yang butuh tenaga ekstra untuk mengangkat material. Kalau tenaganya kurang (RAM terbatas), dia akan <em>drop</em> — dan itu yang bikin error 
+                                <code>Daemon compilation failed</code>.<br>
+                                <strong>Kenapa penting?</strong> Daemon ini jalan di background, makan RAM 1-2 GB. Kalau laptop tersebut RAM-nya terbatas, dia sering crash. Solusinya: atur RAM di <code>gradle.properties</code>, dan matikan daemon kalau tidak dipakai.
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 6.4 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">6.4 Incremental Cache — Lemari Arsip yang Bisa Berjamur</h5>
+                            <p class="case-block-text">
+                                <strong>Analogi:</strong> Bayangkan kamu punya lemari arsip. Setiap kali compile, Gradle menyimpan hasilnya di lemari itu supaya compile berikutnya lebih cepat. 
+                                Tapi kalau lemari itu <strong>berjamur</strong> (cache korup), bukan cepat — malah error.<br>
+                                <strong>Kenapa penting?</strong> Error <code>Could not close incremental caches</code> itu artinya lemari arsipnya rusak. Penyebabnya bisa banyak: drive berbeda, antivirus, atau proses yang nyangkut. 
+                                Solusinya: bersihkan lemari (<code>flutter clean</code>), atau matikan fitur arsipnya (<code>kotlin.incremental=false</code>).
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 6.5 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">6.5 Core Library Desugaring — Penerjemah untuk Android Lama</h5>
+                            <p class="case-block-text">
+                                <strong>Analogi:</strong> Bayangkan kamu punya buku dengan bahasa modern, tapi harus dibaca oleh orang yang hanya mengerti bahasa kuno. 
+                                <strong>Desugaring</strong> itu penerjemahnya — dia mengubah kode modern (Java 8+) jadi kode yang bisa dipahami Android versi lama (Android 5).<br>
+                                <strong>Kenapa penting?</strong> Package seperti <code>flutter_local_notifications</code> butuh fitur Java 8+, tapi harus tetap jalan di Android 5. 
+                                Tanpa desugaring, aplikasimu tidak akan bisa di-build.
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 6.6 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">6.6 Environment Variable — Alamat Rumah</h5>
+                            <p class="case-block-text">
+                                <strong>Analogi:</strong> Environment variable itu seperti <strong>alamat rumah</strong> yang dipakai sistem operasi untuk mencari sesuatu. 
+                                Kalau <code>PUB_CACHE</code> mengarah ke drive D:, maka Flutter akan mencari cache-nya di sana. Kalau alamatnya salah, dia akan tersesat — dan error.<br>
+                                <strong>Kenapa penting?</strong> Banyak error Gradle terjadi karena environment variable tidak di-set dengan benar. 
+                                Setelah saya pindahkan <code>PUB_CACHE</code> ke drive yang sama dengan proyek, error yang sama berulang-ulang itu hilang permanen.
+                            </p>
+                        </div>
+
+                        <hr class="case-divider" />
+
+                        <!-- Sub 6.7 -->
+                        <div class="case-sub-block">
+                            <h5 class="case-sub-title">6.7 APK — Rumah yang Siap Ditinggali</h5>
+                            <p class="case-block-text">
+                                <strong>Analogi:</strong> Kalau kode Flutter itu <strong>desain rumah</strong>, maka <strong>APK</strong> itu <strong>rumah jadi</strong> yang bisa ditinggali. 
+                                Semua material sudah dirakit, semua kabel sudah tersambung, dan siap dipakai.<br><br>
+                                <strong>Kenapa penting?</strong> APK itu <strong>hasil akhir</strong> dari semua proses. Dari kode Dart, compile ke Kotlin, dirakit Gradle, jadi file APK yang bisa di-install di HP siapa saja. 
+                                Itu momen paling memuaskan — ketika hasil kerja berhari-hari jadi satu file yang bisa dibagikan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ===== TOMBOL AKSI ===== -->
+                    <div class="case-actions-detail">
+                        <a href="https://github.com/FerrCodes/Note-Nest/releases/latest" target="_blank" class="btn-jd-view-all">
+                            <i data-lucide="square-arrow-out-up-right"></i>Lihat Hasil
+                        </a>
+                        <a href="https://github.com/FerrCodes/Note-Nest" target="_blank" class="btn-jd-source">
+                            <i class="fab fa-github me-2"></i>Source Code
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="footer-retro">
+        <div class="container text-center">
+            <h3 class="footer-brand">PORTOFOLIO</h3>
+            <p class="footer-tagline">Aspiring Software Engineer</p>
+            <div class="social-links mb-4">
+                <a href="https://github.com/FerrCodes" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2026 Feri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         SCRIPTS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+
+    <!-- ===== SLIDE PANEL PENGATURAN ===== -->
+    <div id="settingsOverlay" class="settings-overlay" onclick="closeSettingsPanel()"></div>
+    <div id="settingsPanel" class="settings-panel">
+        <div class="settings-panel-header">
+            <button class="settings-panel-close" onclick="closeSettingsPanel()">
+                <i data-lucide="chevron-right"></i>
+            </button>
+            <h4>Lainnya</h4>
+        </div>
+        <div class="settings-panel-body">
+            <button class="settings-panel-item" id="themeToggle">
+                <i data-lucide="moon" class="theme-icon"></i>
+                <span>Ganti Tema</span>
+            </button>
+            <div class="settings-panel-item settings-panel-info">
+                <i data-lucide="clock"></i>
+                <span id="lastUpdated">Terakhir diupdate: —</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

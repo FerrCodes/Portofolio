@@ -133,6 +133,85 @@ body.dark-mode [data-tooltip]::after {
 }
 
 /* ============================================================
+   BREADCRUMB
+   ============================================================ */
+
+.breadcrumb-nav {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 0.85rem !important;
+    color: var(--text-secondary) !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    padding: 20px 16px 0 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+}
+
+.breadcrumb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #178bb9;
+}
+
+.breadcrumb-link [data-lucide] {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+}
+
+.breadcrumb-sep {
+    color: var(--text-secondary);
+    opacity: 0.5;
+    font-weight: 600;
+}
+
+.breadcrumb-current {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Dark Mode */
+body.dark-mode .breadcrumb-nav {
+    color: #aaaaaa;
+}
+
+body.dark-mode .breadcrumb-link {
+    color: #aaaaaa;
+}
+
+body.dark-mode .breadcrumb-link:hover {
+    color: #4db8e0;
+}
+
+body.dark-mode .breadcrumb-current {
+    color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .breadcrumb-nav {
+        font-size: 0.75rem;
+        gap: 6px;
+    }
+
+    .breadcrumb-link [data-lucide] {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* ============================================================
    SCROLL TO TOP
    ============================================================ */
 
@@ -1589,7 +1668,7 @@ body.dark-mode .jd-overlay p {
 /* =========================================
    5. SECTIONS GENERAL
 ========================================= */
-.section-padding { padding: 100px 0; }
+.section-padding { padding: 80px 0; }
 .bg-light { background: #f8f8f8; }
 .bg-white { background: #fff; }
 

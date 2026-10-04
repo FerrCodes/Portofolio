@@ -61,8 +61,19 @@
 
     <!-- HEADER HALAMAN STUDI KASUS -->
     <header class="hero-case">
-        <div class="container text-center">
-            <span class="badge-detail">DOKUMENTASI TEKNIS</span>
+        <div class="container">
+            <nav class="breadcrumb-case" aria-label="Breadcrumb">
+                <a href="../index.html" class="breadcrumb-case-link">
+                    <i data-lucide="house"></i>
+                    <span>Beranda</span>
+                </a>
+                <span class="breadcrumb-case-sep">/</span>
+                <a href="../projek.html" class="breadcrumb-case-link">Projek</a>
+                <span class="breadcrumb-case-sep">/</span>
+                <span class="breadcrumb-case-current">Studi Kasus</span>
+            </nav>
+            <div class="text-center">
+            <span class="badge">DOKUMENTASI TEKNIS</span>
             <h1>STUDI KASUS PADA PROJEK</h1>
             <div class="divider"></div>
             <p>
@@ -75,6 +86,26 @@
     <!-- DAFTAR STUDI KASUS (TECHNICAL CARD LIST) -->
     <section class="case-list">
         <div class="container">
+
+            <!-- Case 4: NoteNest -->
+            <article class="tech-case-card favorite-highlight">
+                <div class="card-meta-row">
+                    <span class="tech-tag tag-fav">⭐ Favorit</span>
+                    <span class="tech-year">2026</span>
+                    <span class="tech-tag tag-new">Terbaru</span>
+                </div>
+                <h3 class="card-title">NoteNest</h3>
+                <p class="card-desc">
+                    Aplikasi pertama menggunakan Flutter dan mengimplementasikan arsitektur MVVM.
+                    Dan mencoba bagaimana cara kerja ekosistem Android dan Flutter dalam membangun aplikasi mobile modern.
+                </p>
+                <div class="card-footer-action">
+                    <a href="noteNest.html" class="btn-read-case">
+                        <span class="circle-arrow"><i data-lucide="arrow-right"></i></span>
+                        Baca
+                    </a>
+                </div>
+            </article>
 
             <!-- Case 3: Laundry 54F -->
             <article class="tech-case-card">
