@@ -1,14 +1,26 @@
 /* ============================================================
    CASE STUDY - CLEAN & MINIMALIS
-   Kartu Favorit Dibuat Berbeda Secara Jelas
+   Kartu Favorit Dibedakan Secara Jelas
+
+   File ini pakai design tokens dari style.css:
+   - Background: --bg-page, --bg-section-alt, --bg-card
+   - Text: --text-primary, --text-secondary, --text-muted
+   - Border: --border, --border-subtle, --border-strong
+   - Accent: --accent, --accent-hover, --accent-soft
+   - Shadow: --shadow-sm, --shadow-md, --shadow-lg, --shadow-accent
+   - Tag: --tag-*
+   - Code block: --bg-code (selalu gelap)
    ============================================================ */
 
-/* ===== HERO SECTION ===== */
+/* ============================================================
+   HERO CASE (halaman index2.html)
+   ============================================================ */
+
 .hero-case {
     padding: 100px 0 40px;
-    background: #ffffff;
+    background: var(--bg-page);
     text-align: center;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .hero-case h1 {
@@ -16,7 +28,7 @@
     font-size: clamp(2.4rem, 5vw, 3.4rem);
     font-weight: 900;
     letter-spacing: -1.5px;
-    color: #1a1a1a;
+    color: var(--text-primary);
     margin-bottom: 6px;
 }
 
@@ -26,30 +38,33 @@
     font-size: 0.6rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #178bb9;
+    color: var(--accent);
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 
 .hero-case .divider {
-    width: 36px;
-    height: 2px;
-    background: #178bb9;
-    margin: 0 auto 16px;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 0 auto 20px;
 }
 
 .hero-case p {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--text-secondary);
     max-width: 580px;
     margin: 0 auto;
     line-height: 1.9;
 }
 
-/* ===== LIST CASE STUDY ===== */
+/* ============================================================
+   LIST CASE STUDY
+   ============================================================ */
+
 .case-list {
     padding: 50px 0 80px;
-    background: #fafafa;
+    background: var(--bg-section-alt);
 }
 
 .case-list .container {
@@ -57,44 +72,49 @@
 }
 
 /* ============================================================
-   KARTU BIASA (3 KARTU PERTAMA)
+   KARTU STUDI KASUS
    ============================================================ */
+
 .tech-case-card {
-    background: #ffffff;
-    border: 1px solid #eaeaea;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 26px 32px;
     margin-bottom: 18px;
     transition: all 0.2s ease;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    box-shadow: var(--shadow-sm);
 }
 
 .tech-case-card:hover {
-    border-color: #178bb9;
-    box-shadow: 0 4px 16px rgba(23, 139, 185, 0.06);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
 }
 
 /* ============================================================
-   KARTU FAVORIT (JOURNALAPP) - BEDA JELAS
+   KARTU FAVORIT - BEDA JELAS
    ============================================================ */
+
 .favorite-highlight {
-    background: #f8fcff;
-    border: 1px solid #178bb9;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
     border-radius: 12px;
     padding: 32px 38px;
     margin-bottom: 18px;
-    box-shadow: 0 8px 28px rgba(23, 139, 185, 0.08);
+    box-shadow: var(--shadow-accent);
     transition: all 0.25s ease;
 }
 
 .favorite-highlight:hover {
-    border-color: #178bb9;
+    border-color: var(--accent);
     box-shadow: 0 12px 40px rgba(23, 139, 185, 0.13);
     transform: translateY(-3px);
 }
 
-/* ===== META ROW (TAG + TAHUN) ===== */
+/* ============================================================
+   META ROW (TAG + TAHUN)
+   ============================================================ */
+
 .card-meta-row {
     display: flex;
     justify-content: space-between;
@@ -110,78 +130,83 @@
     letter-spacing: 1px;
     padding: 3px 12px;
     border-radius: 20px;
-    background: #f0f0f0;
-    color: #555;
+    background: var(--tag-neutral-bg);
+    color: var(--tag-neutral-text);
 }
 
 .tag-new {
-    background: #e6f3fa;
-    color: #0a5f7a;
+    background: var(--tag-blue-bg);
+    color: var(--tag-blue-text);
 }
 
 .tag-fav {
-    background: #fef9e7;
-    color: #8a6d0b;
-    border: 1px solid #fde68a;
+    background: var(--tag-yellow-bg);
+    color: var(--tag-yellow-text);
+    border: 1px solid var(--tag-yellow-border);
 }
 
 .tag-ml {
-    background: #f0edff;
-    color: #4c3d8a;
+    background: var(--tag-purple-bg);
+    color: var(--tag-purple-text);
 }
 
 .tag-php {
-    background: #f1f4f8;
-    color: #2d3a4a;
+    background: var(--tag-neutral-bg);
+    color: var(--tag-neutral-text);
 }
 
 .tech-year {
     font-size: 0.7rem;
     font-weight: 600;
-    color: #bbb;
+    color: var(--text-faint);
     letter-spacing: 0.5px;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* ===== JUDUL ===== */
+/* ============================================================
+   JUDUL
+   ============================================================ */
+
 .card-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: 900;
-    color: #1a1a1a;
+    color: var(--text-primary);
     margin-bottom: 6px;
     letter-spacing: -0.3px;
     transition: color 0.2s ease;
 }
 
-/* Judul di kartu favorit sedikit lebih besar */
 .favorite-highlight .card-title {
     font-size: 1.5rem;
 }
 
 .tech-case-card:hover .card-title,
 .favorite-highlight:hover .card-title {
-    color: #178bb9;
+    color: var(--accent);
 }
 
-/* ===== DESKRIPSI ===== */
+/* ============================================================
+   DESKRIPSI
+   ============================================================ */
+
 .card-desc {
     font-size: 0.92rem;
     line-height: 1.8;
-    color: #555;
+    color: var(--text-secondary);
     margin-bottom: 18px;
     max-width: 90%;
 }
 
-/* Deskripsi di kartu favorit lebih lega */
 .favorite-highlight .card-desc {
     font-size: 0.95rem;
     line-height: 1.9;
 }
 
 /* ============================================================
-   TOMBOL BACA STUDI KASUS - OPSI 4 (LINGKARAN BERGESER)
+   TOMBOL BACA STUDI KASUS
    ============================================================ */
+
 .btn-read-case {
     display: inline-flex;
     align-items: center;
@@ -191,7 +216,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: #1a1a1a;
+    color: var(--text-primary);
     text-decoration: none;
     padding: 6px 0;
     transition: all 0.25s ease;
@@ -203,45 +228,56 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-    border: 2px solid #1a1a1a;
+    border: 2px solid var(--text-primary);
     border-radius: 50%;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     background: transparent;
     flex-shrink: 0;
 }
 
-.btn-read-case .circle-arrow i {
+.btn-read-case .circle-arrow i,
+.btn-read-case .circle-arrow [data-lucide] {
     font-size: 0.6rem;
-    transition: transform 0.3s ease;
-    color: #1a1a1a;
+    color: var(--text-primary);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover efek */
+.btn-read-case .circle-arrow [data-lucide] {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5;
+}
+
 .tech-case-card:hover .btn-read-case,
 .favorite-highlight:hover .btn-read-case {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 .tech-case-card:hover .btn-read-case .circle-arrow,
 .favorite-highlight:hover .btn-read-case .circle-arrow {
-    border-color: #178bb9;
-    background: #178bb9;
+    border-color: var(--accent);
+    background: var(--accent);
     transform: scale(1.08);
-    box-shadow: 0 4px 14px rgba(23, 139, 185, 0.2);
+    box-shadow: var(--shadow-accent);
 }
 
 .tech-case-card:hover .btn-read-case .circle-arrow i,
-.favorite-highlight:hover .btn-read-case .circle-arrow i {
+.tech-case-card:hover .btn-read-case .circle-arrow [data-lucide],
+.favorite-highlight:hover .btn-read-case .circle-arrow i,
+.favorite-highlight:hover .btn-read-case .circle-arrow [data-lucide] {
     color: #ffffff;
     transform: translateX(3px);
 }
 
-/* ===== TOMBOL KEMBALI ===== */
+/* ============================================================
+   TOMBOL KEMBALI
+   ============================================================ */
+
 .back-wrap {
     text-align: center;
     margin-top: 44px;
     padding-top: 28px;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid var(--border);
 }
 
 .btn-back {
@@ -253,8 +289,8 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: #1a1a1a;
-    border: 2px solid #e0e0e0;
+    color: var(--text-primary);
+    border: 2px solid var(--border-strong);
     padding: 10px 28px;
     border-radius: 40px;
     text-decoration: none;
@@ -263,555 +299,28 @@
 }
 
 .btn-back:hover {
-    background: #1a1a1a;
-    color: #ffffff;
-    border-color: #1a1a1a;
+    background: var(--text-primary);
+    color: var(--text-inverse);
+    border-color: var(--text-primary);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-md);
 }
 
 /* ============================================================
-   CASE STUDY INDEX (index2.html) - DARK MODE FIX
+   HERO CASE DETAIL (halaman detail case study)
    ============================================================ */
 
-/* ---- Hero Case ---- */
-body.dark-mode .hero-case {
-    background: #121212 !important;
-    border-bottom-color: #2a2a2a !important;
-}
-
-body.dark-mode .hero-case h1 {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .hero-case .badge {
-    color: #178bb9 !important;
-    border-bottom-color: #178bb9 !important;
-}
-
-body.dark-mode .hero-case p {
-    color: #aaaaaa !important;
-}
-
-body.dark-mode .hero-case .divider {
-    background: #178bb9 !important;
-}
-
-/* ---- Tombol Baca Studi Kasus (Lingkaran + Teks) ---- */
-body.dark-mode .btn-read-case {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .btn-read-case .circle-arrow {
-    border-color: #aaaaaa !important;
-    background: transparent !important;
-}
-
-body.dark-mode .btn-read-case .circle-arrow i {
-    color: #aaaaaa !important;
-}
-
-/* Hover state */
-body.dark-mode .tech-case-card:hover .btn-read-case {
-    color: #178bb9 !important;
-}
-
-body.dark-mode .tech-case-card:hover .btn-read-case .circle-arrow {
-    border-color: #178bb9 !important;
-    background: #178bb9 !important;
-    box-shadow: 0 4px 16px rgba(23, 139, 185, 0.25) !important;
-}
-
-body.dark-mode .tech-case-card:hover .btn-read-case .circle-arrow i {
-    color: #ffffff !important;
-}
-
-/* ---- Kartu Studi Kasus (di index2.html) ---- */
-body.dark-mode .tech-case-card {
-    background: #1e1e1e !important;
-    border-color: #2a2a2a !important;
-}
-
-body.dark-mode .tech-case-card:hover {
-    border-color: #178bb9 !important;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
-}
-
-body.dark-mode .tech-case-card .card-title {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .tech-case-card .card-desc {
-    color: #aaaaaa !important;
-}
-
-/* ---- Favorite Highlight ---- */
-body.dark-mode .favorite-highlight {
-    background: #1a2530 !important;
-    border-color: #178bb9 !important;
-}
-
-body.dark-mode .favorite-highlight .card-title {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .favorite-highlight .card-desc {
-    color: #aaaaaa !important;
-}
-
-/* ---- Tag & Tahun ---- */
-body.dark-mode .tech-tag {
-    background: #2a2a2a !important;
-    color: #aaaaaa !important;
-}
-
-body.dark-mode .tag-new {
-    background: #0a2a3a !important;
-    color: #4db8e0 !important;
-}
-
-body.dark-mode .tag-fav {
-    background: #2a2510 !important;
-    color: #f5c842 !important;
-    border-color: #4a3f1a !important;
-}
-
-body.dark-mode .tag-ml {
-    background: #1a1530 !important;
-    color: #8b7fd6 !important;
-}
-
-body.dark-mode .tag-php {
-    background: #1a1a1a !important;
-    color: #aaaaaa !important;
-}
-
-body.dark-mode .tech-year {
-    color: #777777 !important;
-}
-
-/* ---- Tombol Kembali ---- */
-body.dark-mode .btn-back {
-    border-color: #2a2a2a !important;
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .btn-back:hover {
-    background: #e0e0e0 !important;
-    color: #121212 !important;
-    border-color: #e0e0e0 !important;
-}
-
-/* ---- Back Wrap (garis pembatas) ---- */
-body.dark-mode .back-wrap {
-    border-top-color: #2a2a2a !important;
-}
-
-/* ============================================================
-   STUDI KASUS - DARK MODE (SEMUA HALAMAN)
-   ============================================================ */
-
-/* ---- Hero Case Detail (personal-branding.html) ---- */
-body.dark-mode .hero-case-detail {
-    background: #121212 !important;
-    border-bottom-color: #2a2a2a !important;
-}
-
-body.dark-mode .badge-detail {
-    color: #ffffff !important;
-    border-bottom-color: #178bb9 !important;
-}
-
-body.dark-mode .hero-case-detail h1 {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .hero-desc {
-    color: #aaaaaa !important;
-}
-
-body.dark-mode .divider-detail {
-    background: #178bb9 !important;
-}
-
-/* ---- Carousel (section-carousel) ---- */
-body.dark-mode .section-carousel {
-    background: #121212 !important;
-}
-
-body.dark-mode .carousel-inner {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* ---- Tech Stack (section-tech-stack) ---- */
-body.dark-mode .section-tech-stack {
-    background: #121212 !important;
-}
-
-body.dark-mode .tech-stack-title {
-    color: #e0e0e0 !important;
-}
-
-/* ---- Case Content (section-case-content) ---- */
-body.dark-mode .section-case-content {
-    background: #121212 !important;
-}
-
-body.dark-mode .section-title-case {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .divider-case {
-    background: #178bb9 !important;
-}
-
-/* ---- Case Block (isi studi kasus) ---- */
-body.dark-mode .case-block {
-    background: transparent !important;
-}
-
-body.dark-mode .case-block-title {
-    color: #178bb9 !important;
-}
-
-body.dark-mode .case-block-text {
-    color: #cccccc !important;
-}
-
-body.dark-mode .case-block-text strong {
-    color: #e0e0e0 !important;
-}
-
-/* ---- Sub bagian (2.1, 2.2, 2.3) ---- */
-body.dark-mode .case-sub-title {
-    color: #4db8e0 !important;
-}
-
-body.dark-mode .case-divider {
-    border-top-color: #2a2a2a !important;
-}
-
-/* ---- Blok Kode ---- */
-body.dark-mode .code-block {
-    background: #0d0d0d !important;
-    border: 1px solid #2a2a2a !important;
-}
-
-body.dark-mode .code-block pre {
-    color: #d4d4d4 !important;
-}
-
-body.dark-mode .code-block code {
-    color: #d4d4d4 !important;
-}
-
-/* ---- Placeholder Gambar ---- */
-body.dark-mode .placeholder-box {
-    background: #1a1a1a !important;
-    border-color: #2a2a2a !important;
-    color: #777777 !important;
-}
-
-body.dark-mode .placeholder-box i {
-    color: #444444 !important;
-}
-
-body.dark-mode .placeholder-note {
-    color: #555555 !important;
-}
-
-/* ---- Caption Gambar ---- */
-body.dark-mode .image-caption {
-    color: #888888 !important;
-}
-
-/* ---- Tombol Aksi di Detail Case ---- */
-body.dark-mode .case-actions-detail {
-    border-top-color: #2a2a2a !important;
-}
-
-body.dark-mode .case-actions-detail .btn-jd-view-all {
-    background: #178bb9 !important;
-    border-color: #178bb9 !important;
-    color: #ffffff !important;
-}
-
-body.dark-mode .case-actions-detail .btn-jd-view-all:hover {
-    background: #0f6f94 !important;
-    border-color: #0f6f94 !important;
-}
-
-body.dark-mode .case-actions-detail .btn-jd-source {
-    border-color: #2a2a2a !important;
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .case-actions-detail .btn-jd-source:hover {
-    background: #e0e0e0 !important;
-    color: #121212 !important;
-}
-
-/* ---- List Alur (Face Recognition) ---- */
-body.dark-mode .case-list-flow li {
-    color: #cccccc !important;
-    border-bottom-color: #2a2a2a !important;
-}
-
-body.dark-mode .case-list-flow li::before {
-    color: #178bb9 !important;
-}
-
-/* ============================================================
-   CASE STUDY DETAIL - SUB BAGIAN & KODE
-   ============================================================ */
-
-/* ---- Sub-bagian di dalam case block ---- */
-.case-sub-block {
-    margin-top: 20px;
-}
-
-.case-sub-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #178bb9;
-    margin-bottom: 6px;
-}
-
-/* Garis pemisah antar sub-bagian */
-.case-divider {
-    border: 0;
-    border-top: 1px solid #eaeaea;
-    margin: 22px 0;
-}
-
-/* ---- Placeholder Gambar Error ---- */
-.case-image-placeholder {
-    margin: 20px 0 16px;
-}
-
-.placeholder-box {
-    background: #f5f5f5;
-    border: 2px dashed #ccc;
-    border-radius: 12px;
-    padding: 40px 20px;
-    text-align: center;
-    color: #999;
-    font-size: 0.9rem;
-}
-
-.placeholder-box i {
-    color: #bbb;
-    display: block;
-}
-
-.placeholder-note {
-    display: block;
-    font-size: 0.7rem;
-    color: #bbb;
-    margin-top: 6px;
-}
-
-/* ---- Blok Kode (background gelap seperti terminal) ---- */
-.code-block {
-    background: #1e1e1e;
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin: 16px 0 10px;
-    overflow-x: auto;
-}
-
-.code-block pre {
-    margin: 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.85rem;
-    color: #d4d4d4;
-    line-height: 1.7;
-    white-space: pre-wrap;
-    word-break: break-word;
-}
-
-.code-block code {
-    font-family: 'Courier New', monospace;
-    color: #d4d4d4;
-}
-
-/* ---- Responsif ---- */
-@media (max-width: 768px) {
-    .case-sub-title {
-        font-size: 0.85rem;
-    }
-    .placeholder-box {
-        padding: 28px 16px;
-        font-size: 0.8rem;
-    }
-    .code-block {
-        padding: 14px 16px;
-    }
-    .code-block pre {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .case-sub-title {
-        font-size: 0.8rem;
-    }
-    .placeholder-box {
-        padding: 20px 12px;
-        font-size: 0.7rem;
-    }
-    .code-block pre {
-        font-size: 0.65rem;
-    }
-}
-
-/* ===== GAMBAR ERROR DI CASE STUDY ===== */
-.case-error-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #eaeaea;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    display: block;
-    margin-bottom: 8px;
-}
-
-.image-caption {
-    font-size: 0.8rem;
-    color: #888;
-    text-align: center;
-    font-style: italic;
-    margin-top: 4px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .case-error-image {
-        border-radius: 8px;
-    }
-    .image-caption {
-        font-size: 0.7rem;
-    }
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 768px) {
-    .hero-case {
-        padding: 110px 0 30px;
-    }
-    .hero-case h1 {
-        font-size: 2rem;
-    }
-    .hero-case p {
-        font-size: 0.88rem;
-        padding: 0 16px;
-    }
-    .case-list {
-        padding: 36px 0 56px;
-    }
-    .tech-case-card {
-        padding: 20px 20px;
-        border-radius: 10px;
-    }
-    .favorite-highlight {
-        padding: 26px 24px;
-    }
-    .card-title {
-        font-size: 1.15rem;
-    }
-    .favorite-highlight .card-title {
-        font-size: 1.3rem;
-    }
-    .card-desc {
-        font-size: 0.85rem;
-        max-width: 100%;
-    }
-    .favorite-highlight .card-desc {
-        font-size: 0.88rem;
-    }
-    .btn-read-case {
-        font-size: 0.6rem;
-        gap: 10px;
-    }
-    .btn-read-case .circle-arrow {
-        width: 26px;
-        height: 26px;
-    }
-    .btn-read-case .circle-arrow i {
-        font-size: 0.5rem;
-    }
-    .btn-back {
-        padding: 8px 20px;
-        font-size: 0.6rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-case {
-        padding: 90px 0 24px;
-    }
-    .hero-case h1 {
-        font-size: 1.6rem;
-    }
-    .hero-case p {
-        font-size: 0.82rem;
-    }
-    .tech-case-card {
-        padding: 16px 14px;
-    }
-    .favorite-highlight {
-        padding: 20px 16px;
-    }
-    .card-title {
-        font-size: 1rem;
-    }
-    .favorite-highlight .card-title {
-        font-size: 1.15rem;
-    }
-    .card-desc {
-        font-size: 0.82rem;
-    }
-    .favorite-highlight .card-desc {
-        font-size: 0.85rem;
-    }
-    .tech-tag {
-        font-size: 0.45rem;
-        padding: 2px 10px;
-    }
-    .tech-year {
-        font-size: 0.6rem;
-    }
-    .btn-read-case {
-        font-size: 0.55rem;
-        gap: 8px;
-    }
-    .btn-read-case .circle-arrow {
-        width: 22px;
-        height: 22px;
-    }
-    .btn-read-case .circle-arrow i {
-        font-size: 0.45rem;
-    }
-}
-
-/* ===== HERO DETAIL (SELARAS DENGAN INDEX) ===== */
 .hero-case-detail {
-    padding: 140px 0 50px;
-    background: #ffffff;
+    padding: 100px 0 50px;
+    background: var(--bg-page);
     text-align: center;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .badge-detail {
     display: inline-block;
     background: transparent;
-    color: #178bb9;
+    color: var(--accent);
     font-family: 'Montserrat', sans-serif;
     font-size: 0.6rem;
     font-weight: 800;
@@ -819,7 +328,7 @@ body.dark-mode .case-list-flow li::before {
     padding: 0 0 4px 0;
     margin-bottom: 16px;
     text-transform: uppercase;
-    border-bottom: 2px solid #178bb9;
+    border-bottom: 2px solid var(--accent);
 }
 
 .hero-case-detail h1 {
@@ -827,32 +336,24 @@ body.dark-mode .case-list-flow li::before {
     font-size: clamp(2.4rem, 5vw, 3.4rem);
     font-weight: 900;
     letter-spacing: -1.5px;
-    color: #1a1a1a;
+    color: var(--text-primary);
     margin-bottom: 6px;
 }
 
 .divider-detail {
-    width: 36px;
-    height: 2px;
-    background: #178bb9;
-    margin: 0 auto 16px;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 0 auto 20px;
 }
 
 .hero-desc {
-    font-size: 0.95rem;
-    color: #666;
-    max-width: 580px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 640px;
     margin: 0 auto;
-    line-height: 1.9;
-}
-
-.case-block-text code {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9em;
-    color: #ffd60a;
+    line-height: 1.7;
 }
 
 /* ============================================================
@@ -866,9 +367,7 @@ body.dark-mode .case-list-flow li::before {
     gap: 8px;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.85rem;
-    color: #666;    
-    /* Posisi */
-    /* Samakan dengan container */
+    color: var(--text-secondary);
     margin: 0 auto 20px auto;
     text-align: left;
     justify-content: flex-start;
@@ -878,13 +377,13 @@ body.dark-mode .case-list-flow li::before {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #666;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .breadcrumb-case-link:hover {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 .breadcrumb-case-link [data-lucide] {
@@ -894,200 +393,44 @@ body.dark-mode .case-list-flow li::before {
 }
 
 .breadcrumb-case-sep {
-    color: #999;
+    color: var(--text-muted);
     opacity: 0.6;
     font-weight: 600;
 }
 
 .breadcrumb-case-current {
-    color: #1a1a1a;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
-/* Dark Mode */
-body.dark-mode .breadcrumb-case {
-    color: #aaaaaa;
-}
-
-body.dark-mode .breadcrumb-case-link {
-    color: #aaaaaa;
-}
-
-body.dark-mode .breadcrumb-case-link:hover {
-    color: #4db8e0;
-}
-
-body.dark-mode .breadcrumb-case-current {
-    color: #e0e0e0;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .breadcrumb-case {
-        font-size: 0.75rem;
-        margin-bottom: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .breadcrumb-case {
-        font-size: 0.7rem;
-        gap: 6px;
-        padding: 0 8px;
-    }
-
-    .breadcrumb-case-link [data-lucide] {
-        width: 14px;
-        height: 14px;
-    }
-
-    /* ============================================================
-       HERO CASE - RESPONSIVE PADDING
-       ============================================================ */
-    
-    /* Tablet */
-    @media (max-width: 768px) {
-        .hero-case,
-        .hero-case-detail {
-            padding: 100px 0 30px !important;
-        }
-    }
-    
-    /* HP */
-    @media (max-width: 480px) {
-        .hero-case,
-        .hero-case-detail {
-            padding: 80px 0 24px !important;
-        }
-    
-        .breadcrumb-case {
-            margin-bottom: 31px !important;
-        }
-    }
-}
-
 /* ============================================================
-   TECH STACK - RESPONSIF
+   CAROUSEL (detail case study)
    ============================================================ */
-
-/* Ukuran default untuk desktop */
-.case-tech-row .tech-item img {
-    width: 47px;
-    height: 47px;
-    object-fit: contain;
-    transition: all 0.3s ease;
-}
-
-/* Tablet (max-width: 768px) */
-@media (max-width: 768px) {
-    .case-tech-row .tech-item img {
-        width: 36px;
-        height: 36px;
-    }
-    
-    .case-tech-row {
-        gap: 14px 20px;
-    }
-    
-    .tech-item span {
-        font-size: 0.9rem;
-    }
-}
-
-/* Mobile Kecil (max-width: 480px) */
-@media (max-width: 480px) {
-    .case-tech-row .tech-item img {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .case-tech-row {
-        gap: 10px 14px;
-    }
-    
-    .tech-item span {
-        font-size: 0.5rem;
-    }
-}
-
-/* ============================================================
-Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
-============================================================ */
-.case-study-img {
-    filter: grayscale(100%) contrast(1.05);
-    transition: all 0.5s ease;
-}
-.project-case-card:hover .case-study-img {
-    filter: grayscale(0%) contrast(1);
-    transform: scale(1.03);
-}
-
-.hero-case-detail {
-    padding: 100px 0 50px;
-    background: #f8f8f8;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
-
-.badge-detail {
-    background: #178bb9;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
-    font-size: 0.7rem;
-    padding: 6px 20px;
-    border-radius: 30px;
-    color: #fff;
-    display: inline-block;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-}
-
-.hero-case-detail h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-}
-
-.divider-detail {
-    width: 60px;
-    height: 4px;
-    background: #178bb9;
-    margin: 0 auto 20px;
-}
-
-.hero-desc {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.05rem;
-    color: #555;
-    max-width: 640px;
-    margin: 0 auto;
-    line-height: 1.7;
-}
 
 .section-carousel {
     padding: 40px 0 30px;
-    background: #fff;
+    background: var(--bg-page);
 }
 
 .carousel-inner {
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
 }
 
+/* ============================================================
+   TECH STACK SECTION (detail case study)
+   ============================================================ */
+
 .section-tech-stack {
-    background: #fff;
+    background: var(--bg-page);
 }
 
 .tech-stack-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.9rem;
     font-weight: 900;
-    color: #1a1a1a;
+    color: var(--text-primary);
     padding-top: 26px;
     margin-bottom: 24px;
     text-transform: uppercase;
@@ -1100,6 +443,16 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
     flex-wrap: wrap;
     justify-content: center;
     gap: 18px 30px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
 .tech-item img {
@@ -1119,14 +472,18 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
     font-family: 'Open Sans', sans-serif;
     font-size: 0.7rem;
     font-weight: 600;
-    color: #888;
+    color: var(--text-muted);
     letter-spacing: 0.3px;
     text-transform: uppercase;
 }
 
+/* ============================================================
+   CASE CONTENT (isi studi kasus)
+   ============================================================ */
+
 .section-case-content {
     padding: 40px 0 80px;
-    background: #fff;
+    background: var(--bg-page);
 }
 
 .section-title-case {
@@ -1135,14 +492,14 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -1px;
-    color: #1a1a1a;
+    color: var(--text-primary);
     margin-bottom: 10px;
 }
 
 .divider-case {
     width: 60px;
     height: 4px;
-    background: #178bb9;
+    background: var(--accent);
     margin: 0 auto 40px;
 }
 
@@ -1154,7 +511,7 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     font-weight: 900;
-    color: #178bb9;
+    color: var(--accent);
     margin-bottom: 8px;
 }
 
@@ -1162,9 +519,124 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.8;
-    color: #444;
+    color: var(--text-secondary);
     margin: 0;
 }
+
+.case-block-text strong {
+    color: var(--text-primary);
+}
+
+.case-block-text code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #ffd60a;
+}
+
+/* ---- Sub-bagian di dalam case block ---- */
+.case-sub-block {
+    margin-top: 20px;
+}
+
+.case-sub-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+}
+
+.case-divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 22px 0;
+}
+
+/* ============================================================
+   PLACEHOLDER GAMBAR ERROR
+   ============================================================ */
+
+.case-image-placeholder {
+    margin: 20px 0 16px;
+}
+
+.placeholder-box {
+    background: var(--bg-section-alt);
+    border: 2px dashed var(--border-strong);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.placeholder-box i {
+    color: var(--text-faint);
+    display: block;
+}
+
+.placeholder-note {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    margin-top: 6px;
+}
+
+/* ============================================================
+   BLOK KODE (selalu gelap seperti terminal)
+   ============================================================ */
+
+.code-block {
+    background: var(--bg-code);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 16px 0 10px;
+    overflow-x: auto;
+}
+
+.code-block pre,
+.code-block code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #d4d4d4;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.code-block pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ============================================================
+   GAMBAR ERROR + CAPTION
+   ============================================================ */
+
+.case-error-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.image-caption {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* ============================================================
+   TOMBOL AKSI DI DETAIL CASE
+   ============================================================ */
 
 .case-actions-detail {
     display: flex;
@@ -1174,7 +646,7 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
     gap: 12px;
     margin-top: 48px;
     padding-top: 32px;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid var(--border-subtle);
 }
 
 .case-actions-detail .btn-jd-view-all,
@@ -1190,71 +662,143 @@ Halaman Detail Studi Kasus (TETAP DIPERTAHANKAN)
 }
 
 /* ============================================================
-   ICON LUCIDE DI TOMBOL BACA STUDI KASUS
+   RESPONSIVE - TABLET (max-width: 992px)
    ============================================================ */
 
-/* Icon di dalam lingkaran */
-.btn-read-case .circle-arrow [data-lucide] {
-    width: 16px;
-    height: 16px;
-    color: #1a1a1a; /* Default (light mode) */
-    stroke-width: 2.5;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Saat hover, icon jadi putih (karena lingkaran jadi biru) */
-.tech-case-card:hover .btn-read-case .circle-arrow [data-lucide],
-.favorite-highlight:hover .btn-read-case .circle-arrow [data-lucide] {
-    color: #ffffff;
-    transform: translateX(3px);
-}
-
-/* Dark Mode */
-body.dark-mode .btn-read-case .circle-arrow [data-lucide] {
-    color: #e0e0e0;
-}
-
-body.dark-mode .tech-case-card:hover .btn-read-case .circle-arrow [data-lucide],
-body.dark-mode .favorite-highlight:hover .btn-read-case .circle-arrow [data-lucide] {
-    color: #ffffff;
-}
-
-/* ---- Responsif Gabungan ---- */
-@media (max-width: 768px) {
-    .hero-case, .hero-case-detail {
-        padding: 120px 0 30px;
+@media (max-width: 992px) {
+    .case-list {
+        padding: 40px 0 60px;
     }
-    
-    .hero-case h1, .hero-case-detail h1 {
+
+    .tech-case-card {
+        padding: 24px 24px;
+    }
+
+    .favorite-highlight {
+        padding: 28px 28px;
+    }
+
+    .tech-item img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .case-tech-row .tech-item img {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* Hero */
+    .hero-case,
+    .hero-case-detail {
+        padding: 100px 0 30px;
+    }
+
+    .hero-case h1,
+    .hero-case-detail h1 {
         font-size: 2rem;
     }
-    
-    .hero-case p, .hero-desc {
-        font-size: 0.95rem;
+
+    .hero-case p,
+    .hero-desc {
+        font-size: 0.9rem;
         padding: 0 16px;
     }
-    
-    .case-list { padding: 50px 0; }
-    
+
+    .divider-detail {
+        width: 50px;
+        height: 3px;
+    }
+
+    /* List */
+    .case-list {
+        padding: 36px 0 56px;
+    }
+
+    /* Kartu */
     .tech-case-card {
-        padding: 25px;
+        padding: 20px 20px;
+        border-radius: 10px;
+    }
+
+    .favorite-highlight {
+        padding: 26px 24px;
+    }
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    .favorite-highlight .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-desc {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+
+    .favorite-highlight .card-desc {
+        font-size: 0.88rem;
+    }
+
+    /* Tombol Baca */
+    .btn-read-case {
+        font-size: 0.6rem;
+        gap: 10px;
+    }
+
+    .btn-read-case .circle-arrow {
+        width: 26px;
+        height: 26px;
+    }
+
+    .btn-read-case .circle-arrow i,
+    .btn-read-case .circle-arrow [data-lucide] {
+        font-size: 0.5rem;
+        width: 14px;
+        height: 14px;
+    }
+
+    .btn-back {
+        padding: 8px 20px;
+        font-size: 0.6rem;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb-case {
+        font-size: 0.75rem;
         margin-bottom: 16px;
     }
-    
-    .card-title { font-size: 1.15rem; }
-    .card-desc { font-size: 0.9rem; }
-    
+
+    /* Tech Stack */
     .tech-item img {
         width: 40px;
         height: 40px;
     }
-    
+
+    .case-tech-row {
+        gap: 14px 20px;
+    }
+
+    .tech-item span {
+        font-size: 0.75rem;
+    }
+
+    /* Tombol aksi */
     .case-actions-detail {
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
+        margin-top: 36px;
     }
-    
+
     .case-actions-detail .btn-jd-view-all,
     .case-actions-detail .btn-jd-source {
         flex: 1 1 auto;
@@ -1265,18 +809,145 @@ body.dark-mode .favorite-highlight:hover .btn-read-case .circle-arrow [data-luci
         font-size: 0.75rem;
         white-space: nowrap;
     }
+
+    /* Case sub-title */
+    .case-sub-title {
+        font-size: 0.85rem;
+    }
+
+    .placeholder-box {
+        padding: 28px 16px;
+        font-size: 0.8rem;
+    }
+
+    .code-block {
+        padding: 14px 16px;
+    }
+
+    .code-block pre,
+    .code-block code {
+        font-size: 0.75rem;
+    }
+
+    .case-error-image {
+        border-radius: 8px;
+    }
+
+    .image-caption {
+        font-size: 0.7rem;
+    }
 }
 
+/* ============================================================
+   RESPONSIVE - MOBILE KECIL (max-width: 480px)
+   ============================================================ */
+
 @media (max-width: 480px) {
+    /* Hero */
+    .hero-case,
+    .hero-case-detail {
+        padding: 80px 0 24px;
+    }
+
+    .hero-case h1,
+    .hero-case-detail h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-case p,
+    .hero-desc {
+        font-size: 0.85rem;
+    }
+
+    .breadcrumb-case {
+        font-size: 0.7rem;
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    .breadcrumb-case-link [data-lucide] {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Kartu */
+    .tech-case-card {
+        padding: 16px 14px;
+    }
+
+    .favorite-highlight {
+        padding: 20px 16px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .favorite-highlight .card-title {
+        font-size: 1.15rem;
+    }
+
+    .card-desc {
+        font-size: 0.82rem;
+    }
+
+    .favorite-highlight .card-desc {
+        font-size: 0.85rem;
+    }
+
+    .tech-tag {
+        font-size: 0.45rem;
+        padding: 2px 10px;
+    }
+
+    .tech-year {
+        font-size: 0.6rem;
+    }
+
+    /* Tombol Baca */
+    .btn-read-case {
+        font-size: 0.55rem;
+        gap: 8px;
+    }
+
+    .btn-read-case .circle-arrow {
+        width: 22px;
+        height: 22px;
+    }
+
+    .btn-read-case .circle-arrow i,
+    .btn-read-case .circle-arrow [data-lucide] {
+        font-size: 0.45rem;
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Tech Stack */
     .tech-item img {
         width: 32px;
         height: 32px;
     }
-    
-    .card-desc { font-size: 0.85rem; }
-    
-    .tech-tag {
-        font-size: 0.55rem;
-        padding: 3px 8px;
+
+    .case-tech-row {
+        gap: 10px 14px;
     }
-}       
+
+    .tech-item span {
+        font-size: 0.6rem;
+    }
+
+    /* Case sub-section */
+    .case-sub-title {
+        font-size: 0.8rem;
+    }
+
+    .placeholder-box {
+        padding: 20px 12px;
+        font-size: 0.7rem;
+    }
+
+    .code-block pre,
+    .code-block code {
+        font-size: 0.65rem;
+    }
+}

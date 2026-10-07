@@ -1,10 +1,169 @@
 /* =========================================
    1. RESET & BASE
 ========================================= */
+
+/* Anti-FOUC preload: matikan transisi */
+html.dark-mode-preload,
+html.dark-mode-preload body,
+html.dark-mode-preload * {
+    transition: none !important;
+}
+
+/* Pastikan <html> juga gelap saat dark mode */
+html.dark-mode,
+html.dark-mode body {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+html.dark-mode { color-scheme: dark; }
+html { color-scheme: light; }
+
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
+}
+
+/* ============================================================
+   DESIGN TOKENS — SATU SUMBER KEBENARAN
+   Semua warna, shadow, dan spacing yang dipakai di seluruh
+   website. Untuk mengubah tema.
+   ============================================================ */
+
+:root {
+    /* ---------- BACKGROUND ---------- */
+    --bg-page: #ffffff;          /* Background utama halaman */
+    --bg-section: #ffffff;       /* Background section default */
+    --bg-section-alt: #f8f8f8;   /* Section abu-abu (bg-light) */
+    --bg-card: #ffffff;          /* Background kartu */
+    --bg-elevated: #f8f8f8;      /* Elemen yang "di atas" (hover, dsb) */
+    --bg-code: #1e1e1e;          /* Background blok kode (selalu gelap) */
+
+    /* ---------- TEXT ---------- */
+    --text-primary: #1a1a1a;     /* Teks utama: judul, paragraf penting */
+    --text-secondary: #555555;   /* Teks sekunder: deskripsi */
+    --text-muted: #888888;       /* Teks redup: caption, meta */
+    --text-faint: #bbbbbb;       /* Teks paling redup: placeholder */
+    --text-inverse: #ffffff;     /* Teks di atas background gelap */
+
+    /* ---------- BORDER & DIVIDER ---------- */
+    --border: #eeeeee;           /* Border standar */
+    --border-strong: #e0e0e0;    /* Border lebih tegas */
+    --border-subtle: #f0f0f0;    /* Divider tipis */
+
+    /* ---------- ACCENT (Brand Color) ---------- */
+    --accent: #178bb9;           /* Biru tosca utama */
+    --accent-hover: #0f6f94;     /* Saat hover */
+    --accent-soft: #f0f7fa;      /* Background accent tipis */
+    --accent-light: #e6f3fa;     /* Varian lebih terang */
+
+    /* ---------- TAG COLORS (Kategori) ---------- */
+    --tag-yellow-bg: #fef9e7;
+    --tag-yellow-text: #8a6d0b;
+    --tag-yellow-border: #fde68a;
+    --tag-purple-bg: #f0edff;
+    --tag-purple-text: #4c3d8a;
+    --tag-blue-bg: #e6f3fa;
+    --tag-blue-text: #0a5f7a;
+    --tag-neutral-bg: #f0f0f0;
+    --tag-neutral-text: #555555;
+
+    /* ---------- NEXT UP (warna khusus section) ---------- */
+    --next-bg: #f5f0ff;
+    --next-border: #ddd0f0;
+    --next-text: #6d28d9;
+    --next-accent: #8b5cf6;
+
+    /* ---------- EXPLORATION (warna khusus section) ---------- */
+    --explore-bg: #fff8e6;
+    --explore-border: #f5e6b8;
+    --explore-text: #8a6d0b;
+    --explore-accent: #f2c94c;
+
+    /* ---------- SHADOW ---------- */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+    --shadow-accent: 0 8px 24px rgba(23, 139, 185, 0.25);
+
+    /* ---------- ICON FILTER (untuk logo/ikon) ---------- */
+    --icon-filter: grayscale(100%) opacity(0.6);
+    --icon-filter-hover: grayscale(0%) opacity(1);
+    --icon-invert: none;
+
+    /* ---------- BROWSER ---------- */
+    color-scheme: light;
+}
+
+/* ============================================================
+   DARK MODE — Override tokens
+   Cara pakai: tambahkan class "dark-mode" ke <html>
+   ============================================================ */
+
+html.dark-mode {
+    /* ---------- BACKGROUND ---------- */
+    --bg-page: #121212;
+    --bg-section: #121212;
+    --bg-section-alt: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --bg-elevated: #252525;
+    /* --bg-code tetap #1e1e1e karena blok kode selalu gelap */
+
+    /* ---------- TEXT ---------- */
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --text-muted: #777777;
+    --text-faint: #555555;
+    --text-inverse: #121212;
+
+    /* ---------- BORDER ---------- */
+    --border: #2a2a2a;
+    --border-strong: #333333;
+    --border-subtle: #1f1f1f;
+
+    /* ---------- ACCENT ---------- */
+    --accent: #2a9fd6;           /* Lebih terang di dark mode */
+    --accent-hover: #4db8e0;
+    --accent-soft: #1a2a33;
+    --accent-light: #0a2a3a;
+
+    /* ---------- TAG COLORS ---------- */
+    --tag-yellow-bg: #2a2510;
+    --tag-yellow-text: #f5c842;
+    --tag-yellow-border: #4a3f1a;
+    --tag-purple-bg: #1a1530;
+    --tag-purple-text: #8b7fd6;
+    --tag-blue-bg: #0a2a3a;
+    --tag-blue-text: #4db8e0;
+    --tag-neutral-bg: #2a2a2a;
+    --tag-neutral-text: #aaaaaa;
+
+    /* ---------- NEXT UP ---------- */
+    --next-bg: #1f1a2e;
+    --next-border: #3a2f52;
+    --next-text: #a78bfa;
+    --next-accent: #a78bfa;
+
+    /* ---------- EXPLORATION ---------- */
+    --explore-bg: #2a2510;
+    --explore-border: #4a3f1a;
+    --explore-text: #f5c842;
+    --explore-accent: #f5c842;
+
+    /* ---------- SHADOW ---------- */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+    --shadow-accent: 0 8px 24px rgba(42, 159, 214, 0.3);
+
+    /* ---------- ICON FILTER ---------- */
+    --icon-filter: invert(1) grayscale(100%) opacity(0.7);
+    --icon-filter-hover: invert(1) grayscale(0%) opacity(1);
+    --icon-invert: invert(1);
+
+    /* ---------- BROWSER ---------- */
+    color-scheme: dark;
 }
 
 html { 
@@ -374,6 +533,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 .section-title-retro {
     font-size: clamp(2rem, 5vw, 3rem);
     letter-spacing: -1px;
+    color: var(--text-primary);
 }
 
 .divider-retro {
@@ -391,19 +551,18 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: #f7f7f7; /* Soft grey */;
+    background: var(--bg-page);
     position: relative;
     overflow: hidden;
 }
 
-/* Badge kecil di atas nama */
 .hero-badge {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 2.5px;
-    color: #178bb9;
+    color: var(--accent);
     text-transform: uppercase;
     margin-bottom: 12px;
     border: 1px solid rgba(23, 139, 185, 0.15);
@@ -412,7 +571,6 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     background: rgba(23, 139, 185, 0.04);
 }
 
-/* Nama */
 .hero-name {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(3.5rem, 10vw, 7rem);
@@ -420,11 +578,11 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     line-height: 0.95;
     margin: 0;
     letter-spacing: -2px;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .hero-name .accent-text {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -459,19 +617,20 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     z-index: 1000; 
     padding: 20px 0;
     background: transparent; 
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-custom.scrolled {
-    background: rgba(255,255,255,0.95);
+    background: color-mix(in srgb, var(--bg-page) 92%, transparent);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 15px 0; 
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-md);
 }
 
 .brand-logo {
     font-size: 1.5rem; 
-    color: #1a1a1a;
+    color: var(--text-primary);
     text-decoration: none; 
     letter-spacing: 2px;
 }
@@ -482,7 +641,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     right: -350px; 
     width: 300px;
     height: 100vh; 
-    background: #fff; 
+    background: var(--bg-page);
     z-index: 1002;
     transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
     display: flex; 
@@ -497,7 +656,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     justify-content: space-between;
     align-items: center; 
     padding: 30px;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 2px solid var(--border-subtle);
 }
 
 .panel-brand { font-size: 1.2rem; letter-spacing: 3px; }
@@ -507,7 +666,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     border: none; 
     font-size: 1.5rem;
     cursor: pointer; 
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .panel-links { list-style: none; padding: 30px; flex: 1; }
@@ -516,7 +675,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 .panel-links a {
     font-family: 'Montserrat', sans-serif; 
     font-size: 1.5rem;
-    color: #1a1a1a; 
+    color: var(--text-primary);
     text-decoration: none; 
     font-weight: 700;
     transition: color 0.3s; 
@@ -524,9 +683,9 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 }
 
 .panel-links a:hover, 
-.panel-links a.active { color: #178bb9; }
+.panel-links a.active { color: var(--accent); }
 
-.panel-footer { padding: 30px; text-align: center; color: #999; font-size: 0.8rem; }
+.panel-footer { padding: 30px; text-align: center; color: var(--text-muted); font-size: 0.8rem; }
 
 .overlay {
     position: fixed; 
@@ -541,7 +700,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 .divider-retro2 {
     width: 215px; 
     height: 1px;
-    background: #000000;
+    background: var(--border);
 }
 
 .overlay.active { opacity: 1; visibility: visible; }
@@ -560,14 +719,14 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
     text-decoration: none;
     transition: color 0.3s;
     padding: 6px 0;
 }
 
 .panel-links .dropdown-toggle:hover {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 .panel-links .dropdown-toggle i {
@@ -596,7 +755,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     max-height: 300px;
     opacity: 1;
     padding: 8px 0 8px 20px;
-    border-left-color: #178bb9;
+    border-left-color: var(--accent);
 }
 
 .dropdown-menu-custom li {
@@ -611,7 +770,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #555;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: all 0.3s ease;
     display: block;
@@ -619,7 +778,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 }
 
 .dropdown-menu-custom a:hover {
-    color: #178bb9;
+    color: var(--accent);
     transform: translateX(6px);
 }
 
@@ -638,7 +797,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     background: none;
     border: none;
     font-size: 1.9rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
     cursor: pointer;
     padding: 4px 10px;
     transition: all 0.3s ease;
@@ -648,7 +807,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 }
 
 .theme-toggle-btn:hover {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 /* ===== THEME TOGGLE - LUCIDE ICON ===== */
@@ -738,7 +897,7 @@ body.dark-mode .theme-toggle-btn .theme-icon {
     max-width: 90vw;
     height: 100vh;
     background: var(--bg-card);
-    border-left: 1px solid var(--border-color);
+    border-left: 1px solid var(--border);
     z-index: 9999;
     display: flex;
     flex-direction: column;
@@ -755,7 +914,7 @@ body.dark-mode .theme-toggle-btn .theme-icon {
     display: flex;
     align-items: center;
     padding: 24px 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border);
 }
 
 .settings-panel-header h4 {
@@ -780,7 +939,7 @@ body.dark-mode .theme-toggle-btn .theme-icon {
 }
 
 .settings-panel-close:hover {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 .settings-panel-close [data-lucide] {
@@ -816,8 +975,8 @@ body.dark-mode .theme-toggle-btn .theme-icon {
 }
 
 .settings-panel-item:hover {
-    background: var(--bg-secondary);
-    color: #178bb9;
+    background: var(--bg-section-alt);
+    color: var(--accent);
 }
 
 .settings-panel-item [data-lucide] {
@@ -834,17 +993,6 @@ body.dark-mode .theme-toggle-btn .theme-icon {
 .settings-panel-info:hover {
     background: none;
     color: var(--text-secondary);
-}
-
-/* Dark Mode */
-body.dark-mode .settings-panel {
-    background: #1e1e1e;
-    border-left-color: #2a2a2a;
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .settings-panel-item:hover {
-    background: #252525;
 }
 
 /* Responsive */
@@ -886,7 +1034,7 @@ body.dark-mode .settings-panel-item:hover {
 }
 
 .dropdown-item:hover {
-    background: var(--bg-secondary);
+    background: var(--bg-section-alt);
     color: var(--accent);
 }
 
@@ -907,55 +1055,11 @@ body.dark-mode .settings-panel-item:hover {
     color: var(--text-secondary);
 }
 
-body.dark-mode .dropdown-item:hover {
-    background: #252525;
-}
-
-/* ============================================================
-   DARK MODE - VARIABEL & STYLE
-   ============================================================ */
-
-/* ----- Variabel Warna (Light Mode Default) ----- */
-:root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f8f8;
-    --bg-card: #ffffff;
-    --text-primary: #1a1a1a;
-    --text-secondary: #555555;
-    --border-color: #eaeaea;
-    --accent: #178bb9;
-    --accent-hover: #0f6f94;
-    --shadow: rgba(0, 0, 0, 0.05);
-}
-
-/* ----- Dark Mode ----- */
-body.dark-mode {
-    --bg-primary: #121212;
-    --bg-secondary: #1a1a1a;
-    --bg-card: #1e1e1e;
-    --text-primary: #e0e0e0;
-    --text-secondary: #aaaaaa;
-    --border-color: #2a2a2a;
-    --accent: #2a9fd6;
-    --accent-hover: #4db8e0;
-    --shadow: rgba(0, 0, 0, 0.3);
-}
-
 /* Terapkan variabel ke elemen */
 body {
-    background: var(--bg-primary);
+    background: var(--bg-page);
     color: var(--text-primary);
     transition: background 0.3s ease, color 0.3s ease;
-}
-
-.navbar-custom {
-    background: var(--bg-primary);
-    transition: background 0.3s ease;
-}
-
-.navbar-custom.scrolled {
-    background: var(--bg-primary);
-    box-shadow: 0 2px 20px var(--shadow);
 }
 
 .brand-logo {
@@ -1005,7 +1109,7 @@ body {
 
 /* Hero */
 .hero-section {
-    background: var(--bg-primary);
+    background: var(--bg-page);
 }
 
 .hero-name {
@@ -1018,11 +1122,11 @@ body {
 
 /* Card & Section */
 .section-padding.bg-light {
-    background: var(--bg-secondary);
+    background: var(--bg-section-alt);
 }
 
 .section-padding.bg-white {
-    background: var(--bg-primary);
+    background: var(--bg-page);
 }
 
 .tech-case-card,
@@ -1031,14 +1135,14 @@ body {
 .skill-box-core,
 .skill-group-box {
     background: var(--bg-card);
-    border-color: var(--border-color);
-    box-shadow: 0 2px 8px var(--shadow);
+    border-color: var(--border);
+    box-shadow: var(--shadow-sm);
 }
 
 .tech-case-card:hover,
 .project-case-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 12px 40px var(--shadow);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Teks */
@@ -1069,19 +1173,13 @@ body {
 /* Form */
 .form-control-retro {
     background: var(--bg-card);
-    border-color: var(--border-color);
+    border-color: var(--border);
     color: var(--text-primary);
 }
 
 .form-control-retro:focus {
     border-color: var(--accent);
     box-shadow: 4px 4px 0 rgba(23, 139, 185, 0.1);
-}
-
-/* Footer */
-.footer-retro {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
 }
 
 .footer-brand {
@@ -1129,29 +1227,29 @@ body {
 }
 
 .btn-jd-source {
-    border-color: var(--border-color);
+    border-color: var(--border);
     color: var(--text-primary);
 }
 
 .btn-jd-source:hover {
     background: var(--text-primary);
-    color: var(--bg-primary);
+    color: var(--bg-page);
 }
 
 .btn-back {
-    border-color: var(--border-color);
+    border-color: var(--border);
     color: var(--text-primary);
 }
 
 .btn-back:hover {
     background: var(--text-primary);
-    color: var(--bg-primary);
+    color: var(--bg-page);
     border-color: var(--text-primary);
 }
 
 /* Side Panel */
 .side-panel {
-    background: var(--bg-primary);
+    background: var(--bg-page);
 }
 
 .panel-links a {
@@ -1195,63 +1293,6 @@ body.dark-mode ::-webkit-scrollbar-thumb:hover {
     background: #444;
 }
 
-/* ===== SIDE PANEL - PERBAIKAN DARK MODE ===== */
-
-/* Tombol Close (silang) */
-body.dark-mode .close-btn {
-    color: #e0e0e0;
-}
-
-body.dark-mode .close-btn:hover {
-    color: #178bb9;
-}
-
-/* Teks "Projek" di dropdown toggle */
-body.dark-mode .panel-links .dropdown-toggle {
-    color: #e0e0e0;
-}
-
-body.dark-mode .panel-links .dropdown-toggle:hover {
-    color: #178bb9;
-}
-
-/* Teks di dropdown menu (sub menu Projek) */
-body.dark-mode .dropdown-menu-custom a {
-    color: #aaaaaa;
-}
-
-body.dark-mode .dropdown-menu-custom a:hover {
-    color: #178bb9;
-}
-
-/* Divider di side panel */
-body.dark-mode .divider-retro2 {
-    background: #2a2a2a;
-}
-
-/* Teks "Kembali" dan link lainnya di side panel */
-body.dark-mode .panel-links a {
-    color: #e0e0e0;
-}
-
-body.dark-mode .panel-links a:hover {
-    color: #178bb9;
-}
-
-body.dark-mode .panel-links a.active {
-    color: #178bb9;
-}
-
-/* Panel footer */
-body.dark-mode .panel-footer {
-    color: #888;
-}
-
-/* Panel header (teks MENU) */
-body.dark-mode .panel-brand {
-    color: #e0e0e0;
-}
-
 /* ============================================================
    DARK MODE - PERBAIKAN GLOBAL (UNTUK SEMUA ELEMEN)
    ============================================================ */
@@ -1282,34 +1323,12 @@ body.dark-mode .section-padding {
 body.dark-mode .tech-case-card,
 body.dark-mode .project-case-card,
 body.dark-mode .cert-card-elegant,
-body.dark-mode .skill-box-core,
-body.dark-mode .skill-group-box,
-body.dark-mode .profile-frame-retro,
 body.dark-mode .social-card {
     background: #1e1e1e !important;
     border-color: #2a2a2a !important;
 }
 
-/* === TEKS === */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode .card-title,
-body.dark-mode .retro-title,
-body.dark-mode .section-title-retro,
-body.dark-mode .case-block-title,
-body.dark-mode .hero-name,
-body.dark-mode .brand-logo,
-body.dark-mode .panel-brand,
-body.dark-mode .footer-brand {
-    color: #e0e0e0 !important;
-}
-
 body.dark-mode p,
-body.dark-mode .retro-text,
-body.dark-mode .retro-list li,
 body.dark-mode .card-desc,
 body.dark-mode .case-desc,
 body.dark-mode .hero-desc,
@@ -1317,15 +1336,6 @@ body.dark-mode .hero-case p,
 body.dark-mode .footer-tagline,
 body.dark-mode .copyright,
 body.dark-mode .case-block-text {
-    color: #aaaaaa !important;
-}
-
-/* === HERO === */
-body.dark-mode .hero-section {
-    background: #121212 !important;
-}
-
-body.dark-mode .hero-tagline {
     color: #aaaaaa !important;
 }
 
@@ -1357,33 +1367,6 @@ body.dark-mode .form-control-retro {
 
 body.dark-mode .form-control-retro::placeholder {
     color: #666666 !important;
-}
-
-/* === FOOTER === */
-body.dark-mode .footer-retro {
-    background: #0a0a0a !important;
-    border-top: 1px solid #1a1a1a !important;
-}
-
-/* === SIDE PANEL === */
-body.dark-mode .side-panel {
-    background: #1a1a1a !important;
-}
-
-body.dark-mode .panel-links a {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .panel-links a:hover {
-    color: #178bb9 !important;
-}
-
-body.dark-mode .close-btn {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .divider-retro2 {
-    background: #2a2a2a !important;
 }
 
 /* === OVERLAY === */
@@ -1435,7 +1418,6 @@ body.dark-mode .btn-back:hover {
 }
 
 /* === DIVIDER === */
-body.dark-mode .divider-retro,
 body.dark-mode .divider-detail,
 body.dark-mode .divider-case {
     background: #178bb9 !important;
@@ -1467,47 +1449,6 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 
 body.dark-mode ::-webkit-scrollbar-thumb:hover {
     background: #444 !important;
-}
-
-/* ===== TENTANG SAYA - PROFIL SINGKAT ===== */
-body.dark-mode .retro-text {
-    color: #cccccc !important;
-}
-
-body.dark-mode .retro-text strong {
-    color: #e0e0e0 !important;
-}
-
-/* ===== LIST HOBI ===== */
-body.dark-mode .retro-list li {
-    color: #bbbbbb !important;
-    border-bottom-color: #2a2a2a !important;
-}
-
-body.dark-mode .retro-list li::before {
-    color: #178bb9 !important;
-}
-
-/* ===== JUDUL DI TENTANG SAYA ===== */
-body.dark-mode .retro-title {
-    color: #e0e0e0 !important;
-}
-
-/* ===== TOMBOL GANTI FOTO ===== */
-body.dark-mode .profile-switch-btn {
-    border-color: #2a2a2a !important;
-    color: #cccccc !important;
-}
-
-body.dark-mode .profile-switch-btn:hover {
-    background: #178bb9 !important;
-    color: #ffffff !important;
-}
-
-body.dark-mode .profile-switch-btn.active {
-    background: #178bb9 !important;
-    color: #ffffff !important;
-    border-color: #178bb9 !important;
 }
 
 /* ===== FOOTER - LIGHT MODE (TETAP PUTIH) ===== */
@@ -1610,29 +1551,11 @@ body.dark-mode .jd-overlay p {
 /* =========================================
    4. HERO SECTION (PURE TYPOGRAPHIC)
 ========================================= */
-.hero-section {
-    min-height: 100vh; 
-    display: flex; 
-    align-items: center;
-    background: #fff; 
-    position: relative; 
-    overflow: hidden;
-    padding-top: 80px;
-}
 
 .hero-text-col {
     max-width: 100%;
     text-align: left;
     position: relative;
-}
-
-.hero-name {
-    font-size: clamp(3.5rem, 10vw, 9rem); 
-    line-height: 0.9;
-    margin: 0; 
-    letter-spacing: -2px; 
-    color: #1a1a1a;
-    word-break: break-word;
 }
 
 .accent-red { color: #178bb9; }
@@ -1669,8 +1592,8 @@ body.dark-mode .jd-overlay p {
    5. SECTIONS GENERAL
 ========================================= */
 .section-padding { padding: 80px 0; }
-.bg-light { background: #f8f8f8; }
-.bg-white { background: #fff; }
+.bg-light { background: var(--bg-section-alt); }
+.bg-white { background: var(--bg-page); }
 
 /* ============================================================
    ABOUT SECTION - TEMA RETRO
@@ -1678,7 +1601,7 @@ body.dark-mode .jd-overlay p {
 
 /* Background section */
 #about {
-    background: #e8e8e8;
+    background: var(--bg-section-alt);
     padding: 80px 0;
 }
 
@@ -1686,9 +1609,9 @@ body.dark-mode .jd-overlay p {
 .divider-retro {
     width: 80px;
     height: 4px;
-    background: #1a2332;
+    background: var(--accent);
     margin: 10px auto 0;
-    border-bottom: 2px solid #6ca5ff;
+    border-bottom: 2px solid var(--accent);
 }
 
 /* ===== FOTO PROFIL ===== */
@@ -1697,10 +1620,10 @@ body.dark-mode .jd-overlay p {
     height: 300px;
     margin: 0 auto;
     border-radius: 31px;
-    border: 4px solid #1a2332;
+    border: 4px solid var(--text-primary);
     box-shadow: 6px 6px 0 rgba(36, 170, 233, 0.342);
     overflow: hidden;
-    background: #fff;
+    background: var(--bg-card);
 }
 
 .profile-img-retro {
@@ -1711,12 +1634,11 @@ body.dark-mode .jd-overlay p {
     filter: grayscale(100%);
 }
 
-/* ===== TEKS ===== */
 .retro-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
-    color: #1a2332;
+    color: var(--text-primary);
     margin-bottom: 10px;
     letter-spacing: 0.5px;
 }
@@ -1725,12 +1647,12 @@ body.dark-mode .jd-overlay p {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-secondary);
     margin-bottom: 12px;
 }
 
 .retro-text strong {
-    color: #1a2332;
+    color: var(--text-primary);
 }
 
 /* ===== LIST HOBI ===== */
@@ -1744,8 +1666,8 @@ body.dark-mode .jd-overlay p {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     padding: 6px 0;
-    color: #333;
-    border-bottom: 1px dashed #ccc;
+    color: var(--text-secondary);
+    border-bottom: 1px dashed var(--border-strong);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1753,7 +1675,7 @@ body.dark-mode .jd-overlay p {
 
 .retro-list li::before {
     content: '▹';
-    color: #6ca5ff;
+    color: var(--accent);
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -1775,9 +1697,9 @@ body.dark-mode .jd-overlay p {
 
 .profile-switch-btn {
     padding: 8px 20px;
-    border: 2px solid #178bb9;
+    border: 2px solid var(--accent);
     background: transparent;
-    color: #178bb9;
+    color: var(--accent);
     font-family: 'Montserrat', sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
@@ -1789,14 +1711,14 @@ body.dark-mode .jd-overlay p {
 }
 
 .profile-switch-btn:hover {
-    background: #178bb9;
+    background: var(--accent);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(23, 139, 185, 0.25);
+    box-shadow: var(--shadow-accent);
 }
 
 .profile-switch-btn.active {
-    background: #178bb9;
+    background: var(--accent);
     color: #fff;
 }
 
@@ -1880,7 +1802,7 @@ body.dark-mode .jd-overlay p {
 /* ===== CORE TECH STACK STYLE ===== */
 .section-skills-core {
     padding: 80px 0;
-    background: #fff;
+    background: var(--bg-page);
 }
 
 .skill-box-core {
@@ -1895,12 +1817,11 @@ body.dark-mode .jd-overlay p {
 }
 
 .skill-box-core:hover {
-    border-color: rgba(23, 139, 185, 0.2);
-    background: #f8f8f8;
+    border-color: var(--accent);
+    background: var(--bg-section-alt);
     transform: translateY(-5px);
 }
 
-/* Efek Grayscale to Color */
 .skill-box-core img {
     width: 64px;
     height: 64px;
@@ -1953,19 +1874,18 @@ body.dark-mode .jd-overlay p {
     max-width: 750px;
     margin: 0 auto;
     padding: 35px 30px;
-    background: #fff8e6;
-    border: 1px solid #f5e6b8;
+    background: var(--explore-bg);
+    border: 1px solid var(--explore-border);
 }
 
 .skill-group-box.next-up:hover {
-    border-color: #f2c94c;
+    border-color: var(--explore-accent);
     box-shadow: 0 10px 30px rgba(242, 201, 76, 0.1);
 }
 
-/* Label khusus Next Up */
 .skill-group-box.next-up .skill-group-label {
-    border-bottom-color: #f2c94c;
-    color: #8a6d0b;
+    border-bottom-color: var(--explore-accent);
+    color: var(--explore-text);
 }
 
 /* Grid Next Up */
@@ -1995,8 +1915,8 @@ body.dark-mode .jd-overlay p {
     right: -4px;
     font-size: 0.5rem;
     font-weight: 800;
-    background: #f2c94c;
-    color: #1a1a1a;
+    background: var(--explore-accent);
+    color: var(--text-inverse);
     padding: 2px 8px;
     border-radius: 3px;
     letter-spacing: 0.5px;
@@ -2004,42 +1924,15 @@ body.dark-mode .jd-overlay p {
     white-space: nowrap;
 }
 
-/* Note Next Up */
 .next-note {
     font-family: 'Open Sans', sans-serif;
     font-size: 0.85rem;
-    color: #8a6d0b;
+    color: var(--explore-text);
     text-align: center;
     margin-top: 18px;
     padding-top: 15px;
-    border-top: 1px solid #f5e6b8;
+    border-top: 1px solid var(--explore-border);
     letter-spacing: 0.5px;
-}
-
-/* Dark Mode */
-body.dark-mode .skill-group-box.next-up {
-    background: #2a2510;
-    border-color: #4a3f1a;
-}
-
-body.dark-mode .skill-group-box.next-up:hover {
-    border-color: #f2c94c;
-    box-shadow: 0 10px 30px rgba(242, 201, 76, 0.15);
-}
-
-body.dark-mode .skill-group-box.next-up .skill-group-label {
-    color: #f5c842;
-    border-bottom-color: #f5c842;
-}
-
-body.dark-mode .next-tag::after {
-    background: #f5c842;
-    color: #1a1a1a;
-}
-
-body.dark-mode .next-note {
-    color: #d4b85c;
-    border-top-color: #4a3f1a;
 }
 
 /* Responsive */
@@ -2658,12 +2551,12 @@ body.dark-mode .cert-card-elegant .cert-year {
 /* ---- Kotak Modal (LEBIH BESAR) ---- */
 .project-modal-box {
     position: relative;
-    background: #ffffff;
+    background: var(--bg-card);
     border-radius: 16px;
     max-width: 96vw;
     max-height: 96vh;
     padding: 12px 12px 10px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-lg);
     transform: scale(0.95);
     transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     overflow: hidden;
@@ -2719,7 +2612,7 @@ body.dark-mode .cert-card-elegant .cert-year {
     font-size: 0.85rem;
     font-weight: 700;
     text-align: center;
-    color: #1a1a1a;
+    color: var(--text-primary);
     margin: 10px 0 2px 0;
     letter-spacing: 0.5px;
     flex-shrink: 0;
@@ -3258,7 +3151,7 @@ textarea.form-control-retro {
     display: flex;
     align-items: center;
     padding: 150px 0 60px;
-    background: var(--bg-primary);
+    background: var(--bg-page);
 }
 
 .thankyou-icon {

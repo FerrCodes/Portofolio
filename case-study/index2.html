@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                    document.documentElement.classList.add('dark-mode-preload');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semua Studi Kasus - Portofolio Feri</title>
-    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -20,6 +29,15 @@
     <link rel="icon" href="../assets/images/me/favicon.png" type="image/jpg" />
 </head>
 <body>
+    <script>
+        (function() {
+            try {
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.body.classList.add('dark-mode');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <!-- Scroll Progress Bar -->
     <div id="scrollProgress" class="scroll-progress-bar"></div>
 
@@ -73,7 +91,6 @@
                 <span class="breadcrumb-case-current">Studi Kasus</span>
             </nav>
             <div class="text-center">
-            <span class="badge">DOKUMENTASI TEKNIS</span>
             <h1>STUDI KASUS PADA PROJEK</h1>
             <div class="divider"></div>
             <p>

@@ -1,3 +1,7 @@
+// ============================================================
+// SCRIPT.JS - PORTOFOLIO FERI
+// ============================================================
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // ============================================================
@@ -99,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
     // ============================================================
     // DROPDOWN PROJEK DI SIDE PANEL
     // ============================================================
@@ -118,19 +123,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-case-card');
-    
+
     if (filterButtons.length > 0 && projectCards.length > 0) {
         filterButtons.forEach(function(btn) {
             btn.addEventListener('click', function() {
                 const filter = btn.getAttribute('data-filter');
-                
+
                 filterButtons.forEach(function(b) { b.classList.remove('active'); });
                 btn.classList.add('active');
-            
+
                 projectCards.forEach(function(card) {
                     const category = card.getAttribute('data-category') || '';
-                    const categories = category.split(' '); // Pisahkan jika ada spasi (contoh: "web favorite")
-                    
+                    const categories = category.split(' ');
+
                     let match = false;
                     if (filter === 'all') {
                         match = true;
@@ -139,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else {
                         match = categories.includes(filter);
                     }
-                
+
                     card.classList.toggle('is-hidden', !match);
                 });
             });
@@ -170,20 +175,19 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             emailjs.send('service_jikxbjd', 'template_beqfhmy', formData)
-            .then(function() {
-                // Redirect ke halaman terima kasih
-                window.location.href = 'thanks.html';
-            })
-            .catch(function(error) {
-                alertMessage.className = 'alert alert-danger mt-2';
-                alertMessage.style.display = 'block';
-                alertMessage.innerHTML = '<strong>Gagal!</strong> ' + JSON.stringify(error);
-                setTimeout(function() { alertMessage.style.display = 'none'; }, 7000);
-            })
-            .finally(function() {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = defaultLabel;
-            });
+                .then(function() {
+                    window.location.href = 'thanks.html';
+                })
+                .catch(function(error) {
+                    alertMessage.className = 'alert alert-danger mt-2';
+                    alertMessage.style.display = 'block';
+                    alertMessage.innerHTML = '<strong>Gagal!</strong> ' + JSON.stringify(error);
+                    setTimeout(function() { alertMessage.style.display = 'none'; }, 7000);
+                })
+                .finally(function() {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = defaultLabel;
+                });
         });
     }
 
@@ -191,159 +195,75 @@ document.addEventListener('DOMContentLoaded', function() {
     // THEME TOGGLE - LUCIDE ICON
     // ============================================================
     const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
     const body = document.body;
     
-    // Inisialisasi Lucide Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-    
-    if (themeToggle) {
-        // Cek preferensi dari localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
+    function applyTheme(isDark) {
+        if (isDark) {
+            root.classList.add('dark-mode');
             body.classList.add('dark-mode');
-            const icon = themeToggle.querySelector('.theme-icon');
-            if (icon) {
-                icon.setAttribute('data-lucide', 'sun');
-            }
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
+            localStorage.setItem('theme', 'dark');
+        } else {
+            root.classList.remove('dark-mode');
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
         }
     
-        // Event klik
+        const icon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
+        if (icon) icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+    
+    // Sinkronisasi awal
+    const savedTheme = localStorage.getItem('theme');
+    applyTheme(savedTheme === 'dark');
+    
+    // Click handler
+    if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-            
-            const icon = this.querySelector('.theme-icon');
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                if (icon) {
-                    icon.setAttribute('data-lucide', 'sun');
-                }
-            } else {
-                localStorage.setItem('theme', 'light');
-                if (icon) {
-                    icon.setAttribute('data-lucide', 'moon');
-                }
-            }
-        
-            // Refresh icon Lucide
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
+            applyTheme(!root.classList.contains('dark-mode'));
+        });
+    }
+
+    // ============================================================
+    // SLIDE PANEL PENGATURAN
+    // ============================================================
+    const settingsToggle = document.getElementById('settingsToggle');
+    const settingsPanel = document.getElementById('settingsPanel');
+    const settingsOverlay = document.getElementById('settingsOverlay');
+
+    if (settingsToggle && settingsPanel && settingsOverlay) {
+        settingsToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            settingsPanel.classList.add('active');
+            settingsOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && settingsPanel.classList.contains('active')) {
+                closeSettingsPanel();
             }
         });
     }
 
     // ============================================================
-    // GANTI FOTO PROFIL (HANYA JIKA ADA)
+    // LAST UPDATED (DARI GITHUB)
     // ============================================================
-    window.changePhoto = function(filename, button) {
-        const img = document.getElementById('profileImage');
-        if (img) {
-            img.src = 'assets/images/me/' + filename;
-            document.querySelectorAll('.profile-switch-btn').forEach(function(btn) {
-                btn.classList.remove('active');
+    const lastUpdatedEl = document.getElementById('lastUpdated');
+
+    if (lastUpdatedEl) {
+        fetch('https://api.github.com/repos/FerrCodes/Portofolio/commits?per_page=1')
+            .then(response => response.json())
+            .then(data => {
+                const lastCommit = new Date(data[0].commit.author.date);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                lastUpdatedEl.textContent = 'Terakhir diupdate: ' + lastCommit.toLocaleDateString('id-ID', options);
+            })
+            .catch(() => {
+                lastUpdatedEl.textContent = 'Terakhir diupdate: —';
             });
-            if (button) {
-                button.classList.add('active');
-            }
-        }
-    };
-
-    // ============================================================
-    // MODAL SERTIFIKAT
-    // ============================================================
-    window.openCertModal = function(certId) {
-        const certData = {
-            dicoding: {
-                title: "Dicoding Indonesia",
-                issuer: "Belajar Dasar AI",
-                img: "assets/images/sertifikat/1.png",
-            },
-            python: {
-                title: "Python",
-                issuer: "Dasar dasar Python",
-                img: "assets/images/sertifikat/Python.png",
-            },
-            kaggle: {
-                title: "Kaggle",
-                issuer: "Intro to Machine Learning",
-                img: "assets/images/sertifikat/ML.png",
-            },
-        };
-        const cert = certData[certId];
-        if (!cert) return;
-        const modalTitle = document.getElementById('modalCertTitle');
-        const modalIssuer = document.getElementById('modalCertIssuer');
-        const modalImg = document.getElementById('modalCertImg');
-        if (modalTitle) modalTitle.textContent = cert.title;
-        if (modalIssuer) modalIssuer.textContent = cert.issuer;
-        if (modalImg) modalImg.src = cert.img;
-        const modal = document.getElementById('certModal');
-        if (modal) {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    };
-
-    window.closeCertModal = function() {
-        const modal = document.getElementById('certModal');
-        if (modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    };
-
-    // ============================================================
-    // MODAL PREVIEW PROJEK
-    // ============================================================
-    window.openProjectModal = function(imageSrc, title) {
-        const modal = document.getElementById('projectModal');
-        const img = document.getElementById('modalPreviewImg');
-        const titleEl = document.getElementById('modalPreviewTitle');
-        if (modal && img && titleEl) {
-            img.src = imageSrc;
-            titleEl.textContent = title || 'Preview';
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    };
-
-    window.closeProjectModal = function() {
-        const modal = document.getElementById('projectModal');
-        if (modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    };
-
-    // Tutup modal dengan ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            const certModal = document.getElementById('certModal');
-            if (certModal && certModal.classList.contains('active')) {
-                window.closeCertModal();
-            }
-            const projectModal = document.getElementById('projectModal');
-            if (projectModal && projectModal.classList.contains('active')) {
-                window.closeProjectModal();
-            }
-        }
-    });
-
-    // Tutup modal saat klik overlay
-    document.addEventListener('click', function(e) {
-        const certModal = document.getElementById('certModal');
-        if (certModal && e.target === certModal) {
-            window.closeCertModal();
-        }
-        const projectModal = document.getElementById('projectModal');
-        if (projectModal && e.target === projectModal) {
-            window.closeProjectModal();
-        }
-    });
+    }
 
     // ============================================================
     // SCROLL PROGRESS BAR
@@ -365,7 +285,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollToTopBtn = document.getElementById('scrollToTop');
 
     if (scrollToTopBtn) {
-        // Tampilkan / sembunyikan tombol berdasarkan scroll
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 scrollToTopBtn.classList.add('visible');
@@ -374,7 +293,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Klik → scroll ke atas dengan halus
         scrollToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
@@ -382,93 +300,146 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    // Re-render Lucide icons setelah semua elemen dimuat
+
+    // ============================================================
+    // INISIALISASI LUCIDE ICONS (TERAKHIR)
+    // ============================================================
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
-});
-
-// ============================================================
-// NAV DROPDOWN (SETTINGS)
-// ============================================================
-document.addEventListener('DOMContentLoaded', function() {
-    const settingsToggle = document.getElementById('settingsToggle');
-    const settingsMenu = document.getElementById('settingsMenu');
-
-    if (settingsToggle && settingsMenu) {
-        // Buka/tutup dropdown
-        settingsToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            settingsMenu.classList.toggle('open');
-        });
-
-        // Tutup dropdown saat klik di luar
-        document.addEventListener('click', function(e) {
-            if (!settingsMenu.contains(e.target) && e.target !== settingsToggle) {
-                settingsMenu.classList.remove('open');
-            }
-        });
-
-        // Tutup dropdown saat ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                settingsMenu.classList.remove('open');
-            }
-        });
-    }
 
     // ============================================================
-    // LAST UPDATED (DARI GITHUB)
+    // ANTI-FOUC: HAPUS PRELOAD SETELAH TEMA DITERAPKAN
     // ============================================================
-    const lastUpdatedEl = document.getElementById('lastUpdated');
-
-    if (lastUpdatedEl) {
-        fetch('https://api.github.com/repos/FerrCodes/Portofolio/commits?per_page=1')
-            .then(response => response.json())
-            .then(data => {
-                const lastCommit = new Date(data[0].commit.author.date);
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                lastUpdatedEl.textContent = 'Terakhir diupdate: ' + lastCommit.toLocaleDateString('id-ID', options);
-            })
-            .catch(() => {
-                lastUpdatedEl.textContent = 'Terakhir diperbarui: —';
-            });
-    }
-});
-
-    // ============================================================
-    // SLIDE PANEL PENGATURAN
-    // ============================================================
-    document.addEventListener('DOMContentLoaded', function() {
-        const settingsToggle = document.getElementById('settingsToggle');
-        const settingsPanel = document.getElementById('settingsPanel');
-        const settingsOverlay = document.getElementById('settingsOverlay');
-    
-        if (settingsToggle && settingsPanel && settingsOverlay) {
-            // Buka panel
-            settingsToggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                settingsPanel.classList.add('active');
-                settingsOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        
-            // Tutup dengan ESC
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && settingsPanel.classList.contains('active')) {
-                    closeSettingsPanel();
-                }
-            });
-        }
+    requestAnimationFrame(function() {
+        document.documentElement.classList.remove('dark-mode-preload');
     });
-    
-    // Fungsi global (di luar DOMContentLoaded)
-    function closeSettingsPanel() {
-        const panel = document.getElementById('settingsPanel');
-        const overlay = document.getElementById('settingsOverlay');
-        if (panel && overlay) {
-            panel.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
+
+});
+
+// ============================================================
+// FUNGSI GLOBAL (DIPANGGIL DARI HTML)
+// ============================================================
+
+// ============================================================
+// GANTI FOTO PROFIL
+// ============================================================
+window.changePhoto = function(filename, button) {
+    const img = document.getElementById('profileImage');
+    if (img) {
+        img.src = 'assets/images/me/' + filename;
+        document.querySelectorAll('.profile-switch-btn').forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        if (button) {
+            button.classList.add('active');
         }
     }
+};
+
+// ============================================================
+// MODAL SERTIFIKAT
+// ============================================================
+window.openCertModal = function(certId) {
+    const certData = {
+        dicoding: {
+            title: "Dicoding Indonesia",
+            issuer: "Belajar Dasar AI",
+            img: "assets/images/sertifikat/1.png",
+        },
+        python: {
+            title: "Python",
+            issuer: "Dasar dasar Python",
+            img: "assets/images/sertifikat/Python.png",
+        },
+        kaggle: {
+            title: "Kaggle",
+            issuer: "Intro to Machine Learning",
+            img: "assets/images/sertifikat/ML.png",
+        },
+    };
+    const cert = certData[certId];
+    if (!cert) return;
+    const modalTitle = document.getElementById('modalCertTitle');
+    const modalIssuer = document.getElementById('modalCertIssuer');
+    const modalImg = document.getElementById('modalCertImg');
+    if (modalTitle) modalTitle.textContent = cert.title;
+    if (modalIssuer) modalIssuer.textContent = cert.issuer;
+    if (modalImg) modalImg.src = cert.img;
+    const modal = document.getElementById('certModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeCertModal = function() {
+    const modal = document.getElementById('certModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+};
+
+// ============================================================
+// MODAL PREVIEW PROJEK
+// ============================================================
+window.openProjectModal = function(imageSrc, title) {
+    const modal = document.getElementById('projectModal');
+    const img = document.getElementById('modalPreviewImg');
+    const titleEl = document.getElementById('modalPreviewTitle');
+    if (modal && img && titleEl) {
+        img.src = imageSrc;
+        titleEl.textContent = title || 'Preview';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeProjectModal = function() {
+    const modal = document.getElementById('projectModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+};
+
+// ============================================================
+// SLIDE PANEL PENGATURAN - CLOSE
+// ============================================================
+window.closeSettingsPanel = function() {
+    const panel = document.getElementById('settingsPanel');
+    const overlay = document.getElementById('settingsOverlay');
+    if (panel && overlay) {
+        panel.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+};
+
+// ============================================================
+// TUTUP MODAL DENGAN ESC & KLIK OVERLAY
+// ============================================================
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const certModal = document.getElementById('certModal');
+        if (certModal && certModal.classList.contains('active')) {
+            window.closeCertModal();
+        }
+        const projectModal = document.getElementById('projectModal');
+        if (projectModal && projectModal.classList.contains('active')) {
+            window.closeProjectModal();
+        }
+    }
+});
+
+document.addEventListener('click', function(e) {
+    const certModal = document.getElementById('certModal');
+    if (certModal && e.target === certModal) {
+        window.closeCertModal();
+    }
+    const projectModal = document.getElementById('projectModal');
+    if (projectModal && e.target === projectModal) {
+        window.closeProjectModal();
+    }
+});
