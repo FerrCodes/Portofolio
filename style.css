@@ -25,6 +25,147 @@ html { color-scheme: light; }
     box-sizing: border-box; 
 }
 
+/* ============================================================
+   DESIGN TOKENS — SATU SUMBER KEBENARAN
+   Semua warna, shadow, dan spacing yang dipakai di seluruh
+   website. Untuk mengubah tema.
+   ============================================================ */
+
+:root {
+    /* ---------- BACKGROUND ---------- */
+    --bg-page: #ffffff;          /* Background utama halaman */
+    --bg-section: #ffffff;       /* Background section default */
+    --bg-section-alt: #f8f8f8;   /* Section abu-abu (bg-light) */
+    --bg-card: #ffffff;          /* Background kartu */
+    --bg-elevated: #f8f8f8;      /* Elemen yang "di atas" (hover, dsb) */
+    --bg-code: #1e1e1e;          /* Background blok kode (selalu gelap) */
+
+    /* ---------- TEXT ---------- */
+    --text-primary: #1a1a1a;     /* Teks utama: judul, paragraf penting */
+    --text-secondary: #555555;   /* Teks sekunder: deskripsi */
+    --text-muted: #888888;       /* Teks redup: caption, meta */
+    --text-faint: #bbbbbb;       /* Teks paling redup: placeholder */
+    --text-inverse: #ffffff;     /* Teks di atas background gelap */
+
+    /* ---------- BORDER & DIVIDER ---------- */
+    --border: #eeeeee;           /* Border standar */
+    --border-strong: #e0e0e0;    /* Border lebih tegas */
+    --border-subtle: #f0f0f0;    /* Divider tipis */
+
+    /* ---------- ACCENT (Brand Color) ---------- */
+    --accent: #178bb9;           /* Biru tosca utama */
+    --accent-hover: #0f6f94;     /* Saat hover */
+    --accent-soft: #f0f7fa;      /* Background accent tipis */
+    --accent-light: #e6f3fa;     /* Varian lebih terang */
+
+    /* ---------- TAG COLORS (Kategori) ---------- */
+    --tag-yellow-bg: #fef9e7;
+    --tag-yellow-text: #8a6d0b;
+    --tag-yellow-border: #fde68a;
+    --tag-purple-bg: #f0edff;
+    --tag-purple-text: #4c3d8a;
+    --tag-blue-bg: #e6f3fa;
+    --tag-blue-text: #0a5f7a;
+    --tag-neutral-bg: #f0f0f0;
+    --tag-neutral-text: #555555;
+
+    /* ---------- NEXT UP (warna khusus section) ---------- */
+    --next-bg: #f5f0ff;
+    --next-border: #ddd0f0;
+    --next-text: #6d28d9;
+    --next-accent: #8b5cf6;
+
+    /* ---------- EXPLORATION (warna khusus section) ---------- */
+    --explore-bg: #fff8e6;
+    --explore-border: #f5e6b8;
+    --explore-text: #8a6d0b;
+    --explore-accent: #f2c94c;
+
+    /* ---------- SHADOW ---------- */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+    --shadow-accent: 0 8px 24px rgba(23, 139, 185, 0.25);
+
+    /* ---------- ICON FILTER (untuk logo/ikon) ---------- */
+    --icon-filter: grayscale(100%) opacity(0.6);
+    --icon-filter-hover: grayscale(0%) opacity(1);
+    --icon-invert: none;
+
+    /* ---------- BROWSER ---------- */
+    color-scheme: light;
+}
+
+/* ============================================================
+   DARK MODE — Override tokens
+   Cara pakai: tambahkan class "dark-mode" ke <html>
+   ============================================================ */
+
+html.dark-mode {
+    /* ---------- BACKGROUND ---------- */
+    --bg-page: #121212;
+    --bg-section: #121212;
+    --bg-section-alt: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --bg-elevated: #252525;
+    /* --bg-code tetap #1e1e1e karena blok kode selalu gelap */
+
+    /* ---------- TEXT ---------- */
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --text-muted: #777777;
+    --text-faint: #555555;
+    --text-inverse: #121212;
+
+    /* ---------- BORDER ---------- */
+    --border: #2a2a2a;
+    --border-strong: #333333;
+    --border-subtle: #1f1f1f;
+
+    /* ---------- ACCENT ---------- */
+    --accent: #2a9fd6;           /* Lebih terang di dark mode */
+    --accent-hover: #4db8e0;
+    --accent-soft: #1a2a33;
+    --accent-light: #0a2a3a;
+
+    /* ---------- TAG COLORS ---------- */
+    --tag-yellow-bg: #2a2510;
+    --tag-yellow-text: #f5c842;
+    --tag-yellow-border: #4a3f1a;
+    --tag-purple-bg: #1a1530;
+    --tag-purple-text: #8b7fd6;
+    --tag-blue-bg: #0a2a3a;
+    --tag-blue-text: #4db8e0;
+    --tag-neutral-bg: #2a2a2a;
+    --tag-neutral-text: #aaaaaa;
+
+    /* ---------- NEXT UP ---------- */
+    --next-bg: #1f1a2e;
+    --next-border: #3a2f52;
+    --next-text: #a78bfa;
+    --next-accent: #a78bfa;
+
+    /* ---------- EXPLORATION ---------- */
+    --explore-bg: #2a2510;
+    --explore-border: #4a3f1a;
+    --explore-text: #f5c842;
+    --explore-accent: #f5c842;
+
+    /* ---------- SHADOW ---------- */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+    --shadow-accent: 0 8px 24px rgba(42, 159, 214, 0.3);
+
+    /* ---------- ICON FILTER ---------- */
+    --icon-filter: invert(1) grayscale(100%) opacity(0.7);
+    --icon-filter-hover: invert(1) grayscale(0%) opacity(1);
+    --icon-invert: invert(1);
+
+    /* ---------- BROWSER ---------- */
+    color-scheme: dark;
+}
+
 html { 
     scroll-behavior: smooth; 
     overflow-x: hidden; 
@@ -477,14 +618,15 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     z-index: 1000; 
     padding: 20px 0;
     background: transparent; 
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-custom.scrolled {
-    background: rgba(255,255,255,0.95);
+    background: color-mix(in srgb, var(--bg-page) 92%, transparent);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 15px 0; 
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-md);
 }
 
 .brand-logo {
@@ -929,51 +1071,11 @@ body.dark-mode .dropdown-item:hover {
     background: #252525;
 }
 
-/* ============================================================
-   DARK MODE - VARIABEL & STYLE
-   ============================================================ */
-
-/* ----- Variabel Warna (Light Mode Default) ----- */
-:root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f8f8;
-    --bg-card: #ffffff;
-    --text-primary: #1a1a1a;
-    --text-secondary: #555555;
-    --border-color: #eaeaea;
-    --accent: #178bb9;
-    --accent-hover: #0f6f94;
-    --shadow: rgba(0, 0, 0, 0.05);
-}
-
-/* ----- Dark Mode ----- */
-body.dark-mode {
-    --bg-primary: #121212;
-    --bg-secondary: #1a1a1a;
-    --bg-card: #1e1e1e;
-    --text-primary: #e0e0e0;
-    --text-secondary: #aaaaaa;
-    --border-color: #2a2a2a;
-    --accent: #2a9fd6;
-    --accent-hover: #4db8e0;
-    --shadow: rgba(0, 0, 0, 0.3);
-}
-
 /* Terapkan variabel ke elemen */
 body {
     background: var(--bg-primary);
     color: var(--text-primary);
     transition: background 0.3s ease, color 0.3s ease;
-}
-
-.navbar-custom {
-    background: var(--bg-primary);
-    transition: background 0.3s ease;
-}
-
-.navbar-custom.scrolled {
-    background: var(--bg-primary);
-    box-shadow: 0 2px 20px var(--shadow);
 }
 
 .brand-logo {
@@ -1050,13 +1152,13 @@ body {
 .skill-group-box {
     background: var(--bg-card);
     border-color: var(--border-color);
-    box-shadow: 0 2px 8px var(--shadow);
+    box-shadow: var(--shadow-sm);
 }
 
 .tech-case-card:hover,
 .project-case-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 12px 40px var(--shadow);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Teks */
@@ -1094,12 +1196,6 @@ body {
 .form-control-retro:focus {
     border-color: var(--accent);
     box-shadow: 4px 4px 0 rgba(23, 139, 185, 0.1);
-}
-
-/* Footer */
-.footer-retro {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
 }
 
 .footer-brand {
@@ -1169,7 +1265,7 @@ body {
 
 /* Side Panel */
 .side-panel {
-    background: var(--bg-primary);
+    background: var(--bg-page);
 }
 
 .panel-links a {
@@ -1375,12 +1471,6 @@ body.dark-mode .form-control-retro {
 
 body.dark-mode .form-control-retro::placeholder {
     color: #666666 !important;
-}
-
-/* === FOOTER === */
-body.dark-mode .footer-retro {
-    background: #0a0a0a !important;
-    border-top: 1px solid #1a1a1a !important;
 }
 
 /* === SIDE PANEL === */

@@ -198,7 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const root = document.documentElement;
     const body = document.body;
     
-    // Fungsi helper untuk apply tema ke html + body
     function applyTheme(isDark) {
         if (isDark) {
             root.classList.add('dark-mode');
@@ -212,24 +211,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
         const icon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
         if (icon) icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
-    
         if (typeof lucide !== 'undefined') lucide.createIcons();
     }
     
-    // Sinkronisasi awal: kalau <html> sudah dark dari inline script,
-    // pastikan <body> juga dapat class yang sama
+    // Sinkronisasi awal
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        applyTheme(true);
-    } else {
-        applyTheme(false);
-    }
+    applyTheme(savedTheme === 'dark');
     
     // Click handler
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            const isDark = !root.classList.contains('dark-mode');
-            applyTheme(isDark);
+            applyTheme(!root.classList.contains('dark-mode'));
         });
     }
 
