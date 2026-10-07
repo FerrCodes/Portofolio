@@ -898,7 +898,7 @@ body.dark-mode .theme-toggle-btn .theme-icon {
     max-width: 90vw;
     height: 100vh;
     background: var(--bg-card);
-    border-left: 1px solid var(--border-color);
+    border-left: 1px solid var(--border);
     z-index: 9999;
     display: flex;
     flex-direction: column;
@@ -915,7 +915,7 @@ body.dark-mode .theme-toggle-btn .theme-icon {
     display: flex;
     align-items: center;
     padding: 24px 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border);
 }
 
 .settings-panel-header h4 {
@@ -976,7 +976,7 @@ body.dark-mode .theme-toggle-btn .theme-icon {
 }
 
 .settings-panel-item:hover {
-    background: var(--bg-secondary);
+    background: var(--bg-section-alt);
     color: #178bb9;
 }
 
@@ -1046,7 +1046,7 @@ body.dark-mode .settings-panel-item:hover {
 }
 
 .dropdown-item:hover {
-    background: var(--bg-secondary);
+    background: var(--bg-section-alt);
     color: var(--accent);
 }
 
@@ -1073,7 +1073,7 @@ body.dark-mode .dropdown-item:hover {
 
 /* Terapkan variabel ke elemen */
 body {
-    background: var(--bg-primary);
+    background: var(--bg-page);
     color: var(--text-primary);
     transition: background 0.3s ease, color 0.3s ease;
 }
@@ -1125,7 +1125,7 @@ body {
 
 /* Hero */
 .hero-section {
-    background: var(--bg-primary);
+    background: var(--bg-page);
 }
 
 .hero-name {
@@ -1138,11 +1138,11 @@ body {
 
 /* Card & Section */
 .section-padding.bg-light {
-    background: var(--bg-secondary);
+    background: var(--bg-section-alt);
 }
 
 .section-padding.bg-white {
-    background: var(--bg-primary);
+    background: var(--bg-page);
 }
 
 .tech-case-card,
@@ -1151,7 +1151,7 @@ body {
 .skill-box-core,
 .skill-group-box {
     background: var(--bg-card);
-    border-color: var(--border-color);
+    border-color: var(--border);
     box-shadow: var(--shadow-sm);
 }
 
@@ -1189,7 +1189,7 @@ body {
 /* Form */
 .form-control-retro {
     background: var(--bg-card);
-    border-color: var(--border-color);
+    border-color: var(--border);
     color: var(--text-primary);
 }
 
@@ -1243,23 +1243,23 @@ body {
 }
 
 .btn-jd-source {
-    border-color: var(--border-color);
+    border-color: var(--border);
     color: var(--text-primary);
 }
 
 .btn-jd-source:hover {
     background: var(--text-primary);
-    color: var(--bg-primary);
+    color: var(--bg-page);
 }
 
 .btn-back {
-    border-color: var(--border-color);
+    border-color: var(--border);
     color: var(--text-primary);
 }
 
 .btn-back:hover {
     background: var(--text-primary);
-    color: var(--bg-primary);
+    color: var(--bg-page);
     border-color: var(--text-primary);
 }
 
@@ -3366,7 +3366,7 @@ textarea.form-control-retro {
     display: flex;
     align-items: center;
     padding: 150px 0 60px;
-    background: var(--bg-primary);
+    background: var(--bg-page);
 }
 
 .thankyou-icon {
