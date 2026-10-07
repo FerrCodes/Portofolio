@@ -533,6 +533,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 .section-title-retro {
     font-size: clamp(2rem, 5vw, 3rem);
     letter-spacing: -1px;
+    color: var(--text-primary);
 }
 
 .divider-retro {
@@ -550,19 +551,18 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: #f7f7f7; /* Soft grey */;
+    background: var(--bg-page);
     position: relative;
     overflow: hidden;
 }
 
-/* Badge kecil di atas nama */
 .hero-badge {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 2.5px;
-    color: #178bb9;
+    color: var(--accent);
     text-transform: uppercase;
     margin-bottom: 12px;
     border: 1px solid rgba(23, 139, 185, 0.15);
@@ -571,7 +571,6 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     background: rgba(23, 139, 185, 0.04);
 }
 
-/* Nama */
 .hero-name {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(3.5rem, 10vw, 7rem);
@@ -579,11 +578,11 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     line-height: 0.95;
     margin: 0;
     letter-spacing: -2px;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .hero-name .accent-text {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1324,34 +1323,12 @@ body.dark-mode .section-padding {
 body.dark-mode .tech-case-card,
 body.dark-mode .project-case-card,
 body.dark-mode .cert-card-elegant,
-body.dark-mode .skill-box-core,
-body.dark-mode .skill-group-box,
-body.dark-mode .profile-frame-retro,
 body.dark-mode .social-card {
     background: #1e1e1e !important;
     border-color: #2a2a2a !important;
 }
 
-/* === TEKS === */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode .card-title,
-body.dark-mode .retro-title,
-body.dark-mode .section-title-retro,
-body.dark-mode .case-block-title,
-body.dark-mode .hero-name,
-body.dark-mode .brand-logo,
-body.dark-mode .panel-brand,
-body.dark-mode .footer-brand {
-    color: #e0e0e0 !important;
-}
-
 body.dark-mode p,
-body.dark-mode .retro-text,
-body.dark-mode .retro-list li,
 body.dark-mode .card-desc,
 body.dark-mode .case-desc,
 body.dark-mode .hero-desc,
@@ -1359,15 +1336,6 @@ body.dark-mode .hero-case p,
 body.dark-mode .footer-tagline,
 body.dark-mode .copyright,
 body.dark-mode .case-block-text {
-    color: #aaaaaa !important;
-}
-
-/* === HERO === */
-body.dark-mode .hero-section {
-    background: #121212 !important;
-}
-
-body.dark-mode .hero-tagline {
     color: #aaaaaa !important;
 }
 
@@ -1450,7 +1418,6 @@ body.dark-mode .btn-back:hover {
 }
 
 /* === DIVIDER === */
-body.dark-mode .divider-retro,
 body.dark-mode .divider-detail,
 body.dark-mode .divider-case {
     background: #178bb9 !important;
@@ -1482,47 +1449,6 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 
 body.dark-mode ::-webkit-scrollbar-thumb:hover {
     background: #444 !important;
-}
-
-/* ===== TENTANG SAYA - PROFIL SINGKAT ===== */
-body.dark-mode .retro-text {
-    color: #cccccc !important;
-}
-
-body.dark-mode .retro-text strong {
-    color: #e0e0e0 !important;
-}
-
-/* ===== LIST HOBI ===== */
-body.dark-mode .retro-list li {
-    color: #bbbbbb !important;
-    border-bottom-color: #2a2a2a !important;
-}
-
-body.dark-mode .retro-list li::before {
-    color: #178bb9 !important;
-}
-
-/* ===== JUDUL DI TENTANG SAYA ===== */
-body.dark-mode .retro-title {
-    color: #e0e0e0 !important;
-}
-
-/* ===== TOMBOL GANTI FOTO ===== */
-body.dark-mode .profile-switch-btn {
-    border-color: #2a2a2a !important;
-    color: #cccccc !important;
-}
-
-body.dark-mode .profile-switch-btn:hover {
-    background: #178bb9 !important;
-    color: #ffffff !important;
-}
-
-body.dark-mode .profile-switch-btn.active {
-    background: #178bb9 !important;
-    color: #ffffff !important;
-    border-color: #178bb9 !important;
 }
 
 /* ===== FOOTER - LIGHT MODE (TETAP PUTIH) ===== */
@@ -1625,29 +1551,11 @@ body.dark-mode .jd-overlay p {
 /* =========================================
    4. HERO SECTION (PURE TYPOGRAPHIC)
 ========================================= */
-.hero-section {
-    min-height: 100vh; 
-    display: flex; 
-    align-items: center;
-    background: #fff; 
-    position: relative; 
-    overflow: hidden;
-    padding-top: 80px;
-}
 
 .hero-text-col {
     max-width: 100%;
     text-align: left;
     position: relative;
-}
-
-.hero-name {
-    font-size: clamp(3.5rem, 10vw, 9rem); 
-    line-height: 0.9;
-    margin: 0; 
-    letter-spacing: -2px; 
-    color: #1a1a1a;
-    word-break: break-word;
 }
 
 .accent-red { color: #178bb9; }
@@ -1684,8 +1592,8 @@ body.dark-mode .jd-overlay p {
    5. SECTIONS GENERAL
 ========================================= */
 .section-padding { padding: 80px 0; }
-.bg-light { background: #f8f8f8; }
-.bg-white { background: #fff; }
+.bg-light { background: var(--bg-section-alt); }
+.bg-white { background: var(--bg-page); }
 
 /* ============================================================
    ABOUT SECTION - TEMA RETRO
@@ -1693,7 +1601,7 @@ body.dark-mode .jd-overlay p {
 
 /* Background section */
 #about {
-    background: #e8e8e8;
+    background: var(--bg-section-alt);
     padding: 80px 0;
 }
 
@@ -1701,9 +1609,9 @@ body.dark-mode .jd-overlay p {
 .divider-retro {
     width: 80px;
     height: 4px;
-    background: #1a2332;
+    background: var(--accent);
     margin: 10px auto 0;
-    border-bottom: 2px solid #6ca5ff;
+    border-bottom: 2px solid var(--accent);
 }
 
 /* ===== FOTO PROFIL ===== */
@@ -1712,10 +1620,10 @@ body.dark-mode .jd-overlay p {
     height: 300px;
     margin: 0 auto;
     border-radius: 31px;
-    border: 4px solid #1a2332;
+    border: 4px solid var(--text-primary);
     box-shadow: 6px 6px 0 rgba(36, 170, 233, 0.342);
     overflow: hidden;
-    background: #fff;
+    background: var(--bg-card);
 }
 
 .profile-img-retro {
@@ -1726,12 +1634,11 @@ body.dark-mode .jd-overlay p {
     filter: grayscale(100%);
 }
 
-/* ===== TEKS ===== */
 .retro-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
-    color: #1a2332;
+    color: var(--text-primary);
     margin-bottom: 10px;
     letter-spacing: 0.5px;
 }
@@ -1740,12 +1647,12 @@ body.dark-mode .jd-overlay p {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-secondary);
     margin-bottom: 12px;
 }
 
 .retro-text strong {
-    color: #1a2332;
+    color: var(--text-primary);
 }
 
 /* ===== LIST HOBI ===== */
@@ -1759,8 +1666,8 @@ body.dark-mode .jd-overlay p {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     padding: 6px 0;
-    color: #333;
-    border-bottom: 1px dashed #ccc;
+    color: var(--text-secondary);
+    border-bottom: 1px dashed var(--border-strong);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1768,7 +1675,7 @@ body.dark-mode .jd-overlay p {
 
 .retro-list li::before {
     content: '▹';
-    color: #6ca5ff;
+    color: var(--accent);
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -1790,9 +1697,9 @@ body.dark-mode .jd-overlay p {
 
 .profile-switch-btn {
     padding: 8px 20px;
-    border: 2px solid #178bb9;
+    border: 2px solid var(--accent);
     background: transparent;
-    color: #178bb9;
+    color: var(--accent);
     font-family: 'Montserrat', sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
@@ -1804,14 +1711,14 @@ body.dark-mode .jd-overlay p {
 }
 
 .profile-switch-btn:hover {
-    background: #178bb9;
+    background: var(--accent);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(23, 139, 185, 0.25);
+    box-shadow: var(--shadow-accent);
 }
 
 .profile-switch-btn.active {
-    background: #178bb9;
+    background: var(--accent);
     color: #fff;
 }
 
@@ -1895,7 +1802,7 @@ body.dark-mode .jd-overlay p {
 /* ===== CORE TECH STACK STYLE ===== */
 .section-skills-core {
     padding: 80px 0;
-    background: #fff;
+    background: var(--bg-page);
 }
 
 .skill-box-core {
@@ -1910,12 +1817,11 @@ body.dark-mode .jd-overlay p {
 }
 
 .skill-box-core:hover {
-    border-color: rgba(23, 139, 185, 0.2);
-    background: #f8f8f8;
+    border-color: var(--accent);
+    background: var(--bg-section-alt);
     transform: translateY(-5px);
 }
 
-/* Efek Grayscale to Color */
 .skill-box-core img {
     width: 64px;
     height: 64px;
@@ -1968,19 +1874,18 @@ body.dark-mode .jd-overlay p {
     max-width: 750px;
     margin: 0 auto;
     padding: 35px 30px;
-    background: #fff8e6;
-    border: 1px solid #f5e6b8;
+    background: var(--explore-bg);
+    border: 1px solid var(--explore-border);
 }
 
 .skill-group-box.next-up:hover {
-    border-color: #f2c94c;
+    border-color: var(--explore-accent);
     box-shadow: 0 10px 30px rgba(242, 201, 76, 0.1);
 }
 
-/* Label khusus Next Up */
 .skill-group-box.next-up .skill-group-label {
-    border-bottom-color: #f2c94c;
-    color: #8a6d0b;
+    border-bottom-color: var(--explore-accent);
+    color: var(--explore-text);
 }
 
 /* Grid Next Up */
@@ -2010,8 +1915,8 @@ body.dark-mode .jd-overlay p {
     right: -4px;
     font-size: 0.5rem;
     font-weight: 800;
-    background: #f2c94c;
-    color: #1a1a1a;
+    background: var(--explore-accent);
+    color: var(--text-inverse);
     padding: 2px 8px;
     border-radius: 3px;
     letter-spacing: 0.5px;
@@ -2019,42 +1924,15 @@ body.dark-mode .jd-overlay p {
     white-space: nowrap;
 }
 
-/* Note Next Up */
 .next-note {
     font-family: 'Open Sans', sans-serif;
     font-size: 0.85rem;
-    color: #8a6d0b;
+    color: var(--explore-text);
     text-align: center;
     margin-top: 18px;
     padding-top: 15px;
-    border-top: 1px solid #f5e6b8;
+    border-top: 1px solid var(--explore-border);
     letter-spacing: 0.5px;
-}
-
-/* Dark Mode */
-body.dark-mode .skill-group-box.next-up {
-    background: #2a2510;
-    border-color: #4a3f1a;
-}
-
-body.dark-mode .skill-group-box.next-up:hover {
-    border-color: #f2c94c;
-    box-shadow: 0 10px 30px rgba(242, 201, 76, 0.15);
-}
-
-body.dark-mode .skill-group-box.next-up .skill-group-label {
-    color: #f5c842;
-    border-bottom-color: #f5c842;
-}
-
-body.dark-mode .next-tag::after {
-    background: #f5c842;
-    color: #1a1a1a;
-}
-
-body.dark-mode .next-note {
-    color: #d4b85c;
-    border-top-color: #4a3f1a;
 }
 
 /* Responsive */
@@ -2673,12 +2551,12 @@ body.dark-mode .cert-card-elegant .cert-year {
 /* ---- Kotak Modal (LEBIH BESAR) ---- */
 .project-modal-box {
     position: relative;
-    background: #ffffff;
+    background: var(--bg-card);
     border-radius: 16px;
     max-width: 96vw;
     max-height: 96vh;
     padding: 12px 12px 10px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-lg);
     transform: scale(0.95);
     transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     overflow: hidden;
@@ -2734,7 +2612,7 @@ body.dark-mode .cert-card-elegant .cert-year {
     font-size: 0.85rem;
     font-weight: 700;
     text-align: center;
-    color: #1a1a1a;
+    color: var(--text-primary);
     margin: 10px 0 2px 0;
     letter-spacing: 0.5px;
     flex-shrink: 0;
