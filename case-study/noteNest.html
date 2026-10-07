@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Anti-FOUC: Terapkan tema sebelum render -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark-mode-preload');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <meta name="description" content="Studi Kasus - NoteNest" />
     <title>Studi Kasus: NoteNest</title>
 
@@ -130,8 +141,8 @@
                             <span>Android SDK</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" />
-                            <span>Kotlin</span>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+                            <span>Hive</span>
                         </div>
                     </div>
                 </div>

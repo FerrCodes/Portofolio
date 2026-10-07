@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
+    <!-- Anti-FOUC: Terapkan tema sebelum render -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'dark') {
+                    // Anti-FOUC: tempel ke <html> supaya pre-paint sudah gelap
+                    document.documentElement.classList.add('dark-mode');
+                    document.documentElement.classList.add('dark-mode-preload');
+                }
+            } catch (e) {}
+        })();
+    </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -162,15 +175,6 @@
                         cara pembuatan aplikasi dan sistem yang ada di baliknya. 
                         Dan mencoba juga membuat web atau software sendiri dengan menggunakan Tech Stack modern
                     </p>
-
-                    <h3 class="retro-title mt-4">Hobi &amp; Minat:</h3>
-                    <ul class="retro-list">
-                        <li>Coding &amp; Web Development</li>
-                        <li>Belajar Teknologi Baru</li>
-                        <li>Mengembangkan Project Sederhana hingga Sistem Kompleks</li>
-                    <h3 class="retro-title mt-4">Tech Stack yang dipelajari:</h3>
-                        <li>TypeScript, React, Next.js, Tailwind, Astro, Supabase.</li>
-                    </ul>
                     <a href="#tentang" target="_blank" class="btn-view-cv" data-tooltip="CV dalam proses pembuatan" data-tooltip-pos="right">
                         <i data-lucide="file-text"></i>Lihat CV
                     </a>

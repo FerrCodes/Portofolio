@@ -1,6 +1,24 @@
 /* =========================================
    1. RESET & BASE
 ========================================= */
+
+/* Anti-FOUC preload: matikan transisi */
+html.dark-mode-preload,
+html.dark-mode-preload body,
+html.dark-mode-preload * {
+    transition: none !important;
+}
+
+/* Pastikan <html> juga gelap saat dark mode */
+html.dark-mode,
+html.dark-mode body {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+html.dark-mode { color-scheme: dark; }
+html { color-scheme: light; }
+
 * { 
     margin: 0; 
     padding: 0; 

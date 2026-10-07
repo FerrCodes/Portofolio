@@ -32,10 +32,10 @@
 }
 
 .hero-case .divider {
-    width: 36px;
-    height: 2px;
+    width: 60px; 
+    height: 4px;
     background: #178bb9;
-    margin: 0 auto 16px;
+    margin: 0 auto 20px;
 }
 
 .hero-case p {

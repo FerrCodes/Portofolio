@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
+    <!-- Anti-FOUC: Terapkan tema sebelum render -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'dark') {
+                    // Anti-FOUC: tempel ke <html> supaya pre-paint sudah gelap
+                    document.documentElement.classList.add('dark-mode');
+                    document.documentElement.classList.add('dark-mode-preload');
+                }
+            } catch (e) {}
+        })();
+    </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +27,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Lucide Icons (Modern) -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="icon" href="assets/images/me/favicon.png" type="image/jpg">
@@ -78,7 +90,7 @@
             </nav>
             <div class="row justify-content-center mb-5">
                 <div class="text-center">
-                    <h2 class="section-title-retro mt-5">FULL TECH STACK</h2>
+                    <h2 class="section-title-retro mt-5">TECH STACK & EXPLORATION</h2>
                     <div class="divider-retro"></div>
                     <p class="retro-p mt-3" style="max-width: 100%;">
                         Teknologi yang saya gunakan sehari-hari dan yang sedang saya pelajari.
@@ -87,132 +99,149 @@
             </div>
         
             <div class="skill-matrix-container">
-            
-                <!-- Group 1: Frontend Core -->
-                <div class="skill-group-box">
-                    <h4 class="skill-group-label">FRONTEND CORE</h4>
-                    <div class="skill-grid-mini">
-                        <div class="skill-item-mini">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original-wordmark.svg" alt="Bootstrap">
-                            <span>Bootstrap</span>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Group 2: Backend & Database -->
-                <div class="skill-group-box">
-                    <h4 class="skill-group-label">BACKEND &amp; DATABASE</h4>
-                    <div class="skill-grid-mini">
-                        <div class="skill-item-mini">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP">
-                            <span>PHP</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL">
-                            <span>MySQL</span>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Group 3: Tools & Workflow -->
-                <div class="skill-group-box">
-                    <h4 class="skill-group-label">TOOLS &amp; WORKFLOW</h4>
-                    <div class="skill-grid-mini">
-                        <div class="skill-item-mini">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git">
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub">
-                            <span>GitHub</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-                            <span>VS Code</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://skillicons.dev/icons?i=xampp" alt="XAMPP">
-                            <span>XAMPP</span>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Group 4: Modern Exploration -->
-                <div class="skill-group-box modern-exploration">
-                    <h4 class="skill-group-label">MODERN EXPLORATION</h4>
-                    <div class="skill-grid-mini modern-grid">
-                        <div class="skill-item-mini learning-tag">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript">
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="skill-item-mini learning-tag">
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React">
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item-mini learning-tag"> 
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
-                            <span>Next.js</span>
-                        </div>
-                        <div class="skill-item-mini learning-tag">
-                            <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind">
-                            <span>Tailwind CSS</span>
-                        </div>
-                        <div class="skill-item-mini learning-tag">
-                            <img src="https://skillicons.dev/icons?i=astro" alt="Astro">
-                            <span>Astro</span>
-                        </div>
-                        <div class="skill-item-mini learning-tag">
-                            <img src="https://skillicons.dev/icons?i=supabase" alt="Supabase">
-                            <span>Supabase</span>
-                        </div>
-                        <div class="skill-item-mini learning-tag">
-                            <img src="https://skillicons.dev/icons?i=postgresql" alt="PostgreSQL">
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-item-mini learning-tag">
-                            <img src="https://skillicons.dev/icons?i=laravel" alt="Laravel">
-                            <span>Laravel</span>
-                        </div>
-                    </div>
-                    <p class="learning-note">
-                        <i class="fas fa-book-open me-2"></i> Proses sedang belajar dan eksplorasi teknologi modern
-                    </p>
-                </div>
 
-                <!-- Group 5: Next Up -->
-                <div class="skill-group-box next-up">
-                    <h4 class="skill-group-label">NEXT UP</h4>
-                    <div class="skill-grid-mini next-grid">
-                        <div class="skill-item-mini">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" />
-                            <span>Flutter</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go">
-                            <span>Go</span>
-                        </div>
-                        <div class="skill-item-mini">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker">
-                            <span>Docker</span>
-                        </div>
-                    <p class="next-note">
-                        <i class="fas fa-rocket me-2"></i> Rencana belajar yang akan datang.
-                    </p>
+            <!-- ============================================================
+                KATEGORI 1: USED IN PROJECTS (Paling Besar)
+            ============================================================ -->
+            <div class="skill-group-box used-projects">
+                <h4 class="skill-group-label">USED IN PROJECTS</h4>
+                <p class="skill-group-desc">Teknologi yang sudah saya gunakan di proyek nyata.</p>
+                <div class="skill-grid-mini used-grid">
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript">
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React">
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                        <span>Next.js</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://skillicons.dev/icons?i=astro" alt="Astro">
+                        <span>Astro</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP">
+                        <span>PHP</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel">
+                        <span>Laravel</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL">
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://skillicons.dev/icons?i=supabase" alt="Supabase">
+                        <span>Supabase</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind">
+                        <span>Tailwind</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter">
+                        <span>Flutter</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart">
+                        <span>Dart</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV">
+                        <span>OpenCV</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git">
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item-mini">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
                 </div>
-            
             </div>
+        
+            <!-- ============================================================
+                KATEGORI 2: CURRENTLY LEARNING (Lebih Kecil)
+            ============================================================ -->
+            <div class="skill-group-box currently-learning">
+                <h4 class="skill-group-label">CURRENTLY LEARNING</h4>
+                <p class="skill-group-desc">Yang sedang saya fokuskan saat ini.</p>
+                <div class="skill-grid-mini learning-grid">
+                    <div class="skill-item-mini learning-tag">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go">
+                        <span>Go</span>
+                    </div>
+                </div>
+                <p class="learning-note">
+                    <i class="fas fa-book-open me-2"></i> Fokus belajar backend modern
+                </p>
+            </div>
+        
+            <!-- ============================================================
+                KATEGORI 3: EXPLORATION (Lebih Kecil)
+            ============================================================ -->
+            <div class="skill-group-box exploration">
+                <h4 class="skill-group-label">EXPLORATION</h4>
+                <p class="skill-group-desc">Dieksplorasi lewat eksperimen kecil.</p>
+                <div class="skill-grid-mini exploration-grid">
+                    <div class="skill-item-mini exploration-tag">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                        <span>C++</span>
+                    </div>
+                    <div class="skill-item-mini exploration-tag">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#">
+                        <span>C#</span>
+                    </div>
+                    <div class="skill-item-mini exploration-tag">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt="Kotlin">
+                        <span>Kotlin</span>
+                    </div>
+                </div>
+                <p class="learning-note">
+                    <i class="fas fa-compass me-2"></i> Belum sampai tahap produksi
+                </p>
+            </div>
+        
+            <!-- ============================================================
+                KATEGORI 4: NEXT (Lebih Kecil)
+            ============================================================ -->
+            <div class="skill-group-box next-up">
+                <h4 class="skill-group-label">NEXT</h4>
+                <p class="skill-group-desc">Rencana belajar selanjutnya.</p>
+                <div class="skill-grid-mini next-grid">
+                    <div class="skill-item-mini next-tag">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker">
+                        <span>Docker</span>
+                    </div>
+                </div>
+                <p class="learning-note">
+                    <i class="fas fa-rocket me-2"></i> Setelah stack modern matang
+                </p>
+            </div>
+        
+        </div>
         </div>
     </section>
 
@@ -268,9 +297,9 @@
                                lacak mood harian, dan pantau statistik semua jurnal yang ada secara offline, dan mendukung dua bahasa.
                             </p>
                             <div class="case-features">
-                                <span class="feature-tag">Dart</span>
-                                <span class="feature-tag">image_picker</span>
-                                <span class="feature-tag">i18n</span>
+                                <span class="feature-tag">Offline Storage</span>
+                                <span class="feature-tag">Native Notifications</span>
+                                <span class="feature-tag">Localization</span>
                                 <span class="feature-tag">IOS Design</span>
                             </div>
                             <div class="case-tech-row">
@@ -287,8 +316,8 @@
                                     <span>Android SDK</span>
                                 </div>
                                 <div class="tech-item">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" />
-                                    <span>Kotlin</span>
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+                                    <span>Hive</span>
                                 </div>
                             </div>
                             <div class="case-actions">
