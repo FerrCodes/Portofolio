@@ -631,7 +631,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 
 .brand-logo {
     font-size: 1.5rem; 
-    color: #1a1a1a;
+    color: var(--text-primary);
     text-decoration: none; 
     letter-spacing: 2px;
 }
@@ -642,7 +642,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     right: -350px; 
     width: 300px;
     height: 100vh; 
-    background: #fff; 
+    background: var(--bg-page);
     z-index: 1002;
     transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
     display: flex; 
@@ -657,7 +657,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     justify-content: space-between;
     align-items: center; 
     padding: 30px;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 2px solid var(--border-subtle);
 }
 
 .panel-brand { font-size: 1.2rem; letter-spacing: 3px; }
@@ -667,7 +667,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     border: none; 
     font-size: 1.5rem;
     cursor: pointer; 
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .panel-links { list-style: none; padding: 30px; flex: 1; }
@@ -676,7 +676,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 .panel-links a {
     font-family: 'Montserrat', sans-serif; 
     font-size: 1.5rem;
-    color: #1a1a1a; 
+    color: var(--text-primary);
     text-decoration: none; 
     font-weight: 700;
     transition: color 0.3s; 
@@ -684,9 +684,9 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 }
 
 .panel-links a:hover, 
-.panel-links a.active { color: #178bb9; }
+.panel-links a.active { color: var(--accent); }
 
-.panel-footer { padding: 30px; text-align: center; color: #999; font-size: 0.8rem; }
+.panel-footer { padding: 30px; text-align: center; color: var(--text-muted); font-size: 0.8rem; }
 
 .overlay {
     position: fixed; 
@@ -701,7 +701,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 .divider-retro2 {
     width: 215px; 
     height: 1px;
-    background: #000000;
+    background: var(--border);
 }
 
 .overlay.active { opacity: 1; visibility: visible; }
@@ -720,14 +720,14 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
     text-decoration: none;
     transition: color 0.3s;
     padding: 6px 0;
 }
 
 .panel-links .dropdown-toggle:hover {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 .panel-links .dropdown-toggle i {
@@ -756,7 +756,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     max-height: 300px;
     opacity: 1;
     padding: 8px 0 8px 20px;
-    border-left-color: #178bb9;
+    border-left-color: var(--accent);
 }
 
 .dropdown-menu-custom li {
@@ -771,7 +771,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #555;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: all 0.3s ease;
     display: block;
@@ -779,7 +779,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 }
 
 .dropdown-menu-custom a:hover {
-    color: #178bb9;
+    color: var(--accent);
     transform: translateX(6px);
 }
 
@@ -798,7 +798,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
     background: none;
     border: none;
     font-size: 1.9rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
     cursor: pointer;
     padding: 4px 10px;
     transition: all 0.3s ease;
@@ -808,7 +808,7 @@ h1, h2, h3, .brand-logo, .panel-brand, .footer-brand {
 }
 
 .theme-toggle-btn:hover {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 /* ===== THEME TOGGLE - LUCIDE ICON ===== */
@@ -940,7 +940,7 @@ body.dark-mode .theme-toggle-btn .theme-icon {
 }
 
 .settings-panel-close:hover {
-    color: #178bb9;
+    color: var(--accent);
 }
 
 .settings-panel-close [data-lucide] {
@@ -977,7 +977,7 @@ body.dark-mode .theme-toggle-btn .theme-icon {
 
 .settings-panel-item:hover {
     background: var(--bg-section-alt);
-    color: #178bb9;
+    color: var(--accent);
 }
 
 .settings-panel-item [data-lucide] {
@@ -994,17 +994,6 @@ body.dark-mode .theme-toggle-btn .theme-icon {
 .settings-panel-info:hover {
     background: none;
     color: var(--text-secondary);
-}
-
-/* Dark Mode */
-body.dark-mode .settings-panel {
-    background: #1e1e1e;
-    border-left-color: #2a2a2a;
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .settings-panel-item:hover {
-    background: #252525;
 }
 
 /* Responsive */
@@ -1065,10 +1054,6 @@ body.dark-mode .settings-panel-item:hover {
 .dropdown-info:hover {
     background: none;
     color: var(--text-secondary);
-}
-
-body.dark-mode .dropdown-item:hover {
-    background: #252525;
 }
 
 /* Terapkan variabel ke elemen */
@@ -1309,63 +1294,6 @@ body.dark-mode ::-webkit-scrollbar-thumb:hover {
     background: #444;
 }
 
-/* ===== SIDE PANEL - PERBAIKAN DARK MODE ===== */
-
-/* Tombol Close (silang) */
-body.dark-mode .close-btn {
-    color: #e0e0e0;
-}
-
-body.dark-mode .close-btn:hover {
-    color: #178bb9;
-}
-
-/* Teks "Projek" di dropdown toggle */
-body.dark-mode .panel-links .dropdown-toggle {
-    color: #e0e0e0;
-}
-
-body.dark-mode .panel-links .dropdown-toggle:hover {
-    color: #178bb9;
-}
-
-/* Teks di dropdown menu (sub menu Projek) */
-body.dark-mode .dropdown-menu-custom a {
-    color: #aaaaaa;
-}
-
-body.dark-mode .dropdown-menu-custom a:hover {
-    color: #178bb9;
-}
-
-/* Divider di side panel */
-body.dark-mode .divider-retro2 {
-    background: #2a2a2a;
-}
-
-/* Teks "Kembali" dan link lainnya di side panel */
-body.dark-mode .panel-links a {
-    color: #e0e0e0;
-}
-
-body.dark-mode .panel-links a:hover {
-    color: #178bb9;
-}
-
-body.dark-mode .panel-links a.active {
-    color: #178bb9;
-}
-
-/* Panel footer */
-body.dark-mode .panel-footer {
-    color: #888;
-}
-
-/* Panel header (teks MENU) */
-body.dark-mode .panel-brand {
-    color: #e0e0e0;
-}
-
 /* ============================================================
    DARK MODE - PERBAIKAN GLOBAL (UNTUK SEMUA ELEMEN)
    ============================================================ */
@@ -1471,27 +1399,6 @@ body.dark-mode .form-control-retro {
 
 body.dark-mode .form-control-retro::placeholder {
     color: #666666 !important;
-}
-
-/* === SIDE PANEL === */
-body.dark-mode .side-panel {
-    background: #1a1a1a !important;
-}
-
-body.dark-mode .panel-links a {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .panel-links a:hover {
-    color: #178bb9 !important;
-}
-
-body.dark-mode .close-btn {
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .divider-retro2 {
-    background: #2a2a2a !important;
 }
 
 /* === OVERLAY === */
