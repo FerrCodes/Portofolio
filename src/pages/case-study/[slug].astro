@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const modules = import.meta.glob('../../content/projects/*.md', { eager: true });
+  const paths = [];
+  
+  for (const path in modules) {
+    const slug = path.split('/').pop()?.replace('.md', '');
+    paths.push({ params: { slug } });
+  }
+  return paths;
+}
+
+const modules = import.meta.glob('../../content/projects/*.md', { eager: true });
+const { slug } = Astro.params;
+const path = `../../content/projects/${slug}.md`;
+const mod: any = modules[path];
+
+if (!mod) {
+  return Astro.redirect('/Portofolio/404');
+}
+
+const { title, description, image, year, tech } = mod.frontmatter;
+const Content = mod.Content;
+---
+<BaseLayout title={`${title} - Case Study`}>
+  <article class="max-w-3xl">
+    <a href="/Portofolio/projects" class="text-sm text-neutral-500 hover:text-black dark:hover:text-white mb-6 inline-block">
+      &larr; Kembali ke Projects
+    </a>
+
+    <h1 class="font-heading font-black text-4xl mb-2">{title}</h1>
+    <p class="text-neutral-500 mb-6">{year} • {tech.join(', ')}</p>
+    
+    <img src={`/Portofolio/assets/images/projek/${image}`} alt={title} class="w-full rounded-lg mb-8 border border-neutral-200 dark:border-neutral-800" />
+
+    <div class="prose dark:prose-invert max-w-none text-neutral-800 dark:text-neutral-300 leading-relaxed">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,24 +1,54 @@
 ---
-const { title, description, image, year, tech, category } = Astro.props;
+// Tambahkan prop baru: demoUrl dan repoUrl
+const { title, description, image, year, tech, category, slug, demoUrl, repoUrl } = Astro.props;
 ---
-<article class="flex flex-col sm:flex-row gap-5 p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors cursor-pointer group">
-  <div class="w-full sm:w-48 h-32 shrink-0 overflow-hidden rounded-md border border-neutral-200 dark:border-neutral-700">
+<article class="project-card flex flex-col sm:flex-row gap-9 p-9 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group" data-category={category}>
+  
+  <!-- Gambar Projek -->
+  <div class="w-full sm:w-56 md:w-64 h-40 md:h-44 shrink-0 overflow-hidden rounded-md border border-neutral-200 dark:border-neutral-700">
     <img src={`/Portofolio/assets/images/projek/${image}`} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
   </div>
+
+  <!-- Info Projek -->
   <div class="flex-1 min-w-0 flex flex-col justify-center">
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 mb-1">
       <h3 class="font-heading font-bold text-lg truncate">{title}</h3>
       {category === 'favorite' && (
         <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-pink-500 text-white">FAVORIT</span>
       )}
     </div>
-    <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1 line-clamp-2 leading-relaxed">
+    
+    <p class="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-2 leading-relaxed mb-3">
       {description}
     </p>
-    <div class="flex flex-wrap items-center gap-2 mt-3 text-xs text-neutral-500">
+    
+    <!-- Meta Info -->
+    <div class="flex flex-wrap items-center gap-2 text-xs text-neutral-500 mb-4">
       <span>{year}</span>
       <span>•</span>
       <span>{tech.join(', ')}</span>
+    </div>
+
+    <!-- TOMBOL AKSI -->
+    <div class="flex flex-wrap items-center gap-2 mt-auto">
+      <!-- Tombol Studi Kasus -->
+      <a href={`/Portofolio/case-study/${slug}`} class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-neutral-900 text-white dark:bg-white dark:text-black rounded-md hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
+        <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Studi Kasus
+      </a>
+
+      <!-- Tombol Kunjungi (Tampil jika ada demoUrl) -->
+      {demoUrl && (
+        <a href={demoUrl} target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold border border-neutral-300 dark:border-neutral-700 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Kunjungi
+        </a>
+      )}
+
+      <!-- Tombol GitHub (Tampil jika ada repoUrl) -->
+      {repoUrl && (
+        <a href={repoUrl} target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold border border-neutral-300 dark:border-neutral-700 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" aria-label="Source Code">
+          <i class="fab fa-github text-sm"></i> Source
+        </a>
+      )}
     </div>
   </div>
 </article>

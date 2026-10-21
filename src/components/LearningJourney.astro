@@ -1,0 +1,51 @@
+---
+// Data untuk Learning Journey (Silakan ganti teks & nama gambarnya sesuai punyamu)
+const journeys = [
+  {
+    title: "MEMBUAT PROJEK SEBANYAK MUNGKIN",
+    description: "Sudah berbulan-bulan dan sampai sekarang, saya berusaha mencoba membuat dan mengembangkan projek sederhana sebanyak mungkin dan mengasah dan mencari solusi error di baris kode tersebut dan terus memperbaikinya.",
+    image: "image1.webp", // Pastikan gambar ini ada di public/assets/images/learning-journey/
+    bgColor: "bg-red-600 text-white", // Warna latar belakang untuk teks
+  },
+  {
+    title: "MULAI MENCOBA DAN BEREKSPERIMEN",
+    description: "Seiring belajar dan proses pembuatan projek, saya mencoba untuk memakai teknologi modern seperti Typescript berbasis JavaScript dengan tambahan sintaks tipe data yang kuat, karena bahasa pemograman itu saya pelajari sendiri yaitu tidak boleh memakai Tipe data yang tidak ada di Tipe data kita buat.",
+    image: "image2.webp",
+    bgColor: "bg-white text-black dark:bg-neutral-900 dark:text-white", // Warna latar belakang untuk teks
+    reverse: true, // Untuk membalik posisi gambar ke kiri
+  },
+  {
+    title: "PROBLEM SOLVING",
+    description: "Coding bukan hanya soal mengetik sintaks, tapi memecahkan masalah yang rumit dan kompleks. Di era modern ini, kehadiran AI sangat membantu saya untuk lebih cepat menemukan penyebab error dan memahami alur logika yang salah. Namun, pada akhirnya, saya tetap harus memahami setiap solusi yang diberikan — karena AI adalah alat, bukan pengganti pola pikir engineer.",
+    image: "image3.webp",
+    bgColor: "bg-red-600 text-white",
+  }
+];
+---
+<section class="mb-16">
+  <h2 class="font-heading font-bold text-2xl mb-6 border-b border-neutral-200 dark:border-neutral-800 pb-2">Learning Journey</h2>
+  
+  <div class="flex flex-col gap-0 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden">
+    {journeys.map((item) => (
+      <div class={`flex flex-col md:flex-row ${item.reverse ? 'md:flex-row-reverse' : ''}`}>
+        
+        <!-- Gambar -->
+        <div class="w-full md:w-1/2">
+          <img 
+            src={`/Portofolio/assets/images/learning-journey/${item.image}`} 
+            alt={item.title} 
+            class="w-full h-64 md:h-full object-cover" 
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Teks -->
+        <div class={`w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center ${item.bgColor}`}>
+          <h3 class="font-heading font-black text-xl md:text-2xl mb-4 leading-tight">{item.title}</h3>
+          <p class="text-sm md:text-base leading-relaxed opacity-90 text-justify">{item.description}</p>
+        </div>
+
+      </div>
+    ))}
+  </div>
+</section>

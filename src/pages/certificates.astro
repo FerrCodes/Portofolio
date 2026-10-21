@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Sertifikat - Portofolio">
+  <section>
+    <div class="mb-8">
+      <h1 class="font-heading font-black text-3xl md:text-4xl">Sertifikat</h1>
+      <p class="text-neutral-500 mt-2">Pencapaian yang pernah saya kerjakan di kursus online.</p>
+    </div>
+
+    <!-- Grid Sertifikat -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Sertifikat 1 -->
+      <div class="border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden group">
+        <img src="assets/images/sertifikat/1.png" alt="Dicoding" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="p-4">
+          <h3 class="font-heading font-bold text-lg">Belajar Dasar AI</h3>
+          <p class="text-sm text-neutral-500">Dicoding Indonesia • 2025</p>
+        </div>
+      </div>
+
+      <!-- Sertifikat 2 -->
+      <div class="border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden group">
+        <img src="assets/images/sertifikat/ML.png" alt="Kaggle" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="p-4">
+          <h3 class="font-heading font-bold text-lg">Intro to Machine Learning</h3>
+          <p class="text-sm text-neutral-500">Kaggle • 2026</p>
+        </div>
+      </div>
+
+      <!-- Sertifikat 3 -->
+      <div class="border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden group">
+        <img src="assets/images/sertifikat/python.png" alt="Python" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="p-4">
+          <h3 class="font-heading font-bold text-lg">Dasar-dasar Python</h3>
+          <p class="text-sm text-neutral-500">Kaggle • 2026</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

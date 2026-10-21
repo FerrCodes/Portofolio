@@ -8,13 +8,17 @@ let projects: any[] = [];
 for (const path in modules) {
   const mod: any = modules[path];
   if (mod.frontmatter) {
+    const slug = path.split('/').pop()?.replace('.md', '');
     projects.push({
+      slug: slug,
       title: mod.frontmatter.title,
       description: mod.frontmatter.description,
       image: mod.frontmatter.image,
       year: mod.frontmatter.year,
       tech: mod.frontmatter.tech,
       category: mod.frontmatter.category,
+      demoUrl: mod.frontmatter.demoUrl || null, // Ambil URL demo
+      repoUrl: mod.frontmatter.repoUrl || null, // Ambil URL Github
     });
   }
 }
@@ -23,21 +27,75 @@ projects.sort((a, b) => b.year.localeCompare(a.year));
 ---
 <BaseLayout>
   <section>
+    <!-- Header -->
     <div class="mb-8">
       <h1 class="font-heading font-black text-3xl md:text-4xl">My Projects</h1>
       <p class="text-neutral-500 mt-2">Beberapa projek yang pernah saya kerjakan.</p>
     </div>
-    <div class="flex flex-col gap-4">
+
+    <!-- FILTER TOMBOL -->
+    <div class="flex flex-wrap gap-2 mb-6">
+      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 bg-neutral-900 text-white dark:bg-white dark:text-black transition-colors" data-filter="all">Semua</button>
+      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" data-filter="favorite">Favorit</button>
+      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" data-filter="web">Web App</button>
+      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" data-filter="app">Mobile App</button>
+      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" data-filter="sistem">Sistem</button>
+    </div>
+
+    <!-- LIST PROJEK -->
+    <div id="projects-grid" class="flex flex-col gap-4">
       {projects.map(project => (
         <ProjectCard 
-          title={project.title}
-          description={project.description}
+          title={project.title} 
+          description={project.description} 
           image={project.image}
-          year={project.year}
-          tech={project.tech}
-          category={project.category}
+          year={project.year} 
+          tech={project.tech} 
+          category={project.category} 
+          slug={project.slug}
+          demoUrl={project.demoUrl}
+          repoUrl={project.repoUrl}
         />
       ))}
     </div>
   </section>
 </BaseLayout>
+
+<!-- SCRIPT UNTUK FILTER & LUCIDE ICONS -->
+<script>
+  // 1. Render Lucide Icons (Panggil dari window/global)
+  // @ts-ignore
+  if (typeof window !== 'undefined' && window.lucide) {
+    // @ts-ignore
+    window.lucide.createIcons();
+  }
+
+  // 2. Logika Filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Ubah gaya tombol yang aktif
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-neutral-900', 'text-white', 'dark:bg-white', 'dark:text-black');
+        b.classList.add('hover:bg-neutral-100', 'dark:hover:bg-neutral-800');
+      });
+      btn.classList.remove('hover:bg-neutral-100', 'dark:hover:bg-neutral-800');
+      btn.classList.add('bg-neutral-900', 'text-white', 'dark:bg-white', 'dark:text-black');
+
+      // Filter Kartu
+      const filterValue = btn.getAttribute('data-filter');
+      
+      cards.forEach(card => {
+        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+          card.classList.remove('hidden');
+          card.classList.add('flex'); // Pastikan display-nya kembali flex
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('flex');
+        }
+      });
+    });
+  });
+</script>
