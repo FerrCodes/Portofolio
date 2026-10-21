@@ -1,0 +1,24 @@
+---
+const { title, description, image, year, tech, category } = Astro.props;
+---
+<article class="flex flex-col sm:flex-row gap-5 p-4 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors cursor-pointer group">
+  <div class="w-full sm:w-48 h-32 shrink-0 overflow-hidden rounded-md border border-neutral-200 dark:border-neutral-700">
+    <img src={`/Portofolio/assets/images/projek/${image}`} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="flex-1 min-w-0 flex flex-col justify-center">
+    <div class="flex items-center gap-3">
+      <h3 class="font-heading font-bold text-lg truncate">{title}</h3>
+      {category === 'favorite' && (
+        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-pink-500 text-white">FAVORIT</span>
+      )}
+    </div>
+    <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1 line-clamp-2 leading-relaxed">
+      {description}
+    </p>
+    <div class="flex flex-wrap items-center gap-2 mt-3 text-xs text-neutral-500">
+      <span>{year}</span>
+      <span>•</span>
+      <span>{tech.join(', ')}</span>
+    </div>
+  </div>
+</article>
