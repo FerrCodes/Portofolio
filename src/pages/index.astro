@@ -2,8 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import LearningJourney from '../components/LearningJourney.astro';
+import FeaturedCard from '../components/FeaturedCard.astro';
 
-// Ambil data projek untuk ditampilkan di Beranda (hanya ambil 3)
 const modules = import.meta.glob('../content/projects/*.md', { eager: true });
 let projects: any[] = [];
 
@@ -11,20 +11,28 @@ for (const path in modules) {
   const mod: any = modules[path];
   if (mod.frontmatter) {
     const slug = path.split('/').pop()?.replace('.md', '');
-    projects.push({
-      slug: slug,
-      title: mod.frontmatter.title,
-      description: mod.frontmatter.description,
-      image: mod.frontmatter.image,
-      year: mod.frontmatter.year,
-      tech: mod.frontmatter.tech,
-      category: mod.frontmatter.category,
-    });
+    
+    // HANYA masukkan projek yang punya 'featured: true' di file .md
+    if (mod.frontmatter.featured === true) {
+      projects.push({
+        slug: slug,
+        title: mod.frontmatter.title,
+        description: mod.frontmatter.description,
+        image: mod.frontmatter.image,
+        year: mod.frontmatter.year,
+        status: mod.frontmatter.status || "Selesai",
+        tech: mod.frontmatter.tech,
+        category: mod.frontmatter.category,
+        demoUrl: mod.frontmatter.demoUrl || null,
+      });
+    }
   }
 }
-// Urutkan dan ambil 2 teratas untuk preview di beranda
+
+// Tidak perlu di-slice(0, 3) lagi karena kita sudah memfilter khusus 'featured'
+// Tapi kita urutkan tetap berdasarkan tahun terbaru
 projects.sort((a, b) => b.year.localeCompare(a.year));
-const featuredProjects = projects.slice(0, 2);
+const featuredProjects = projects; // <--- Ganti nama variabel atau sesuaikan
 
 ---
 <BaseLayout title="Beranda - Portofolio">
@@ -49,10 +57,12 @@ const featuredProjects = projects.slice(0, 2);
 
   <!-- FEATURED PROJECTS -->
   <section class="mb-16">
-    <h2 class="font-heading font-bold text-2xl mb-6">Projek terbaru</h2>
-    <div class="flex flex-col gap-4">
+    <h2 class="font-heading font-bold text-2xl mb-6">Projek Unggulan</h2>
+    
+    <!-- Grid Layout 3 Kolom -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {featuredProjects.map(project => (
-        <ProjectCard 
+        <FeaturedCard 
           title={project.title}
           description={project.description}
           image={project.image}
@@ -60,13 +70,10 @@ const featuredProjects = projects.slice(0, 2);
           tech={project.tech}
           category={project.category}
           slug={project.slug} 
+          demoUrl={project.demoUrl}
+          status={project.status}
         />
       ))}
-    </div>
-    <div class="mt-6">
-      <a href="/Portofolio/projects" class="text-sm text-blue-600 hover:underline dark:text-blue-400 font-semibold">
-        Lihat semua projek &rarr;
-      </a>
     </div>
   </section>
   <LearningJourney />

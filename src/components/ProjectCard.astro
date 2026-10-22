@@ -1,8 +1,8 @@
 ---
 // Tambahkan prop baru: demoUrl dan repoUrl
-const { title, description, image, year, tech, category, slug, demoUrl, repoUrl } = Astro.props;
+const { title, description, image, year, status, category, slug, demoUrl, repoUrl, hasCaseStudy = true } = Astro.props;
 ---
-<article class="project-card flex flex-col sm:flex-row gap-9 p-9 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group" data-category={category}>
+<article class="project-card flex flex-col sm:flex-row gap-6 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group" data-category={category}>
   
   <!-- Gambar Projek -->
   <div class="w-full sm:w-56 md:w-64 h-40 md:h-44 shrink-0 overflow-hidden rounded-md border border-neutral-200 dark:border-neutral-700">
@@ -22,31 +22,43 @@ const { title, description, image, year, tech, category, slug, demoUrl, repoUrl 
       {description}
     </p>
     
-    <!-- Meta Info -->
-    <div class="flex flex-wrap items-center gap-2 text-xs text-neutral-500 mb-4">
+        <!-- Meta Info -->
+    <div class="flex flex-wrap items-center gap-2 text-xs md:text-sm text-neutral-500 mb-5">
       <span>{year}</span>
-      <span>•</span>
-      <span>{tech.join(', ')}</span>
+      {status && (
+        <>
+          <span>•</span>
+          <span class={`font-semibold px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wider ${
+            status.toLowerCase() === 'selesai' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+            status.toLowerCase() === 'tahap pengembangan' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' :
+            status.toLowerCase() === 'eksperimen' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
+            'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300'
+          }`}>
+            {status}
+          </span>
+        </>
+      )}
     </div>
 
     <!-- TOMBOL AKSI -->
     <div class="flex flex-wrap items-center gap-2 mt-auto">
-      <!-- Tombol Studi Kasus -->
-      <a href={`/Portofolio/case-study/${slug}`} class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-neutral-900 text-white dark:bg-white dark:text-black rounded-md hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
-        <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Studi Kasus
-      </a>
-
-      <!-- Tombol Kunjungi (Tampil jika ada demoUrl) -->
-      {demoUrl && (
-        <a href={demoUrl} target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold border border-neutral-300 dark:border-neutral-700 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Kunjungi
+      
+      <!-- Tombol Studi Kasus (Hanya muncul jika hasCaseStudy !== false) -->
+      {hasCaseStudy !== false && (
+        <a href={`/Portofolio/case-study/${slug}`} class="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold bg-neutral-900 text-white dark:bg-white dark:text-black rounded-md hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
+          <i data-lucide="book-open" class="w-4 h-4"></i> Studi Kasus
         </a>
       )}
 
-      <!-- Tombol GitHub (Tampil jika ada repoUrl) -->
+      {demoUrl && (
+        <a href={demoUrl} target="_blank" class="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold border border-neutral-300 dark:border-neutral-700 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+          <i data-lucide="external-link" class="w-4 h-4"></i> Kunjungi
+        </a>
+      )}
+
       {repoUrl && (
-        <a href={repoUrl} target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold border border-neutral-300 dark:border-neutral-700 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" aria-label="Source Code">
-          <i class="fab fa-github text-sm"></i> Source
+        <a href={repoUrl} target="_blank" class="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold border border-neutral-300 dark:border-neutral-700 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" aria-label="Source Code">
+          <i class="fab fa-github text-sm"></i>
         </a>
       )}
     </div>

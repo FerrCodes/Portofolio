@@ -4,7 +4,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 export async function getStaticPaths() {
   const modules = import.meta.glob('../../content/projects/*.md', { eager: true });
   const paths = [];
-  
   for (const path in modules) {
     const slug = path.split('/').pop()?.replace('.md', '');
     paths.push({ params: { slug } });
@@ -21,22 +20,102 @@ if (!mod) {
   return Astro.redirect('/Portofolio/404');
 }
 
-const { title, description, image, year, tech } = mod.frontmatter;
+const { title, description, image, year, tech, demoUrl, repoUrl } = mod.frontmatter;
 const Content = mod.Content;
+
+// KAMUS IKON TEKNOLOGI
+// Kamu bisa menambah daftar ini kapan saja jika ada teknologi baru
+const techIcons: Record<string, string> = {
+  "Flutter": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
+  "Dart": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg",
+  "Android SDK": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg",
+  "Hive": "https://cdn.simpleicons.org/hive/FDBA2D",
+  "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+  "TypeScript": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+  "React": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+  "Tailwind": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+  "Supabase": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+  "Astro": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg",
+  "PHP": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+  "MySQL": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+  "Python": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+  "Laravel": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+  "OpenCV": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg",
+  "Vercel": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+  "Streamlit": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg",
+};
+
+// Fungsi bantuan untuk mengambil URL ikon
+const getIconUrl = (techName: string) => {
+  return techIcons[techName] || "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg"; // Fallback jika tidak ketemu
+};
 ---
 <BaseLayout title={`${title} - Case Study`}>
-  <article class="max-w-3xl">
-    <a href="/Portofolio/projects" class="text-sm text-neutral-500 hover:text-black dark:hover:text-white mb-6 inline-block">
-      &larr; Kembali ke Projects
-    </a>
-
-    <h1 class="font-heading font-black text-4xl mb-2">{title}</h1>
-    <p class="text-neutral-500 mb-6">{year} • {tech.join(', ')}</p>
+  <article class="max-w-4xl mx-auto">
     
-    <img src={`/Portofolio/assets/images/projek/${image}`} alt={title} class="w-full rounded-lg mb-8 border border-neutral-200 dark:border-neutral-800" />
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-neutral-500 mb-8">
+      <a href="/Portofolio" class="hover:text-black dark:hover:text-white transition-colors">Beranda</a>
+      <span>/</span>
+      <a href="/Portofolio/projects" class="hover:text-black dark:hover:text-white transition-colors">Projects</a>
+      <span>/</span>
+      <span class="text-black dark:text-white font-semibold">{title}</span>
+    </nav>
 
-    <div class="prose dark:prose-invert max-w-none text-neutral-800 dark:text-neutral-300 leading-relaxed">
+    <!-- Hero Section -->
+    <header class="text-center mb-12">
+      <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 font-semibold text-xs rounded-full mb-4 tracking-wider uppercase">Studi Kasus</span>
+      <h1 class="font-heading font-black text-4xl md:text-5xl mb-4 leading-tight">{title}</h1>
+      <p class="text-neutral-600 dark:text-neutral-400 text-lg leading-relaxed max-w-2xl mx-auto">
+        {description}
+      </p>
+    </header>
+
+    <!-- Gambar Utama -->
+    <div class="mb-12 rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-lg">
+      <img src={`/Portofolio/assets/images/projek/${image}`} alt={title} class="w-full h-auto object-cover" />
+    </div>
+
+    <!-- Tech Stack Info dengan Ikon -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 p-6 mb-12 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
+      <div>
+        <h3 class="font-heading font-bold text-lg mb-4 text-center md:text-left">Teknologi yang Digunakan</h3>
+        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+          {tech.map((t: string) => (
+            <div class="flex flex-col items-center justify-center p-3 w-20 h-20 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:border-blue-500 transition-colors">
+              <img src={getIconUrl(t)} alt={t} class="w-8 h-8 object-contain mb-1" />
+              <span class="text-[10px] text-center font-medium text-neutral-600 dark:text-neutral-400 leading-tight">{t}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="text-center md:text-right shrink-0 md:border-l md:border-neutral-200 md:dark:border-neutral-700 md:pl-6">
+        <p class="text-sm text-neutral-500 mb-1">Tahun Pembuatan</p>
+        <p class="font-heading font-black text-2xl">{year}</p>
+      </div>
+    </div>
+
+    <!-- Konten Markdown -->
+    <div class="prose prose-neutral dark:prose-invert prose-lg max-w-none 
+                prose-headings:font-heading prose-headings:font-bold 
+                prose-a:text-blue-600 dark:prose-a:text-blue-400
+                prose-img:rounded-xl prose-img:border prose-img:border-neutral-200 dark:prose-img:border-neutral-800">
       <Content />
     </div>
+
+    <!-- Tombol Aksi Bawah -->
+    <div class="flex flex-wrap items-center gap-4 mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+      {demoUrl && (
+        <a href={demoUrl} target="_blank" class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          Lihat Hasil / Demo
+        </a>
+      )}
+      {repoUrl && (
+        <a href={repoUrl} target="_blank" class="flex items-center gap-2 px-6 py-3 border border-neutral-300 dark:border-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+          <i class="fab fa-github text-xl"></i> Source Code
+        </a>
+      )}
+    </div>
+
   </article>
 </BaseLayout>

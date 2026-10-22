@@ -1,0 +1,57 @@
+---
+const { title, description, image, year, status, category, slug, demoUrl } = Astro.props;
+---
+<article class="flex flex-col h-full rounded-xl border-2 border-[#291334] dark:border-neutral-600 bg-white dark:bg-neutral-700 overflow-hidden hover:shadow-lg transition-all duration-300 group">
+  
+  <!-- Gambar (Atas) -->
+  <a href={`/Portofolio/case-study/${slug}`} class="relative block w-full h-48 overflow-hidden">
+    <img src={`/Portofolio/assets/images/projek/${image}`} alt={title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+      <span class="bg-white/90 text-black px-4 py-2 rounded-full font-semibold text-sm shadow-lg">Lihat Detail</span>
+    </div>
+  </a>
+
+  <!-- Konten (Bawah) -->
+  <div class="p-5 flex flex-col flex-1">
+    <div class="flex items-center gap-2 mb-2">
+      <h3 class="font-heading font-bold text-lg line-clamp-1">{title}</h3>
+      {category === 'favorite' && (
+        <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-pink-500 text-white shrink-0">FAVORIT</span>
+      )}
+    </div>
+    
+    <p class="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-3 leading-relaxed mb-4 flex-1">
+      {description}
+    </p>
+    
+    <!-- Tahun & Status -->
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-500 mb-5 mt-auto">
+      <span class="font-semibold text-neutral-800 dark:text-neutral-200">{year}</span>
+      {status && (
+        <>
+          <span>•</span>
+          <span class={`font-semibold px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wider ${
+            status.toLowerCase() === 'selesai' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+            status.toLowerCase() === 'tahap pengembangan' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' :
+            status.toLowerCase() === 'eksperimen' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
+            'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300'
+          }`}>
+            {status}
+          </span>
+        </>
+      )}
+    </div>
+
+    <!-- Tombol Aksi -->
+    <div class="flex items-center gap-2 mt-auto pt-4 border-t border-neutral-100 dark:border-neutral-800">
+      <a href={`/Portofolio/case-study/${slug}`} class="flex-1 text-center px-3 py-2 text-xs font-semibold bg-neutral-900 text-white dark:bg-white dark:text-black rounded-md hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
+        Studi Kasus
+      </a>
+      {demoUrl && (
+        <a href={demoUrl} target="_blank" class="flex items-center justify-center w-8 h-8 rounded-md border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" title="Kunjungi Website">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      )}
+    </div>
+  </div>
+</article>
