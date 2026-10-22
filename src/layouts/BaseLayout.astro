@@ -128,7 +128,47 @@ const navItems = [
       </div>
     </aside>
 
-   <main class="flex-1 px-6 md:px-12 py-10 max-w-5xl mx-auto">
+        <!-- MOBILE DRAWER OVERLAY -->
+    <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
+
+    <!-- MOBILE DRAWER MENU -->
+    <div id="mobile-drawer" class="fixed top-0 left-0 h-full w-64 bg-white dark:bg-neutral-950 border-r border-neutral-200 dark:border-neutral-800 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col p-6 shadow-2xl">
+      <div class="flex justify-end mb-4">
+        <button id="mobile-close-btn" class="text-neutral-500 hover:text-black dark:hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      
+      <!-- Foto & Nama di dalam Drawer -->
+      <div class="text-center mb-6">
+        <img src="/Portofolio/assets/images/me/favicon.png" alt="Feri" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 border border-neutral-200 dark:border-neutral-700" />
+      </div>
+
+      <!-- Menu Navigasi Mobile -->
+      <nav class="flex flex-col gap-1 flex-1">
+        {navItems.map(item => (
+          <a href={`/Portofolio${item.href}`} class="px-3 py-2 rounded-md text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Sosmed Mobile -->
+      <div class="flex justify-center gap-4 text-3xl text-neutral-600 dark:text-neutral-400 mt-auto pt-6 border-t border-neutral-200 dark:border-neutral-800">
+        <a href="https://github.com/FerrCodes" target="_blank" class="hover:text-black dark:hover:text-white"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/imnotferrriii" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/imnotferrriii" target="_blank" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <!-- MOBILE HEADER (Tombol Profil) -->
+    <div class="md:hidden fixed top-4 left-4 z-40">
+      <button id="mobile-menu-btn" class="w-12 h-12 rounded-full overflow-hidden border-2 border-white dark:border-neutral-800 shadow-lg active:scale-95 transition-transform">
+        <img src="/Portofolio/assets/images/me/favicon.png" alt="Menu" class="w-full h-full object-cover" />
+      </button>
+    </div>
+
+   <main class="flex-1 px-6 md:px-12 pt-20 md:pt-10 pb-10 max-w-5xl mx-auto">
       <div class="flex justify-end mb-8">
         <button id="theme-toggle" class="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
           <i class="fas fa-moon"></i> Ganti Tema
@@ -151,6 +191,35 @@ const navItems = [
         localStorage.setItem('theme', 'dark');
       }
     });
+
+    // --- LOGIKA MOBILE DRAWER ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileCloseBtn = document.getElementById('mobile-close-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileOverlay = document.getElementById('mobile-drawer-overlay');
+
+    function openDrawer() {
+      if(mobileOverlay && mobileDrawer) {
+        mobileOverlay.classList.remove('hidden');
+        // Sedikit delay agar transisi opacity berjalan
+        setTimeout(() => mobileOverlay.classList.remove('opacity-0'), 10);
+        mobileDrawer.classList.remove('-translate-x-full');
+        document.body.style.overflow = 'hidden'; // Cegah scroll di background
+      }
+    }
+
+    function closeDrawer() {
+      if(mobileOverlay && mobileDrawer) {
+        mobileOverlay.classList.add('opacity-0');
+        mobileDrawer.classList.add('-translate-x-full');
+        document.body.style.overflow = '';
+        setTimeout(() => mobileOverlay.classList.add('hidden'), 300);
+      }
+    }
+
+    mobileMenuBtn?.addEventListener('click', openDrawer);
+    mobileCloseBtn?.addEventListener('click', closeDrawer);
+    mobileOverlay?.addEventListener('click', closeDrawer);
   </script>
 </body>
 </html>
