@@ -4,6 +4,7 @@ description: "Tujuan untuk membuat Fanpage ini adalah hanya untuk menunjukan ras
 image: "PersonaHanni.png"
 year: "2026"
 status: "Selesai"
+tech: ["HTML", "CSS", "Vanilla JS"]
 category: "web"
 hasCaseStudy: false
 demoUrl: "https://ferrcodes.github.io/Fanpage/"
