@@ -59,9 +59,40 @@ const navItems = [
     .dark\:text-neutral-400 { color: var(--text-muted) !important; }
     .text-neutral-600 { color: var(--text-muted) !important; }
   </style>
+    <!-- SEO & Open Graph -->
+  <meta name="description" content="Portofolio - Feri Ferdianto" />
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Feri Ferdianto — Aspiring Software Engineer">
+  <meta property="og:description" content="Portofolio Feri Ferdianto. Berisi projek web development, studi kasus teknis, dan dokumentasi proses belajar — dari eksperimen hingga proyek nyata.">
+  <link rel="canonical" href="https://ferrcodes.github.io/Portofolio/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/FerrCodes/Portofolio/main/assets/images/me/preview.png">
+  <meta property="og:url" content="https://ferrcodes.github.io/Portofolio/">
+
+  <!-- Structured Data (Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Feri Ferdianto",
+    "jobTitle": "Software Engineer",
+    "url": "https://ferrcodes.github.io/Portofolio/",
+    "sameAs": [
+      "https://github.com/FerrCodes",
+      "https://www.instagram.com/imnotferrriii",
+      "https://x.com/imnotferrriii"
+    ]
+  }
+  </script>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Feri Ferdianto — Software Engineer">
+  <meta name="twitter:description" content="Portofolio Feri Ferdianto, siswa SMKN 5 Malang.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/FerrCodes/Portofolio/main/assets/images/me/preview.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title}</title>
+  <title>{title} | Feri Ferdianto</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -90,7 +121,7 @@ const navItems = [
           ))}
         </nav>
       </div>
-      <div class="flex justify-center gap-4 text-lg text-neutral-600 dark:text-neutral-400">
+      <div class="flex justify-center gap-5 text-2xl text-neutral-600 dark:text-neutral-400">
         <a href="https://github.com/FerrCodes" target="_blank" class="hover:text-black dark:hover:text-white"><i class="fab fa-github"></i></a>
         <a href="https://www.instagram.com/imnotferrriii" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram"></i></a>
         <a href="https://x.com/imnotferrriii" target="_blank" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
