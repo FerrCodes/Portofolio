@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/TimeLine.astro";
+import SkillGrid from "../components/SkillGrid.astro";
 ---
 
 <BaseLayout title="CV - Portofolio">
@@ -10,38 +11,53 @@ import TimeLineElement from "../components/TimeLine.astro";
   </div>
   <div class="mb-10 text-justify text-neutral-600 dark:text-neutral-400 leading-relaxed">
     <p>
-      Dalam proses pembuatan dan menyusun semua progress.
+      Saya sangat tertarik dengan dunia teknologi digital, terutama di bidang <strong>Software Engineering dengan fokus Web Development. </strong> 
+      Karena saya suka bereksperimen dan mencoba teknologi baru, misal seperti membongkar cara kerja di balik halaman login, 
+      cara pembuatan aplikasi dan sistem yang ada di baliknya. 
+      Dan mencoba juga membuat web atau software sendiri dengan menggunakan Tech Stack modern.
     </p>
   </div>
 
-  <!-- Education Section -->
+    <!-- Education Section -->
   <div class="mb-5">
     <h2 class="font-heading font-bold text-2xl w-full">Pendidikan</h2>
   </div>
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-
-    >
-
+      title="Pengembangan Perangkat Lunak dan Gim (PPLG)"
+      subtitle="2024 - Sekarang | SMK Negeri 5 Malang"
+      isLast={true}>
+      Fokus mempelajari dasar-dasar pemrograman, pengembangan web, dan pembuatan aplikasi mobile.
     </TimeLineElement>
   </div>
 
-  <!-- Experience Section -->
+    <!-- Experience / PKL Section -->
   <div class="mb-5">
-    <h2 class="font-heading font-bold text-2xl w-full">Pengalaman</h2>
+    <h2 class="font-heading font-bold text-2xl w-full">Pengalaman & Projek</h2>
   </div>
   <div class="time-line-container mb-10">
-    <TimeLineElement
     
+    <!-- PKL UB -->
+    <TimeLineElement
+      title="(Pratik Kerja Lapangan) PKL"
+      subtitle="Juli 2026 - Sekarang | Universitas Brawijaya (Perpustakaan Pusat)"
     >
-
+      <ul class="list-disc ml-4 space-y-1">
+        <li>Melakukan input data skripsi mahasiswa dari berbagai jurusan ke dalam web perpustakaan.</li>
+      </ul>
+    </TimeLineElement>
+    
+    <TimeLineElement
+      title="Projek Mandiri & Eksperimen"
+      subtitle={`2026 | <a href="/Portofolio/case-study/notenest" class="text-blue-500 hover:text-blue-700 hover:underline transition-colors font-medium">NoteNest</a>`}
+    >
+      Aplikasi Jurnal atau Note minimalis dengan fitur native secara offline berbasis Flutter.
     </TimeLineElement>
   </div>
 
-  <!-- Skills Section -->
-  <div class="mb-5">
-    <h2 class="font-heading font-bold text-2xl w-full">Keahlian (Skills)</h2>
+  <!-- BAGIAN SKILLS BARU (MENGGANTIKAN LIST LAMA) -->
+  <div class="mb-5 mt-12">
+    <h2 class="font-heading font-bold text-2xl w-full">Tech Stack & Exploration</h2>
   </div>
-  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-10 text-neutral-600 dark:text-neutral-400">
-  </ul>
+  <SkillGrid />
 </BaseLayout>

@@ -1,20 +1,22 @@
 ---
-const { title, subtitle } = Astro.props;
+const { title, subtitle, isLast = false } = Astro.props;
 ---
-
 <div class="flex">
   <!-- Kolom Kiri: Garis & Titik -->
   <div class="relative flex flex-col items-center mr-4">
     <!-- Titik (Bulatan) -->
-    <span class="w-4 h-4 bg-blue-600 dark:bg-blue-500 rounded-full z-10 mt-1.5"></span>
-    <!-- Garis Vertikal (menyambung ke bawah) -->
-    <span class="w-[1px] bg-neutral-300 dark:bg-neutral-700 absolute top-5 bottom-0"></span>
+    <span class="w-3.5 h-3.5 bg-blue-600 dark:bg-blue-500 rounded-full z-10 mt-1.5"></span>
+    
+    <!-- Garis Vertikal (Hanya muncul jika BUKAN item terakhir) -->
+    {!isLast && (
+      <span class="w-[1px] bg-neutral-300 dark:bg-neutral-700 absolute top-5 bottom-0"></span>
+    )}
   </div>
 
   <!-- Kolom Kanan: Teks -->
-  <div class="pb-8 flex-1">
+  <div class={`flex-1 ${isLast ? 'pb-0' : 'pb-8'}`}>
     <h3 class="font-heading font-bold text-lg">{title}</h3>
-    <span class="text-sm text-neutral-500">{subtitle}</span>
+    <span class="text-sm text-neutral-500" set:html={subtitle}></span>
     <div class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 text-justify leading-relaxed">
       <slot />
     </div>
