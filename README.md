@@ -1,11 +1,12 @@
 # Portofolio
 
-Portofolio pribadi Feri Ferdianto. <br>
+Portofolio pribadi.
 
 ## Tech Stack
-- HTML5, CSS3, JavaScript
-- Bootstrap 5
-- Lucide Icons
+- Astro
+- Tailwind CSS
+- React (untuk Contact Form)
+- TypeScript
 
 ## Kontak
 - Email: ferdiantoferi1303@gmail.com
