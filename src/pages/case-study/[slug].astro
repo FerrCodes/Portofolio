@@ -119,3 +119,11 @@ const getIconUrl = (techName: string) => {
 
   </article>
 </BaseLayout>
+
+<script>
+  // @ts-ignore
+  if (typeof window !== 'undefined' && window.lucide) {
+    // @ts-ignore
+    window.lucide.createIcons();
+  }
+</script>

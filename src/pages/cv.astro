@@ -61,3 +61,11 @@ import SkillGrid from "../components/SkillGrid.astro";
   </div>
   <SkillGrid />
 </BaseLayout>
+
+<script>
+  // @ts-ignore
+  if (typeof window !== 'undefined' && window.lucide) {
+    // @ts-ignore
+    window.lucide.createIcons();
+  }
+</script>

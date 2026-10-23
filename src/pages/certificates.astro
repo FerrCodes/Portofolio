@@ -12,8 +12,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
       <!-- Sertifikat 1 -->
-      <div class="border-2 border-neutral-200 dark:border-neutral-800 hover:border-blue-500 dark:hover:border-blue-400 rounded-lg transition-all duration-300 overflow-hidden group">
-        <img src="/Portofolio/assets/images/sertifikat/1.png" alt="Dicoding" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+      <div onclick="openCertModal('/Portofolio/assets/images/sertifikat/1.png', 'Belajar Dasar AI')" class="group relative cursor-zoom-in border-2 border-neutral-200 dark:border-neutral-800 hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-lg dark:hover:shadow-purple-500/20 rounded-xl overflow-hidden transition-all duration-300">
+        <img src="/Portofolio/assets/images/sertifikat/1.png" alt="Dicoding" class="w-full h-48 object-cover group-hover:scale-110 ease-in-out transition-transform duration-300" />
         <div class="p-4">
           <h3 class="font-heading font-bold text-lg">Belajar Dasar AI</h3>
           <p class="text-sm text-neutral-500">Dicoding Indonesia • 2025</p>
@@ -21,7 +21,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <!-- Sertifikat 2 -->
-      <div class="border-2 border-neutral-200 dark:border-neutral-800 hover:border-blue-500 dark:hover:border-blue-400 rounded-lg transition-all duration-300 overflow-hidden group">
+      <div onclick="openCertModal('/Portofolio/assets/images/sertifikat/ML.png', 'Belajar Dasar AI')" class="group relative cursor-zoom-in border-2 border-neutral-200 dark:border-neutral-800 hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-lg dark:hover:shadow-purple-500/20 rounded-xl overflow-hidden transition-all duration-300">
         <img src="/Portofolio/assets/images/sertifikat/ML.png" alt="Kaggle" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
         <div class="p-4">
           <h3 class="font-heading font-bold text-lg">Intro to Machine Learning</h3>
@@ -30,7 +30,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <!-- Sertifikat 3 -->
-      <div class="border-2 border-neutral-200 dark:border-neutral-800 hover:border-blue-500 dark:hover:border-blue-400 rounded-lg transition-all duration-300 overflow-hidden group">
+      <div onclick="openCertModal('/Portofolio/assets/images/sertifikat/Python.png', 'Belajar Dasar AI')" class="group relative cursor-zoom-in border-2 border-neutral-200 dark:border-neutral-800 hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-lg dark:hover:shadow-purple-500/20 rounded-xl overflow-hidden transition-all duration-300">
         <img src="/Portofolio/assets/images/sertifikat/Python.png" alt="Python" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
         <div class="p-4">
           <h3 class="font-heading font-bold text-lg">Dasar-dasar Python</h3>
@@ -40,4 +40,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     </div>
   </section>
+
+  <!-- MODAL SERTIFIKAT (Pop-up) -->
+  <div id="certModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300 p-4" onclick="closeCertModal()">
+    <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+      <!-- Tombol Close -->
+      <button onclick="closeCertModal()" class="absolute -top-12 right-0 text-white hover:text-red-400 transition-colors bg-white/10 hover:bg-white/20 p-2 rounded-full">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <!-- Gambar Modal -->
+      <img id="modalCertImg" src="" alt="Sertifikat" class="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl" />
+      <p id="modalCertTitle" class="text-white text-lg font-bold mt-4"></p>
+    </div>
+  </div>
 </BaseLayout>
+
+<script>
+  // Beri tipe data (any) agar TypeScript tidak protes
+  const modal = document.getElementById('certModal') as HTMLDivElement;
+  const modalImg = document.getElementById('modalCertImg') as HTMLImageElement; // Cast ke HTMLImageElement
+  const modalTitle = document.getElementById('modalCertTitle') as HTMLParagraphElement;
+
+  function openCertModal(imageSrc: string, title: string) {
+    if (modal && modalImg && modalTitle) {
+      modalImg.src = imageSrc;
+      modalTitle.textContent = title;
+      
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
+      }, 10);
+      
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  // window agar tidak error di Astro
+  (window as any).openCertModal = openCertModal;
+
+  function closeCertModal() {
+    if (modal) {
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0');
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+  }
+  
+  (window as any).closeCertModal = closeCertModal;
+
+  // Beri tahu TypeScript bahwa 'lucide' itu ada di window
+  if (typeof window !== 'undefined' && (window as any).lucide) {
+    (window as any).lucide.createIcons();
+  }
+</script>
+
+<script>
+  // @ts-ignore
+  if (typeof window !== 'undefined' && window.lucide) {
+    // @ts-ignore
+    window.lucide.createIcons();
+  }
+</script>
