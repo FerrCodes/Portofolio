@@ -49,7 +49,7 @@ export default function ContactForm() {
           id="user_name" 
           required 
           className="w-full px-4 py-3 rounded-lg border-2 border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-[#291334] dark:focus:border-white transition-colors"
-          placeholder="Masukkan nama Anda"
+          placeholder="Masukkan nama"
         />
       </div>
 
@@ -73,7 +73,7 @@ export default function ContactForm() {
           required 
           rows={5}
           className="w-full px-4 py-3 rounded-lg border-2 border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-[#291334] dark:focus:border-white transition-colors resize-none"
-          placeholder="Tulis pesan atau ide projek Anda di sini..."
+          placeholder="Tulis pesan atau ide projek di sini..."
         ></textarea>
       </div>
 

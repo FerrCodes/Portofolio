@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import LearningJourney from '../components/LearningJourney.astro';
 import FeaturedCard from '../components/FeaturedCard.astro';
+import LearningJourney from '../components/LearningJourney.astro';
+import CurrentFocus from '../components/CurrentFocus.astro';
 
 const modules = import.meta.glob('../content/projects/*.md', { eager: true });
 let projects: any[] = [];
@@ -12,7 +12,6 @@ for (const path in modules) {
   if (mod.frontmatter) {
     const slug = path.split('/').pop()?.replace('.md', '');
     
-    // HANYA masukkan projek yang punya 'featured: true' di file .md
     if (mod.frontmatter.featured === true) {
       projects.push({
         slug: slug,
@@ -29,37 +28,51 @@ for (const path in modules) {
   }
 }
 
-// Tidak perlu di-slice(0, 3) lagi karena kita sudah memfilter khusus 'featured'
-// Tapi kita urutkan tetap berdasarkan tahun terbaru
+// Urutkan dan MAKSIMAL ambil 3 proyek
 projects.sort((a, b) => b.year.localeCompare(a.year));
-const featuredProjects = projects; // <--- Ganti nama variabel atau sesuaikan
-
+const featuredProjects = projects.slice(0, 3); 
 ---
 <BaseLayout title="Beranda - Portofolio">
-  <!--HERO SECTION -->
-  <section class="mb-16">
-    <h1 class="font-heading font-black text-4xl md:text-5xl mt-2 leading-tight">
-      Feri Ferdianto
+  
+  <!-- HERO SECTION -->
+  <section class="mb-12 md:mb-16">
+    <p class="text-sm font-bold text-purple-600 dark:text-purple-400 mb-2 tracking-widest uppercase">Hi, I'm Feri 👋</p>
+    
+    <h1 class="font-heading font-black text-3xl md:text-6xl mt-2 leading-tight">
+      Aspiring Software Engineer
     </h1>
-   <h2 class="font-heading font-bold text-xl md:text-2xl mt-2 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-      <span class="text-neutral-800 dark:text-neutral-200">Aspiring</span>
-      <span class="bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">
-        Software Engineer & Full Stack Developer
-      </span>
-  </h2>
+    
+    <h2 class="font-heading font-bold text-xl md:text-2xl mt-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent max-w-3xl">
+      Mewujudkan gagasan menjadi proyek nyata.
+    </h2>
+    
+    <p class="mt-6 text-neutral-600 dark:text-neutral-400 max-w-2xl leading-relaxed text-base md:text-lg">
+      Saya senang mengeksplorasi teknologi modern, mengembangkan aplikasi web dan seluler, serta mempelajari cara kerja sistem di baliknya.
+    </p>
 
-    <div class="flex flex-wrap gap-3 mt-6">
-      <a href="/Portofolio/contact" class="px-4 py-2 bg-neutral-100 dark:bg-neutral-800 rounded-md font-semibold text-sm hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors">
-        Let's connect!
+    <div class="flex flex-wrap items-center gap-4 mt-8">
+      <a href="/Portofolio/projects" class="px-6 py-3 bg-[#291334] dark:bg-white text-white dark:text-[#291334] font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2 group">
+        Lihat semua projek
+        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+      </a>
+      <a href="/Portofolio/contact" class="px-6 py-3 border-2 border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 font-semibold rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
+        Let's Connect!
       </a>
     </div>
   </section>
 
+    <!-- CURRENT FOCUS -->
+  <CurrentFocus />
+
   <!-- FEATURED PROJECTS -->
   <section class="mb-16">
-    <h2 class="font-heading font-bold text-2xl mb-6">Projek Unggulan</h2>
+    <div class="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 pb-2 mb-6">
+      <h2 class="font-heading font-bold text-2xl">Featured Projects</h2>
+      <a href="/Portofolio/projects" class="text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-1 group">
+        View All <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i>
+      </a>
+    </div>
     
-    <!-- Grid Layout 3 Kolom -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {featuredProjects.map(project => (
         <FeaturedCard 
@@ -67,15 +80,16 @@ const featuredProjects = projects; // <--- Ganti nama variabel atau sesuaikan
           description={project.description}
           image={project.image}
           year={project.year}
+          status={project.status}
           tech={project.tech}
           category={project.category}
           slug={project.slug} 
           demoUrl={project.demoUrl}
-          status={project.status}
         />
       ))}
     </div>
   </section>
+  <!-- LEARNING JOURNEY -->
   <LearningJourney />
 </BaseLayout>
 

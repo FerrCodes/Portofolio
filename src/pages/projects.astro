@@ -15,91 +15,171 @@ for (const path in modules) {
       description: mod.frontmatter.description,
       image: mod.frontmatter.image,
       year: mod.frontmatter.year,
+      status: mod.frontmatter.status || "Selesai",
       tech: mod.frontmatter.tech,
       category: mod.frontmatter.category,
       demoUrl: mod.frontmatter.demoUrl || null,
       repoUrl: mod.frontmatter.repoUrl || null,
       hasCaseStudy: mod.frontmatter.hasCaseStudy !== false,
-      status: mod.frontmatter.status || "Selesai",
+      featured: mod.frontmatter.featured || false,
     });
   }
 }
 
 projects.sort((a, b) => b.year.localeCompare(a.year));
 ---
-<BaseLayout>
+<BaseLayout title="Projects & Experiments">
   <section>
     <!-- Header -->
-    <div class="mb-8">
-      <h1 class="font-heading font-black text-3xl md:text-4xl">Projek</h1>
-      <p class="text-neutral-500 dark:text-neutral-400 mt-2">Beberapa projek yang pernah saya kerjakan.</p>
+    <div class="mb-10">
+      <h1 class="font-heading font-black text-4xl md:text-3xl">Proyek & Eksperimen</h1>
+      <p class="text-neutral-500 mt-3 text-lg">Kumpulan hasil semua projek dan eksperimen mencoba menjadi projek nyata.</p>
     </div>
 
-    <!-- FILTER TOMBOL -->
-    <div class="flex flex-wrap gap-2 mb-6">
-      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 bg-neutral-900 text-white dark:bg-white dark:text-black transition-colors" data-filter="all">Semua</button>
-      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" data-filter="favorite">Favorit</button>
-      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" data-filter="web">Web App</button>
-      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" data-filter="app">Aplikasi</button>
-      <button class="filter-btn px-4 py-1.5 text-sm font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors" data-filter="sistem">Sistem</button>
+    <!-- Toolbar: Search & Filter -->
+    <div class="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center mb-8 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
+      
+      <!-- Search -->
+      <div class="relative w-full md:w-72">
+        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400"></i>
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Cari projek lain..." 
+          class="w-full pl-10 pr-4 py-2 text-sm bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:outline-none focus:border-purple-500 dark:focus:border-purple-400 transition-colors"
+        />
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-2">
+        <button class="filter-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-neutral-900 text-white dark:bg-white dark:text-black transition-colors" data-filter="all">Semua</button>
+        <button class="filter-btn px-4 py-1.5 text-xs font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors" data-filter="featured">Favorit</button>
+        <button class="filter-btn px-4 py-1.5 text-xs font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors" data-filter="web">Web App</button>
+        <button class="filter-btn px-4 py-1.5 text-xs font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors" data-filter="app">Aplikasi</button>
+        <button class="filter-btn px-4 py-1.5 text-xs font-semibold rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors" data-filter="system">Sistem</button>
+      </div>
     </div>
 
-    <!-- LIST PROJEK -->
-    <div id="projects-grid" class="flex flex-col gap-4">
+    <!-- Info Jumlah Projek -->
+    <div class="mb-4 text-sm text-neutral-500">
+      Menampilkan <span id="project-count" class="font-bold text-neutral-900 dark:text-white">{projects.length}</span> projek
+    </div>
+
+    <!-- Grid Projek -->
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map(project => (
         <ProjectCard 
           title={project.title} 
           description={project.description} 
           image={project.image}
           year={project.year} 
+          status={project.status}
           tech={project.tech} 
           category={project.category} 
           slug={project.slug}
           demoUrl={project.demoUrl}
           repoUrl={project.repoUrl}
           hasCaseStudy={project.hasCaseStudy}
-          status={project.status}
+          featured={project.featured}
         />
       ))}
     </div>
+
+    <!-- Empty State (Muncul jika projek tidak ditemukan) -->
+    <div id="empty-state" class="hidden flex-col items-center justify-center py-20 text-center">
+      <i data-lucide="search-x" class="w-12 h-12 text-neutral-300 dark:text-neutral-600 mb-4"></i>
+      <h3 class="font-heading font-bold text-xl mb-2">Tidak ada projek ditemukan</h3>
+      <p class="text-neutral-500 mb-6">Coba kata kunci lain atau ubah filter kategori.</p>
+      <button onclick="resetFilters()" class="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">Reset Pencarian</button>
+    </div>
+
   </section>
 </BaseLayout>
 
-<!-- SCRIPT UNTUK FILTER & LUCIDE ICONS -->
+<!-- Script untuk Search & Filter -->
 <script>
-  // 1. Render Lucide Icons (Panggil dari window/global)
   // @ts-ignore
   if (typeof window !== 'undefined' && window.lucide) {
     // @ts-ignore
     window.lucide.createIcons();
   }
 
-  // 2. Logika Filter
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card');
+  const emptyState = document.getElementById('empty-state');
+  const projectCount = document.getElementById('project-count');
+  const projectsGrid = document.getElementById('projects-grid');
 
+  let currentFilter = 'all';
+
+  function filterProjects() {
+    const searchTerm = searchInput.value.toLowerCase();
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const title = card.getAttribute('data-title') || '';
+      const tech = card.getAttribute('data-tech') || '';
+      const category = card.getAttribute('data-category') || '';
+      const isFeatured = card.getAttribute('data-featured') === 'true';
+
+      // Cek Search (judul atau tech)
+      const matchesSearch = title.includes(searchTerm) || tech.includes(searchTerm);
+      
+      // Cek Filter
+      let matchesFilter = false;
+      if (currentFilter === 'all') matchesFilter = true;
+      else if (currentFilter === 'featured') matchesFilter = isFeatured;
+      else matchesFilter = category === currentFilter;
+
+      if (matchesSearch && matchesFilter) {
+        card.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Update Count & Empty State
+    if (projectCount) projectCount.textContent = visibleCount.toString();
+    
+    if (visibleCount === 0) {
+      projectsGrid?.classList.add('hidden');
+      emptyState?.classList.remove('hidden');
+      emptyState?.classList.add('flex');
+    } else {
+      projectsGrid?.classList.remove('hidden');
+      emptyState?.classList.add('hidden');
+      emptyState?.classList.remove('flex');
+    }
+  }
+
+  // Event Listener untuk Search
+  searchInput?.addEventListener('input', filterProjects);
+
+  // Event Listener untuk Filter Buttons
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Ubah gaya tombol yang aktif
+      // Ubah Gaya Tombol
       filterBtns.forEach(b => {
         b.classList.remove('bg-neutral-900', 'text-white', 'dark:bg-white', 'dark:text-black');
-        b.classList.add('hover:bg-neutral-100', 'dark:hover:bg-neutral-800');
+        b.classList.add('border', 'border-neutral-300', 'dark:border-neutral-700', 'hover:bg-neutral-200', 'dark:hover:bg-neutral-800');
       });
-      btn.classList.remove('hover:bg-neutral-100', 'dark:hover:bg-neutral-800');
+      btn.classList.remove('border', 'border-neutral-300', 'dark:border-neutral-700', 'hover:bg-neutral-200', 'dark:hover:bg-neutral-800');
       btn.classList.add('bg-neutral-900', 'text-white', 'dark:bg-white', 'dark:text-black');
 
-      // Filter Kartu
-      const filterValue = btn.getAttribute('data-filter');
-      
-      cards.forEach(card => {
-        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-          card.classList.remove('hidden');
-          card.classList.add('flex'); // Pastikan display-nya kembali flex
-        } else {
-          card.classList.add('hidden');
-          card.classList.remove('flex');
-        }
-      });
+      // Jalankan Filter
+      currentFilter = btn.getAttribute('data-filter') || 'all';
+      filterProjects();
     });
   });
+
+  // Fungsi Reset (untuk Empty State)
+  (window as any).resetFilters = () => {
+    if (searchInput) searchInput.value = '';
+    currentFilter = 'all';
+    // Klik tombol "Semua" secara otomatis
+    const allBtn = document.querySelector('.filter-btn[data-filter="all"]') as HTMLButtonElement;
+    allBtn?.click();
+  };
 </script>
