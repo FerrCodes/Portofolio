@@ -140,9 +140,13 @@ const navItems = [
         <a href="https://www.instagram.com/imnotferrriii" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram"></i></a>
         <a href="https://x.com/imnotferrriii" target="_blank" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
       </div>
+      <!-- Teks Copyright Khusus Mobile Drawer -->
+        <p class="text-[10px] text-center text-neutral-500 dark:text-neutral-500 md:hidden">
+          &copy; {new Date().getFullYear()} Feri.<br>All rights reserved.
+        </p>
     </aside>
 
-        <!-- MOBILE DRAWER OVERLAY (Latar Gelap) -->
+    <!-- MOBILE DRAWER OVERLAY -->
     <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
 
     <!-- MOBILE DRAWER MENU -->
@@ -208,6 +212,14 @@ const navItems = [
         </button>
       </div>
       <slot />
+      <!-- FOOTER COPYRIGHT (Muncul di semua halaman) -->
+      <footer class="mt-20 pt-6 border-t border-neutral-200 dark:border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-neutral-500">
+        <p>&copy; {new Date().getFullYear()} Feri. All rights reserved.</p>
+        <p class="flex items-center gap-1">
+          Built with <a href="https://astro.build" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">Astro</a> & 
+          <a href="https://tailwindcss.com" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">Tailwind CSS</a>
+        </p>
+      </footer>
     </main>
   </div>
 
