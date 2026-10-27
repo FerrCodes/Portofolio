@@ -28,7 +28,7 @@ for (const path in modules) {
 
 projects.sort((a, b) => b.year.localeCompare(a.year));
 ---
-<BaseLayout title="Projects & Experiments">
+<BaseLayout title="Projek">
   <section>
     <!-- Header -->
     <div class="mb-10">
@@ -87,10 +87,8 @@ projects.sort((a, b) => b.year.localeCompare(a.year));
 
     <!-- Empty State (Muncul jika projek tidak ditemukan) -->
     <div id="empty-state" class="hidden flex-col items-center justify-center py-20 text-center">
-      <i data-lucide="search-x" class="w-12 h-12 text-neutral-300 dark:text-neutral-600 mb-4"></i>
       <h3 class="font-heading font-bold text-xl mb-2">Tidak ada projek ditemukan</h3>
       <p class="text-neutral-500 mb-6">Coba kata kunci lain atau ubah filter kategori.</p>
-      <button onclick="resetFilters()" class="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">Reset Pencarian</button>
     </div>
 
   </section>

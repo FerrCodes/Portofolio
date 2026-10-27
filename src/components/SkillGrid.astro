@@ -1,51 +1,73 @@
 ---
-const frontend = [
+// 1. WEB DEVELOPMENT
+const webDev = [
   { name: "HTML5", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" },
   { name: "CSS3", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" },
   { name: "JavaScript", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
+  { name: "PHP", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" },
+  { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
   { name: "TypeScript", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
   { name: "React", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
   { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
   { name: "Astro", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" },
-  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" }
 ];
 
-const backend = [
-  { name: "PHP", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" },
-  { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
-  { name: "MySQL", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" },
-  { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" }
-];
-
-const mobile = [
+// 2. MOBILE DEVELOPMENT (Kotlin dipindah ke sini)
+const mobileDev = [
   { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" },
-  { name: "Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" }
+  { name: "Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" },
+  { name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" }
 ];
 
+// 3. DATA & COMPUTER VISION
+const dataCV = [
+  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "OpenCV", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" }
+];
+
+// 4. DATABASES (Dipisah dari Git)
+const databases = [
+  { name: "MySQL", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
+];
+
+// 5. DEVELOPMENT TOOLS
 const tools = [
   { name: "Git", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
   { name: "GitHub", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" }
 ];
 
-const exploring = [
+// 6. TECH EXPLORATION
+const exploration = [
   { name: "Go", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" },
-  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
   { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
   { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
-  { name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" },
-  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
 ];
 ---
 
-<div class="space-y-8">
+<div class="space-y-10">
   
-  <!-- FRONTEND -->
+  <!-- PARAGRAF PENGANTAR (Sesuai saran) -->
+  <div class="p-5 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-xl">
+    <h3 class="font-heading font-bold text-lg mb-2 text-purple-900 dark:text-purple-300">Technology Exploration</h3>
+    <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+      Saya senang bereksperimen dengan berbagai teknologi dan memilih perangkat berdasarkan kebutuhan setiap proyek. 
+      Tujuan saya adalah mengeksplorasi beragam pendekatan dalam pengembangan perangkat lunak, belajar melalui proyek praktis, 
+      serta memahami cara kerja sistem di balik layar.
+    </p>
+  </div>
+
+  <!-- WEB DEVELOPMENT -->
   <div>
     <div class="mb-3">
-      <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Frontend Development</h3>
+      <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Web Development</h3>
+      <p class="text-xs text-neutral-500 mb-3">Membangun antarmuka dan sistem backend untuk aplikasi web.</p>
     </div>
     <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
-      {frontend.map(tech => (
+      {webDev.map(tech => (
         <div class="flex flex-col items-center justify-center p-2.5 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-purple-400 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/10 transition-all group">
           <img src={tech.icon} alt={tech.name} class="w-7 h-7 object-contain mb-1.5 group-hover:scale-110 transition-transform" />
           <span class="text-[10px] font-medium text-center text-neutral-600 dark:text-neutral-400 leading-tight">{tech.name}</span>
@@ -54,29 +76,15 @@ const exploring = [
     </div>
   </div>
 
-  <!-- BACKEND & DATABASE -->
-  <div>
-    <div class="mb-3">
-      <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Backend & Database</h3>
-    </div>
-    <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
-      {backend.map(tech => (
-        <div class="flex flex-col items-center justify-center p-2.5 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-all group">
-          <img src={tech.icon} alt={tech.name} class="w-7 h-7 object-contain mb-1.5 group-hover:scale-110 transition-transform" />
-          <span class="text-[10px] font-medium text-center text-neutral-600 dark:text-neutral-400 leading-tight">{tech.name}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <!-- MOBILE -->
+    <!-- MOBILE DEVELOPMENT -->
     <div>
       <div class="mb-3">
         <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Mobile Development</h3>
+        <p class="text-xs text-neutral-500 mb-3">Pengembangan aplikasi mobile dengan berbagai pendekatan dan teknologi.</p>
       </div>
       <div class="grid grid-cols-4 gap-3">
-        {mobile.map(tech => (
+        {mobileDev.map(tech => (
           <div class="flex flex-col items-center justify-center p-2.5 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-teal-400 dark:hover:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-900/10 transition-all group">
             <img src={tech.icon} alt={tech.name} class="w-7 h-7 object-contain mb-1.5 group-hover:scale-110 transition-transform" />
             <span class="text-[10px] font-medium text-center text-neutral-600 dark:text-neutral-400 leading-tight">{tech.name}</span>
@@ -85,10 +93,45 @@ const exploring = [
       </div>
     </div>
 
-    <!-- TOOLS -->
+    <!-- DATA & COMPUTER VISION -->
     <div>
       <div class="mb-3">
-        <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Tools & Version Control</h3>
+        <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Data & Computer Vision</h3>
+        <p class="text-xs text-neutral-500 mb-3">Eksplorasi pemrosesan data dan pengenalan gambar.</p>
+      </div>
+      <div class="grid grid-cols-4 gap-3">
+        {dataCV.map(tech => (
+          <div class="flex flex-col items-center justify-center p-2.5 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-all group">
+            <img src={tech.icon} alt={tech.name} class="w-7 h-7 object-contain mb-1.5 group-hover:scale-110 transition-transform" />
+            <span class="text-[10px] font-medium text-center text-neutral-600 dark:text-neutral-400 leading-tight">{tech.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- DATABASES -->
+    <div>
+      <div class="mb-3">
+        <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Databases & Services</h3>
+        <p class="text-xs text-neutral-500 mb-3">Penyimpanan data dan layanan backend.</p>
+      </div>
+      <div class="grid grid-cols-4 gap-3">
+        {databases.map(tech => (
+          <div class="flex flex-col items-center justify-center p-2.5 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-green-400 dark:hover:border-green-500 hover:bg-green-50 dark:hover:bg-green-900/10 transition-all group">
+            <img src={tech.icon} alt={tech.name} class="w-7 h-7 object-contain mb-1.5 group-hover:scale-110 transition-transform" />
+            <span class="text-[10px] font-medium text-center text-neutral-600 dark:text-neutral-400 leading-tight">{tech.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- DEVELOPMENT TOOLS -->
+    <div>
+      <div class="mb-3">
+        <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Development Tools</h3>
+        <p class="text-xs text-neutral-500 mb-3">Manajemen kode dan kolaborasi.</p>
       </div>
       <div class="grid grid-cols-4 gap-3">
         {tools.map(tech => (
@@ -103,14 +146,14 @@ const exploring = [
 
   <hr class="border-neutral-200 dark:border-neutral-800" />
 
-  <!-- EXPLORING -->
+  <!-- TECH EXPLORATION -->
   <div>
     <div class="mb-3">
-      <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Learning & Exploration</h3>
-      <p class="text-xs text-neutral-500">Teknologi yang sedang dipelajari atau dieksplorasi di luar stack utama.</p>
+      <h3 class="font-heading font-bold text-lg text-neutral-800 dark:text-neutral-200">Tech Exploration</h3>
+      <p class="text-xs text-neutral-500">Bahasa dan perangkat yang sedang saya pelajari untuk memahami berbagai pendekatan dalam pengembangan perangkat lunak.</p>
     </div>
     <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
-      {exploring.map(tech => (
+      {exploration.map(tech => (
         <div class="flex flex-col items-center justify-center p-2.5 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:border-amber-400 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/10 transition-all group">
           <img src={tech.icon} alt={tech.name} class="w-7 h-7 object-contain mb-1.5 group-hover:scale-110 transition-transform" />
           <span class="text-[10px] font-medium text-center text-neutral-600 dark:text-neutral-400 leading-tight">{tech.name}</span>
